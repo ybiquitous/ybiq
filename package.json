@@ -1,7 +1,7 @@
 {
   "name": "@ybiquitous/cli",
   "version": "0.1.0",
-  "description": "ybiquitous's command line tools",
+  "description": "ybiquitous's command-line tools",
   "author": "ybiquitous <ybiquitous@gmail.com>",
   "license": "MIT",
   "repository": "ybiquitous/cli",
