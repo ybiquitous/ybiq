@@ -1,0 +1,43 @@
+{
+  "name": "@ybiquitous/cli",
+  "version": "0.1.0",
+  "description": "ybiquitous's command line tools",
+  "author": "ybiquitous <ybiquitous@gmail.com>",
+  "license": "MIT",
+  "repository": "ybiquitous/cli",
+  "bugs": "https://github.com/ybiquitous/cli/issues",
+  "homepage": "https://github.com/ybiquitous/cli#readme",
+  "keywords": [
+    "cli",
+    "utility",
+    "tool"
+  ],
+  "main": "index.js",
+  "bin": {
+    "ybiquitous": "./bin/cli.js"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^3.1.3",
+    "@commitlint/config-angular": "^3.1.1",
+    "eslint": "^4.5.0",
+    "eslint-config-ybiquitous": "^2.0.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.4",
+    "standard-version": "^4.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "lint:js": "eslint --max-warnings=0 .",
+    "lint:js:fix": "eslint --max-warnings=0 . --fix",
+    "commitmsg": "commitlint -e",
+    "precommit": "lint-staged",
+    "release": "standard-version",
+    "release:dry-run": "standard-version --dry-run"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix --max-warnings=0 --no-ignore",
+      "git add"
+    ]
+  }
+}
