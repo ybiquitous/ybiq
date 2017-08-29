@@ -15,5 +15,7 @@ module.exports = async function init(basedir = process.cwd()) {
     packageInfo[prop] = { ...originalPackage[prop], ...packageInfo[prop] }
   })
 
-  await writeFile(packageFile, JSON.stringify(packageInfo, null, 2))
+  await writeFile(packageFile, `${JSON.stringify(packageInfo, null, 2)}\n`)
+
+  process.stdout.write(`${packageFile} was updated.\n`)
 }
