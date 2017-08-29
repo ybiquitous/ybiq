@@ -1,0 +1,19 @@
+const path = require('path')
+const fs = require('fs')
+const { promisify } = require('util')
+const originalPackage = require('../package.json')
+
+const readFile = promisify(fs.readFile)
+const writeFile = promisify(fs.writeFile)
+const targetProps = ['scripts', 'lint-staged']
+
+module.exports = async function init(basedir = process.cwd()) {
+  const packageFile = path.join(basedir, 'package.json')
+  const packageInfo = JSON.parse(await readFile(packageFile, 'utf8'))
+
+  targetProps.forEach((prop) => {
+    packageInfo[prop] = { ...originalPackage[prop], ...packageInfo[prop] }
+  })
+
+  await writeFile(packageFile, JSON.stringify(packageInfo, null, 2))
+}
