@@ -8,7 +8,7 @@ module.exports = function cli() {
     .command({
       command: 'init',
       desc: 'Initialize Node.js project',
-      handler: init,
+      handler: () => init(),
     })
     .demandCommand(1)
     .help()
