@@ -31,6 +31,7 @@ test('init', async (t) => {
     'lint:js': 'eslint --max-warnings=0 .',
     'lint:js:fix': 'eslint --max-warnings=0 . --fix',
     'lint:md': 'markdownlint *.md',
+    lint: 'npm-run-all --parallel lint:js lint:md',
     precommit: 'lint-staged',
     release: 'standard-version',
     'release:dry-run': 'standard-version --dry-run',
