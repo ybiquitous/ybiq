@@ -5,16 +5,16 @@ import assert from 'assert'
 import init from './init'
 
 suite('init', () => {
-  let tmpdir
+  let workDir
   let packageJson
 
   setup('work directory', async () => {
-    tmpdir = path.join(os.tmpdir(), `cli-${Date.now()}`)
-    await fs.mkdirs(tmpdir)
+    workDir = path.join(os.tmpdir(), `cli-${Date.now()}`)
+    await fs.mkdirs(workDir)
   })
 
   setup('package.json', async () => {
-    packageJson = path.join(tmpdir, 'package.json')
+    packageJson = path.join(workDir, 'package.json')
     await fs.writeJson(packageJson, {
       scripts: { test: 'abc' },
       'lint-staged': { '*.css': 'xyz' },
@@ -22,11 +22,11 @@ suite('init', () => {
   })
 
   teardown(async () => {
-    await fs.remove(tmpdir)
+    await fs.remove(workDir)
   })
 
-  test('success', async () => {
-    await init(tmpdir)
+  test('write package.json', async () => {
+    await init(workDir)
     const pkg = await fs.readJson(packageJson)
 
     assert.deepStrictEqual(pkg.scripts, {
@@ -50,5 +50,13 @@ suite('init', () => {
       '*.md': 'markdownlint',
       '*.css': 'xyz',
     })
+  })
+
+  test('write .editorconfig', async () => {
+    await init(workDir)
+
+    const original = await fs.readFile(path.join(__dirname, '..', '.editorconfig'), 'utf8')
+    const wrote = await fs.readFile(path.join(workDir, '.editorconfig'), 'utf8')
+    assert(original === wrote)
   })
 })
