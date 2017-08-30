@@ -30,6 +30,7 @@ test('init', async (t) => {
     commitmsg: 'commitlint -e',
     'lint:js': 'eslint --max-warnings=0 .',
     'lint:js:fix': 'eslint --max-warnings=0 . --fix',
+    'lint:md': 'markdownlint *.md',
     precommit: 'lint-staged',
     release: 'standard-version',
     'release:dry-run': 'standard-version --dry-run',
@@ -41,6 +42,7 @@ test('init', async (t) => {
       'eslint --fix --max-warnings=0 --no-ignore',
       'git add',
     ],
+    '*.md': 'markdownlint',
     '*.css': 'xyz',
   })
 })
