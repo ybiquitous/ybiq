@@ -1,7 +1,8 @@
-import test from 'ava'
 import { promisify } from 'util'
 import { execFile } from 'child_process'
 import path from 'path'
+import assert from 'assert'
+import assertThrows from '../test/assert-throws'
 
 const HELP = `
 ybiquitous <command>
@@ -21,15 +22,19 @@ function exec(...args) {
   return promisify(execFile)(tested, args, options)
 }
 
-test('output help without any arguments', async (t) => {
-  const { code, stdout, stderr } = await t.throws(exec())
-  t.true(code === 1)
-  t.true(stdout === '')
-  t.true(stderr.includes(HELP))
-})
+suite('cli', () => {
+  test('output help without any arguments', async () => {
+    const error = await assertThrows(exec)
+    const { code, stdout, stderr } = error
+    assert(error instanceof Error)
+    assert(code === 1)
+    assert(stdout === '')
+    assert(stderr.includes(HELP))
+  })
 
-test('output help with `--help` option', async (t) => {
-  const { stdout, stderr } = await exec('--help')
-  t.true(stdout.includes(HELP))
-  t.true(stderr === '')
+  test('output help with `--help` option', async () => {
+    const { stdout, stderr } = await exec('--help')
+    assert(stdout.includes(HELP))
+    assert(stderr === '')
+  })
 })

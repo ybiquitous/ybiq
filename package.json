@@ -30,12 +30,16 @@
     "yargs": "^8.0.2"
   },
   "devDependencies": {
-    "ava": "^0.22.0",
-    "fs-extra": "^4.0.1"
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "fs-extra": "^4.0.1",
+    "mocha": "^3.5.0"
   },
   "scripts": {
-    "test": "ava",
-    "test:watch": "ava --watch",
+    "test": "mocha \"bin/**/*.test.js\" \"src/**/*.test.js\"",
+    "test:watch": "mocha --watch",
     "lint:js": "eslint --max-warnings=0 .",
     "lint:js:fix": "eslint --max-warnings=0 . --fix",
     "lint:md": "markdownlint *.md",
