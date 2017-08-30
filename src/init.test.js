@@ -36,7 +36,7 @@ test('init', async (t) => {
     release: 'standard-version',
     'release:dry-run': 'standard-version --dry-run',
     test: 'abc',
-    'test:watch': 'LANG=C ava --watch',
+    'test:watch': 'ava --watch',
   })
   t.deepEqual(pkg['lint-staged'], {
     '*.{js,jsx}': [
