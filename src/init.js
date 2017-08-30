@@ -1,22 +1,33 @@
 const path = require('path')
-const fs = require('fs')
-const { promisify } = require('util')
+const fs = require('fs-extra')
 const originalPackage = require('../package.json')
 
-const readFile = promisify(fs.readFile)
-const writeFile = promisify(fs.writeFile)
 const targetProps = ['scripts', 'lint-staged']
 
-module.exports = async function init(basedir = process.cwd()) {
-  const packageFile = path.join(basedir, 'package.json')
-  const packageInfo = JSON.parse(await readFile(packageFile, 'utf8'))
+async function updatePackageFile(baseDir) {
+  const packageFile = path.join(baseDir, 'package.json')
+  const packageInfo = JSON.parse(await fs.readFile(packageFile, 'utf8'))
 
   targetProps.forEach((prop) => {
     packageInfo[prop] = { ...originalPackage[prop], ...packageInfo[prop] }
   })
   packageInfo.scripts['test:watch'] = `${packageInfo.scripts.test} --watch`
 
-  await writeFile(packageFile, `${JSON.stringify(packageInfo, null, 2)}\n`)
+  await fs.writeFile(packageFile, `${JSON.stringify(packageInfo, null, 2)}\n`)
 
   process.stdout.write(`${packageFile} was updated.\n`)
+}
+
+async function copyEditorConfig(baseDir) {
+  const source = path.join(__dirname, '..', '.editorconfig')
+  const target = path.join(baseDir, '.editorconfig')
+  await fs.copy(source, target)
+
+  process.stdout.write(`${target} was updated.\n`)
+}
+
+module.exports = async function init(baseDir = process.cwd()) {
+  await updatePackageFile(baseDir)
+
+  await copyEditorConfig(baseDir)
 }
