@@ -26,8 +26,19 @@ async function copyEditorConfig(baseDir) {
   process.stdout.write(`${target} was updated.\n`)
 }
 
+async function writeESLintConfig(baseDir) {
+  const target = path.join(baseDir, '.eslintrc.js')
+  await fs.writeFile(target, `module.exports = {
+  root: true,
+  extends: ['ybiquitous'],
+}
+`)
+
+  process.stdout.write(`${target} was updated.\n`)
+}
+
 module.exports = async function init(baseDir = process.cwd()) {
   await updatePackageFile(baseDir)
-
   await copyEditorConfig(baseDir)
+  await writeESLintConfig(baseDir)
 }

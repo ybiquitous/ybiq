@@ -52,11 +52,22 @@ suite('init', () => {
     })
   })
 
-  test('write .editorconfig', async () => {
+  test('copy .editorconfig', async () => {
     await init(workDir)
 
     const original = await fs.readFile(path.join(__dirname, '..', '.editorconfig'), 'utf8')
-    const wrote = await fs.readFile(path.join(workDir, '.editorconfig'), 'utf8')
-    assert(original === wrote)
+    const copy = await fs.readFile(path.join(workDir, '.editorconfig'), 'utf8')
+    assert(original === copy)
+  })
+
+  test('write .eslintrc.js', async () => {
+    await init(workDir)
+
+    const wrote = await fs.readFile(path.join(workDir, '.eslintrc.js'), 'utf8')
+    assert(wrote === `module.exports = {
+  root: true,
+  extends: ['ybiquitous'],
+}
+`)
   })
 })
