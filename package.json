@@ -34,8 +34,8 @@
     "fs-extra": "^4.0.1"
   },
   "scripts": {
-    "test": "LANG=C ava",
-    "test:watch": "LANG=C ava --watch",
+    "test": "ava",
+    "test:watch": "ava --watch",
     "lint:js": "eslint --max-warnings=0 .",
     "lint:js:fix": "eslint --max-warnings=0 . --fix",
     "lint:md": "markdownlint *.md",
