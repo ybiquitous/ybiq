@@ -14,4 +14,4 @@ ybiquitous --help
 
 ## License
 
-This product is licensed under the [MIT License](LICENSE).
+[MIT](LICENSE) © ybiquitous
