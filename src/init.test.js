@@ -38,7 +38,7 @@ test('init', async (t) => {
     release: 'standard-version',
     'release:dry-run': 'standard-version --dry-run',
     test: 'abc',
-    'test:watch': 'ava --watch',
+    'test:watch': 'abc --watch',
   })
   t.deepEqual(pkg['lint-staged'], {
     '*.{js,jsx}': [
