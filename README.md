@@ -14,4 +14,4 @@ ybiquitous --help
 
 ## License
 
-[MIT License](LICENSE)
+This product is licensed under the [MIT License](LICENSE).
