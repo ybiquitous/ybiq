@@ -14,6 +14,7 @@ module.exports = async function init(basedir = process.cwd()) {
   targetProps.forEach((prop) => {
     packageInfo[prop] = { ...originalPackage[prop], ...packageInfo[prop] }
   })
+  packageInfo.scripts['test:watch'] = `${packageInfo.scripts.test} --watch`
 
   await writeFile(packageFile, `${JSON.stringify(packageInfo, null, 2)}\n`)
 
