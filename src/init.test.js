@@ -5,14 +5,16 @@ import fs from 'fs-extra'
 import init from './init'
 
 let tmpdir
-let packageFile
+let packageJson
 
-test.before(async () => {
+test.before('setup work directory', async () => {
   tmpdir = path.join(os.tmpdir(), `cli-${Date.now()}`)
   await fs.mkdirs(tmpdir)
+})
 
-  packageFile = path.join(tmpdir, 'package.json')
-  await fs.writeJson(packageFile, {
+test.before('setup package.json', async () => {
+  packageJson = path.join(tmpdir, 'package.json')
+  await fs.writeJson(packageJson, {
     scripts: { test: 'abc' },
     'lint-staged': { '*.css': 'xyz' },
   })
@@ -25,7 +27,7 @@ test.after.always(async () => {
 test('init', async (t) => {
   await init(tmpdir)
 
-  const pkg = await fs.readJson(packageFile)
+  const pkg = await fs.readJson(packageJson)
   t.deepEqual(pkg.scripts, {
     commitmsg: 'commitlint -e',
     'lint:js': 'eslint --max-warnings=0 .',
