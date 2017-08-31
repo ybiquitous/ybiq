@@ -4,10 +4,10 @@ const init = require('./init')
 module.exports = function cli() {
   // eslint-disable-next-line no-unused-expressions
   yargs
-    .usage('ybiquitous <command>')
+    .usage('ybiq <command>')
     .command({
       command: 'init',
-      desc: 'Initialize Node.js project',
+      desc: 'Setup npm project',
       handler: () => init(),
     })
     .demandCommand(1)
