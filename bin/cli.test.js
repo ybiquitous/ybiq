@@ -5,10 +5,10 @@ import assert from 'assert'
 import assertThrows from '../test/assert-throws'
 
 const HELP = `
-ybiquitous <command>
+ybiq <command>
 
 Commands:
-  init  Initialize Node.js project
+  init  Setup npm project
 
 Options:
   --help  Show help                                                    [boolean]
