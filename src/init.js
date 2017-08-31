@@ -37,7 +37,8 @@ async function writeESLintConfig(baseDir) {
   process.stdout.write(`${target} was updated.\n`)
 }
 
-module.exports = async function init(baseDir = process.cwd()) {
+module.exports = async function init() {
+  const baseDir = process.cwd()
   await updatePackageFile(baseDir)
   await copyEditorConfig(baseDir)
   await writeESLintConfig(baseDir)
