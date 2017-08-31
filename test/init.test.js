@@ -2,15 +2,19 @@ import path from 'path'
 import os from 'os'
 import fs from 'fs-extra'
 import assert from 'assert'
-import init from './init'
+import exec from './exec'
 
 suite('init', () => {
   let workDir
+  let currentDir
   let packageJson
 
   setup('work directory', async () => {
     workDir = path.join(os.tmpdir(), `cli-${Date.now()}`)
     await fs.mkdirs(workDir)
+
+    currentDir = process.cwd()
+    process.chdir(workDir)
   })
 
   setup('package.json', async () => {
@@ -22,11 +26,13 @@ suite('init', () => {
   })
 
   teardown(async () => {
+    process.chdir(currentDir)
+
     await fs.remove(workDir)
   })
 
   test('write package.json', async () => {
-    await init(workDir)
+    await exec('init')
     const pkg = await fs.readJson(packageJson)
 
     assert.deepStrictEqual(pkg.scripts, {
@@ -53,7 +59,7 @@ suite('init', () => {
   })
 
   test('copy .editorconfig', async () => {
-    await init(workDir)
+    await exec('init')
 
     const original = await fs.readFile(path.join(__dirname, '..', '.editorconfig'), 'utf8')
     const copy = await fs.readFile(path.join(workDir, '.editorconfig'), 'utf8')
@@ -61,7 +67,7 @@ suite('init', () => {
   })
 
   test('write .eslintrc.js', async () => {
-    await init(workDir)
+    await exec('init')
 
     const wrote = await fs.readFile(path.join(workDir, '.eslintrc.js'), 'utf8')
     assert(wrote === `module.exports = {

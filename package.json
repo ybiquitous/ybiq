@@ -38,7 +38,7 @@
     "mocha": "^3.5.0"
   },
   "scripts": {
-    "test": "mocha \"bin/**/*.test.js\" \"src/**/*.test.js\"",
+    "test": "mocha",
     "test:watch": "mocha --watch",
     "lint:js": "eslint --max-warnings=0 .",
     "lint:js:fix": "eslint --max-warnings=0 . --fix",
