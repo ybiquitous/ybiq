@@ -1,12 +1,12 @@
 {
-  "name": "@ybiquitous/cli",
+  "name": "ybiq",
   "version": "0.1.0",
-  "description": "ybiquitous's command-line tools",
+  "description": "Command-line utilities for npm",
   "author": "ybiquitous <ybiquitous@gmail.com>",
   "license": "MIT",
-  "repository": "ybiquitous/cli",
-  "bugs": "https://github.com/ybiquitous/cli/issues",
-  "homepage": "https://github.com/ybiquitous/cli#readme",
+  "repository": "ybiquitous/ybiq",
+  "bugs": "https://github.com/ybiquitous/ybiq/issues",
+  "homepage": "https://github.com/ybiquitous/ybiq#readme",
   "keywords": [
     "cli",
     "command-line",
@@ -15,7 +15,7 @@
   ],
   "main": "index.js",
   "bin": {
-    "ybiquitous": "./bin/cli.js"
+    "ybiq": "./bin/cli.js"
   },
   "dependencies": {
     "@commitlint/cli": "^3.1.3",

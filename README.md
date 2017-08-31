@@ -1,17 +1,29 @@
-# ybiquitous's command-line tools
+# ybiq
 
 [![Build Status](https://travis-ci.org/ybiquitous/cli.svg?branch=master)](https://travis-ci.org/ybiquitous/cli)
+
+Command-line utilities for `npm`.
 
 ## Install
 
 ```sh
-npm install @ybiquitous/cli --save-dev
+npm install ybiq --save-dev
 ```
 
 ## Usage
 
+For details, please show help.
+
 ```sh
-ybiquitous --help
+ybiq --help
+```
+
+### `init`
+
+Setup npm project.
+
+```sh
+ybiq init
 ```
 
 ## License
