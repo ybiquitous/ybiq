@@ -1,6 +1,6 @@
 # ybiq
 
-[![Build Status](https://travis-ci.org/ybiquitous/cli.svg?branch=master)](https://travis-ci.org/ybiquitous/cli)
+[![Build Status](https://travis-ci.org/ybiquitous/ybiq.svg?branch=master)](https://travis-ci.org/ybiquitous/ybiq)
 
 Command-line utilities for `npm`.
 
