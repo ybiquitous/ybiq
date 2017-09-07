@@ -46,6 +46,7 @@ suite('init', () => {
       'release:dry-run': 'standard-version --dry-run',
       test: 'abc',
       'test:watch': 'abc --watch',
+      'test:coverage': 'echo "unsupported." && exit 1',
     })
 
     assert.deepStrictEqual(pkg['lint-staged'], {

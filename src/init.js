@@ -12,6 +12,7 @@ async function updatePackageFile(baseDir) {
     packageInfo[prop] = { ...originalPackage[prop], ...packageInfo[prop] }
   })
   packageInfo.scripts['test:watch'] = `${packageInfo.scripts.test} --watch`
+  packageInfo.scripts['test:coverage'] = 'echo "unsupported." && exit 1'
 
   await fs.writeFile(packageFile, `${JSON.stringify(packageInfo, null, 2)}\n`)
 
