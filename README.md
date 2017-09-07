@@ -20,7 +20,7 @@ ybiq --help
 
 ### `init`
 
-Setup npm project.
+Setup Node.js project.
 
 ```sh
 ybiq init
