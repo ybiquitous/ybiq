@@ -1,11 +1,12 @@
 import path from 'path'
-import { promisify } from 'util'
-import { execFile } from 'child_process'
+import util from 'util'
+import cp from 'child_process'
+
+const tested = path.join(process.cwd(), 'bin', 'cli.js')
 
 export default function exec(...args) {
-  const tested = path.join(__dirname, '..', 'bin', 'cli.js')
   const options = {
     env: { ...process.env, LANG: 'C' },
   }
-  return promisify(execFile)(tested, args, options)
+  return util.promisify(cp.execFile)(tested, args, options)
 }
