@@ -6,14 +6,14 @@ import exec from './exec'
 
 suite('init', () => {
   let workDir
-  let currentDir
+  let originalDir
   let packageJson
 
   setup('work directory', async () => {
     workDir = path.join(os.tmpdir(), `cli-${Date.now()}`)
     await fs.mkdirs(workDir)
 
-    currentDir = process.cwd()
+    originalDir = process.cwd()
     process.chdir(workDir)
   })
 
@@ -26,7 +26,7 @@ suite('init', () => {
   })
 
   teardown(async () => {
-    process.chdir(currentDir)
+    process.chdir(originalDir)
 
     await fs.remove(workDir)
   })
@@ -61,7 +61,7 @@ suite('init', () => {
   test('copy .editorconfig', async () => {
     await exec('init')
 
-    const original = await fs.readFile(path.join(__dirname, '..', '.editorconfig'), 'utf8')
+    const original = await fs.readFile(path.join(originalDir, '.editorconfig'), 'utf8')
     const copy = await fs.readFile(path.join(workDir, '.editorconfig'), 'utf8')
     assert(original === copy)
   })

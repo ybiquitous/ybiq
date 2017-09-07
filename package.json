@@ -17,6 +17,9 @@
   "bin": {
     "ybiq": "./bin/cli.js"
   },
+  "engines": {
+    "node" : ">=8"
+  },
   "dependencies": {
     "@commitlint/cli": "^3.2.0",
     "@commitlint/config-angular": "^3.1.1",
@@ -31,10 +34,7 @@
     "yargs": "^8.0.2"
   },
   "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.26.0",
+    "@std/esm": "^0.7.1",
     "mocha": "^3.5.0"
   },
   "scripts": {
@@ -55,5 +55,8 @@
       "git add"
     ],
     "*.md": "markdownlint"
+  },
+  "@std/esm": {
+    "esm": "all"
   }
 }
