@@ -37,8 +37,8 @@ suite('init', () => {
 
     assert.deepStrictEqual(pkg.scripts, {
       commitmsg: 'commitlint -e',
-      'lint:js': 'eslint --max-warnings=0 .',
-      'lint:js:fix': 'eslint --max-warnings=0 . --fix',
+      'lint:js': 'eslint --max-warnings=-1 --ignore-path=.gitignore .',
+      'lint:js:fix': 'npm run lint:js -- --fix',
       'lint:md': 'markdownlint *.md',
       lint: 'npm-run-all --parallel lint:js lint:md',
       precommit: 'lint-staged',
@@ -51,7 +51,7 @@ suite('init', () => {
 
     assert.deepStrictEqual(pkg['lint-staged'], {
       '*.{js,jsx}': [
-        'eslint --fix --max-warnings=0 --no-ignore',
+        'eslint --fix --max-warnings=-1 --no-ignore',
         'git add',
       ],
       '*.md': 'markdownlint',
