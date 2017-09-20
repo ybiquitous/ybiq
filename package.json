@@ -37,7 +37,8 @@
     "@std/esm": "^0.8.2",
     "codecov": "^2.3.0",
     "mocha": "^3.5.0",
-    "nyc": "^11.2.1"
+    "nyc": "^11.2.1",
+    "prepend-file-cli": "^1.0.6"
   },
   "scripts": {
     "test": "nyc mocha",
@@ -58,6 +59,11 @@
       "git add"
     ],
     "*.md": "markdownlint"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prepend CHANGELOG.md \"<!-- markdownlint-disable -->\n\""
+    }
   },
   "@std/esm": {
     "esm": "all"
