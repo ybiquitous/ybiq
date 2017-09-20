@@ -36,7 +36,7 @@
   "devDependencies": {
     "@std/esm": "^0.10.1",
     "codecov": "^2.3.0",
-    "mocha": "^3.5.0",
+    "mocha": "^3.5.3",
     "nyc": "^11.2.1",
     "prepend-file-cli": "^1.0.6"
   },
