@@ -1,5 +1,6 @@
 # ybiq
 
+[![NPM version](https://img.shields.io/npm/v/ybiq.svg)](https://www.npmjs.com/package/ybiq)
 [![Build Status](https://travis-ci.org/ybiquitous/ybiq.svg?branch=master)](https://travis-ci.org/ybiquitous/ybiq)
 [![codecov](https://codecov.io/gh/ybiquitous/ybiq/branch/master/graph/badge.svg)](https://codecov.io/gh/ybiquitous/ybiq)
 
