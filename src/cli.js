@@ -11,6 +11,5 @@ module.exports = function cli() {
       handler: () => init(),
     })
     .demandCommand(1)
-    .help()
     .argv
 }

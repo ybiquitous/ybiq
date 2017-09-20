@@ -9,7 +9,8 @@ Commands:
   init  Setup npm project
 
 Options:
-  --help  Show help                                                    [boolean]
+  --help     Show help                                                 [boolean]
+  --version  Show version number                                       [boolean]
 `.trim()
 
 suite('help', () => {
@@ -19,7 +20,7 @@ suite('help', () => {
     assert(error instanceof Error)
     assert(code === 1)
     assert(stdout === '')
-    assert(stderr.includes(HELP))
+    assert(stderr.includes(HELP), stderr)
   })
 
   test('with `--help` option', async () => {
