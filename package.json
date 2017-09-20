@@ -34,7 +34,7 @@
     "yargs": "^9.0.1"
   },
   "devDependencies": {
-    "@std/esm": "^0.8.2",
+    "@std/esm": "^0.10.1",
     "codecov": "^2.3.0",
     "mocha": "^3.5.0",
     "nyc": "^11.2.1",
