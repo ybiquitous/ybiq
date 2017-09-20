@@ -8,3 +8,13 @@ script:
   - npm run lint
   - npm test
   - npm run test:coverage
+
+deploy:
+  provider: npm
+  email: ybiquitous@gmail.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
+
+notifications:
+  email: false
