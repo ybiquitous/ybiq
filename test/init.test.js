@@ -47,6 +47,7 @@ suite('init', () => {
       test: 'abc',
       'test:watch': 'abc --watch',
       'test:coverage': 'echo "unsupported." && exit 1',
+      build: 'babel src/ -d lib/',
     })
 
     assert.deepStrictEqual(pkg['lint-staged'], {

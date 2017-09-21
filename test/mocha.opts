@@ -1,4 +1,5 @@
---require @std/esm
+--require babel-register
+--require ./test/setup.js
 --ui tdd
 --slow 100
 --timeout 5000
