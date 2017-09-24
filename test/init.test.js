@@ -78,4 +78,14 @@ suite('init', () => {
 }
 `)
   })
+
+  test('write commitlint.config.js', async () => {
+    await exec('init')
+
+    const wrote = await fs.readFile(path.join(workDir, 'commitlint.config.js'), 'utf8')
+    assert(wrote === `module.exports = {
+  extends: ['@commitlint/config-angular'],
+}
+`)
+  })
 })
