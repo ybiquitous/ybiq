@@ -75,5 +75,11 @@
     "scripts": {
       "postchangelog": "prepend CHANGELOG.md \"<!-- markdownlint-disable -->\n\""
     }
+  },
+  "nyc": {
+    "exclude": [
+      "lib",
+      "test"
+    ]
   }
 }

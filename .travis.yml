@@ -16,7 +16,7 @@ script:
   - npm run build
   - npm run lint
   - npm test
-  - if [[ $TRAVIS_NODE_VERSION = '8' ]]; then npm run test:coverage; fi
+  - npm run test:coverage
 
 deploy:
   provider: npm
