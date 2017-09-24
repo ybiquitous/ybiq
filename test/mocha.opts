@@ -1,4 +1,4 @@
---require @std/esm
+--require babel-register
 --ui tdd
 --slow 100
 --timeout 5000

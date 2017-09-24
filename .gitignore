@@ -60,3 +60,6 @@ typings/
 
 # @std/esm
 .esm-cache
+
+# build directory
+/lib/

@@ -13,12 +13,17 @@
     "utility",
     "tool"
   ],
+  "files": [
+    "bin",
+    "lib",
+    "src"
+  ],
   "main": "index.js",
   "bin": {
     "ybiq": "./bin/cli.js"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=6"
   },
   "dependencies": {
     "@commitlint/cli": "^3.2.0",
@@ -34,13 +39,18 @@
     "yargs": "^9.0.1"
   },
   "devDependencies": {
-    "@std/esm": "^0.10.1",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
     "codecov": "^2.3.0",
     "mocha": "^3.5.3",
     "nyc": "^11.2.1",
     "prepend-file-cli": "^1.0.6"
   },
   "scripts": {
+    "build": "babel src/ -d lib/",
     "test": "nyc mocha",
     "test:watch": "mocha --watch",
     "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
@@ -64,8 +74,5 @@
     "scripts": {
       "postchangelog": "prepend CHANGELOG.md \"<!-- markdownlint-disable -->\n\""
     }
-  },
-  "@std/esm": {
-    "esm": "all"
   }
 }
