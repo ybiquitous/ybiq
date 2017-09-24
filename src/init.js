@@ -27,15 +27,25 @@ async function copyEditorConfig(baseDir) {
   process.stdout.write(`${target} was updated.\n`)
 }
 
+async function writeConfigFile(baseDir, fileName, fileContent) {
+  const target = path.join(baseDir, fileName)
+  await fs.writeFile(target, fileContent)
+  process.stdout.write(`${target} was wrote.\n`)
+}
+
 async function writeESLintConfig(baseDir) {
-  const target = path.join(baseDir, '.eslintrc.js')
-  await fs.writeFile(target, `module.exports = {
+  writeConfigFile(baseDir, '.eslintrc.js', `module.exports = {
   root: true,
   extends: ['ybiquitous'],
 }
 `)
+}
 
-  process.stdout.write(`${target} was updated.\n`)
+async function writeCommitlintConfig(baseDir) {
+  writeConfigFile(baseDir, 'commitlint.config.js', `module.exports = {
+  extends: ['@commitlint/config-angular'],
+}
+`)
 }
 
 module.exports = async function init() {
@@ -43,4 +53,5 @@ module.exports = async function init() {
   await updatePackageFile(baseDir)
   await copyEditorConfig(baseDir)
   await writeESLintConfig(baseDir)
+  await writeCommitlintConfig(baseDir)
 }
