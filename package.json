@@ -16,7 +16,10 @@
   "files": [
     "bin",
     "lib",
-    "src"
+    "src",
+    ".editorconfig",
+    ".eslintrc.js",
+    "commitlint.config.js"
   ],
   "main": "index.js",
   "bin": {
