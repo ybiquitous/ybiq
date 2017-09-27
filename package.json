@@ -19,7 +19,8 @@
     "src",
     ".editorconfig",
     ".eslintrc.js",
-    "commitlint.config.js"
+    "commitlint.config.js",
+    "index.js"
   ],
   "main": "index.js",
   "bin": {

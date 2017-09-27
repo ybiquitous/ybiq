@@ -17,6 +17,8 @@ npm install ybiq --save-dev
 
 ## Usage
 
+### CLI
+
 For details, please show help.
 
 ```sh
@@ -29,6 +31,12 @@ Setup Node.js project.
 
 ```sh
 ybiq init
+```
+
+### Programmatic API
+
+```js
+const ybiq = require('ybiq')
 ```
 
 ## License
