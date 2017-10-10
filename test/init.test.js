@@ -20,7 +20,7 @@ suite('init', () => {
   setup('package.json', async () => {
     packageJson = path.join(workDir, 'package.json')
     await fs.writeJson(packageJson, {
-      scripts: { test: 'abc' },
+      scripts: { test: 'abc', 'lint:js': 'eslint .' },
       'lint-staged': { '*.css': 'xyz' },
     })
   })
@@ -36,6 +36,7 @@ suite('init', () => {
     const pkg = await fs.readJson(packageJson)
 
     assert.deepStrictEqual(pkg.scripts, {
+      build: 'babel src/ -d lib/',
       commitmsg: 'commitlint -e',
       'lint:js': 'eslint --max-warnings=-1 --ignore-path=.gitignore --ext=.js --ext=.jsx .',
       'lint:js:fix': 'npm run lint:js -- --fix',
@@ -47,7 +48,6 @@ suite('init', () => {
       test: 'abc',
       'test:watch': 'abc --watch',
       'test:coverage': 'echo "unsupported." && exit 1',
-      build: 'babel src/ -d lib/',
     })
 
     assert.deepStrictEqual(pkg['lint-staged'], {
