@@ -58,6 +58,12 @@ suite('init', () => {
       '*.md': 'markdownlint',
       '*.css': 'xyz',
     })
+
+    assert.deepStrictEqual(pkg['standard-version'], {
+      scripts: {
+        postchangelog: 'prepend CHANGELOG.md "<!-- markdownlint-disable -->\n"',
+      },
+    })
   })
 
   test('copy .editorconfig', async () => {
