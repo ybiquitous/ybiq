@@ -5,11 +5,7 @@ module.exports = function cli() {
   // eslint-disable-next-line no-unused-expressions
   yargs
     .usage('ybiq <command>')
-    .command({
-      command: 'init',
-      desc: 'Setup npm project',
-      handler: () => init(),
-    })
+    .command('init', init.desc, {}, init)
     .demandCommand(1)
     .argv
 }
