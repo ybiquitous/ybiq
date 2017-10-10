@@ -2,8 +2,6 @@ const path = require('path')
 const fs = require('fs-extra')
 const originalPackage = require('../package.json')
 
-const targetProps = ['scripts', 'lint-staged']
-
 function stdout(str) {
   process.stdout.write(`${str}\n`)
 }
@@ -30,11 +28,18 @@ class Init {
   async updatePackageFile() {
     const packageInfo = JSON.parse(await this.readFile('package.json'))
 
-    targetProps.forEach((prop) => {
-      packageInfo[prop] = { ...originalPackage[prop], ...packageInfo[prop] }
+    const { scripts } = packageInfo
+    Object.assign(scripts, {
+      'test:watch': `${scripts.test} --watch`,
+      'test:coverage': 'echo "unsupported." && exit 1',
     })
-    packageInfo.scripts['test:watch'] = `${packageInfo.scripts.test} --watch`
-    packageInfo.scripts['test:coverage'] = 'echo "unsupported." && exit 1'
+    Object.keys(originalPackage.scripts)
+      .filter(key => !(key === 'test' || key.startsWith('test:')))
+      .forEach((key) => {
+        scripts[key] = originalPackage.scripts[key]
+      })
+
+    Object.assign(packageInfo['lint-staged'], originalPackage['lint-staged'])
 
     await this.writeFile('package.json', JSON.stringify(packageInfo, null, 2))
   }
