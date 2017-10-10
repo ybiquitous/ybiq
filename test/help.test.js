@@ -6,7 +6,11 @@ const HELP = `
 ybiq <command>
 
 Commands:
-  init  Setup npm project
+  init  Setup npm project:
+        - Update 'package.json'
+        - Create '.editorconfig'
+        - Create '.eslintrc.js'
+        - Create 'commitlint.config.js'
 
 Options:
   --help     Show help                                                 [boolean]
@@ -25,7 +29,7 @@ suite('help', () => {
 
   test('with `--help` option', async () => {
     const { stdout, stderr } = await exec('--help')
-    assert(stdout.includes(HELP))
+    assert(stdout.includes(HELP), stdout)
     assert(stderr === '')
   })
 })
