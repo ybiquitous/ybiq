@@ -7,5 +7,7 @@ module.exports = function cli() {
     .usage('ybiq <command>')
     .command('init', init.desc, {}, init)
     .demandCommand(1)
+    .alias('help', 'h')
+    .alias('version', 'v')
     .argv
 }

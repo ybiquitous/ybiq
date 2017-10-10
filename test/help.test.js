@@ -13,8 +13,8 @@ Commands:
         - Create 'commitlint.config.js'
 
 Options:
-  --help     Show help                                                 [boolean]
-  --version  Show version number                                       [boolean]
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
 `.trim()
 
 suite('help', () => {
