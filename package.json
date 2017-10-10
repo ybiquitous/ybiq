@@ -50,7 +50,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
     "codecov": "^2.3.0",
-    "mocha": "^3.5.3",
+    "mocha": "^4.0.1",
     "nyc": "^11.2.1",
     "prepend-file-cli": "^1.0.6"
   },
