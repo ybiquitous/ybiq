@@ -28,6 +28,7 @@ class Init {
   async updatePackageFile() {
     const packageInfo = JSON.parse(await this.readFile('package.json'))
 
+    // update 'scripts'
     const { scripts } = packageInfo
     Object.assign(scripts, {
       'test:watch': `${scripts.test} --watch`,
@@ -39,7 +40,14 @@ class Init {
         scripts[key] = originalPackage.scripts[key]
       })
 
-    Object.assign(packageInfo['lint-staged'], originalPackage['lint-staged'])
+    // update other keys
+    const keys = ['lint-staged', 'standard-version']
+    keys.forEach((key) => {
+      if (!(key in packageInfo)) {
+        packageInfo[key] = {}
+      }
+      Object.assign(packageInfo[key], originalPackage[key])
+    })
 
     await this.writeFile('package.json', JSON.stringify(packageInfo, null, 2))
   }
