@@ -29,7 +29,13 @@ class Init {
     const packageInfo = JSON.parse(await this.readFile('package.json'))
 
     // update 'scripts'
+    if (!('scripts' in packageInfo)) {
+      packageInfo.scripts = {}
+    }
     const { scripts } = packageInfo
+    if (!('test' in scripts)) {
+      scripts.test = 'test'
+    }
     Object.assign(scripts, {
       'test:watch': `${scripts.test} --watch`,
       'test:coverage': 'echo "unsupported." && exit 1',

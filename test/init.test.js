@@ -31,7 +31,7 @@ suite('init', () => {
     await fs.remove(workDir)
   })
 
-  test('write package.json', async () => {
+  test('update package.json', async () => {
     await exec('init')
     const pkg = await fs.readJson(packageJson)
 
@@ -64,6 +64,16 @@ suite('init', () => {
         postchangelog: 'prepend CHANGELOG.md "<!-- markdownlint-disable -->\n"',
       },
     })
+  })
+
+  test('update package.json without fields', async () => {
+    await fs.writeJson(packageJson, {})
+    await exec('init')
+    const pkg = await fs.readJson(packageJson)
+    assert('scripts' in pkg)
+    assert('test' in pkg.scripts)
+    assert('lint-staged' in pkg)
+    assert('standard-version' in pkg)
   })
 
   test('copy .editorconfig', async () => {
