@@ -2,6 +2,7 @@ import path from 'path'
 import os from 'os'
 import fs from 'fs-extra'
 import assert from 'assert'
+import assertThrows from './assert-throws'
 import exec from './exec'
 
 suite('init', () => {
@@ -103,5 +104,15 @@ suite('init', () => {
   extends: ['@commitlint/config-angular'],
 }
 `)
+  })
+
+  test('error', async () => {
+    await fs.remove(packageJson)
+    const error = await assertThrows(() => exec('init'))
+    const { code, stdout, stderr } = error
+    assert(error instanceof Error)
+    assert(code === 1)
+    assert(stdout === '')
+    assert(stderr.includes('Error: ENOENT:'), stderr)
   })
 })
