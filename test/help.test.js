@@ -28,7 +28,7 @@ suite('help', () => {
   });
 
   ['--help', '-h'].forEach((option) => {
-    test(`with '${option}' option`, async () => {
+    test(`with "${option}" option`, async () => {
       const { stdout, stderr } = await exec(option)
       assert(stdout.includes(HELP), stdout)
       assert(stderr === '')

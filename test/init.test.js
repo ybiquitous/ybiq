@@ -32,7 +32,7 @@ suite('init', () => {
     await fs.remove(workDir)
   })
 
-  test('update package.json', async () => {
+  test('update "package.json"', async () => {
     await exec('init')
     const pkg = await fs.readJson(packageJson)
 
@@ -67,7 +67,7 @@ suite('init', () => {
     })
   })
 
-  test('update package.json without fields', async () => {
+  test('update "package.json" without fields', async () => {
     await fs.writeJson(packageJson, {})
     await exec('init')
     const pkg = await fs.readJson(packageJson)
@@ -77,7 +77,7 @@ suite('init', () => {
     assert('standard-version' in pkg)
   })
 
-  test('copy .editorconfig', async () => {
+  test('copy ".editorconfig"', async () => {
     await exec('init')
 
     const original = await fs.readFile(path.join(originalDir, '.editorconfig'), 'utf8')
@@ -85,7 +85,7 @@ suite('init', () => {
     assert(original === copy)
   })
 
-  test('write .eslintrc.js', async () => {
+  test('write ".eslintrc.js"', async () => {
     await exec('init')
 
     const wrote = await fs.readFile(path.join(workDir, '.eslintrc.js'), 'utf8')
@@ -96,7 +96,7 @@ suite('init', () => {
 `)
   })
 
-  test('write commitlint.config.js', async () => {
+  test('write "commitlint.config.js"', async () => {
     await exec('init')
 
     const wrote = await fs.readFile(path.join(workDir, 'commitlint.config.js'), 'utf8')
@@ -106,7 +106,7 @@ suite('init', () => {
 `)
   })
 
-  test('error', async () => {
+  test('throw error', async () => {
     await fs.remove(packageJson)
     const error = await assertThrows(() => exec('init'))
     const { code, stdout, stderr } = error
