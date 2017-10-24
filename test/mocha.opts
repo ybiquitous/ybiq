@@ -2,4 +2,4 @@
 --ui tdd
 --slow 100
 --timeout 5000
---reporter min
+--reporter list
