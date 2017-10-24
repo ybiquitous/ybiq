@@ -1,5 +1,5 @@
 --require babel-register
 --ui tdd
---slow 100
+--slow 500
 --timeout 5000
 --reporter list
