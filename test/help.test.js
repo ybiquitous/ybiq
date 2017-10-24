@@ -25,11 +25,13 @@ suite('help', () => {
     assert(code === 1)
     assert(stdout === '')
     assert(stderr.includes(HELP), stderr)
-  })
+  });
 
-  test('with `--help` option', async () => {
-    const { stdout, stderr } = await exec('--help')
-    assert(stdout.includes(HELP), stdout)
-    assert(stderr === '')
+  ['--help', '-h'].forEach((option) => {
+    test(`with '${option}' option`, async () => {
+      const { stdout, stderr } = await exec(option)
+      assert(stdout.includes(HELP), stdout)
+      assert(stderr === '')
+    })
   })
 })
