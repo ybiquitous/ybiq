@@ -42,7 +42,7 @@
     "prepend-file-cli": "^1.0.6",
     "semver": "^5.4.1",
     "standard-version": "^4.2.0",
-    "yargs": "^9.0.1"
+    "yargs": "^10.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

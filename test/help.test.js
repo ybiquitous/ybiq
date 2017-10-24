@@ -3,14 +3,14 @@ import assertThrows from './assert-throws'
 import exec from './exec'
 
 const HELP = `
-ybiq <command>
+cli.js <command>
 
 Commands:
-  init  Setup npm project:
-        - Update 'package.json'
-        - Create '.editorconfig'
-        - Create '.eslintrc.js'
-        - Create 'commitlint.config.js'
+  cli.js init  Setup npm project:
+               - Update 'package.json'
+               - Create '.editorconfig'
+               - Create '.eslintrc.js'
+               - Create 'commitlint.config.js'
 
 Options:
   --help, -h     Show help                                             [boolean]
