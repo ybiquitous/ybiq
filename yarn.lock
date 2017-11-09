@@ -1478,13 +1478,13 @@ eslint-config-airbnb@^16.0.0:
   dependencies:
     eslint-config-airbnb-base "^12.0.2"
 
-eslint-config-ybiquitous@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-ybiquitous/-/eslint-config-ybiquitous-3.0.0.tgz#81ec5aafa39f838e270304c1ad39ec90e69e230d"
+eslint-config-ybiquitous@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-ybiquitous/-/eslint-config-ybiquitous-3.0.1.tgz#a326942998bbf1d2fe53d7ddaa6949ff6cbb6970"
   dependencies:
     eslint-config-airbnb "^16.0.0"
     eslint-plugin-compat "^2.0.1"
-    eslint-plugin-eslint-comments "^1.0.3"
+    eslint-plugin-eslint-comments "^2.0.1"
     eslint-plugin-import "^2.7.0"
     eslint-plugin-jsx-a11y "^6.0.2"
     eslint-plugin-react "^7.4.0"
@@ -1512,11 +1512,12 @@ eslint-plugin-compat@^2.0.1:
     caniuse-db "^1.0.30000741"
     requireindex "^1.1.0"
 
-eslint-plugin-eslint-comments@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-comments/-/eslint-plugin-eslint-comments-1.0.3.tgz#29443862c1a27219bf41342099ee951f9966004c"
+eslint-plugin-eslint-comments@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-comments/-/eslint-plugin-eslint-comments-2.0.1.tgz#2cddd5507f1f93b6738b5295f1730f4c2712f2a3"
   dependencies:
     escape-string-regexp "^1.0.5"
+    ignore "^3.3.7"
 
 eslint-plugin-import@^2.7.0:
   version "2.7.0"
@@ -2131,6 +2132,10 @@ iconv-lite@^0.4.17, iconv-lite@~0.4.13:
 ignore@^3.3.3:
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.5.tgz#c4e715455f6073a8d7e5dae72d2fc9d71663dba6"
+
+ignore@^3.3.7:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
