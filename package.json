@@ -30,8 +30,8 @@
     "node": ">=6"
   },
   "dependencies": {
-    "@commitlint/cli": "^4.2.1",
-    "@commitlint/config-angular": "^4.2.1",
+    "@commitlint/cli": "^4.3.0",
+    "@commitlint/config-angular": "^4.3.0",
     "eslint": "^4.10.0",
     "eslint-config-ybiquitous": "^3.0.1",
     "fs-extra": "^4.0.2",
