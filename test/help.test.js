@@ -17,13 +17,19 @@ Options:
 `.trim()
 
 suite('help', () => {
-  test('without any arguments', async () => {
-    const error = await assertThrows(() => exec())
-    const { code, stdout, stderr } = error
-    assert(error instanceof Error)
-    assert(code === 1)
-    assert(stdout === '')
-    assert(stderr.includes(HELP), stderr)
+  [
+    [],
+    ['unknown'],
+    ['unknown', 'xyz'],
+  ].forEach((args) => {
+    test(`with arguments [${args.join(', ')}]`, async () => {
+      const error = await assertThrows(() => exec(...args))
+      const { code, stdout, stderr } = error
+      assert(error instanceof Error)
+      assert(code === 1)
+      assert(stdout === '')
+      assert(stderr.includes(HELP), stderr)
+    })
   });
 
   ['--help', '-h'].forEach((option) => {
