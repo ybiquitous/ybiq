@@ -1,5 +1,5 @@
 import assert from 'assert'
-import exec from './exec'
+import { exec } from './helpers'
 
 suite('version', () => {
   const version = process.env.npm_package_version;
