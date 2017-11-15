@@ -2779,9 +2779,9 @@ markdown-it@8.3.2:
     mdurl "^1.0.1"
     uc.micro "^1.0.3"
 
-markdownlint-cli@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.4.1.tgz#f2878128bd141ce18fbb2517f2cf76763e6c645a"
+markdownlint-cli@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.5.0.tgz#5c9562667efbf3298cfedb66d50c0a891b62cb39"
   dependencies:
     commander "~2.9.0"
     deep-extend "~0.4.1"
@@ -2792,8 +2792,8 @@ markdownlint-cli@^0.4.1:
     rc "~1.1.6"
 
 markdownlint@~0.6.1:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/markdownlint/-/markdownlint-0.6.2.tgz#c16a5713cbd6245db2866741f32dd0920624d88d"
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/markdownlint/-/markdownlint-0.6.3.tgz#e7859da1a9329575b81947e59966e34e649391cc"
   dependencies:
     markdown-it "8.3.2"
 
