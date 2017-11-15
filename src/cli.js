@@ -12,6 +12,7 @@ module.exports = function cli() {
     .usage('$0 <command>')
     .command('init', init.desc, {}, init)
     .demandCommand(1)
+    .strict()
     .alias('help', 'h')
     .alias('version', 'v')
     .argv
