@@ -2,8 +2,7 @@ import path from 'path'
 import os from 'os'
 import fs from 'fs-extra'
 import assert from 'assert'
-import assertThrows from './assert-throws'
-import exec from './exec'
+import { assertThrows, exec } from './helpers'
 
 suite('init', () => {
   let workDir

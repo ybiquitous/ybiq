@@ -1,6 +1,5 @@
 import assert from 'assert'
-import assertThrows from './assert-throws'
-import exec from './exec'
+import { assertThrows, exec } from './helpers'
 
 const HELP = `
 cli.js <command>
