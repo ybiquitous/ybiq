@@ -37,6 +37,8 @@ ybiq init
 
 ```js
 const ybiq = require('ybiq')
+
+ybiq.init()
 ```
 
 ## License
