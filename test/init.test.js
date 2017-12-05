@@ -38,7 +38,7 @@ suite('init', () => {
     assert.deepStrictEqual(pkg.scripts, {
       build: 'babel src/ -d lib/',
       commitmsg: 'commitlint -e',
-      'lint:js': 'eslint --max-warnings=-1 --ignore-path=.gitignore --ext=.js --ext=.jsx .',
+      'lint:js': 'eslint --ignore-path .gitignore --ext .js,.jsx .',
       'lint:js:fix': 'npm run lint:js -- --fix',
       'lint:md': 'markdownlint *.md',
       lint: 'npm-run-all --print-name --print-label --parallel lint:*',
@@ -52,7 +52,7 @@ suite('init', () => {
 
     assert.deepStrictEqual(pkg['lint-staged'], {
       '*.{js,jsx}': [
-        'eslint --fix --max-warnings=-1 --no-ignore',
+        'eslint --fix --no-ignore',
         'git add',
       ],
       '*.md': 'markdownlint',
