@@ -79,7 +79,7 @@ class Init {
     await this.writeFile(
       'commitlint.config.js',
       `module.exports = {
-  extends: ['@commitlint/config-angular'],
+  extends: ['@commitlint/config-conventional'],
 }`,
     )
   }
