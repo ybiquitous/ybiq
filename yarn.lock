@@ -1468,15 +1468,23 @@ eslint-config-airbnb@^16.0.0:
   dependencies:
     eslint-config-airbnb-base "^12.1.0"
 
-eslint-config-ybiquitous@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-ybiquitous/-/eslint-config-ybiquitous-3.0.1.tgz#a326942998bbf1d2fe53d7ddaa6949ff6cbb6970"
+eslint-config-prettier@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.9.0.tgz#5ecd65174d486c22dff389fe036febf502d468a3"
+  dependencies:
+    get-stdin "^5.0.1"
+
+eslint-config-ybiquitous@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-ybiquitous/-/eslint-config-ybiquitous-4.0.0.tgz#d55c93bd91ce87ceaed4b12f1bd30dbe7444f1ab"
   dependencies:
     eslint-config-airbnb "^16.0.0"
+    eslint-config-prettier "^2.9.0"
     eslint-plugin-compat "^2.0.1"
     eslint-plugin-eslint-comments "^2.0.1"
     eslint-plugin-import "^2.7.0"
     eslint-plugin-jsx-a11y "^6.0.2"
+    eslint-plugin-prettier "^2.3.1"
     eslint-plugin-react "^7.4.0"
 
 eslint-import-resolver-node@^0.3.1:
@@ -1535,6 +1543,13 @@ eslint-plugin-jsx-a11y@^6.0.2:
     damerau-levenshtein "^1.0.0"
     emoji-regex "^6.1.0"
     jsx-ast-utils "^1.4.0"
+
+eslint-plugin-prettier@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.3.1.tgz#e7a746c67e716f335274b88295a9ead9f544e44d"
+  dependencies:
+    fast-diff "^1.1.1"
+    jest-docblock "^21.0.0"
 
 eslint-plugin-react@^7.4.0:
   version "7.5.1"
@@ -1711,6 +1726,10 @@ extsprintf@^1.2.0:
 fast-deep-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-1.0.0.tgz#96256a3bc975595eb36d82e9929d060d893439ff"
+
+fast-diff@^1.1.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.1.2.tgz#4b62c42b8e03de3f848460b639079920695d0154"
 
 fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
@@ -1922,7 +1941,7 @@ get-pkg-repo@^1.0.0:
     parse-github-repo-url "^1.3.0"
     through2 "^2.0.0"
 
-get-stdin@5.0.1:
+get-stdin@5.0.1, get-stdin@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
 
@@ -2448,6 +2467,10 @@ istanbul-reports@^1.1.3:
   resolved "https://registry.yarnpkg.com/istanbul-reports/-/istanbul-reports-1.1.3.tgz#3b9e1e8defb6d18b1d425da8e8b32c5a163f2d10"
   dependencies:
     handlebars "^4.0.3"
+
+jest-docblock@^21.0.0:
+  version "21.2.0"
+  resolved "https://registry.yarnpkg.com/jest-docblock/-/jest-docblock-21.2.0.tgz#51529c3b30d5fd159da60c27ceedc195faf8d414"
 
 jest-get-type@^21.2.0:
   version "21.2.0"
@@ -3322,6 +3345,10 @@ prepend-file@1.3.1:
 preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
+
+prettier@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.8.2.tgz#bff83e7fd573933c607875e5ba3abbdffb96aeb8"
 
 pretty-format@^21.2.1:
   version "21.2.1"

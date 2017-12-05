@@ -1,7 +1,7 @@
 const yargs = require('yargs')
 const init = require('./init')
 
-process.on('unhandledRejection', (reason) => {
+process.on('unhandledRejection', reason => {
   process.stderr.write(reason.stack)
   process.exit(1)
 })
@@ -14,6 +14,5 @@ module.exports = function cli() {
     .demandCommand(1)
     .strict()
     .alias('help', 'h')
-    .alias('version', 'v')
-    .argv
+    .alias('version', 'v').argv
 }

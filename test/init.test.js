@@ -51,10 +51,7 @@ suite('init', () => {
     })
 
     assert.deepStrictEqual(pkg['lint-staged'], {
-      '*.{js,jsx}': [
-        'eslint --fix --no-ignore',
-        'git add',
-      ],
+      '*.{js,jsx}': ['eslint --fix --no-ignore', 'git add'],
       '*.md': 'markdownlint',
       '*.css': 'xyz',
     })
@@ -79,7 +76,10 @@ suite('init', () => {
   test('copy ".editorconfig"', async () => {
     await exec('init')
 
-    const original = await fs.readFile(path.join(originalDir, '.editorconfig'), 'utf8')
+    const original = await fs.readFile(
+      path.join(originalDir, '.editorconfig'),
+      'utf8',
+    )
     const copy = await fs.readFile(path.join(workDir, '.editorconfig'), 'utf8')
     assert(original === copy)
   })
@@ -88,21 +88,30 @@ suite('init', () => {
     await exec('init')
 
     const wrote = await fs.readFile(path.join(workDir, '.eslintrc.js'), 'utf8')
-    assert(wrote === `module.exports = {
+    assert(
+      wrote ===
+        `module.exports = {
   root: true,
   extends: ['ybiquitous'],
 }
-`)
+`,
+    )
   })
 
   test('write "commitlint.config.js"', async () => {
     await exec('init')
 
-    const wrote = await fs.readFile(path.join(workDir, 'commitlint.config.js'), 'utf8')
-    assert(wrote === `module.exports = {
+    const wrote = await fs.readFile(
+      path.join(workDir, 'commitlint.config.js'),
+      'utf8',
+    )
+    assert(
+      wrote ===
+        `module.exports = {
   extends: ['@commitlint/config-angular'],
 }
-`)
+`,
+    )
   })
 
   test('throw error', async () => {
