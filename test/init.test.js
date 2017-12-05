@@ -57,6 +57,7 @@ suite('init', () => {
     })
 
     assert.deepStrictEqual(pkg['standard-version'], {
+      message: 'chore(release): new version %s',
       scripts: {
         postchangelog: 'prepend CHANGELOG.md "<!-- markdownlint-disable -->\n"',
       },
