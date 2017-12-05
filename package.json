@@ -1,6 +1,6 @@
 {
   "name": "ybiq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Command-line utilities for npm",
   "author": "ybiquitous <ybiquitous@gmail.com>",
   "license": "MIT",
