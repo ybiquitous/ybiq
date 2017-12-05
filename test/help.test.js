@@ -17,11 +17,7 @@ Options:
 `.trim()
 
 suite('help', () => {
-  [
-    [],
-    ['unknown'],
-    ['unknown', 'xyz'],
-  ].forEach((args) => {
+  ;[[], ['unknown'], ['unknown', 'xyz']].forEach(args => {
     test(`with arguments [${args.join(', ')}]`, async () => {
       const error = await assertThrows(() => exec(...args))
       const { code, stdout, stderr } = error
@@ -30,9 +26,8 @@ suite('help', () => {
       assert(stdout === '')
       assert(stderr.includes(HELP), stderr)
     })
-  });
-
-  ['--help', '-h'].forEach((option) => {
+  })
+  ;['--help', '-h'].forEach(option => {
     test(`with "${option}" option`, async () => {
       const { stdout, stderr } = await exec(option)
       assert(stdout.includes(HELP), stdout)

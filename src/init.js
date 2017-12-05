@@ -42,13 +42,13 @@ class Init {
     })
     Object.keys(originalPackage.scripts)
       .filter(key => !(key === 'test' || key.startsWith('test:')))
-      .forEach((key) => {
+      .forEach(key => {
         scripts[key] = originalPackage.scripts[key]
       })
 
     // update other keys
     const keys = ['lint-staged', 'standard-version']
-    keys.forEach((key) => {
+    keys.forEach(key => {
       if (!(key in packageInfo)) {
         packageInfo[key] = {}
       }
@@ -66,16 +66,22 @@ class Init {
   }
 
   async writeESLintConfig() {
-    await this.writeFile('.eslintrc.js', `module.exports = {
+    await this.writeFile(
+      '.eslintrc.js',
+      `module.exports = {
   root: true,
   extends: ['ybiquitous'],
-}`)
+}`,
+    )
   }
 
   async writeCommitlintConfig() {
-    await this.writeFile('commitlint.config.js', `module.exports = {
+    await this.writeFile(
+      'commitlint.config.js',
+      `module.exports = {
   extends: ['@commitlint/config-angular'],
-}`)
+}`,
+    )
   }
 }
 
