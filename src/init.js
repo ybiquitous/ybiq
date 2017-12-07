@@ -2,27 +2,28 @@ const path = require('path')
 const fs = require('fs-extra')
 const originalPackage = require('../package.json')
 
-function stdout(str) {
-  process.stdout.write(`${str}\n`)
-}
+const stdout = str => process.stdout.write(`${str}\n`)
+
+const packagePath = (...pathElements) =>
+  path.join(...[__dirname, '..', ...pathElements])
 
 class Init {
   constructor(baseDir) {
     this.baseDir = baseDir
   }
 
-  filePath(fileName) {
-    return path.join(this.baseDir, fileName)
+  currentPath(...pathElements) {
+    return path.join(...[this.baseDir, ...pathElements])
   }
 
   async writeFile(fileName, fileContent) {
-    const file = this.filePath(fileName)
+    const file = this.currentPath(fileName)
     await fs.writeFile(file, `${fileContent}\n`)
     stdout(`${file} was updated.`)
   }
 
   async readFile(fileName) {
-    return fs.readFile(path.join(this.baseDir, fileName), 'utf8')
+    return fs.readFile(this.currentPath(fileName), 'utf8')
   }
 
   async updatePackageFile() {
@@ -59,8 +60,8 @@ class Init {
   }
 
   async copyEditorConfig() {
-    const source = path.join(__dirname, '..', '.editorconfig')
-    const target = this.filePath('.editorconfig')
+    const source = packagePath('.editorconfig')
+    const target = this.currentPath('.editorconfig')
     await fs.copy(source, target)
     stdout(`${target} was updated.`)
   }
