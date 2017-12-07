@@ -10,6 +10,7 @@ module.exports = {
         'package',
         'readme',
         'eslint',
+        'editorconfig',
         'commitlint',
         'coverage',
         'release',
