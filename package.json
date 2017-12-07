@@ -57,7 +57,7 @@
   },
   "scripts": {
     "build": "babel src/ -d lib/",
-    "test": "nyc mocha",
+    "test": "nyc --check-coverage mocha",
     "test:watch": "mocha --watch",
     "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
