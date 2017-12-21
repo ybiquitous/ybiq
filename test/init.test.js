@@ -37,7 +37,7 @@ suite('init', () => {
 
     assert.deepStrictEqual(pkg.scripts, {
       build: 'babel src/ -d lib/',
-      commitmsg: 'commitlint -e',
+      commitmsg: 'commitlint -e $GIT_PARAMS',
       'lint:js': 'eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .',
       'lint:js:fix': 'npm run lint:js -- --fix',
       'lint:md': 'markdownlint *.md',
