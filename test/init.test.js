@@ -44,7 +44,7 @@ suite('init', () => {
       lint: 'npm-run-all --print-name --print-label --parallel lint:*',
       precommit: 'lint-staged',
       release: 'standard-version',
-      'release:dry-run': 'standard-version --dry-run',
+      'release:dry-run': 'npm run release -- --dry-run',
       test: 'abc',
       'test:watch': 'abc --watch',
       'test:coverage': 'echo "unsupported." && exit 1',
