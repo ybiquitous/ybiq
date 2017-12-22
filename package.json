@@ -54,7 +54,7 @@
     "babel-register": "^6.26.0",
     "codecov": "^3.0.0",
     "mocha": "^4.0.1",
-    "nyc": "^11.3.0"
+    "nyc": "^11.4.1"
   },
   "scripts": {
     "build": "babel src/ -d lib/",
