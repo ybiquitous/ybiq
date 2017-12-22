@@ -30,7 +30,7 @@
     "node": ">=6"
   },
   "dependencies": {
-    "@commitlint/cli": "^5.2.5",
+    "@commitlint/cli": "^5.2.6",
     "@commitlint/config-conventional": "^5.2.3",
     "eslint": "^4.13.1",
     "eslint-config-ybiquitous": "^4.0.0",
