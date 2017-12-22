@@ -79,7 +79,7 @@ suite('init', () => {
 
     const original = await fs.readFile(
       path.join(originalDir, '.editorconfig'),
-      'utf8',
+      'utf8'
     )
     const copy = await fs.readFile(path.join(workDir, '.editorconfig'), 'utf8')
     assert(original === copy)
@@ -95,7 +95,7 @@ suite('init', () => {
   root: true,
   extends: ['ybiquitous'],
 }
-`,
+`
     )
   })
 
@@ -104,14 +104,14 @@ suite('init', () => {
 
     const wrote = await fs.readFile(
       path.join(workDir, 'commitlint.config.js'),
-      'utf8',
+      'utf8'
     )
     assert(
       wrote ===
         `module.exports = {
   extends: ['@commitlint/config-conventional'],
 }
-`,
+`
     )
   })
 

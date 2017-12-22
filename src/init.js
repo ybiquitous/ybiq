@@ -72,7 +72,7 @@ class Init {
       `module.exports = {
   root: true,
   extends: ['ybiquitous'],
-}`,
+}`
     )
   }
 
@@ -81,7 +81,7 @@ class Init {
       'commitlint.config.js',
       `module.exports = {
   extends: ['@commitlint/config-conventional'],
-}`,
+}`
     )
   }
 }
