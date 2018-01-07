@@ -43,7 +43,7 @@
     "prepend-file-cli": "^1.0.6",
     "prettier": "^1.9.2",
     "semver": "^5.4.1",
-    "standard-version": "^4.2.0",
+    "standard-version": "^4.3.0",
     "yargs": "^10.0.3"
   },
   "devDependencies": {
