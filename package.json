@@ -49,7 +49,6 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
-    "codecov": "^3.0.0",
     "mocha": "^4.1.0",
     "nyc": "^11.4.1"
   },
@@ -57,7 +56,7 @@
     "build": "babel src/ -d lib/",
     "test": "nyc --check-coverage mocha",
     "test:watch": "mocha --watch",
-    "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "markdownlint *.md",
