@@ -13,19 +13,16 @@
     "utility",
     "tool"
   ],
+  "main": "index.js",
+  "bin": "bin/cli.js",
   "files": [
     "bin",
     "lib",
     "src",
     ".editorconfig",
     ".eslintrc.js",
-    "commitlint.config.js",
-    "index.js"
+    "commitlint.config.js"
   ],
-  "main": "index.js",
-  "bin": {
-    "ybiq": "./bin/cli.js"
-  },
   "engines": {
     "node": ">=6"
   },
