@@ -30,9 +30,9 @@
     "node": ">=6"
   },
   "dependencies": {
-    "@commitlint/cli": "^5.2.8",
-    "@commitlint/config-conventional": "^5.2.3",
-    "@commitlint/travis-cli": "^5.2.8",
+    "@commitlint/cli": "^6.0.2",
+    "@commitlint/config-conventional": "^6.0.2",
+    "@commitlint/travis-cli": "^6.0.2",
     "eslint": "^4.14.0",
     "eslint-config-ybiquitous": "^4.2.1",
     "fs-extra": "^5.0.0",
