@@ -1,7 +1,7 @@
 {
   "name": "ybiq",
   "version": "1.3.0",
-  "description": "Command-line utilities for npm",
+  "description": "Useful command-line tools for Node.js project",
   "author": "ybiquitous <ybiquitous@gmail.com>",
   "license": "MIT",
   "repository": "ybiquitous/ybiq",

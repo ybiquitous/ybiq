@@ -5,7 +5,7 @@
 [![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-Command-line utilities for `npm`.
+Useful command-line tools for Node.js project.
 
 ## Install
 
