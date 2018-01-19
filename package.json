@@ -49,7 +49,7 @@
     "@babel/preset-env": "^7.0.0-beta.37",
     "@babel/register": "^7.0.0-beta.37",
     "babel-plugin-istanbul": "^4.1.5",
-    "mocha": "^4.1.0",
+    "mocha": "^5.0.0",
     "nyc": "^11.4.1"
   },
   "scripts": {
