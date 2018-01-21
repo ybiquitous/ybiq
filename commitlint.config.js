@@ -7,6 +7,7 @@ module.exports = {
       'always',
       [
         '',
+        'deps',
         'package',
         'readme',
         'eslint',
