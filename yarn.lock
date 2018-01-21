@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@babel/cli@^7.0.0-beta.38":
+"@babel/cli@7.0.0-beta.38":
   version "7.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.0.0-beta.38.tgz#500794750a08778103c97b0c693307e582697f06"
   dependencies:
@@ -25,7 +25,7 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@babel/core@^7.0.0-beta.38":
+"@babel/core@7.0.0-beta.38":
   version "7.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.0.0-beta.38.tgz#f669abfd5ca918a53cfef45eb57d9efd8d8eac5b"
   dependencies:
@@ -375,7 +375,7 @@
     "@babel/helper-regex" "7.0.0-beta.38"
     regexpu-core "^4.1.3"
 
-"@babel/preset-env@^7.0.0-beta.38":
+"@babel/preset-env@7.0.0-beta.38":
   version "7.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.0.0-beta.38.tgz#1e32c91db82b0d0746a9bb34c9418ff2ca829bae"
   dependencies:
@@ -418,7 +418,7 @@
     invariant "^2.2.2"
     semver "^5.3.0"
 
-"@babel/register@^7.0.0-beta.38":
+"@babel/register@7.0.0-beta.38":
   version "7.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.0.0-beta.38.tgz#3336e7bf5e830eb464a2b47c4df28b52e519f873"
   dependencies:
@@ -836,7 +836,7 @@ babel-messages@^6.23.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-istanbul@^4.1.5:
+babel-plugin-istanbul@4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.5.tgz#6760cdd977f411d3e175bb064f2bc327d99b2b6e"
   dependencies:
@@ -3157,7 +3157,7 @@ mkdirp@0.5.1, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mocha@^5.0.0:
+mocha@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.0.tgz#cccac988b0bc5477119cba0e43de7af6d6ad8f4e"
   dependencies:
@@ -3296,7 +3296,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nyc@^11.4.1:
+nyc@11.4.1:
   version "11.4.1"
   resolved "https://registry.yarnpkg.com/nyc/-/nyc-11.4.1.tgz#13fdf7e7ef22d027c61d174758f6978a68f4f5e5"
   dependencies:
