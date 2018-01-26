@@ -41,7 +41,7 @@
     "prettier": "^1.10.2",
     "semver": "^5.5.0",
     "standard-version": "^4.3.0",
-    "yargs": "^10.1.1"
+    "yargs": "^10.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.38",
