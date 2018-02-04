@@ -59,7 +59,7 @@
     "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "lint:md": "markdownlint *.md",
+    "lint:md": "markdownlint --ignore node_modules \"**/*.md\"",
     "lint": "npm-run-all --print-name --print-label --parallel lint:*",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "lint-staged",
