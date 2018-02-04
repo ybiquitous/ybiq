@@ -40,7 +40,7 @@ suite('init', () => {
       commitmsg: 'commitlint -e $GIT_PARAMS',
       'lint:js': 'eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .',
       'lint:js:fix': 'npm run lint:js -- --fix',
-      'lint:md': 'markdownlint *.md',
+      'lint:md': 'markdownlint --ignore node_modules "**/*.md"',
       lint: 'npm-run-all --print-name --print-label --parallel lint:*',
       precommit: 'lint-staged',
       release: 'standard-version',

@@ -17,6 +17,7 @@ module.exports = {
         'release',
         'init',
         'api',
+        'markdownlint',
       ],
     ],
   },
