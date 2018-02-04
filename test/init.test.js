@@ -10,7 +10,10 @@ suite('init', () => {
   let packageJson
 
   setup('work directory', async () => {
-    workDir = path.join(os.tmpdir(), `cli-${Date.now()}`)
+    workDir = path.join(
+      os.tmpdir(),
+      `${process.env.npm_package_name}${Date.now()}`
+    )
     await fs.mkdirs(workDir)
 
     originalDir = process.cwd()
