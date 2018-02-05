@@ -37,7 +37,6 @@
     "lint-staged": "^6.0.0",
     "markdownlint-cli": "^0.7.0",
     "npm-run-all": "^4.1.2",
-    "prepend-file-cli": "^1.0.6",
     "prettier": "^1.10.2",
     "semver": "^5.5.0",
     "standard-version": "^4.3.0",
@@ -59,7 +58,7 @@
     "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "lint:md": "markdownlint --ignore node_modules \"**/*.md\"",
+    "lint:md": "markdownlint --ignore node_modules --ignore CHANGELOG.md \"**/*.md\"",
     "lint": "npm-run-all --print-name --print-label --parallel lint:*",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "lint-staged",
@@ -74,10 +73,7 @@
     "*.md": "markdownlint"
   },
   "standard-version": {
-    "message": "chore(release): new version %s",
-    "scripts": {
-      "postchangelog": "prepend CHANGELOG.md \"<!-- markdownlint-disable -->\n\""
-    }
+    "message": "chore(release): new version %s"
   },
   "nyc": {
     "exclude": [
