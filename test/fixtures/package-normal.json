@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "abc",
+    "lint:js": "eslint ."
+  },
+  "lint-staged": {
+    "*.css": "xyz"
+  }
+}
