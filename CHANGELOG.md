@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/ybiquitous/ybiq/compare/v1.4.0...v1.4.1) (2018-02-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency markdownlint-cli to ^0.7.1 ([#113](https://github.com/ybiquitous/ybiq/issues/113)) ([85566e6](https://github.com/ybiquitous/ybiq/commit/85566e6))
+* **markdownlint:** ignore CHANGELOG on pre-commit ([#115](https://github.com/ybiquitous/ybiq/issues/115)) ([0b27b2e](https://github.com/ybiquitous/ybiq/commit/0b27b2e))
+* **markdownlint:** stop writing CHANGELOG.md before release ([#111](https://github.com/ybiquitous/ybiq/issues/111)) ([1baf050](https://github.com/ybiquitous/ybiq/commit/1baf050))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/ybiquitous/ybiq/compare/v1.3.0...v1.4.0) (2018-02-05)
 
