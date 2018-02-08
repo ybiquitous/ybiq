@@ -7,7 +7,13 @@ import { assertThrows, exec } from './helpers'
 suite('init', () => {
   let workDir
   let originalDir
-  let packageJson
+
+  const fixture = async name => {
+    const src = path.join(__dirname, 'fixtures', name)
+    const dest = path.join(workDir, 'package.json')
+    await fs.copy(src, dest)
+    return dest
+  }
 
   setup('work directory', async () => {
     workDir = path.join(
@@ -20,14 +26,6 @@ suite('init', () => {
     process.chdir(workDir)
   })
 
-  setup('package.json', async () => {
-    packageJson = path.join(workDir, 'package.json')
-    await fs.writeJson(packageJson, {
-      scripts: { test: 'abc', 'lint:js': 'eslint .' },
-      'lint-staged': { '*.css': 'xyz' },
-    })
-  })
-
   teardown(async () => {
     process.chdir(originalDir)
 
@@ -35,8 +33,9 @@ suite('init', () => {
   })
 
   test('update "package.json"', async () => {
+    const src = await fixture('package-normal.json')
     await exec('init')
-    const pkg = await fs.readJson(packageJson)
+    const pkg = await fs.readJson(src)
 
     assert.deepStrictEqual(pkg.scripts, {
       build: 'babel src/ -d lib/',
@@ -66,9 +65,9 @@ suite('init', () => {
   })
 
   test('update "package.json" without fields', async () => {
-    await fs.writeJson(packageJson, {})
+    const src = await fixture('package-empty.json')
     await exec('init')
-    const pkg = await fs.readJson(packageJson)
+    const pkg = await fs.readJson(src)
     assert('scripts' in pkg)
     assert('test' in pkg.scripts)
     assert('lint-staged' in pkg)
@@ -76,6 +75,7 @@ suite('init', () => {
   })
 
   test('copy ".editorconfig"', async () => {
+    await fixture('package-normal.json')
     await exec('init')
 
     const original = await fs.readFile(
@@ -87,6 +87,7 @@ suite('init', () => {
   })
 
   test('write ".eslintrc.js"', async () => {
+    await fixture('package-normal.json')
     await exec('init')
 
     const wrote = await fs.readFile(path.join(workDir, '.eslintrc.js'), 'utf8')
@@ -101,6 +102,7 @@ suite('init', () => {
   })
 
   test('write "commitlint.config.js"', async () => {
+    await fixture('package-normal.json')
     await exec('init')
 
     const wrote = await fs.readFile(
@@ -117,7 +119,6 @@ suite('init', () => {
   })
 
   test('throw error', async () => {
-    await fs.remove(packageJson)
     const error = await assertThrows(() => exec('init'))
     const { code, stdout, stderr } = error
     assert(error instanceof Error)
