@@ -4,12 +4,16 @@ import fs from 'fs-extra'
 import assert from 'assert'
 import { assertThrows, exec } from './helpers'
 
+const readFile = file => fs.readFile(file, 'utf8')
+
 suite('init', () => {
   let workDir
   let originalDir
 
+  const fixturePath = name => path.join(__dirname, 'fixtures', name)
+
   const fixture = async name => {
-    const src = path.join(__dirname, 'fixtures', name)
+    const src = fixturePath(name)
     const dest = path.join(workDir, 'package.json')
     await fs.copy(src, dest)
     return dest
@@ -35,54 +39,25 @@ suite('init', () => {
   test('update "package.json"', async () => {
     const src = await fixture('package-normal.json')
     await exec('init')
-    const pkg = await fs.readJson(src)
-
-    assert.deepStrictEqual(pkg.scripts, {
-      build: 'babel src/ -d lib/',
-      commitmsg: 'commitlint -e $GIT_PARAMS',
-      'lint:js': 'eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .',
-      'lint:js:fix': 'npm run lint:js -- --fix',
-      'lint:md':
-        'markdownlint --ignore node_modules --ignore CHANGELOG.md "**/*.md"',
-      lint: 'npm-run-all --print-name --print-label --parallel lint:*',
-      precommit: 'lint-staged',
-      release: 'standard-version',
-      'release:dry-run': 'npm run release -- --dry-run',
-      test: 'abc',
-      'test:watch': 'abc --watch',
-      'test:coverage': 'echo "unsupported." && exit 1',
-    })
-
-    assert.deepStrictEqual(pkg['lint-staged'], {
-      '*.{js,jsx,mjs}': ['eslint --fix --no-ignore', 'git add'],
-      '*.md': 'markdownlint --ignore CHANGELOG.md',
-      '*.css': 'xyz',
-    })
-
-    assert.deepStrictEqual(pkg['standard-version'], {
-      message: 'chore(release): new version %s',
-    })
+    const actual = await readFile(src)
+    const expected = await readFile(fixturePath('package-normal_expected.json'))
+    assert(actual === expected)
   })
 
   test('update "package.json" without fields', async () => {
     const src = await fixture('package-empty.json')
     await exec('init')
-    const pkg = await fs.readJson(src)
-    assert('scripts' in pkg)
-    assert('test' in pkg.scripts)
-    assert('lint-staged' in pkg)
-    assert('standard-version' in pkg)
+    const actual = await readFile(src)
+    const expected = await readFile(fixturePath('package-empty_expected.json'))
+    assert(actual === expected)
   })
 
   test('copy ".editorconfig"', async () => {
     await fixture('package-normal.json')
     await exec('init')
 
-    const original = await fs.readFile(
-      path.join(originalDir, '.editorconfig'),
-      'utf8'
-    )
-    const copy = await fs.readFile(path.join(workDir, '.editorconfig'), 'utf8')
+    const original = await readFile(path.join(originalDir, '.editorconfig'))
+    const copy = await readFile(path.join(workDir, '.editorconfig'))
     assert(original === copy)
   })
 
@@ -90,40 +65,27 @@ suite('init', () => {
     await fixture('package-normal.json')
     await exec('init')
 
-    const wrote = await fs.readFile(path.join(workDir, '.eslintrc.js'), 'utf8')
-    assert(
-      wrote ===
-        `module.exports = {
-  root: true,
-  extends: ['ybiquitous'],
-}
-`
-    )
+    const actual = await readFile(path.join(workDir, '.eslintrc.js'))
+    const expected = await readFile(fixturePath('.eslintrc_expected.js'))
+    assert(actual === expected)
   })
 
   test('write "commitlint.config.js"', async () => {
     await fixture('package-normal.json')
     await exec('init')
 
-    const wrote = await fs.readFile(
-      path.join(workDir, 'commitlint.config.js'),
-      'utf8'
+    const actual = await readFile(path.join(workDir, 'commitlint.config.js'))
+    const expected = await readFile(
+      fixturePath('commitlint.config_expected.js')
     )
-    assert(
-      wrote ===
-        `module.exports = {
-  extends: ['@commitlint/config-conventional'],
-}
-`
-    )
+    assert(actual === expected)
   })
 
-  test('throw error', async () => {
+  test('throw error if no package.json', async () => {
     const error = await assertThrows(() => exec('init'))
-    const { code, stdout, stderr } = error
     assert(error instanceof Error)
-    assert(code === 1)
-    assert(stdout === '')
-    assert(stderr.includes('Error: ENOENT:'), stderr)
+    assert(error.code === 1)
+    assert(error.stdout === '')
+    assert(error.stderr.includes('Error: ENOENT:'))
   })
 })
