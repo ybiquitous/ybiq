@@ -56,7 +56,7 @@ suite('init', () => {
 
     assert.deepStrictEqual(pkg['lint-staged'], {
       '*.{js,jsx,mjs}': ['eslint --fix --no-ignore', 'git add'],
-      '*.md': 'markdownlint',
+      '*.md': 'markdownlint --ignore CHANGELOG.md',
       '*.css': 'xyz',
     })
 

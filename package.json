@@ -70,7 +70,7 @@
       "eslint --fix --no-ignore",
       "git add"
     ],
-    "*.md": "markdownlint"
+    "*.md": "markdownlint --ignore CHANGELOG.md"
   },
   "standard-version": {
     "message": "chore(release): new version %s"
