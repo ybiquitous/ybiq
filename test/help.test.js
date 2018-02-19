@@ -7,9 +7,9 @@ cli.js <command>
 Commands:
   cli.js init  Setup npm project:
                - Update 'package.json'
+               - Create '.commitlintrc.js'
                - Create '.editorconfig'
                - Create '.eslintrc.js'
-               - Create 'commitlint.config.js'
 
 Options:
   --help, -h     Show help                                             [boolean]

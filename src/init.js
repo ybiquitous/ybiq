@@ -78,7 +78,7 @@ class Init {
 
   async writeCommitlintConfig() {
     await this.writeFile(
-      'commitlint.config.js',
+      '.commitlintrc.js',
       `module.exports = {
   extends: ['@commitlint/config-conventional'],
 }`
@@ -96,6 +96,6 @@ module.exports = async function init() {
 
 module.exports.desc = `Setup npm project:
 - Update 'package.json'
+- Create '.commitlintrc.js'
 - Create '.editorconfig'
-- Create '.eslintrc.js'
-- Create 'commitlint.config.js'`
+- Create '.eslintrc.js'`

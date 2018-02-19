@@ -70,14 +70,12 @@ suite('init', () => {
     assert(actual === expected)
   })
 
-  test('write "commitlint.config.js"', async () => {
+  test('write ".commitlintrc.js"', async () => {
     await fixture('package-normal.json')
     await exec('init')
 
-    const actual = await readFile(path.join(workDir, 'commitlint.config.js'))
-    const expected = await readFile(
-      fixturePath('commitlint.config_expected.js')
-    )
+    const actual = await readFile(path.join(workDir, '.commitlintrc.js'))
+    const expected = await readFile(fixturePath('.commitlintrc_expected.js'))
     assert(actual === expected)
   })
 
