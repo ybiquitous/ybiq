@@ -19,8 +19,8 @@
     "bin",
     "lib",
     "src",
-    ".editorconfig",
-    ".eslintrc.js"
+    "templates",
+    ".editorconfig"
   ],
   "engines": {
     "node": ">=6"

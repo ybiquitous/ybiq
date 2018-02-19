@@ -7,6 +7,13 @@ const stdout = str => process.stdout.write(`${str}\n`)
 const packagePath = (...pathElements) =>
   path.join(...[__dirname, '..', ...pathElements])
 
+const copyFile = async (src, dest) => {
+  await fs.copy(src, dest)
+  stdout(`${dest} was updated.`)
+}
+
+const template = name => path.join(__dirname, '..', 'templates', name)
+
 class Init {
   constructor(baseDir) {
     this.baseDir = baseDir
@@ -59,37 +66,26 @@ class Init {
     await this.writeFile('package.json', JSON.stringify(packageInfo, null, 2))
   }
 
-  async copyEditorConfig() {
-    const source = packagePath('.editorconfig')
-    const target = this.currentPath('.editorconfig')
-    await fs.copy(source, target)
-    stdout(`${target} was updated.`)
+  async writeEditorConfig() {
+    const name = '.editorconfig'
+    await copyFile(packagePath(name), this.currentPath(name))
   }
 
   async writeESLintConfig() {
-    await this.writeFile(
-      '.eslintrc.js',
-      `module.exports = {
-  root: true,
-  extends: ['ybiquitous'],
-}`
-    )
+    const name = '.eslintrc.js'
+    await copyFile(template(name), this.currentPath(name))
   }
 
   async writeCommitlintConfig() {
-    await this.writeFile(
-      '.commitlintrc.js',
-      `module.exports = {
-  extends: ['@commitlint/config-conventional'],
-}`
-    )
+    const name = '.commitlintrc.js'
+    await copyFile(template(name), this.currentPath(name))
   }
 }
 
 module.exports = async function init() {
   const cmd = new Init(process.cwd())
   await cmd.updatePackageFile()
-  await cmd.copyEditorConfig()
+  await cmd.writeEditorConfig()
   await cmd.writeESLintConfig()
   await cmd.writeCommitlintConfig()
 }

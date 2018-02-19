@@ -52,9 +52,11 @@ suite('init', () => {
     assert(actual === expected)
   })
 
-  test('copy ".editorconfig"', async () => {
+  test('write ".editorconfig"', async () => {
     await fixture('package-normal.json')
-    await exec('init')
+    const { stdout, stderr } = await exec('init')
+    assert(stdout.includes('package.json was updated.'))
+    assert(stderr === '')
 
     const original = await readFile(path.join(originalDir, '.editorconfig'))
     const copy = await readFile(path.join(workDir, '.editorconfig'))
@@ -63,7 +65,9 @@ suite('init', () => {
 
   test('write ".eslintrc.js"', async () => {
     await fixture('package-normal.json')
-    await exec('init')
+    const { stdout, stderr } = await exec('init')
+    assert(stdout.includes('.eslintrc.js was updated.'))
+    assert(stderr === '')
 
     const actual = await readFile(path.join(workDir, '.eslintrc.js'))
     const expected = await readFile(fixturePath('.eslintrc_expected.js'))
@@ -72,7 +76,9 @@ suite('init', () => {
 
   test('write ".commitlintrc.js"', async () => {
     await fixture('package-normal.json')
-    await exec('init')
+    const { stdout, stderr } = await exec('init')
+    assert(stdout.includes('.commitlintrc.js was updated.'))
+    assert(stderr === '')
 
     const actual = await readFile(path.join(workDir, '.commitlintrc.js'))
     const expected = await readFile(fixturePath('.commitlintrc_expected.js'))
