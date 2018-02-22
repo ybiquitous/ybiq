@@ -1,0 +1,6 @@
+linter:
+  eslint:
+    npm_install: true
+    options:
+      ignore-path: '.gitignore'
+      ext: '.js,.jsx,.mjs'

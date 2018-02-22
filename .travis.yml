@@ -13,7 +13,6 @@ cache:
 script:
   - commitlint-travis
   - npm run build
-  - npm run lint
   - npm test
   - npm run test:coverage
 
