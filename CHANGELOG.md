@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/ybiquitous/ybiq/compare/v1.4.1...v2.0.0) (2018-03-23)
+
+
+### Bug Fixes
+
+* **commitlint:** rename config file to `.commitlintrc.js` ([#123](https://github.com/ybiquitous/ybiq/issues/123)) ([8a4aef1](https://github.com/ybiquitous/ybiq/commit/8a4aef1))
+* **deps:** update dependency lint-staged to ^7.0.0 ([#127](https://github.com/ybiquitous/ybiq/issues/127)) ([687c85d](https://github.com/ybiquitous/ybiq/commit/687c85d))
+* **deps:** update dependency markdownlint-cli to ^0.8.0 ([#142](https://github.com/ybiquitous/ybiq/issues/142)) ([6043a26](https://github.com/ybiquitous/ybiq/commit/6043a26))
+* **init:** use `templates/` directory ([#126](https://github.com/ybiquitous/ybiq/issues/126)) ([7e55ab5](https://github.com/ybiquitous/ybiq/commit/7e55ab5))
+
+
+### Features
+
+* **init:** migrate from `.commitlintrc.js` to `commitlint.config.js` ([#125](https://github.com/ybiquitous/ybiq/issues/125)) ([d8fc94e](https://github.com/ybiquitous/ybiq/commit/d8fc94e))
+
+
+### BREAKING CHANGES
+
+* **init:** same as other `*rc.js` files
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/ybiquitous/ybiq/compare/v1.4.0...v1.4.1) (2018-02-08)
 
