@@ -42,10 +42,10 @@
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.44",
-    "@babel/core": "7.0.0-beta.44",
-    "@babel/preset-env": "7.0.0-beta.44",
-    "@babel/register": "7.0.0-beta.44",
+    "@babel/cli": "7.0.0-beta.46",
+    "@babel/core": "7.0.0-beta.46",
+    "@babel/preset-env": "7.0.0-beta.46",
+    "@babel/register": "7.0.0-beta.46",
     "babel-plugin-istanbul": "4.1.6",
     "mocha": "5.1.1",
     "nyc": "11.7.1"
