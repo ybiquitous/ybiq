@@ -48,7 +48,7 @@
     "@babel/register": "7.0.0-beta.46",
     "babel-plugin-istanbul": "4.1.6",
     "mocha": "5.1.1",
-    "nyc": "11.7.1"
+    "nyc": "11.7.2"
   },
   "scripts": {
     "build": "babel src/ -d lib/",
