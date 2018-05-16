@@ -1,6 +1,3 @@
-const dir = require('./src/select-dir')
-
-// eslint-disable-next-line import/no-dynamic-require
-const init = require(`./${dir}/init`)
+const init = require(`./lib/init`)
 
 module.exports = { init }

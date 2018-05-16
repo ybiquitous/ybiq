@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-const dir = require('../src/select-dir')
+const cli = require(`../lib/cli`)
 
-require(`../${dir}/cli`)() // eslint-disable-line import/no-dynamic-require
+cli()
