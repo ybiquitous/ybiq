@@ -1,4 +1,2 @@
-import assertThrows from './assert-throws'
-import exec from './exec'
-
-export { assertThrows, exec }
+export { default as assertThrows } from './assert-throws'
+export { default as exec } from './exec'
