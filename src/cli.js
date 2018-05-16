@@ -1,11 +1,6 @@
 const yargs = require('yargs')
 const init = require('./init')
 
-process.on('unhandledRejection', reason => {
-  process.stderr.write(reason.stack)
-  process.exit(1)
-})
-
 module.exports = function cli() {
   // eslint-disable-next-line no-unused-expressions
   yargs
