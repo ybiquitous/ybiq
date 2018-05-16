@@ -18,12 +18,11 @@
   "files": [
     "bin",
     "lib",
-    "src",
     "templates",
     ".editorconfig"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "dependencies": {
     "@commitlint/cli": "^6.0.2",
@@ -37,12 +36,10 @@
     "markdownlint-cli": "^0.8.0",
     "npm-run-all": "^4.1.2",
     "prettier": "^1.10.2",
-    "semver": "^5.5.0",
     "standard-version": "^4.3.0",
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.47",
     "@babel/core": "7.0.0-beta.47",
     "@babel/preset-env": "7.0.0-beta.47",
     "@babel/register": "7.0.0-beta.47",
@@ -51,10 +48,9 @@
     "nyc": "11.8.0"
   },
   "scripts": {
-    "build": "babel src/ -d lib/",
-    "test": "nyc --check-coverage mocha",
-    "test:watch": "mocha --watch",
-    "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov",
+    "test": "NODE_ENV=test nyc --check-coverage mocha",
+    "test:watch": "NODE_ENV=test mocha --watch",
+    "test:coverage": "NODE_ENV=test nyc report --reporter=text-lcov > coverage.lcov",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "markdownlint --ignore node_modules --ignore CHANGELOG.md \"**/*.md\"",
@@ -81,6 +77,8 @@
     ]
   },
   "browserslist": [
-    "> 5%"
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
   ]
 }

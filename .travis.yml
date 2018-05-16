@@ -3,7 +3,6 @@ language: node_js
 node_js:
   - 10
   - 8
-  - 6
 
 cache:
   yarn: true
@@ -12,9 +11,7 @@ cache:
 
 script:
   - commitlint-travis
-  - npm run build
   - npm test
-  - npm run test:coverage
 
 deploy:
   provider: npm
@@ -23,7 +20,7 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    node: 6
+    node: 8
 
 notifications:
   email: false
