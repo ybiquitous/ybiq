@@ -3,6 +3,7 @@ import os from 'os'
 import fs from 'fs-extra'
 import assert from 'assert'
 import { assertThrows, exec } from './helpers'
+import pkg from '../package.json'
 
 const readFile = file => fs.readFile(file, 'utf8')
 
@@ -20,10 +21,7 @@ suite('init', () => {
   }
 
   setup('work directory', async () => {
-    workDir = path.join(
-      os.tmpdir(),
-      `${process.env.npm_package_name}${Date.now()}`
-    )
+    workDir = path.join(os.tmpdir(), `${pkg.name}${Date.now()}`)
     await fs.mkdirs(workDir)
 
     originalDir = process.cwd()
