@@ -45,7 +45,7 @@
     "@babel/register": "7.0.0-beta.49",
     "babel-plugin-istanbul": "4.1.6",
     "mocha": "5.2.0",
-    "nyc": "12.0.1"
+    "nyc": "12.0.2"
   },
   "scripts": {
     "test": "NODE_ENV=test nyc --check-coverage mocha",
