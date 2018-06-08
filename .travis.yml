@@ -12,9 +12,8 @@ before_install:
   # `npm ci` is available since npm@5.7.0
   - if [[ $TRAVIS_NODE_VERSION == 8 ]]; then npm i -g npm@latest; fi
 
-script:
+before_script:
   - commitlint-travis
-  - npm test
 
 deploy:
   provider: npm
