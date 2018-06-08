@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/ybiquitous/ybiq/compare/v2.0.0...v3.0.0) (2018-06-08)
+
+
+### Bug Fixes
+
+* **deps:** update commitlint monorepo to v7 ([#181](https://github.com/ybiquitous/ybiq/issues/181)) ([3846081](https://github.com/ybiquitous/ybiq/commit/3846081))
+* **deps:** update dependency fs-extra to v6 ([#157](https://github.com/ybiquitous/ybiq/issues/157)) ([702c498](https://github.com/ybiquitous/ybiq/commit/702c498))
+* **deps:** update dependency markdownlint-cli to ^0.10.0 ([#177](https://github.com/ybiquitous/ybiq/issues/177)) ([54f2cde](https://github.com/ybiquitous/ybiq/commit/54f2cde))
+* **deps:** update dependency markdownlint-cli to ^0.9.0 ([#171](https://github.com/ybiquitous/ybiq/issues/171)) ([76be9dd](https://github.com/ybiquitous/ybiq/commit/76be9dd))
+
+
+### Features
+
+* drop Node 6 support ([#169](https://github.com/ybiquitous/ybiq/issues/169)) ([4d5364e](https://github.com/ybiquitous/ybiq/commit/4d5364e))
+
+
+### BREAKING CHANGES
+
+* Stop supporting Node 6.x which is maintenance LTS.
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/ybiquitous/ybiq/compare/v1.4.1...v2.0.0) (2018-03-23)
 
