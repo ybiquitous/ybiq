@@ -18,6 +18,7 @@ module.exports = {
         'init',
         'api',
         'markdownlint',
+        'travis',
       ],
     ],
   },
