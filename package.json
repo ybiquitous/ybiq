@@ -5,8 +5,6 @@
   "author": "Masafumi Koba <ybiquitous@gmail.com>",
   "license": "MIT",
   "repository": "ybiquitous/ybiq",
-  "bugs": "https://github.com/ybiquitous/ybiq/issues",
-  "homepage": "https://github.com/ybiquitous/ybiq#readme",
   "keywords": [
     "cli",
     "command-line",
