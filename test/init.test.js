@@ -2,8 +2,8 @@ import path from 'path'
 import os from 'os'
 import fs from 'fs-extra'
 import assert from 'assert'
-import exec from './helpers/exec'
 import pkg from '../package.json'
+import init from '../lib/init'
 
 const readFile = file => fs.readFile(file, 'utf8')
 
@@ -13,6 +13,10 @@ const sandbox = async fn => {
   const origDir = process.cwd()
   process.chdir(workDir)
 
+  const origLogger = process.stdout.write
+  const logMsgs = []
+  process.stdout.write = msg => logMsgs.push(msg)
+
   try {
     const fixturePath = name => path.join(__dirname, 'fixtures', name)
     const fixture = async name => {
@@ -21,18 +25,17 @@ const sandbox = async fn => {
       await fs.copy(src, dest)
       return dest
     }
-    const readFixture = name => readFile(fixturePath(name))
-    const readOrigFile = name => readFile(path.join(origDir, name))
-    const readWorkFile = name => readFile(path.join(workDir, name))
 
     return await fn({
       fixturePath,
       fixture,
-      readFixture,
-      readOrigFile,
-      readWorkFile,
+      readFixture: name => readFile(fixturePath(name)),
+      readOrigFile: name => readFile(path.join(origDir, name)),
+      readWorkFile: name => readFile(path.join(workDir, name)),
+      logMessage: () => logMsgs.join(''),
     })
   } finally {
+    process.stdout.write = origLogger
     process.chdir(origDir)
     await fs.remove(workDir)
   }
@@ -45,7 +48,7 @@ const testInSandbox = (name, fn) => {
 suite('init', () => {
   testInSandbox('update "package.json"', async ctx => {
     const src = await ctx.fixture('package-normal.json')
-    await exec('init')
+    await init()
     const actual = await readFile(src)
     const expected = await ctx.readFixture('package-normal_expected.json')
     assert(actual === expected)
@@ -53,7 +56,7 @@ suite('init', () => {
 
   testInSandbox('update "package.json" without fields', async ctx => {
     const src = await ctx.fixture('package-empty.json')
-    await exec('init')
+    await init()
     const actual = await readFile(src)
     const expected = await ctx.readFixture('package-empty_expected.json')
     assert(actual === expected)
@@ -61,9 +64,8 @@ suite('init', () => {
 
   testInSandbox('write ".editorconfig"', async ctx => {
     await ctx.fixture('package-normal.json')
-    const { stdout, stderr } = await exec('init')
-    assert(stdout.includes('package.json was updated.'))
-    assert(stderr === '')
+    await init()
+    assert(ctx.logMessage().includes('package.json was updated.'))
 
     const original = await ctx.readOrigFile('.editorconfig')
     const copy = await ctx.readWorkFile('.editorconfig')
@@ -72,9 +74,8 @@ suite('init', () => {
 
   testInSandbox('write ".prettierignore"', async ctx => {
     await ctx.fixture('package-normal.json')
-    const { stdout, stderr } = await exec('init')
-    assert(stdout.includes('package.json was updated.'))
-    assert(stderr === '')
+    await init()
+    assert(ctx.logMessage().includes('package.json was updated.'))
 
     const original = await ctx.readOrigFile('.prettierignore')
     const copy = await ctx.readWorkFile('.prettierignore')
@@ -83,9 +84,8 @@ suite('init', () => {
 
   testInSandbox('write ".eslintrc.js"', async ctx => {
     await ctx.fixture('package-normal.json')
-    const { stdout, stderr } = await exec('init')
-    assert(stdout.includes('.eslintrc.js was updated.'))
-    assert(stderr === '')
+    await init()
+    assert(ctx.logMessage().includes('.eslintrc.js was updated.'))
 
     const actual = await ctx.readWorkFile('.eslintrc.js')
     const expected = await ctx.readFixture('.eslintrc_expected.js')
@@ -94,9 +94,8 @@ suite('init', () => {
 
   testInSandbox('write ".commitlintrc.js"', async ctx => {
     await ctx.fixture('package-normal.json')
-    const { stdout, stderr } = await exec('init')
-    assert(stdout.includes('.commitlintrc.js was updated.'))
-    assert(stderr === '')
+    await init()
+    assert(ctx.logMessage().includes('.commitlintrc.js was updated.'))
 
     const actual = await ctx.readWorkFile('.commitlintrc.js')
     const expected = await ctx.readFixture('.commitlintrc_expected.js')
@@ -104,10 +103,8 @@ suite('init', () => {
   })
 
   testInSandbox('throw error if no package.json', async () => {
-    const error = await exec('init').catch(err => err)
+    const error = await init().catch(err => err)
     assert(error instanceof Error)
-    assert(error.code === 1)
-    assert(error.stdout === '')
-    assert(error.stderr.includes('Error: ENOENT:'))
+    assert(error.code === 'ENOENT')
   })
 })
