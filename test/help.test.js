@@ -1,4 +1,4 @@
-const assert = require('assert')
+const test = require('tape')
 const exec = require('./helpers/exec')
 
 const HELP = `
@@ -16,22 +16,24 @@ Options:
   --version, -v  Show version number                                   [boolean]
 `.trim()
 
-suite('help', () => {
+test('help', t => {
   ;[[], ['unknown'], ['unknown', 'xyz']].forEach(args => {
-    test(`with arguments [${args.join(', ')}]`, async () => {
+    t.test(`with arguments [${args.join(', ')}]`, async t => {
       const error = await exec(...args).catch(err => err)
       const { code, stdout, stderr } = error
-      assert(error instanceof Error)
-      assert(code === 1)
-      assert(stdout === '')
-      assert(stderr.includes(HELP), stderr)
+      t.ok(error instanceof Error)
+      t.is(code, 1)
+      t.is(stdout, '')
+      t.ok(stderr.includes(HELP))
+      t.end()
     })
   })
   ;['--help', '-h'].forEach(option => {
-    test(`with "${option}" option`, async () => {
+    t.test(`with "${option}" option`, async t => {
       const { stdout, stderr } = await exec(option)
-      assert(stdout.includes(HELP), stdout)
-      assert(stderr === '')
+      t.ok(stdout.includes(HELP))
+      t.is(stderr, '')
+      t.end()
     })
   })
 })

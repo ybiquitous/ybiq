@@ -1,10 +1,11 @@
-const assert = require('assert')
+const test = require('tape')
 const main = require('..')
 
-suite('main', () => {
-  test('init', async () => {
+test('main', t => {
+  t.test('init', async t => {
     const { init } = main
-    assert(typeof init === 'function')
-    assert(init.name === 'init')
+    t.is(typeof init, 'function')
+    t.is(init.name, 'init')
+    t.end()
   })
 })

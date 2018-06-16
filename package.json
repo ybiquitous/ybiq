@@ -38,15 +38,16 @@
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "mocha": "5.2.0",
-    "nyc": "12.0.2"
+    "nodemon": "1.17.5",
+    "nyc": "12.0.2",
+    "tape": "4.9.1"
   },
   "optionalDependencies": {
     "eslint-config-ybiquitous": "^4.2.1"
   },
   "scripts": {
-    "test": "nyc --check-coverage mocha",
-    "test:watch": "mocha --watch",
+    "test": "nyc --check-coverage tape \"test/**/*.test.js\"",
+    "test:watch": "nodemon --ext js --watch . --exec \"tape test/**/*.test.js\"",
     "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",

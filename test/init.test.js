@@ -1,13 +1,13 @@
 const path = require('path')
 const os = require('os')
 const fs = require('fs-extra')
-const assert = require('assert')
+const test = require('tape')
 const pkg = require('../package.json')
 const init = require('../lib/init')
 
 const readFile = file => fs.readFile(file, 'utf8')
 
-const sandbox = async fn => {
+const sandbox = async (fn, t) => {
   const workDir = path.join(os.tmpdir(), `${pkg.name}${Date.now()}`)
   await fs.mkdirs(workDir)
   const origDir = process.cwd()
@@ -26,7 +26,7 @@ const sandbox = async fn => {
       return dest
     }
 
-    return await fn({
+    return await fn(t, {
       fixturePath,
       fixture,
       readFixture: name => readFile(fixturePath(name)),
@@ -41,70 +41,77 @@ const sandbox = async fn => {
   }
 }
 
-const testInSandbox = (name, fn) => {
-  test(name, () => sandbox(fn))
-}
+test('init', t => {
+  const testInSandbox = (name, fn) => {
+    t.test(name, t => sandbox(fn, t))
+  }
 
-suite('init', () => {
-  testInSandbox('update "package.json"', async ctx => {
+  testInSandbox('update "package.json"', async (t, ctx) => {
     const src = await ctx.fixture('package-normal.json')
     await init()
     const actual = await readFile(src)
     const expected = await ctx.readFixture('package-normal_expected.json')
-    assert(actual === expected)
+    t.is(actual, expected)
+    t.end()
   })
 
-  testInSandbox('update "package.json" without fields', async ctx => {
+  testInSandbox('update "package.json" without fields', async (t, ctx) => {
     const src = await ctx.fixture('package-empty.json')
     await init()
     const actual = await readFile(src)
     const expected = await ctx.readFixture('package-empty_expected.json')
-    assert(actual === expected)
+    t.is(actual, expected)
+    t.end()
   })
 
-  testInSandbox('write ".editorconfig"', async ctx => {
+  testInSandbox('write ".editorconfig"', async (t, ctx) => {
     await ctx.fixture('package-normal.json')
     await init()
-    assert(ctx.logMessage().includes('package.json was updated.'))
+    t.ok(ctx.logMessage().includes('package.json was updated.'))
 
     const original = await ctx.readOrigFile('.editorconfig')
     const copy = await ctx.readWorkFile('.editorconfig')
-    assert(original === copy)
+    t.is(original, copy)
+    t.end()
   })
 
-  testInSandbox('write ".prettierignore"', async ctx => {
+  testInSandbox('write ".prettierignore"', async (t, ctx) => {
     await ctx.fixture('package-normal.json')
     await init()
-    assert(ctx.logMessage().includes('package.json was updated.'))
+    t.ok(ctx.logMessage().includes('package.json was updated.'))
 
     const original = await ctx.readOrigFile('.prettierignore')
     const copy = await ctx.readWorkFile('.prettierignore')
-    assert(original === copy)
+    t.is(original, copy)
+    t.end()
   })
 
-  testInSandbox('write ".eslintrc.js"', async ctx => {
+  testInSandbox('write ".eslintrc.js"', async (t, ctx) => {
     await ctx.fixture('package-normal.json')
     await init()
-    assert(ctx.logMessage().includes('.eslintrc.js was updated.'))
+    t.ok(ctx.logMessage().includes('.eslintrc.js was updated.'))
 
     const actual = await ctx.readWorkFile('.eslintrc.js')
     const expected = await ctx.readFixture('.eslintrc_expected.js')
-    assert(actual === expected)
+    t.is(actual, expected)
+    t.end()
   })
 
-  testInSandbox('write ".commitlintrc.js"', async ctx => {
+  testInSandbox('write ".commitlintrc.js"', async (t, ctx) => {
     await ctx.fixture('package-normal.json')
     await init()
-    assert(ctx.logMessage().includes('.commitlintrc.js was updated.'))
+    t.ok(ctx.logMessage().includes('.commitlintrc.js was updated.'))
 
     const actual = await ctx.readWorkFile('.commitlintrc.js')
     const expected = await ctx.readFixture('.commitlintrc_expected.js')
-    assert(actual === expected)
+    t.is(actual, expected)
+    t.end()
   })
 
-  testInSandbox('throw error if no package.json', async () => {
+  testInSandbox('throw error if no package.json', async t => {
     const error = await init().catch(err => err)
-    assert(error instanceof Error)
-    assert(error.code === 'ENOENT')
+    t.ok(error instanceof Error)
+    t.is(error.code, 'ENOENT')
+    t.end()
   })
 })
