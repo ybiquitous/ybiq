@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { assertThrows, exec } from './helpers'
+import exec from './helpers/exec'
 
 const HELP = `
 cli.js <command>
@@ -19,7 +19,7 @@ Options:
 suite('help', () => {
   ;[[], ['unknown'], ['unknown', 'xyz']].forEach(args => {
     test(`with arguments [${args.join(', ')}]`, async () => {
-      const error = await assertThrows(() => exec(...args))
+      const error = await exec(...args).catch(err => err)
       const { code, stdout, stderr } = error
       assert(error instanceof Error)
       assert(code === 1)
