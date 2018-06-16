@@ -1,13 +1,14 @@
-const assert = require('assert')
+const test = require('tape')
 const exec = require('./helpers/exec')
 const pkg = require('../package.json')
 
-suite('version', () => {
+test('version', t => {
   ;['--version', '-v'].forEach(option => {
-    test(`with "${option}" option`, async () => {
+    t.test(`with "${option}" option`, async t => {
       const { stdout, stderr } = await exec(option)
-      assert(stdout.trim() === pkg.version)
-      assert(stderr === '')
+      t.is(stdout.trim(), pkg.version)
+      t.is(stderr, '')
+      t.end()
     })
   })
 })
