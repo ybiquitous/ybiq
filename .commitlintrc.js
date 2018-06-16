@@ -19,6 +19,7 @@ module.exports = {
         'api',
         'markdownlint',
         'travis',
+        'prettier',
       ],
     ],
   },
