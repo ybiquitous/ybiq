@@ -14,6 +14,13 @@ Useful command-line tools for Node.js project.
 npm install ybiq --save-dev
 ```
 
+Or if you don't need optional dependencies (e.g. `eslint-config-ybiquitous`),
+it's recommended to use `--no-optional` option.
+
+```sh
+npm install ybiq --save-dev --no-optional
+```
+
 ## Usage
 
 ### CLI
