@@ -61,6 +61,17 @@ suite('init', () => {
     assert(original === copy)
   })
 
+  test('write ".prettierignore"', async () => {
+    await fixture('package-normal.json')
+    const { stdout, stderr } = await exec('init')
+    assert(stdout.includes('package.json was updated.'))
+    assert(stderr === '')
+
+    const original = await readFile(path.join(originalDir, '.prettierignore'))
+    const copy = await readFile(path.join(workDir, '.prettierignore'))
+    assert(original === copy)
+  })
+
   test('write ".eslintrc.js"', async () => {
     await fixture('package-normal.json')
     const { stdout, stderr } = await exec('init')

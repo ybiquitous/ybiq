@@ -17,7 +17,8 @@
     "bin",
     "lib",
     "templates",
-    ".editorconfig"
+    ".editorconfig",
+    ".prettierignore"
   ],
   "engines": {
     "node": ">=8"
@@ -54,6 +55,7 @@
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "markdownlint --ignore node_modules --ignore CHANGELOG.md \"**/*.md\"",
+    "lint:md:fix": "prettier --write \"**/*.md\"",
     "lint": "npm-run-all --print-name --print-label --parallel lint:*",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "precommit": "lint-staged",
@@ -66,7 +68,11 @@
         "eslint --fix --no-ignore",
         "git add"
       ],
-      "*.md": "markdownlint"
+      "*.md": [
+        "prettier --write",
+        "markdownlint",
+        "git add"
+      ]
     },
     "ignore": [
       "CHANGELOG.md"
