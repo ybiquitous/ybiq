@@ -63,27 +63,17 @@ test('init', t => {
     t.is(actual, expected)
     t.end()
   })
+  ;['.editorconfig', '.prettierignore', '.markdownlint.json'].forEach(file => {
+    testInSandbox(`write "${file}"`, async (t, ctx) => {
+      await ctx.fixture('package-normal.json')
+      await init()
+      t.ok(ctx.logMessage().includes('package.json was updated.'))
 
-  testInSandbox('write ".editorconfig"', async (t, ctx) => {
-    await ctx.fixture('package-normal.json')
-    await init()
-    t.ok(ctx.logMessage().includes('package.json was updated.'))
-
-    const original = await ctx.readOrigFile('.editorconfig')
-    const copy = await ctx.readWorkFile('.editorconfig')
-    t.is(original, copy)
-    t.end()
-  })
-
-  testInSandbox('write ".prettierignore"', async (t, ctx) => {
-    await ctx.fixture('package-normal.json')
-    await init()
-    t.ok(ctx.logMessage().includes('package.json was updated.'))
-
-    const original = await ctx.readOrigFile('.prettierignore')
-    const copy = await ctx.readWorkFile('.prettierignore')
-    t.is(original, copy)
-    t.end()
+      const original = await ctx.readOrigFile(file)
+      const copy = await ctx.readWorkFile(file)
+      t.is(original, copy)
+      t.end()
+    })
   })
 
   testInSandbox('write ".eslintrc.js"', async (t, ctx) => {
