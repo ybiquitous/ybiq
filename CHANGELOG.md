@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/ybiquitous/ybiq/compare/v3.1.0...v3.1.1) (2018-06-16)
+
+
+### Bug Fixes
+
+* **markdownlint:** disable `MD030` rule conflicting with Prettier ([#202](https://github.com/ybiquitous/ybiq/issues/202)) ([7878c5e](https://github.com/ybiquitous/ybiq/commit/7878c5e))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/ybiquitous/ybiq/compare/v3.0.2...v3.1.0) (2018-06-16)
 
