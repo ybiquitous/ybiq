@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/ybiquitous/ybiq/compare/v3.0.2...v3.1.0) (2018-06-16)
+
+
+### Bug Fixes
+
+* **commitlint:** correct `GIT_PARAMS` argument ([#192](https://github.com/ybiquitous/ybiq/issues/192)) ([373f549](https://github.com/ybiquitous/ybiq/commit/373f549))
+
+
+### Features
+
+* **eslint:** make `eslint-config-ybiquitous` optional ([#194](https://github.com/ybiquitous/ybiq/issues/194)) ([7c0eb9b](https://github.com/ybiquitous/ybiq/commit/7c0eb9b))
+* **init:** improve `lint-staged` settings via `ignore` option ([#196](https://github.com/ybiquitous/ybiq/issues/196)) ([8fe523c](https://github.com/ybiquitous/ybiq/commit/8fe523c))
+* **init:** remove `standard-version` custom settings ([#191](https://github.com/ybiquitous/ybiq/issues/191)) ([d49de38](https://github.com/ybiquitous/ybiq/commit/d49de38))
+* **prettier:** add Markdown support ([#197](https://github.com/ybiquitous/ybiq/issues/197)) ([38d0d9c](https://github.com/ybiquitous/ybiq/commit/38d0d9c))
+
+
+
 <a name="3.0.2"></a>
 ## [3.0.2](https://github.com/ybiquitous/ybiq/compare/v3.0.1...v3.0.2) (2018-06-16)
 
