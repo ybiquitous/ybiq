@@ -14,10 +14,15 @@
   },
   "lint-staged": {
     "*.css": "xyz",
-    "*.{js,jsx,mjs}": [
-      "eslint --fix --no-ignore",
-      "git add"
-    ],
-    "*.md": "markdownlint --ignore CHANGELOG.md"
+    "linters": {
+      "*.{js,jsx,mjs}": [
+        "eslint --fix --no-ignore",
+        "git add"
+      ],
+      "*.md": "markdownlint"
+    },
+    "ignore": [
+      "CHANGELOG.md"
+    ]
   }
 }
