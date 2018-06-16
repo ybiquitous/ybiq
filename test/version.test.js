@@ -1,6 +1,6 @@
-import assert from 'assert'
-import exec from './helpers/exec'
-import pkg from '../package.json'
+const assert = require('assert')
+const exec = require('./helpers/exec')
+const pkg = require('../package.json')
 
 suite('version', () => {
   ;['--version', '-v'].forEach(option => {

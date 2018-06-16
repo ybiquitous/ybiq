@@ -1,4 +1,3 @@
---require @babel/register
 --ui tdd
 --slow 500
 --timeout 5000

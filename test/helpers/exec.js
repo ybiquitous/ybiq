@@ -1,9 +1,9 @@
-import path from 'path'
-import cp from 'child_process'
+const path = require('path')
+const cp = require('child_process')
 
 const tested = path.join(process.cwd(), 'bin', 'cli.js')
 
-export default function exec(...args) {
+module.exports = function exec(...args) {
   const options = {
     env: { ...process.env, LANG: 'C' },
   }

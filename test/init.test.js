@@ -1,9 +1,9 @@
-import path from 'path'
-import os from 'os'
-import fs from 'fs-extra'
-import assert from 'assert'
-import pkg from '../package.json'
-import init from '../lib/init'
+const path = require('path')
+const os = require('os')
+const fs = require('fs-extra')
+const assert = require('assert')
+const pkg = require('../package.json')
+const init = require('../lib/init')
 
 const readFile = file => fs.readFile(file, 'utf8')
 

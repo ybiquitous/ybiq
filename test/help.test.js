@@ -1,5 +1,5 @@
-import assert from 'assert'
-import exec from './helpers/exec'
+const assert = require('assert')
+const exec = require('./helpers/exec')
 
 const HELP = `
 cli.js <command>

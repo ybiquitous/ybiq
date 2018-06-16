@@ -1,5 +1,5 @@
-import assert from 'assert'
-import main from '..'
+const assert = require('assert')
+const main = require('..')
 
 suite('main', () => {
   test('init', async () => {
