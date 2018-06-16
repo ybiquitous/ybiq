@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { exec } from './helpers'
+import exec from './helpers/exec'
 import pkg from '../package.json'
 
 suite('version', () => {

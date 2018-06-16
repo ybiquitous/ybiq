@@ -2,7 +2,7 @@ import path from 'path'
 import os from 'os'
 import fs from 'fs-extra'
 import assert from 'assert'
-import { assertThrows, exec } from './helpers'
+import exec from './helpers/exec'
 import pkg from '../package.json'
 
 const readFile = file => fs.readFile(file, 'utf8')
@@ -95,7 +95,7 @@ suite('init', () => {
   })
 
   test('throw error if no package.json', async () => {
-    const error = await assertThrows(() => exec('init'))
+    const error = await exec('init').catch(err => err)
     assert(error instanceof Error)
     assert(error.code === 1)
     assert(error.stdout === '')
