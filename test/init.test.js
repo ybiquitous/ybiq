@@ -70,6 +70,8 @@ test('init', t => {
       const original = await ctx.readOrigFile(file)
       const copy = await ctx.readWorkFile(file)
       t.is(original, copy)
+
+      t.ok(pkg.files.includes(file))
       t.end()
     })
   })

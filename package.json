@@ -18,7 +18,8 @@
     "lib",
     "templates",
     ".editorconfig",
-    ".prettierignore"
+    ".prettierignore",
+    ".markdownlint.json"
   ],
   "engines": {
     "node": ">=8"
