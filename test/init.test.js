@@ -2,6 +2,7 @@ const path = require('path')
 const os = require('os')
 const fs = require('fs-extra')
 const test = require('tape')
+const exec = require('./helpers/exec')
 const pkg = require('../package.json')
 const init = require('../lib/init')
 
@@ -10,15 +11,13 @@ const readFile = file => fs.readFile(file, 'utf8')
 const sandbox = async (fn, t) => {
   const workDir = path.join(os.tmpdir(), `${pkg.name}${Date.now()}`)
   await fs.mkdirs(workDir)
-  const origDir = process.cwd()
-  process.chdir(workDir)
 
-  const origLogger = process.stdout.write
   const logMsgs = []
-  process.stdout.write = msg => logMsgs.push(msg)
+  const logger = msg => logMsgs.push(msg)
 
   try {
-    const fixturePath = name => path.join(__dirname, 'fixtures', name)
+    const cwd = process.cwd()
+    const fixturePath = name => path.join(cwd, 'test', 'fixtures', name)
     const fixture = async name => {
       const src = fixturePath(name)
       const dest = path.join(workDir, 'package.json')
@@ -30,13 +29,12 @@ const sandbox = async (fn, t) => {
       fixturePath,
       fixture,
       readFixture: name => readFile(fixturePath(name)),
-      readOrigFile: name => readFile(path.join(origDir, name)),
+      readOrigFile: name => readFile(path.join(cwd, name)),
       readWorkFile: name => readFile(path.join(workDir, name)),
       logMessage: () => logMsgs.join(''),
+      initArgs: { cwd: workDir, logger },
     })
   } finally {
-    process.stdout.write = origLogger
-    process.chdir(origDir)
     await fs.remove(workDir)
   }
 }
@@ -48,7 +46,7 @@ test('init', t => {
 
   testInSandbox('update "package.json"', async (t, ctx) => {
     const src = await ctx.fixture('package-normal.json')
-    await init()
+    await init(ctx.initArgs)
     const actual = await readFile(src)
     const expected = await ctx.readFixture('package-normal_expected.json')
     t.is(actual, expected)
@@ -57,7 +55,7 @@ test('init', t => {
 
   testInSandbox('update "package.json" without fields', async (t, ctx) => {
     const src = await ctx.fixture('package-empty.json')
-    await init()
+    await init(ctx.initArgs)
     const actual = await readFile(src)
     const expected = await ctx.readFixture('package-empty_expected.json')
     t.is(actual, expected)
@@ -66,7 +64,7 @@ test('init', t => {
   ;['.editorconfig', '.prettierignore', '.markdownlint.json'].forEach(file => {
     testInSandbox(`write "${file}"`, async (t, ctx) => {
       await ctx.fixture('package-normal.json')
-      await init()
+      await init(ctx.initArgs)
       t.ok(ctx.logMessage().includes('package.json was updated.'))
 
       const original = await ctx.readOrigFile(file)
@@ -78,7 +76,7 @@ test('init', t => {
 
   testInSandbox('write ".eslintrc.js"', async (t, ctx) => {
     await ctx.fixture('package-normal.json')
-    await init()
+    await init(ctx.initArgs)
     t.ok(ctx.logMessage().includes('.eslintrc.js was updated.'))
 
     const actual = await ctx.readWorkFile('.eslintrc.js')
@@ -89,7 +87,7 @@ test('init', t => {
 
   testInSandbox('write ".commitlintrc.js"', async (t, ctx) => {
     await ctx.fixture('package-normal.json')
-    await init()
+    await init(ctx.initArgs)
     t.ok(ctx.logMessage().includes('.commitlintrc.js was updated.'))
 
     const actual = await ctx.readWorkFile('.commitlintrc.js')
@@ -98,10 +96,18 @@ test('init', t => {
     t.end()
   })
 
-  testInSandbox('throw error if no package.json', async t => {
-    const error = await init().catch(err => err)
+  testInSandbox('throw error if no package.json', async (t, ctx) => {
+    const error = await init(ctx.initArgs).catch(err => err)
     t.ok(error instanceof Error)
     t.is(error.code, 'ENOENT')
+    t.end()
+  })
+
+  testInSandbox('End-to-End via CLI', async (t, ctx) => {
+    await ctx.fixture('package-normal.json')
+    const { stdout, stderr } = await exec('init', { cwd: ctx.initArgs.cwd })
+    t.ok(stdout.includes('package.json was updated.'))
+    t.is(stderr, '')
     t.end()
   })
 })
