@@ -46,7 +46,7 @@
     "eslint-config-ybiquitous": "^4.2.1"
   },
   "scripts": {
-    "test": "nyc --check-coverage tape \"test/**/*.test.js\"",
+    "test": "nyc --check-coverage --lines 100 --branches 90 tape \"test/**/*.test.js\"",
     "test:watch": "nodemon --ext js --watch . --exec \"tape test/**/*.test.js\"",
     "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",

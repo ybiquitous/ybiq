@@ -42,7 +42,11 @@ ybiq init
 ### Programmatic API
 
 ```js
-const ybiq = require('ybiq')
+const ybiq = require("ybiq");
 
-ybiq.init()
+ybiq.init({
+  // Default options
+  // cwd: process.cwd(),
+  // logger: msg => process.stdout.write(msg),
+});
 ```
