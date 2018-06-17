@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/ybiquitous/ybiq/compare/v3.1.1...v3.2.0) (2018-06-17)
+
+
+### Bug Fixes
+
+* **init:** missing `.markdownlint.json` on published package ([#204](https://github.com/ybiquitous/ybiq/issues/204)) ([54afaeb](https://github.com/ybiquitous/ybiq/commit/54afaeb))
+
+
+### Features
+
+* **init:** add new options (`cwd`, `logger`) to `init()` ([#203](https://github.com/ybiquitous/ybiq/issues/203)) ([7d8b30a](https://github.com/ybiquitous/ybiq/commit/7d8b30a))
+
+
+
 <a name="3.1.1"></a>
 ## [3.1.1](https://github.com/ybiquitous/ybiq/compare/v3.1.0...v3.1.1) (2018-06-16)
 
