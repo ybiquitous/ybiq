@@ -22,7 +22,7 @@
     ".markdownlint.json"
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=8.3.0"
   },
   "dependencies": {
     "@commitlint/cli": "^7.0.0",
@@ -44,7 +44,7 @@
     "tape": "4.9.1"
   },
   "optionalDependencies": {
-    "eslint-config-ybiquitous": "^4.2.1"
+    "eslint-config-ybiquitous": "^5.0.0"
   },
   "scripts": {
     "test": "nyc --check-coverage --lines 100 --branches 90 tape \"test/**/*.test.js\"",
@@ -75,6 +75,9 @@
     "ignore": [
       "CHANGELOG.md"
     ]
+  },
+  "prettier": {
+    "trailingComma": "es5"
   },
   "browserslist": [
     "> 1%",
