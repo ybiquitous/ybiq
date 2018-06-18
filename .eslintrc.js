@@ -1,14 +1,15 @@
 module.exports = {
   root: true,
 
-  extends: ['ybiquitous'],
+  extends: ["ybiquitous/node"],
 
   overrides: [
     {
-      files: ['**/test/**/*.js'],
+      files: ["**/test/**/*.js"],
       rules: {
-        'no-shadow': ['error', { allow: ['t'] }],
+        "no-shadow": ["error", { allow: ["t"] }],
+        "import/no-internal-modules": "off",
       },
     },
   ],
-}
+};

@@ -22,7 +22,7 @@
     ".markdownlint.json"
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=8.3.0"
   },
   "dependencies": {
     "@commitlint/cli": "^7.0.0",
@@ -75,6 +75,9 @@
     "ignore": [
       "CHANGELOG.md"
     ]
+  },
+  "prettier": {
+    "trailingComma": "es5"
   },
   "browserslist": [
     "> 1%",

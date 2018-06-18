@@ -1,26 +1,26 @@
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
+  extends: ["@commitlint/config-conventional"],
 
   rules: {
-    'scope-enum': [
+    "scope-enum": [
       2,
-      'always',
+      "always",
       [
-        '',
-        'deps',
-        'package',
-        'readme',
-        'eslint',
-        'editorconfig',
-        'commitlint',
-        'coverage',
-        'release',
-        'init',
-        'api',
-        'markdownlint',
-        'travis',
-        'prettier',
+        "",
+        "deps",
+        "package",
+        "readme",
+        "eslint",
+        "editorconfig",
+        "commitlint",
+        "coverage",
+        "release",
+        "init",
+        "api",
+        "markdownlint",
+        "travis",
+        "prettier",
       ],
     ],
   },
-}
+};
