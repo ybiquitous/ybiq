@@ -36,7 +36,7 @@
     "npm-run-all": "^4.1.2",
     "prettier": "^1.10.2",
     "standard-version": "^4.3.0",
-    "yargs": "^11.0.0"
+    "yargs": "^12.0.0"
   },
   "devDependencies": {
     "nodemon": "1.17.5",
