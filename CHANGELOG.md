@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/ybiquitous/ybiq/compare/v3.2.0...v3.3.0) (2018-06-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency yargs to v12 ([cb6a1a1](https://github.com/ybiquitous/ybiq/commit/cb6a1a1))
+* **eslint:** update settings and fix source code ([a236089](https://github.com/ybiquitous/ybiq/commit/a236089))
+
+
+### Features
+
+* **deps:** bump eslint from 4.19.1 to 5.0.1 ([544aeb6](https://github.com/ybiquitous/ybiq/commit/544aeb6))
+* **deps:** update dependency eslint-config-ybiquitous to v5 ([46e8086](https://github.com/ybiquitous/ybiq/commit/46e8086))
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/ybiquitous/ybiq/compare/v3.1.1...v3.2.0) (2018-06-17)
 
