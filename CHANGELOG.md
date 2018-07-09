@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.2"></a>
+## [3.3.2](https://github.com/ybiquitous/ybiq/compare/v3.3.1...v3.3.2) (2018-07-09)
+
+
+### Bug Fixes
+
+* **travis:** deploy failed caused by excluding builds on tags ([5e8a8e8](https://github.com/ybiquitous/ybiq/commit/5e8a8e8))
+
+
+
 <a name="3.3.1"></a>
 ## [3.3.1](https://github.com/ybiquitous/ybiq/compare/v3.3.0...v3.3.1) (2018-07-09)
 
