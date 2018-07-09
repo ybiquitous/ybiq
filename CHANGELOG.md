@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.1"></a>
+## [3.3.1](https://github.com/ybiquitous/ybiq/compare/v3.3.0...v3.3.1) (2018-07-09)
+
+
+### Bug Fixes
+
+* **init:** trim `--print-name` option from `npm-run-all` ([#218](https://github.com/ybiquitous/ybiq/issues/218)) ([2ceeb86](https://github.com/ybiquitous/ybiq/commit/2ceeb86))
+
+
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/ybiquitous/ybiq/compare/v3.2.0...v3.3.0) (2018-06-26)
 
