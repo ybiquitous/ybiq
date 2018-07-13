@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.3-0"></a>
+## [3.3.3-0](https://github.com/ybiquitous/ybiq/compare/v3.3.2...v3.3.3-0) (2018-07-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency markdownlint-cli to ^0.11.0 ([#223](https://github.com/ybiquitous/ybiq/issues/223)) ([a8d8a8d](https://github.com/ybiquitous/ybiq/commit/a8d8a8d))
+
+
+
 <a name="3.3.2"></a>
 ## [3.3.2](https://github.com/ybiquitous/ybiq/compare/v3.3.1...v3.3.2) (2018-07-09)
 
