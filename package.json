@@ -39,7 +39,7 @@
     "yargs": "^12.0.0"
   },
   "devDependencies": {
-    "nodemon": "1.18.1",
+    "nodemon": "1.18.2",
     "nyc": "12.0.2",
     "tape": "4.9.1"
   },
