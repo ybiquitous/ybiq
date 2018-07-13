@@ -21,7 +21,7 @@ before_script:
 branches:
   only:
     - master
-    - /^v\d+\.\d+.\d+$/
+    - /^v\d+\.\d+.\d+(-\d+)?$/ # e.g. `v3.2.1` | `v3.2.1-0`
 
 deploy:
   provider: npm
