@@ -20,6 +20,7 @@ module.exports = {
         "markdownlint",
         "travis",
         "prettier",
+        "standard-version",
       ],
     ],
   },
