@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.0"></a>
+# [3.4.0](https://github.com/ybiquitous/ybiq/compare/v3.3.3-0...v3.4.0) (2018-07-17)
+
+
+### Features
+
+* **standard-version:** add `--sign` option ([#226](https://github.com/ybiquitous/ybiq/issues/226)) ([42c4633](https://github.com/ybiquitous/ybiq/commit/42c4633))
+
+
+
 <a name="3.3.3-0"></a>
 ## [3.3.3-0](https://github.com/ybiquitous/ybiq/compare/v3.3.2...v3.3.3-0) (2018-07-13)
 
