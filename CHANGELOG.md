@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/ybiquitous/ybiq/compare/v3.4.0...v4.0.0) (2018-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-extra to v7 ([#227](https://github.com/ybiquitous/ybiq/issues/227)) ([cf738d9](https://github.com/ybiquitous/ybiq/commit/cf738d9))
+
+
+### Features
+
+* **eslint:** remove dependency on `eslint-config-ybiquitous` ([#228](https://github.com/ybiquitous/ybiq/issues/228)) ([ea04df3](https://github.com/ybiquitous/ybiq/commit/ea04df3))
+
+
+### BREAKING CHANGES
+
+* **eslint:** remove dependency on `eslint-config-ybiquitous` from `optionalDependencies`
+
+
+
 <a name="3.4.0"></a>
 # [3.4.0](https://github.com/ybiquitous/ybiq/compare/v3.3.3-0...v3.4.0) (2018-07-17)
 
