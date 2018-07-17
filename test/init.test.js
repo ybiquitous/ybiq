@@ -61,6 +61,7 @@ test("init", t => {
     t.is(actual, expected);
     t.end();
   });
+
   [".editorconfig", ".prettierignore", ".markdownlint.json"].forEach(file => {
     testInSandbox(`write "${file}"`, async (t, ctx) => {
       await ctx.fixture("package-normal.json");

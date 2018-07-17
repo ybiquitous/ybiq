@@ -9,6 +9,7 @@ module.exports = {
       rules: {
         "no-shadow": ["error", { allow: ["t"] }],
         "import/no-internal-modules": "off",
+        "max-lines-per-function": ["error", 100],
       },
     },
   ],
