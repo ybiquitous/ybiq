@@ -16,22 +16,10 @@
   "lint-staged": {
     "*.css": "xyz",
     "linters": {
-      "*.{js,jsx,mjs}": [
-        "eslint --fix --no-ignore",
-        "git add"
-      ],
-      "*.md": [
-        "prettier --write",
-        "markdownlint",
-        "git add"
-      ],
-      "*.{yml,yaml}": [
-        "prettier --write",
-        "git add"
-      ]
+      "*.{js,jsx,mjs}": ["eslint --fix --no-ignore", "git add"],
+      "*.md": ["prettier --write", "markdownlint", "git add"],
+      "*.{yml,yaml,json}": ["prettier --write", "git add"]
     },
-    "ignore": [
-      "CHANGELOG.md"
-    ]
+    "ignore": ["CHANGELOG.md"]
   }
 }

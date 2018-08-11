@@ -69,7 +69,7 @@
         "markdownlint",
         "git add"
       ],
-      "*.{yml,yaml}": [
+      "*.{yml,yaml,json}": [
         "prettier --write",
         "git add"
       ]
