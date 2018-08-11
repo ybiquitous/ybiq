@@ -68,6 +68,10 @@
         "prettier --write",
         "markdownlint",
         "git add"
+      ],
+      "*.{yml,yaml}": [
+        "prettier --write",
+        "git add"
       ]
     },
     "ignore": [
