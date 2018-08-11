@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.0"></a>
+# [4.1.0](https://github.com/ybiquitous/ybiq/compare/v4.0.0...v4.1.0) (2018-08-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency markdownlint-cli to ^0.12.0 ([#232](https://github.com/ybiquitous/ybiq/issues/232)) ([1f3bd43](https://github.com/ybiquitous/ybiq/commit/1f3bd43))
+
+
+### Features
+
+* **markdownlint:** remove "MD030" rule and enable default option ([#238](https://github.com/ybiquitous/ybiq/issues/238)) ([c4ac79c](https://github.com/ybiquitous/ybiq/commit/c4ac79c))
+* **prettier:** add JSON support ([#240](https://github.com/ybiquitous/ybiq/issues/240)) ([c5eb5fa](https://github.com/ybiquitous/ybiq/commit/c5eb5fa))
+* **prettier:** add YAML support ([#239](https://github.com/ybiquitous/ybiq/issues/239)) ([461f7d1](https://github.com/ybiquitous/ybiq/commit/461f7d1))
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/ybiquitous/ybiq/compare/v3.4.0...v4.0.0) (2018-07-17)
 
