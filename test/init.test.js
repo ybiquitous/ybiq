@@ -7,6 +7,7 @@ const init = require("../lib/init");
 const exec = require("./helpers/exec");
 
 const readFile = file => fs.readFile(file, "utf8");
+const readJSON = file => fs.readJSON(file, "utf8");
 
 const sandbox = async (fn, t) => {
   const workDir = path.join(os.tmpdir(), `${pkg.name}${Date.now()}`);
@@ -29,6 +30,7 @@ const sandbox = async (fn, t) => {
       fixturePath,
       fixture,
       readFixture: name => readFile(fixturePath(name)),
+      readFixtureJSON: name => readJSON(fixturePath(name)),
       readOrigFile: name => readFile(path.join(cwd, name)),
       readWorkFile: name => readFile(path.join(workDir, name)),
       logMessage: () => logMsgs.join(""),
@@ -47,18 +49,18 @@ test("init", t => {
   testInSandbox('update "package.json"', async (t, ctx) => {
     const src = await ctx.fixture("package-normal.json");
     await init(ctx.initArgs);
-    const actual = await readFile(src);
-    const expected = await ctx.readFixture("package-normal_expected.json");
-    t.is(actual, expected);
+    const actual = await readJSON(src);
+    const expected = await ctx.readFixtureJSON("package-normal_expected.json");
+    t.deepEqual(actual, expected);
     t.end();
   });
 
   testInSandbox('update "package.json" without fields', async (t, ctx) => {
     const src = await ctx.fixture("package-empty.json");
     await init(ctx.initArgs);
-    const actual = await readFile(src);
-    const expected = await ctx.readFixture("package-empty_expected.json");
-    t.is(actual, expected);
+    const actual = await readJSON(src);
+    const expected = await ctx.readFixtureJSON("package-empty_expected.json");
+    t.deepEqual(actual, expected);
     t.end();
   });
 
