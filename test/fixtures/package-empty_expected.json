@@ -8,10 +8,14 @@
     "lint:md": "markdownlint --ignore node_modules --ignore CHANGELOG.md \"**/*.md\"",
     "lint:md:fix": "prettier --write \"**/*.md\"",
     "lint": "npm-run-all --print-label --parallel lint:*",
-    "commitmsg": "commitlint -E GIT_PARAMS",
-    "precommit": "lint-staged",
     "release": "standard-version --sign",
     "release:dry-run": "npm run release -- --dry-run"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "linters": {
