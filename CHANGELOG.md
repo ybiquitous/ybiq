@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/ybiquitous/ybiq/compare/v4.1.0...v5.0.0) (2018-09-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency markdownlint-cli to ^0.13.0 ([#243](https://github.com/ybiquitous/ybiq/issues/243)) ([15b879b](https://github.com/ybiquitous/ybiq/commit/15b879b))
+
+
+### Features
+
+* **deps:** update dependency husky to v1 ([#253](https://github.com/ybiquitous/ybiq/issues/253)) ([d53ef7c](https://github.com/ybiquitous/ybiq/commit/d53ef7c))
+
+
+### BREAKING CHANGES
+
+* **deps:** update husky scripts because husky@1.0.0 has breaking changes
+
+
+
 <a name="4.1.0"></a>
 # [4.1.0](https://github.com/ybiquitous/ybiq/compare/v4.0.0...v4.1.0) (2018-08-11)
 
