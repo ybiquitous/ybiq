@@ -41,7 +41,7 @@
   "devDependencies": {
     "eslint-config-ybiquitous": "6.2.0",
     "nodemon": "1.18.4",
-    "nyc": "13.0.1",
+    "nyc": "13.1.0",
     "tape": "4.9.1"
   },
   "scripts": {
