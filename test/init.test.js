@@ -90,17 +90,6 @@ test("init", t => {
     t.end();
   });
 
-  testInSandbox('write ".commitlintrc.js"', async (t, ctx) => {
-    await ctx.fixture("package-normal.json");
-    await init(ctx.initArgs);
-    t.ok(ctx.logMessage().includes(".commitlintrc.js was updated."));
-
-    const actual = await ctx.readWorkFile(".commitlintrc.js");
-    const expected = await ctx.readFixture(".commitlintrc_expected.js");
-    t.is(actual, expected);
-    t.end();
-  });
-
   testInSandbox("throw error if no package.json", async (t, ctx) => {
     const error = await init(ctx.initArgs).catch(err => err);
     t.ok(error instanceof Error);
