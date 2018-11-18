@@ -28,5 +28,8 @@
     "scripts": {
       "postchangelog": "prettier --write CHANGELOG.md"
     }
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
   }
 }
