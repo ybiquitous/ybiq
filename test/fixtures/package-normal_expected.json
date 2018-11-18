@@ -21,9 +21,13 @@
     "*.css": "xyz",
     "linters": {
       "*.{js,jsx,mjs}": ["eslint --fix --no-ignore", "git add"],
-      "*.md": ["markdownlint"],
+      "*.md": ["markdownlint --ignore CHANGELOG.md"],
       "*.{html,json,md,yaml,yml}": ["prettier --write", "git add"]
-    },
-    "ignore": ["CHANGELOG.md"]
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
   }
 }
