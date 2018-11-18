@@ -8,7 +8,6 @@ Commands:
   cli.js init  Setup npm project:
                - Update 'package.json'
                - Create '.editorconfig'
-               - Create '.eslintrc.js'
 
 Options:
   --help, -h     Show help                                             [boolean]
