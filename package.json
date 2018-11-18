@@ -69,19 +69,21 @@
         "git add"
       ],
       "*.md": [
-        "markdownlint"
+        "markdownlint --ignore CHANGELOG.md"
       ],
       "*.{html,json,md,yaml,yml}": [
         "prettier --write",
         "git add"
       ]
-    },
-    "ignore": [
-      "CHANGELOG.md"
-    ]
+    }
   },
   "prettier": {
     "trailingComma": "es5"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
   },
   "browserslist": [
     "> 1%",
