@@ -46,13 +46,13 @@
   },
   "scripts": {
     "test": "nyc --check-coverage --lines 100 --branches 90 tape \"test/**/*.test.js\"",
-    "test:watch": "nodemon --ext js --watch . --exec \"tape test/**/*.test.js\"",
+    "test:watch": "nodemon --ext js,json --watch . --exec \"tape test/**/*.test.js\"",
     "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "markdownlint --ignore node_modules --ignore CHANGELOG.md \"**/*.md\"",
-    "lint:md:fix": "prettier --write \"**/*.md\"",
     "lint": "npm-run-all --print-label --parallel lint:*",
+    "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{html,json,md,yaml,yml}\"",
     "release": "standard-version --sign",
     "release:dry-run": "npm run release -- --dry-run"
   },
@@ -69,11 +69,9 @@
         "git add"
       ],
       "*.md": [
-        "prettier --write",
-        "markdownlint",
-        "git add"
+        "markdownlint"
       ],
-      "*.{yml,yaml,json}": [
+      "*.{html,json,md,yaml,yml}": [
         "prettier --write",
         "git add"
       ]
