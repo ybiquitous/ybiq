@@ -51,6 +51,7 @@
     "lint:md": "markdownlint --ignore node_modules --ignore CHANGELOG.md \"**/*.md\"",
     "lint": "npm-run-all --print-label --parallel lint:*",
     "prettier:write": "prettier --write --ignore-path .gitignore \"**/*.{html,json,md,yaml,yml}\"",
+    "format": "npm-run-all --print-label --parallel lint:js:fix prettier:write",
     "release": "standard-version --sign",
     "release:dry-run": "npm run release -- --dry-run"
   },
