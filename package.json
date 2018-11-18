@@ -16,7 +16,6 @@
   "files": [
     "bin",
     "lib",
-    "templates",
     ".editorconfig",
     ".markdownlint.json"
   ],

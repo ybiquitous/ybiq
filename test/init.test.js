@@ -79,17 +79,6 @@ test("init", t => {
     });
   });
 
-  testInSandbox('write ".eslintrc.js"', async (t, ctx) => {
-    await ctx.fixture("package-normal.json");
-    await init(ctx.initArgs);
-    t.ok(ctx.logMessage().includes(".eslintrc.js was updated."));
-
-    const actual = await ctx.readWorkFile(".eslintrc.js");
-    const expected = await ctx.readFixture(".eslintrc_expected.js");
-    t.is(actual, expected);
-    t.end();
-  });
-
   testInSandbox("throw error if no package.json", async (t, ctx) => {
     const error = await init(ctx.initArgs).catch(err => err);
     t.ok(error instanceof Error);
