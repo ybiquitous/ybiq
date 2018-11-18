@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0"></a>
+
+# [6.0.0](https://github.com/ybiquitous/ybiq/compare/v5.0.1...v6.0.0) (2018-11-18)
+
+### Bug Fixes
+
+- **deps:** update `husky` from 1.1.3 to 1.1.4 ([#281](https://github.com/ybiquitous/ybiq/issues/281)) ([3f7447a](https://github.com/ybiquitous/ybiq/commit/3f7447a))
+- **deps:** update `lint-staged` from 8.0.4 to 8.0.5 ([#282](https://github.com/ybiquitous/ybiq/issues/282)) ([fe3728f](https://github.com/ybiquitous/ybiq/commit/fe3728f))
+- **deps:** update `yargs` from 12.0.2 to 12.0.4 ([#280](https://github.com/ybiquitous/ybiq/issues/280)) ([3de4120](https://github.com/ybiquitous/ybiq/commit/3de4120))
+- **deps:** update all `dependencies` ([#283](https://github.com/ybiquitous/ybiq/issues/283)) ([60c6703](https://github.com/ybiquitous/ybiq/commit/60c6703))
+
+### Features
+
+- **commitlint:** move `.commitlintrc.js` to `package.json` ([#277](https://github.com/ybiquitous/ybiq/issues/277)) ([0884342](https://github.com/ybiquitous/ybiq/commit/0884342))
+- **eslint:** move `.eslintrc.js` to `package.json` ([#278](https://github.com/ybiquitous/ybiq/issues/278)) ([5077193](https://github.com/ybiquitous/ybiq/commit/5077193))
+- **prettier:** extend Prettier target files ([#273](https://github.com/ybiquitous/ybiq/issues/273)) ([a89ba5d](https://github.com/ybiquitous/ybiq/commit/a89ba5d))
+- **prettier:** format CHANGELOG.md ([#274](https://github.com/ybiquitous/ybiq/issues/274)) ([be9a697](https://github.com/ybiquitous/ybiq/commit/be9a697))
+- add `npm run format` script ([#279](https://github.com/ybiquitous/ybiq/issues/279)) ([293fbae](https://github.com/ybiquitous/ybiq/commit/293fbae))
+
+### BREAKING CHANGES
+
+- **eslint:** remove `.eslintrc.js` file
+- **commitlint:** remove `.commitlintrc.js` file
+- **prettier:** remove `.prettierignore` file
+- **prettier:** `lint:md:fix` was replaced with `prettier:write`
+
 <a name="5.0.1"></a>
 
 ## [5.0.1](https://github.com/ybiquitous/ybiq/compare/v5.0.0...v5.0.1) (2018-11-07)
