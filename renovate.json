@@ -1,9 +1,9 @@
 {
   "extends": [
     "config:js-lib",
-    ":preserveSemverRanges",
     ":maintainLockFilesMonthly",
     "schedule:nonOfficeHours"
   ],
+  "rangeStrategy": "bump",
   "timezone": "Asia/Tokyo"
 }
