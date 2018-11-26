@@ -2,8 +2,9 @@
   "extends": [
     "config:js-lib",
     ":maintainLockFilesMonthly",
-    "schedule:nonOfficeHours"
+    "schedule:nonOfficeHours",
+    ":timezone(Asia/Tokyo)",
+    ":label(dependencies)"
   ],
-  "rangeStrategy": "bump",
-  "timezone": "Asia/Tokyo"
+  "rangeStrategy": "bump"
 }
