@@ -1,17 +1,17 @@
 const path = require("path");
 const os = require("os");
-const fs = require("fs-extra");
+const fse = require("fs-extra");
 const test = require("tape");
 const pkg = require("../package.json");
 const init = require("../lib/init");
 const exec = require("./helpers/exec");
 
-const readFile = file => fs.readFile(file, "utf8");
-const readJSON = file => fs.readJSON(file, "utf8");
+const readFile = file => fse.readFile(file, "utf8");
+const readJSON = file => fse.readJSON(file, "utf8");
 
 const sandbox = async (fn, t) => {
   const workDir = path.join(os.tmpdir(), `${pkg.name}${Date.now()}`);
-  await fs.mkdirs(workDir);
+  await fse.mkdirs(workDir);
 
   const logMsgs = [];
   const logger = msg => logMsgs.push(msg);
@@ -22,7 +22,7 @@ const sandbox = async (fn, t) => {
     const fixture = async name => {
       const src = fixturePath(name);
       const dest = path.join(workDir, "package.json");
-      await fs.copy(src, dest);
+      await fse.copy(src, dest);
       return dest;
     };
 
@@ -37,7 +37,7 @@ const sandbox = async (fn, t) => {
       initArgs: { cwd: workDir, logger },
     });
   } finally {
-    await fs.remove(workDir);
+    await fse.remove(workDir);
   }
 };
 
