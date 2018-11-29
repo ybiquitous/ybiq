@@ -8,6 +8,7 @@ module.exports = {
       [
         "",
         "deps",
+        "deps-dev",
         "package",
         "readme",
         "eslint",
