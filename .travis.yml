@@ -6,6 +6,8 @@ node_js:
 
 cache: npm
 
+script: echo "Running tests against $(node -v) ..."
+
 jobs:
   include:
     - stage: test
@@ -17,6 +19,7 @@ jobs:
         - npm run lint
     - stage: deploy
       node_js: 8
+      script: echo "Deploying to npm ..."
       deploy:
         provider: npm
         email: $NPM_EMAIL
