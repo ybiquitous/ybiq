@@ -1,31 +1,34 @@
 language: node_js
 
 node_js:
-  - "10"
-  - "8"
+  - 10
+  - 8
 
 cache: npm
 
-before_script:
-  - commitlint-travis
-  - npm run lint
-
-script:
-  - npm test
+jobs:
+  include:
+    - stage: test
+      script: npm test
+    - state: lint
+      node_js: 10
+      script:
+        - commitlint-travis
+        - npm run lint
+    - stage: deploy
+      node_js: 8
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+        skip_cleanup: true
+        on:
+          tags: true
 
 branches:
   only:
     - master
     - /^v\d+\.\d+.\d+(-\d+)?$/ # e.g. `v3.2.1` | `v3.2.1-0`
-
-deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  skip_cleanup: true
-  on:
-    tags: true
-    node: "8"
 
 notifications:
   email: false
