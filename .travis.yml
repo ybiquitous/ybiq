@@ -12,7 +12,7 @@ jobs:
   include:
     - stage: test
       script: npm test
-    - state: lint
+    - stage: lint
       node_js: 10
       script:
         - commitlint-travis
