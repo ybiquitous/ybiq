@@ -6,12 +6,10 @@ node_js:
 
 cache: npm
 
-script: echo "Running tests against $(node -v) ..."
+script: npm test
 
 jobs:
   include:
-    - stage: test
-      script: npm test
     - stage: lint
       node_js: 10
       script:
