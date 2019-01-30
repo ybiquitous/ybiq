@@ -64,7 +64,7 @@ test("init", t => {
     t.end();
   });
 
-  [".editorconfig", ".markdownlint.json"].forEach(file => {
+  [".editorconfig", ".remarkignore"].forEach(file => {
     testInSandbox(`write "${file}"`, async (t, ctx) => {
       await ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
