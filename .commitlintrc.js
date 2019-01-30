@@ -18,7 +18,7 @@ module.exports = {
         "release",
         "init",
         "api",
-        "markdownlint",
+        "remark",
         "travis",
         "prettier",
         "standard-version",
