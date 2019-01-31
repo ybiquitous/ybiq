@@ -12,7 +12,7 @@
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
-    "release": "standard-version --sign --no-verify",
+    "release": "standard-version --sign",
     "release:dry-run": "npm run release -- --dry-run"
   },
   "husky": {
@@ -27,12 +27,8 @@
       "*.{js,jsx,mjs}": ["eslint --fix --no-ignore", "git add"],
       "*.md": ["remark --output", "git add"],
       "*.{html,json,md,yaml,yml}": ["prettier --write", "git add"]
-    }
-  },
-  "standard-version": {
-    "scripts": {
-      "postchangelog": "prettier --write CHANGELOG.md"
-    }
+    },
+    "ignore": ["CHANGELOG.md"]
   },
   "commitlint": {
     "extends": ["@commitlint/config-conventional"]
