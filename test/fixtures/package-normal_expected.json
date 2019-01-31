@@ -12,7 +12,7 @@
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
-    "release": "standard-version --sign",
+    "release": "standard-version --sign --no-verify",
     "release:dry-run": "npm run release -- --dry-run"
   },
   "husky": {
