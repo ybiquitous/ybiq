@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.0"></a>
+
+# [7.0.0](https://github.com/ybiquitous/ybiq/compare/v6.0.0...v7.0.0) (2019-01-31)
+
+### Bug Fixes
+
+- **deps:** update `nodemon` for `event-stream` vulnerability ([#296](https://github.com/ybiquitous/ybiq/issues/296)) ([80b2a11](https://github.com/ybiquitous/ybiq/commit/80b2a11))
+- **standard-version:** add `--no-verify` option ([#330](https://github.com/ybiquitous/ybiq/issues/330)) ([b9ecf57](https://github.com/ybiquitous/ybiq/commit/b9ecf57))
+
+### Features
+
+- **init:** drop `fs-extra` from runtime dependencies ([#285](https://github.com/ybiquitous/ybiq/issues/285)) ([2de76eb](https://github.com/ybiquitous/ybiq/commit/2de76eb))
+- **prettier:** add npm scripts ([#321](https://github.com/ybiquitous/ybiq/issues/321)) ([3380443](https://github.com/ybiquitous/ybiq/commit/3380443))
+- **remark:** migrate from `markdownlint` to `remark-lint` ([#326](https://github.com/ybiquitous/ybiq/issues/326)) ([d629afd](https://github.com/ybiquitous/ybiq/commit/d629afd))
+
+### BREAKING CHANGES
+
+- **remark:** `markdownlint` is unsupported no longer. It may fail linting your Markdown files.
+- **init:** drop support Node 8.4- by using `fs.copyFile()`
+
+http://nodejs.org/api/fs.html#fs_fs_copyfile_src_dest_flags_callback
+
 <a name="6.0.0"></a>
 
 # [6.0.0](https://github.com/ybiquitous/ybiq/compare/v5.0.1...v6.0.0) (2018-11-18)
