@@ -60,7 +60,7 @@
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
-    "release": "standard-version --sign --no-verify",
+    "release": "standard-version --sign",
     "release:dry-run": "npm run release -- --dry-run"
   },
   "husky": {
@@ -83,15 +83,13 @@
         "prettier --write",
         "git add"
       ]
-    }
+    },
+    "ignore": [
+      "CHANGELOG.md"
+    ]
   },
   "prettier": {
     "trailingComma": "es5"
-  },
-  "standard-version": {
-    "scripts": {
-      "postchangelog": "prettier --write CHANGELOG.md"
-    }
   },
   "remarkConfig": {
     "plugins": [
