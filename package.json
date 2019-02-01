@@ -129,6 +129,33 @@
       ]
     }
   },
+  "eslintConfig": {
+    "extends": [
+      "ybiquitous/node"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/test/**/*.js"
+        ],
+        "rules": {
+          "no-shadow": [
+            "error",
+            {
+              "allow": [
+                "t"
+              ]
+            }
+          ],
+          "import/no-internal-modules": "off",
+          "max-lines-per-function": [
+            "error",
+            100
+          ]
+        }
+      }
+    ]
+  },
   "browserslist": [
     "> 1%",
     "not ie 11",
