@@ -100,6 +100,35 @@
       "remark-validate-links"
     ]
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "scope-enum": [
+        2,
+        "always",
+        [
+          "",
+          "api",
+          "commitlint",
+          "coverage",
+          "deps",
+          "deps-dev",
+          "editorconfig",
+          "eslint",
+          "init",
+          "package",
+          "prettier",
+          "readme",
+          "release",
+          "remark",
+          "standard-version",
+          "travis"
+        ]
+      ]
+    }
+  },
   "browserslist": [
     "> 1%",
     "not ie 11",
