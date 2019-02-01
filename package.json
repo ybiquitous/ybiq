@@ -110,21 +110,21 @@
         "always",
         [
           "",
-          "deps",
-          "deps-dev",
-          "package",
-          "readme",
-          "eslint",
-          "editorconfig",
+          "api",
           "commitlint",
           "coverage",
-          "release",
+          "deps",
+          "deps-dev",
+          "editorconfig",
+          "eslint",
           "init",
-          "api",
-          "remark",
-          "travis",
+          "package",
           "prettier",
-          "standard-version"
+          "readme",
+          "release",
+          "remark",
+          "standard-version",
+          "travis"
         ]
       ]
     }
