@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.0"></a>
+
+# [7.2.0](https://github.com/ybiquitous/ybiq/compare/v7.1.0...v7.2.0) (2019-02-02)
+
+### Bug Fixes
+
+- **standard-version:** revert "simplify settings" ([#343](https://github.com/ybiquitous/ybiq/issues/343)) ([0356fc0](https://github.com/ybiquitous/ybiq/commit/0356fc0))
+
+### Features
+
+- **prettier:** support TypeScript extensions ([#345](https://github.com/ybiquitous/ybiq/issues/345)) ([208a988](https://github.com/ybiquitous/ybiq/commit/208a988))
+
 <a name="7.1.0"></a>
 
 # [7.1.0](https://github.com/ybiquitous/ybiq/compare/v7.0.0...v7.1.0) (2019-02-01)
