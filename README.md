@@ -9,6 +9,13 @@
 
 Useful command-line tools for Node.js project.
 
+## Table of Contents
+
+1.  [Install](#install)
+2.  [Usage](#usage)
+    1.  [CLI](#cli)
+    2.  [API](#api)
+
 ## Install
 
 ```sh
@@ -40,7 +47,7 @@ Setup npm project.
 ybiq init
 ```
 
-### Programmatic API
+### API
 
 ```js
 const ybiq = require("ybiq");
