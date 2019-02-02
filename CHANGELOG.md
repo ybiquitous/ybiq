@@ -3,17 +3,15 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="7.1.0"></a>
-# [7.1.0](https://github.com/ybiquitous/ybiq/compare/v7.0.0...v7.1.0) (2019-02-01)
 
+# [7.1.0](https://github.com/ybiquitous/ybiq/compare/v7.0.0...v7.1.0) (2019-02-01)
 
 ### Features
 
-* **editorconfig:** increase `max_line_length` ([#335](https://github.com/ybiquitous/ybiq/issues/335)) ([df7e35f](https://github.com/ybiquitous/ybiq/commit/df7e35f))
-* **prettier:** add settings to `package.json` ([#337](https://github.com/ybiquitous/ybiq/issues/337)) ([761c33e](https://github.com/ybiquitous/ybiq/commit/761c33e))
-* **remark:** add settings to `package.json` ([#336](https://github.com/ybiquitous/ybiq/issues/336)) ([a536e25](https://github.com/ybiquitous/ybiq/commit/a536e25))
-* **standard-version:** simplify settings ([#334](https://github.com/ybiquitous/ybiq/issues/334)) ([bd0ff2b](https://github.com/ybiquitous/ybiq/commit/bd0ff2b))
-
-
+- **editorconfig:** increase `max_line_length` ([#335](https://github.com/ybiquitous/ybiq/issues/335)) ([df7e35f](https://github.com/ybiquitous/ybiq/commit/df7e35f))
+- **prettier:** add settings to `package.json` ([#337](https://github.com/ybiquitous/ybiq/issues/337)) ([761c33e](https://github.com/ybiquitous/ybiq/commit/761c33e))
+- **remark:** add settings to `package.json` ([#336](https://github.com/ybiquitous/ybiq/issues/336)) ([a536e25](https://github.com/ybiquitous/ybiq/commit/a536e25))
+- **standard-version:** simplify settings ([#334](https://github.com/ybiquitous/ybiq/issues/334)) ([bd0ff2b](https://github.com/ybiquitous/ybiq/commit/bd0ff2b))
 
 <a name="7.0.0"></a>
 

@@ -30,6 +30,11 @@
     },
     "ignore": ["CHANGELOG.md"]
   },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
+  },
   "prettier": {
     "trailingComma": "es5"
   },
