@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.1"></a>
+
+## [7.2.1](https://github.com/ybiquitous/ybiq/compare/v7.2.0...v7.2.1) (2019-02-02)
+
+### Bug Fixes
+
+- **remark:** fix settings & scripts ([#346](https://github.com/ybiquitous/ybiq/issues/346)) ([f31a097](https://github.com/ybiquitous/ybiq/commit/f31a097))
+
 <a name="7.2.0"></a>
 
 # [7.2.0](https://github.com/ybiquitous/ybiq/compare/v7.1.0...v7.2.0) (2019-02-02)
