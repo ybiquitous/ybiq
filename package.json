@@ -54,7 +54,7 @@
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
-    "lint:md:fix": "npm run lint:md -- --output",
+    "lint:md:fix": "remark . --output",
     "lint": "npm-run-all --print-label --parallel lint:*",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}\"",
     "prettier:check": "npm run prettier -- --check",
@@ -76,7 +76,7 @@
         "git add"
       ],
       "*.md": [
-        "remark --output",
+        "remark --output --",
         "git add"
       ],
       "*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}": [
@@ -102,6 +102,14 @@
       "remark-preset-lint-recommended",
       "remark-lint-first-heading-level",
       "remark-lint-no-tabs",
+      [
+        "remark-lint-list-item-spacing",
+        false
+      ],
+      [
+        "remark-lint-ordered-list-marker-value",
+        "ordered"
+      ],
       "remark-validate-links"
     ]
   },
