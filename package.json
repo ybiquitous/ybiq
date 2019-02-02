@@ -91,6 +91,11 @@
   "prettier": {
     "trailingComma": "es5"
   },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
+  },
   "remarkConfig": {
     "plugins": [
       "remark-preset-lint-markdown-style-guide",
