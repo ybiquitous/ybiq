@@ -56,7 +56,7 @@
     "lint:md": "remark . --frail",
     "lint:md:fix": "npm run lint:md -- --output",
     "lint": "npm-run-all --print-label --parallel lint:*",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.{css,html,js,json,jsx,md,mjs,scss,yaml,yml}\"",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}\"",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
@@ -79,7 +79,7 @@
         "remark --output",
         "git add"
       ],
-      "*.{html,json,md,yaml,yml}": [
+      "*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}": [
         "prettier --write",
         "git add"
       ]
