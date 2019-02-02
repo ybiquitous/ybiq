@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.2"></a>
+
+## [7.2.2](https://github.com/ybiquitous/ybiq/compare/v7.2.1...v7.2.2) (2019-02-02)
+
+### Bug Fixes
+
+- **remark:** disable rules conflicting with Prettier ([#349](https://github.com/ybiquitous/ybiq/issues/349)) ([1e45a84](https://github.com/ybiquitous/ybiq/commit/1e45a84))
+
 <a name="7.2.1"></a>
 
 ## [7.2.1](https://github.com/ybiquitous/ybiq/compare/v7.2.0...v7.2.1) (2019-02-02)
