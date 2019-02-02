@@ -103,6 +103,14 @@
       "remark-lint-first-heading-level",
       "remark-lint-no-tabs",
       [
+        "remark-lint-emphasis-marker",
+        false
+      ],
+      [
+        "remark-lint-list-item-indent",
+        false
+      ],
+      [
         "remark-lint-list-item-spacing",
         false
       ],
