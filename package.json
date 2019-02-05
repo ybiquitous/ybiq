@@ -44,7 +44,7 @@
     "eslint-config-ybiquitous": "^7.1.0",
     "fs-extra": "^7.0.1",
     "nodemon": "^1.18.9",
-    "nyc": "^13.1.0",
+    "nyc": "^13.2.0",
     "tape": "^4.9.2"
   },
   "scripts": {
