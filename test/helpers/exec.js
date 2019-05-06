@@ -5,7 +5,7 @@ const tested = path.join(process.cwd(), "bin", "cli.js");
 
 module.exports = function exec(...args) {
   const options = {
-    env: { ...process.env, LANG: "C" },
+    env: { ...process.env, LC_ALL: "C" },
   };
   const lastArg = args[args.length - 1];
   if (lastArg && typeof lastArg === "object") {
