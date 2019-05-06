@@ -28,6 +28,3 @@ deploy:
   on:
     tags: true
     node: "8"
-
-notifications:
-  email: false
