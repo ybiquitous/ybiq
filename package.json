@@ -45,7 +45,7 @@
     "fs-extra": "^8.0.1",
     "nodemon": "^1.19.0",
     "nyc": "^14.1.1",
-    "tape": "^4.10.1"
+    "tape": "^4.10.2"
   },
   "scripts": {
     "test": "nyc --check-coverage --lines 100 --branches 90 tape \"test/**/*.test.js\"",
