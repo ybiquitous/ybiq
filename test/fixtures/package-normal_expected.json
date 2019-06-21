@@ -40,12 +40,10 @@
   },
   "remarkConfig": {
     "plugins": [
-      "remark-preset-lint-markdown-style-guide",
       "remark-preset-lint-recommended",
-      ["remark-lint-emphasis-marker", false],
+      "remark-lint-no-heading-punctuation",
+      ["remark-lint-list-item-bullet-indent", false],
       ["remark-lint-list-item-indent", false],
-      ["remark-lint-list-item-spacing", false],
-      ["remark-lint-ordered-list-marker-value", "ordered"],
       "remark-validate-links"
     ]
   },

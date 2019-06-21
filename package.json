@@ -32,7 +32,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "remark-cli": "^6.0.1",
-    "remark-preset-lint-markdown-style-guide": "^2.1.3",
+    "remark-lint-no-heading-punctuation": "^1.0.3",
     "remark-preset-lint-recommended": "^3.0.3",
     "remark-validate-links": "^8.0.3",
     "standard-version": "^6.0.1",
@@ -96,23 +96,15 @@
   },
   "remarkConfig": {
     "plugins": [
-      "remark-preset-lint-markdown-style-guide",
       "remark-preset-lint-recommended",
+      "remark-lint-no-heading-punctuation",
       [
-        "remark-lint-emphasis-marker",
+        "remark-lint-list-item-bullet-indent",
         false
       ],
       [
         "remark-lint-list-item-indent",
         false
-      ],
-      [
-        "remark-lint-list-item-spacing",
-        false
-      ],
-      [
-        "remark-lint-ordered-list-marker-value",
-        "ordered"
       ],
       "remark-validate-links"
     ]
