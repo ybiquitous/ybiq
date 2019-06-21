@@ -96,17 +96,17 @@
   },
   "remarkConfig": {
     "plugins": [
-      "remark-preset-lint-recommended",
-      "remark-lint-no-heading-punctuation",
+      "preset-lint-recommended",
+      "lint-no-heading-punctuation",
       [
-        "remark-lint-list-item-bullet-indent",
+        "lint-list-item-bullet-indent",
         false
       ],
       [
-        "remark-lint-list-item-indent",
+        "lint-list-item-indent",
         false
       ],
-      "remark-validate-links"
+      "validate-links"
     ]
   },
   "commitlint": {
