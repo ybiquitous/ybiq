@@ -15,6 +15,7 @@ Useful command-line tools for Node.js project.
 2.  [Usage](#usage)
     1.  [CLI](#cli)
     2.  [API](#api)
+3.  [LICENSE](#license)
 
 ## Install
 
@@ -58,3 +59,7 @@ ybiq.init({
   // logger: msg => process.stdout.write(msg),
 });
 ```
+
+## License
+
+[MIT](LICENSE) © Masafumi Koba
