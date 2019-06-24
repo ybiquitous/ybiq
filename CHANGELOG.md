@@ -1,6 +1,31 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [8.0.0](https://github.com/ybiquitous/ybiq/compare/v7.3.0...v8.0.0) (2019-06-24)
+
+### Bug Fixes
+
+- **remark:** missing linting on pre-commit ([#430](https://github.com/ybiquitous/ybiq/issues/430)) ([389aaa6](https://github.com/ybiquitous/ybiq/commit/389aaa6)), closes [#428](https://github.com/ybiquitous/ybiq/issues/428)
+- **remark:** use official short plugin names ([#426](https://github.com/ybiquitous/ybiq/issues/426)) ([a387704](https://github.com/ybiquitous/ybiq/commit/a387704))
+
+### Features
+
+- **deps:** bump standard-version from 5.0.2 to 6.0.1 ([#393](https://github.com/ybiquitous/ybiq/issues/393)) ([7aac359](https://github.com/ybiquitous/ybiq/commit/7aac359))
+- **eslint:** support TypeScript file extensions ([#427](https://github.com/ybiquitous/ybiq/issues/427)) ([5a2bb23](https://github.com/ybiquitous/ybiq/commit/5a2bb23))
+- **remark:** remove `remark-lint-first-heading-level` package ([#423](https://github.com/ybiquitous/ybiq/issues/423)) ([ae09165](https://github.com/ybiquitous/ybiq/commit/ae09165))
+- **remark:** remove `remark-lint-no-tabs` package ([#424](https://github.com/ybiquitous/ybiq/issues/424)) ([30e05ea](https://github.com/ybiquitous/ybiq/commit/30e05ea))
+- **remark:** remove `remark-preset-lint-markdown-style-guide` package ([#425](https://github.com/ybiquitous/ybiq/issues/425)) ([6630938](https://github.com/ybiquitous/ybiq/commit/6630938))
+- **remark:** stop auto-fix on pre-commit ([#428](https://github.com/ybiquitous/ybiq/issues/428)) ([48fbe47](https://github.com/ybiquitous/ybiq/commit/48fbe47))
+
+### Tests
+
+- fix unstable `help` test by locale on localhost ([#390](https://github.com/ybiquitous/ybiq/issues/390)) ([0716e88](https://github.com/ybiquitous/ybiq/commit/0716e88)), closes [/github.com/yargs/yargs/blob/51876e69c71e9861fb09847530eeaec9be534f5f/yargs.js#L1184](https://github.com/ybiquitous/ybiq/issues/L1184) [/github.com/sindresorhus/os-locale/blob/22e9f2e66e1493ffda58c9ed8f936f554bccb76f/index.js#L10](https://github.com/ybiquitous/ybiq/issues/L10)
+
+### BREAKING CHANGES
+
+- **remark:** please configure manually if you want to fix markdown files on pre-commit
+- **remark:** please install it manually to keep same linting rules
 
 <a name="7.3.0"></a>
 
