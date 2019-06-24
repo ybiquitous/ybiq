@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "abc",
-    "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
+    "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs,.ts,.tsx .",
     "test:watch": "abc --watch",
     "test:coverage": "echo \"unsupported.\" && exit 1",
     "lint:js:fix": "npm run lint:js -- --fix",
@@ -24,7 +24,7 @@
   "lint-staged": {
     "*.css": "xyz",
     "linters": {
-      "*.{js,jsx,mjs}": ["eslint --fix --no-ignore", "git add"],
+      "*.{js,jsx,mjs,ts,tsx}": ["eslint --fix --no-ignore", "git add"],
       "*.md": ["remark --output --", "git add"],
       "*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}": ["prettier --write", "git add"]
     },
