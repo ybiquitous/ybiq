@@ -49,7 +49,7 @@
     "test": "nyc --check-coverage --lines 100 --branches 90 tape \"test/**/*.test.js\"",
     "test:watch": "nodemon --ext js,json --watch . --exec \"tape test/**/*.test.js\"",
     "test:coverage": "nyc report --reporter=html",
-    "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs .",
+    "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs,.ts,.tsx .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
@@ -69,7 +69,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js,jsx,mjs}": [
+      "*.{js,jsx,mjs,ts,tsx}": [
         "eslint --fix --no-ignore",
         "git add"
       ],
