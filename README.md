@@ -40,13 +40,9 @@ For details, please show help.
 ybiq --help
 ```
 
-### `init`
+#### `ybiq init`
 
 Setup npm project.
-
-```sh
-ybiq init
-```
 
 ### API
 
