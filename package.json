@@ -73,6 +73,9 @@
         "eslint --fix --no-ignore",
         "git add"
       ],
+      "*.md": [
+        "remark --frail"
+      ],
       "*.{css,html,js,json,jsx,md,mjs,scss,ts,tsx,yaml,yml}": [
         "prettier --write",
         "git add"
