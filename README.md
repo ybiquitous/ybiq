@@ -59,3 +59,4 @@ ybiq.init({
 ## License
 
 [MIT](LICENSE) © Masafumi Koba
+test
