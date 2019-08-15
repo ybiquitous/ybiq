@@ -4,3 +4,7 @@ linter:
     options:
       ignore-path: ".gitignore"
       ext: ".js,.jsx,.mjs"
+
+branches:
+  exclude:
+    - /^dependabot/
