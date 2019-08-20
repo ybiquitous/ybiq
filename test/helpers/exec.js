@@ -7,12 +7,15 @@ module.exports = function exec(...args) {
   const options = {
     env: { ...process.env, LC_ALL: "C" },
   };
-  const lastArg = args[args.length - 1];
+  const lastArgIndex = args.length - 1;
+  const lastArg = args[lastArgIndex];
+  let newArgs = args;
   if (lastArg && typeof lastArg === "object") {
     options.cwd = lastArg.cwd;
+    newArgs = args.slice(0, lastArgIndex);
   }
   return new Promise((resolve, reject) => {
-    cp.execFile(tested, args, options, (error, stdout, stderr) => {
+    cp.execFile(tested, newArgs, options, (error, stdout, stderr) => {
       if (error) {
         /* eslint-disable no-param-reassign */
         error.stdout = stdout;
