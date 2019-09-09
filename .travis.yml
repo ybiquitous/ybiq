@@ -1,17 +1,11 @@
 language: node_js
 
-node_js:
-  - "12"
-  - "10"
-
 cache: npm
 
-before_script:
+script:
   - commitlint-travis
   - npm run prettier:check
   - npm run lint
-
-script:
   - npm test
   - npm run release:dry-run
 
