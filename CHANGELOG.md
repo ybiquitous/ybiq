@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0](https://github.com/ybiquitous/ybiq/compare/v8.0.0...v9.0.0) (2019-09-09)
+
+### ⚠ BREAKING CHANGES
+
+- drop Node v8 and v9 support
+- **deps:** `execa@2.0.2`, which `lint-staged@9` depends on, requires Node 8.12 at minimum
+- **lint-staged:** the `lint-staged` field structure in `package.json` is changed
+
+### Features
+
+- update minimum Node to v10 ([#473](https://github.com/ybiquitous/ybiq/issues/473)) ([6c03057](https://github.com/ybiquitous/ybiq/commit/6c03057))
+- **deps:** bump eslint from 5.16.0 to 6.3.0 ([#476](https://github.com/ybiquitous/ybiq/issues/476)) ([9806de7](https://github.com/ybiquitous/ybiq/commit/9806de7))
+- **deps:** bump husky from 2.7.0 to 3.0.0 ([#438](https://github.com/ybiquitous/ybiq/issues/438)) ([ff6c8bb](https://github.com/ybiquitous/ybiq/commit/ff6c8bb))
+- **deps:** bump lint-staged from 8.2.1 to 9.0.1 ([#439](https://github.com/ybiquitous/ybiq/issues/439)) ([3a0f7d0](https://github.com/ybiquitous/ybiq/commit/3a0f7d0))
+- **deps:** bump remark-cli from 6.0.1 to 7.0.0 ([#453](https://github.com/ybiquitous/ybiq/issues/453)) ([166391e](https://github.com/ybiquitous/ybiq/commit/166391e))
+- **deps:** bump standard-version from 6.0.1 to 7.0.0 ([#456](https://github.com/ybiquitous/ybiq/issues/456)) ([bad2836](https://github.com/ybiquitous/ybiq/commit/bad2836))
+- **deps:** update `engines.node` to `>=8.12.0` ([#441](https://github.com/ybiquitous/ybiq/issues/441)) ([a44dd50](https://github.com/ybiquitous/ybiq/commit/a44dd50)), closes [sindresorhus/execa#319](https://github.com/sindresorhus/execa/issues/319)
+- **lint-staged:** make settings more simple ([#440](https://github.com/ybiquitous/ybiq/issues/440)) ([9660b11](https://github.com/ybiquitous/ybiq/commit/9660b11))
+- **prettier:** support `*.mdx` files ([#433](https://github.com/ybiquitous/ybiq/issues/433)) ([712402f](https://github.com/ybiquitous/ybiq/commit/712402f))
+
 ## [8.0.0](https://github.com/ybiquitous/ybiq/compare/v7.3.0...v8.0.0) (2019-06-24)
 
 ### Bug Fixes
