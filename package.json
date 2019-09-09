@@ -113,6 +113,7 @@
         "always",
         [
           "",
+          "actions",
           "api",
           "commitlint",
           "coverage",
