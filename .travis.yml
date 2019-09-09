@@ -19,13 +19,3 @@ script:
 branches:
   only:
     - master
-    - /^v\d+\.\d+.\d+(-\d+)?$/ # e.g. `v3.2.1` | `v3.2.1-0`
-
-deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  skip_cleanup: true
-  on:
-    tags: true
-    node: "8"
