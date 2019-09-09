@@ -20,7 +20,7 @@
     ".remarkignore"
   ],
   "engines": {
-    "node": ">=8.12.0"
+    "node": ">=10"
   },
   "dependencies": {
     "@commitlint/cli": "^8.1.0",
