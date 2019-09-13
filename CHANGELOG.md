@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.1.0](https://github.com/ybiquitous/ybiq/compare/v9.0.0...v9.1.0) (2019-09-13)
+
+### Features
+
+- **standard-version:** add `prerelease` hook ([#480](https://github.com/ybiquitous/ybiq/issues/480)) ([9258362](https://github.com/ybiquitous/ybiq/commit/9258362))
+
 ## [9.0.0](https://github.com/ybiquitous/ybiq/compare/v8.0.0...v9.0.0) (2019-09-09)
 
 ### ⚠ BREAKING CHANGES
