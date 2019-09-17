@@ -23,7 +23,7 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@commitlint/cli": "^8.1.0",
+    "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@commitlint/travis-cli": "^8.1.0",
     "eslint": "^6.4.0",
