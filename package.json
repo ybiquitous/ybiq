@@ -36,7 +36,7 @@
     "remark-preset-lint-recommended": "^3.0.3",
     "remark-validate-links": "^9.0.1",
     "standard-version": "^7.0.0",
-    "yargs": "^14.2.0"
+    "yargs": "^15.0.1"
   },
   "devDependencies": {
     "eslint-config-ybiquitous": "^10.1.0",
