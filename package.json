@@ -39,7 +39,7 @@
     "yargs": "^15.1.0"
   },
   "devDependencies": {
-    "eslint-config-ybiquitous": "^10.4.0",
+    "eslint-config-ybiquitous": "^10.5.0",
     "fs-extra": "^8.1.0",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.0",
