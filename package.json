@@ -28,7 +28,7 @@
     "@commitlint/travis-cli": "^8.3.5",
     "eslint": "^6.8.0",
     "husky": "^4.0.10",
-    "lint-staged": "^9.5.0",
+    "lint-staged": "^10.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "remark-cli": "^7.0.1",
