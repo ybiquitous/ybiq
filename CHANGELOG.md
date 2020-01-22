@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.0.0](https://github.com/ybiquitous/ybiq/compare/v9.1.0...v10.0.0) (2020-01-22)
+
+### ⚠ BREAKING CHANGES
+
+- **commitlint:** drop support for Travis CI (#546)
+
+### Features
+
+- **commitlint:** drop support for Travis CI ([#546](https://github.com/ybiquitous/ybiq/issues/546)) ([7eb5412](https://github.com/ybiquitous/ybiq/commit/7eb541264aa46cb9632ff959fb1ee60a7e855211))
+- **deps:** bump husky from 3.1.0 to 4.0.0 ([#531](https://github.com/ybiquitous/ybiq/issues/531)) ([7d609a7](https://github.com/ybiquitous/ybiq/commit/7d609a7fec4bcd341109f2ec30deb28300e5140d))
+- **deps:** bump lint-staged from 9.5.0 to 10.0.1 ([#545](https://github.com/ybiquitous/ybiq/issues/545)) ([a0c9484](https://github.com/ybiquitous/ybiq/commit/a0c948408bccb72f13da1ae47d5b7db65d0f0589))
+
 ## [9.1.0](https://github.com/ybiquitous/ybiq/compare/v9.0.0...v9.1.0) (2019-09-13)
 
 ### Features
