@@ -32,7 +32,7 @@
     "prettier": "^1.19.1",
     "remark-cli": "^7.0.1",
     "remark-lint-no-heading-punctuation": "^1.0.3",
-    "remark-preset-lint-recommended": "^3.0.3",
+    "remark-preset-lint-recommended": "^3.0.4",
     "remark-validate-links": "^10.0.0",
     "standard-version": "^7.1.0",
     "yargs": "^15.3.1"
