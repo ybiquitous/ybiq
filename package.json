@@ -29,7 +29,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.1.3",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.4",
     "remark-cli": "^8.0.0",
     "remark-lint-no-heading-punctuation": "^2.0.0",
     "remark-preset-lint-recommended": "^4.0.0",
@@ -53,7 +53,7 @@
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
     "lint": "npm-run-all --print-label --parallel lint:*",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.{css,html,js,json,jsx,md,mdx,mjs,scss,ts,tsx,yaml,yml}\"",
+    "prettier": "prettier --ignore-path .gitignore .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
@@ -69,11 +69,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx}": "eslint --fix --no-ignore",
-    "*.{css,html,js,json,jsx,md,mdx,mjs,scss,ts,tsx,yaml,yml}": "prettier --write",
+    "*": "prettier --write",
     "!(CHANGELOG).md": "remark --frail"
-  },
-  "prettier": {
-    "trailingComma": "es5"
   },
   "standard-version": {
     "sign": true,
