@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.0.0](https://github.com/ybiquitous/ybiq/compare/v10.0.0...v11.0.0) (2020-04-13)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** Prettier v2; change defaults and use `.` instead of `**.{ext1,ext2}`.
+
+### Features
+
+- **deps:** bump prettier from 1.19.1 to 2.0.4 ([#593](https://github.com/ybiquitous/ybiq/issues/593)) ([375a6ef](https://github.com/ybiquitous/ybiq/commit/375a6effc4479c622f0c7b6bde0ad55605fe297a))
+- **deps:** bump remark-cli from 7.0.1 to 8.0.0 ([#584](https://github.com/ybiquitous/ybiq/issues/584)) ([9bae553](https://github.com/ybiquitous/ybiq/commit/9bae553c4545b35690ea46404c0c70ad832175a8))
+- **deps:** bump remark-lint-no-heading-punctuation from 1.0.4 t… ([#582](https://github.com/ybiquitous/ybiq/issues/582)) ([c68732c](https://github.com/ybiquitous/ybiq/commit/c68732cf7aafe0f359c5218001b0f450af72bebe))
+- **deps:** bump remark-preset-lint-recommended from 3.0.4 to 4.0.0 ([#583](https://github.com/ybiquitous/ybiq/issues/583)) ([dd56b10](https://github.com/ybiquitous/ybiq/commit/dd56b10040b7ffc73dc6a076809df1a3dd1e3529))
+- **deps:** bump remark-validate-links from 9.2.0 to 10.0.0 ([#578](https://github.com/ybiquitous/ybiq/issues/578)) ([3462404](https://github.com/ybiquitous/ybiq/commit/3462404bb53290f1b630b012e3e5cc8e14b9d87f))
+
 ## [10.0.0](https://github.com/ybiquitous/ybiq/compare/v9.1.0...v10.0.0) (2020-01-22)
 
 ### ⚠ BREAKING CHANGES
