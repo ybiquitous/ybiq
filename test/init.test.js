@@ -6,20 +6,20 @@ const pkg = require("../package.json");
 const init = require("../lib/init");
 const exec = require("./helpers/exec");
 
-const readFile = file => fse.readFile(file, "utf8");
-const readJSON = file => fse.readJSON(file, "utf8");
+const readFile = (file) => fse.readFile(file, "utf8");
+const readJSON = (file) => fse.readJSON(file, "utf8");
 
 const sandbox = async (fn, t) => {
   const workDir = path.join(os.tmpdir(), `${pkg.name}${Date.now()}`);
   await fse.mkdirs(workDir);
 
   const logMsgs = [];
-  const logger = msg => logMsgs.push(msg);
+  const logger = (msg) => logMsgs.push(msg);
 
   try {
     const cwd = process.cwd();
-    const fixturePath = name => path.join(cwd, "test", "fixtures", name);
-    const fixture = async name => {
+    const fixturePath = (name) => path.join(cwd, "test", "fixtures", name);
+    const fixture = async (name) => {
       const src = fixturePath(name);
       const dest = path.join(workDir, "package.json");
       await fse.copy(src, dest);
@@ -29,10 +29,10 @@ const sandbox = async (fn, t) => {
     return await fn(t, {
       fixturePath,
       fixture,
-      readFixture: name => readFile(fixturePath(name)),
-      readFixtureJSON: name => readJSON(fixturePath(name)),
-      readOrigFile: name => readFile(path.join(cwd, name)),
-      readWorkFile: name => readFile(path.join(workDir, name)),
+      readFixture: (name) => readFile(fixturePath(name)),
+      readFixtureJSON: (name) => readJSON(fixturePath(name)),
+      readOrigFile: (name) => readFile(path.join(cwd, name)),
+      readWorkFile: (name) => readFile(path.join(workDir, name)),
       logMessage: () => logMsgs.join(""),
       initArgs: { cwd: workDir, logger },
     });
@@ -41,9 +41,9 @@ const sandbox = async (fn, t) => {
   }
 };
 
-test("init", t => {
+test("init", (t) => {
   const testInSandbox = (name, fn) => {
-    t.test(name, t => sandbox(fn, t));
+    t.test(name, (t) => sandbox(fn, t));
   };
 
   testInSandbox('update "package.json"', async (t, ctx) => {
@@ -64,7 +64,7 @@ test("init", t => {
     t.end();
   });
 
-  [".editorconfig", ".remarkignore"].forEach(file => {
+  [".editorconfig", ".remarkignore"].forEach((file) => {
     testInSandbox(`write "${file}"`, async (t, ctx) => {
       await ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
@@ -80,7 +80,7 @@ test("init", t => {
   });
 
   testInSandbox("throw error if no package.json", async (t, ctx) => {
-    const error = await init(ctx.initArgs).catch(err => err);
+    const error = await init(ctx.initArgs).catch((err) => err);
     t.ok(error instanceof Error);
     t.is(error.code, "ENOENT");
     t.end();
