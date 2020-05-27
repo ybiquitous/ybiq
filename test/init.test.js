@@ -1,17 +1,20 @@
 const path = require("path");
 const os = require("os");
+const fs = require("fs");
 const fse = require("fs-extra");
 const test = require("tape");
 const pkg = require("../package.json");
 const init = require("../lib/init");
 const exec = require("./helpers/exec");
 
-const readFile = (file) => fse.readFile(file, "utf8");
-const readJSON = (file) => fse.readJSON(file, "utf8");
+/* eslint-disable node/no-unsupported-features/node-builtins */
+const readFile = (file) => fs.promises.readFile(file, "utf8");
+const readJSON = (file) => fs.promises.readFile(file, "utf8").then(JSON.parse);
+/* eslint-enable node/no-unsupported-features/node-builtins */
 
 const sandbox = async (fn, t) => {
   const workDir = path.join(os.tmpdir(), `${pkg.name}${Date.now()}`);
-  await fse.mkdirs(workDir);
+  await fs.promises.mkdir(workDir); // eslint-disable-line node/no-unsupported-features/node-builtins
 
   const logMsgs = [];
   const logger = (msg) => logMsgs.push(msg);
@@ -22,7 +25,7 @@ const sandbox = async (fn, t) => {
     const fixture = async (name) => {
       const src = fixturePath(name);
       const dest = path.join(workDir, "package.json");
-      await fse.copy(src, dest);
+      await fs.promises.copyFile(src, dest); // eslint-disable-line node/no-unsupported-features/node-builtins
       return dest;
     };
 
@@ -37,6 +40,8 @@ const sandbox = async (fn, t) => {
       initArgs: { cwd: workDir, logger },
     });
   } finally {
+    // TODO: Node 12+
+    // await fs.promises.rmdir(workDir, { recursive: true });
     await fse.remove(workDir);
   }
 };
