@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "eslint-config-ybiquitous": "^10.11.0",
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^9.0.1",
     "nodemon": "^2.0.4",
     "nyc": "^15.1.0",
     "tape": "^5.0.1"
