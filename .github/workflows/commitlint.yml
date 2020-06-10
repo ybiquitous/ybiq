@@ -1,9 +1,13 @@
 name: commitlint
 
-on: [push, pull_request]
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["**"]
 
 jobs:
-  run:
+  commitlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
