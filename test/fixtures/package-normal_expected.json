@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "abc",
-    "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx,.mjs,.ts,.tsx .",
+    "lint:js": "eslint .",
     "test:watch": "abc --watch",
     "test:coverage": "echo \"unsupported.\" && exit 1",
     "lint:js:fix": "npm run lint:js -- --fix",
@@ -24,7 +24,7 @@
   },
   "lint-staged": {
     "*.css": "xyz",
-    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix --no-ignore",
+    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
     "*": "prettier --write",
     "!(CHANGELOG).md": "remark --frail"
   },
@@ -47,6 +47,7 @@
     "extends": ["@commitlint/config-conventional"]
   },
   "eslintConfig": {
+    "root": true,
     "extends": ["ybiquitous"]
   }
 }
