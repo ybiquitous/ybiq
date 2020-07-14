@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.3.0](https://github.com/ybiquitous/ybiq/compare/v11.2.0...v11.3.0) (2020-07-14)
+
+### Features
+
+- **init:** create `.github/workflows/*.yml` ([#641](https://github.com/ybiquitous/ybiq/issues/641)) ([8719e54](https://github.com/ybiquitous/ybiq/commit/8719e54f3f43d9bb3f4348f3613028ce83b7f13b))
+
 ## [11.2.0](https://github.com/ybiquitous/ybiq/compare/v11.1.0...v11.2.0) (2020-07-14)
 
 ### Features
