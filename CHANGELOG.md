@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.2.0](https://github.com/ybiquitous/ybiq/compare/v11.1.0...v11.2.0) (2020-07-14)
+
+### Features
+
+- **eslint:** simplify config since v7 ([#640](https://github.com/ybiquitous/ybiq/issues/640)) ([c22d7e3](https://github.com/ybiquitous/ybiq/commit/c22d7e368240f212e206e1032577f259b063bc3a))
+
 ## [11.1.0](https://github.com/ybiquitous/ybiq/compare/v11.0.0...v11.1.0) (2020-07-14)
 
 ### Features
