@@ -17,7 +17,11 @@
     "bin",
     "lib",
     ".editorconfig",
-    ".remarkignore"
+    ".remarkignore",
+    ".github/workflows/commitlint.yml",
+    ".github/workflows/npm-audit-fix.yml",
+    ".github/workflows/release.yml",
+    ".github/workflows/test.yml"
   ],
   "engines": {
     "node": ">=10.17.0"

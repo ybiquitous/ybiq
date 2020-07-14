@@ -69,11 +69,18 @@ test("init", (t) => {
     t.end();
   });
 
-  [".editorconfig", ".remarkignore"].forEach((file) => {
+  [
+    ".editorconfig",
+    ".remarkignore",
+    ".github/workflows/commitlint.yml",
+    ".github/workflows/npm-audit-fix.yml",
+    ".github/workflows/release.yml",
+    ".github/workflows/test.yml",
+  ].forEach((file) => {
     testInSandbox(`write "${file}"`, async (t, ctx) => {
       await ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
-      t.ok(ctx.logMessage().includes("package.json was updated."));
+      t.ok(ctx.logMessage().includes("`package.json` was updated"));
 
       const original = await ctx.readOrigFile(file);
       const copy = await ctx.readWorkFile(file);
@@ -94,7 +101,19 @@ test("init", (t) => {
   testInSandbox("End-to-End via CLI", async (t, ctx) => {
     await ctx.fixture("package-normal.json");
     const { stdout, stderr } = await exec("init", { cwd: ctx.initArgs.cwd });
-    t.ok(stdout.includes("package.json was updated."));
+    t.match(
+      stdout,
+      new RegExp( // eslint-disable-line prefer-regex-literals
+        `=> \`package.json\` was updated
+=> \`.editorconfig\` was updated
+=> \`.remarkignore\` was updated
+=> \`.github/workflows/commitlint.yml\` was updated
+=> \`.github/workflows/npm-audit-fix.yml\` was updated
+=> \`.github/workflows/release.yml\` was updated
+=> \`.github/workflows/test.yml\` was updated`,
+        "u"
+      )
+    );
     t.is(stderr, "");
     t.end();
   });

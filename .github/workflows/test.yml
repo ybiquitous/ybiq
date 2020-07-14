@@ -5,13 +5,14 @@ on:
     branches: ["master"]
   pull_request:
     branches: ["**"]
+    tags: ["**"]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: ["10", "12", "14"]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.0

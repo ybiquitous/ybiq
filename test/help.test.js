@@ -6,8 +6,10 @@ cli.js <command>
 
 Commands:
   cli.js init  Setup npm project:
-               - Update 'package.json'
-               - Create '.editorconfig'
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
 
 Options:
   --help, -h     Show help                                             [boolean]
