@@ -13,7 +13,7 @@ const readJSON = (file) => fs.promises.readFile(file, "utf8").then(JSON.parse);
 /* eslint-enable node/no-unsupported-features/node-builtins */
 
 const sandbox = async (fn, t) => {
-  const workDir = path.join(os.tmpdir(), `${pkg.name}${Date.now()}`);
+  const workDir = path.join(os.tmpdir(), `${pkg.name}${process.hrtime.bigint()}`);
   await fs.promises.mkdir(workDir); // eslint-disable-line node/no-unsupported-features/node-builtins
 
   const logMsgs = [];
