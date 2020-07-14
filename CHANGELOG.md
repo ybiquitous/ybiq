@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.1.0](https://github.com/ybiquitous/ybiq/compare/v11.0.0...v11.1.0) (2020-07-14)
+
+### Features
+
+- bump minimum node version (`engines.node`) ([#613](https://github.com/ybiquitous/ybiq/issues/613)) ([7e2e276](https://github.com/ybiquitous/ybiq/commit/7e2e276bd10ca70defdb02ccd183c4ecbe36f6b9))
+- **deps:** bump @commitlint/cli from 8.3.5 to 9.0.1 ([#626](https://github.com/ybiquitous/ybiq/issues/626)) ([0a54463](https://github.com/ybiquitous/ybiq/commit/0a5446318a9579e1fbfe861524595e0a5f8a660e))
+- **deps:** bump @commitlint/config-conventional from 8.3.4 to 9.0.1 ([#625](https://github.com/ybiquitous/ybiq/issues/625)) ([819043f](https://github.com/ybiquitous/ybiq/commit/819043f500f386f47ff71fa2417a7ae4b649cc37))
+- **deps:** bump eslint to v7 ([#639](https://github.com/ybiquitous/ybiq/issues/639)) ([dfb7864](https://github.com/ybiquitous/ybiq/commit/dfb78647c5d20406fb2e19b5ff56da47a0be71de))
+
+### Bug Fixes
+
+- **deps:** bump standard-version from 7.1.0 to 8.0.0 ([#604](https://github.com/ybiquitous/ybiq/issues/604)) ([302aed6](https://github.com/ybiquitous/ybiq/commit/302aed66c8699e7933197ff48177b53c4ccc77ee))
+
 ## [11.0.0](https://github.com/ybiquitous/ybiq/compare/v10.0.0...v11.0.0) (2020-04-13)
 
 ### ⚠ BREAKING CHANGES
