@@ -139,9 +139,15 @@
   },
   "eslintConfig": {
     "root": true,
+    "ignorePatterns": [
+      "*.d.ts"
+    ],
     "extends": [
       "ybiquitous/node"
     ],
+    "rules": {
+      "import/no-internal-modules": "off"
+    },
     "overrides": [
       {
         "files": [
@@ -156,7 +162,6 @@
               ]
             }
           ],
-          "import/no-internal-modules": "off",
           "max-lines-per-function": [
             "error",
             100
