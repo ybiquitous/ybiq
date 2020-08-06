@@ -4,7 +4,7 @@ const fs = require("fs");
 const fse = require("fs-extra");
 const test = require("tape");
 const pkg = require("../package.json");
-const init = require("../lib/init");
+const { init } = require("../lib/init");
 const exec = require("./helpers/exec");
 
 /* eslint-disable node/no-unsupported-features/node-builtins */
