@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.4.0](https://github.com/ybiquitous/ybiq/compare/v11.3.0...v11.4.0) (2020-08-08)
+
+### Features
+
+- **commitlint:** loosen `body-max-line-length` rule ([#649](https://github.com/ybiquitous/ybiq/issues/649)) ([eeb9b8d](https://github.com/ybiquitous/ybiq/commit/eeb9b8d90feae411944f0b8dff1420eba7d9a447))
+- **commitlint:** loosen `body-max-line-length` rule again ([#650](https://github.com/ybiquitous/ybiq/issues/650)) ([4d9abd1](https://github.com/ybiquitous/ybiq/commit/4d9abd15556886ca140df1b5e84990f0c7c6f4cf)), closes [#649](https://github.com/ybiquitous/ybiq/issues/649)
+- **init:** `lint` script includes `prettier:check` ([#661](https://github.com/ybiquitous/ybiq/issues/661)) ([bb2f205](https://github.com/ybiquitous/ybiq/commit/bb2f2053dd4a92c2b6fb0f24b5ff68a09a262f93))
+- **init:** add `lint:types` script ([#654](https://github.com/ybiquitous/ybiq/issues/654)) ([0abf160](https://github.com/ybiquitous/ybiq/commit/0abf160548f990d5f30286ce8327f8ae3ea7e0f4))
+- **init:** exclude snapshot files from Prettier ([#663](https://github.com/ybiquitous/ybiq/issues/663)) ([b873407](https://github.com/ybiquitous/ybiq/commit/b87340782beb9bcfca2a90e162d3fd2e43122da7))
+- **init:** rename default branch: master -> main ([#664](https://github.com/ybiquitous/ybiq/issues/664)) ([d7b849a](https://github.com/ybiquitous/ybiq/commit/d7b849a57cdc687222d471b2157995a7423156e5))
+- **init:** run `release:dry-run` on post-commit ([#662](https://github.com/ybiquitous/ybiq/issues/662)) ([e603390](https://github.com/ybiquitous/ybiq/commit/e6033902488337f6d999b84d9d8d8f3eba55ad1f))
+- **init:** use yargs command module ([#655](https://github.com/ybiquitous/ybiq/issues/655)) ([152f75e](https://github.com/ybiquitous/ybiq/commit/152f75e7f4e95afbeeeae5aaed971d5d903b23d3))
+- **types:** publish type declarations ([#656](https://github.com/ybiquitous/ybiq/issues/656)) ([84a281e](https://github.com/ybiquitous/ybiq/commit/84a281e77498b4f9d3688bdec70c54ccb475ab6f))
+
 ## [11.3.0](https://github.com/ybiquitous/ybiq/compare/v11.2.0...v11.3.0) (2020-07-14)
 
 ### Features
