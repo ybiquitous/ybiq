@@ -29,10 +29,7 @@ const sandbox = async (callback) => {
     };
 
     return await callback({
-      fixturePath,
       fixture,
-      readFixture: (name) => readFile(fixturePath(name)),
-      readFixtureJSON: (name) => readJSON(fixturePath(name)),
       readOrigFile: (name) => readFile(path.join(cwd, name)),
       readWorkFile: (name) => readFile(path.join(workDir, name)),
       logMessage: () => logMsgs.join(""),
@@ -49,9 +46,7 @@ test('update "package.json"', () => {
   return sandbox(async (ctx) => {
     const src = await ctx.fixture("package-normal.json");
     await init(ctx.initArgs);
-    const actual = await readJSON(src);
-    const expected = await ctx.readFixtureJSON("package-normal_expected.json");
-    expect(actual).toEqual(expected);
+    expect(await readJSON(src)).toMatchSnapshot();
   });
 });
 
@@ -59,9 +54,7 @@ test('update "package.json" without fields', () => {
   return sandbox(async (ctx) => {
     const src = await ctx.fixture("package-empty.json");
     await init(ctx.initArgs);
-    const actual = await readJSON(src);
-    const expected = await ctx.readFixtureJSON("package-empty_expected.json");
-    expect(actual).toEqual(expected);
+    expect(await readJSON(src)).toMatchSnapshot();
   });
 });
 
