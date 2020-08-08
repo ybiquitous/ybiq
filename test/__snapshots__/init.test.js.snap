@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`update "package.json" 1`] = `
+Object {
+  "commitlint": Object {
+    "extends": Array [
+      "@commitlint/config-conventional",
+    ],
+    "rules": Object {
+      "body-max-line-length": Array [
+        1,
+        "always",
+        100,
+      ],
+    },
+  },
+  "eslintConfig": Object {
+    "extends": Array [
+      "ybiquitous",
+    ],
+    "root": true,
+  },
+  "husky": Object {
+    "hooks": Object {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+    },
+  },
+  "lint-staged": Object {
+    "!(CHANGELOG).md": "remark --frail",
+    "*": "prettier --write",
+    "*.css": "xyz",
+    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
+  },
+  "remarkConfig": Object {
+    "plugins": Array [
+      "preset-lint-recommended",
+      "lint-no-heading-punctuation",
+      Array [
+        "lint-list-item-bullet-indent",
+        false,
+      ],
+      Array [
+        "lint-list-item-indent",
+        false,
+      ],
+      "validate-links",
+    ],
+  },
+  "scripts": Object {
+    "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
+    "lint": "npm-run-all --print-label --parallel lint:*",
+    "lint:js": "eslint .",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:md": "remark . --frail",
+    "lint:md:fix": "remark . --output",
+    "lint:types": "tsc --noEmit",
+    "prerelease": "git checkout master && git pull origin master && npm ci && npm test",
+    "prettier": "prettier --ignore-path .gitignore .",
+    "prettier:check": "npm run prettier -- --check",
+    "prettier:write": "npm run prettier -- --write",
+    "release": "standard-version",
+    "release:dry-run": "standard-version --dry-run",
+    "test": "abc",
+    "test:coverage": "echo \\"unsupported.\\" && exit 1",
+    "test:watch": "abc --watch",
+  },
+  "standard-version": Object {
+    "scripts": Object {
+      "postchangelog": "prettier --write CHANGELOG.md",
+    },
+    "sign": true,
+  },
+}
+`;
+
+exports[`update "package.json" without fields 1`] = `
+Object {
+  "commitlint": Object {
+    "extends": Array [
+      "@commitlint/config-conventional",
+    ],
+    "rules": Object {
+      "body-max-line-length": Array [
+        1,
+        "always",
+        100,
+      ],
+    },
+  },
+  "eslintConfig": Object {
+    "extends": Array [
+      "ybiquitous",
+    ],
+    "root": true,
+  },
+  "husky": Object {
+    "hooks": Object {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+    },
+  },
+  "lint-staged": Object {
+    "!(CHANGELOG).md": "remark --frail",
+    "*": "prettier --write",
+    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
+  },
+  "remarkConfig": Object {
+    "plugins": Array [
+      "preset-lint-recommended",
+      "lint-no-heading-punctuation",
+      Array [
+        "lint-list-item-bullet-indent",
+        false,
+      ],
+      Array [
+        "lint-list-item-indent",
+        false,
+      ],
+      "validate-links",
+    ],
+  },
+  "scripts": Object {
+    "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
+    "lint": "npm-run-all --print-label --parallel lint:*",
+    "lint:js": "eslint .",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:md": "remark . --frail",
+    "lint:md:fix": "remark . --output",
+    "lint:types": "tsc --noEmit",
+    "prerelease": "git checkout master && git pull origin master && npm ci && npm test",
+    "prettier": "prettier --ignore-path .gitignore .",
+    "prettier:check": "npm run prettier -- --check",
+    "prettier:write": "npm run prettier -- --write",
+    "release": "standard-version",
+    "release:dry-run": "standard-version --dry-run",
+    "test": "test",
+    "test:coverage": "echo \\"unsupported.\\" && exit 1",
+    "test:watch": "test --watch",
+  },
+  "standard-version": Object {
+    "scripts": Object {
+      "postchangelog": "prettier --write CHANGELOG.md",
+    },
+    "sign": true,
+  },
+}
+`;
