@@ -33,7 +33,7 @@ Options:
 `;
 
 exports[`with arguments [] 1`] = `
-"Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js
+"Command failed: bin/cli.js
 cli.js <command>
 
 Commands:
@@ -52,7 +52,7 @@ Not enough non-option arguments: got 0, need at least 1
 `;
 
 exports[`with arguments []: stderr 1`] = `
-[Error: Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js
+[Error: Command failed: bin/cli.js
 cli.js <command>
 
 Commands:
@@ -71,7 +71,7 @@ Not enough non-option arguments: got 0, need at least 1
 `;
 
 exports[`with arguments [unknown, xyz] 1`] = `
-"Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js unknown xyz
+"Command failed: bin/cli.js unknown xyz
 cli.js <command>
 
 Commands:
@@ -90,7 +90,7 @@ Unknown arguments: unknown, xyz
 `;
 
 exports[`with arguments [unknown, xyz]: stderr 1`] = `
-[Error: Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js unknown xyz
+[Error: Command failed: bin/cli.js unknown xyz
 cli.js <command>
 
 Commands:
@@ -109,7 +109,7 @@ Unknown arguments: unknown, xyz
 `;
 
 exports[`with arguments [unknown] 1`] = `
-"Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js unknown
+"Command failed: bin/cli.js unknown
 cli.js <command>
 
 Commands:
@@ -128,7 +128,7 @@ Unknown argument: unknown
 `;
 
 exports[`with arguments [unknown]: stderr 1`] = `
-[Error: Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js unknown
+[Error: Command failed: bin/cli.js unknown
 cli.js <command>
 
 Commands:

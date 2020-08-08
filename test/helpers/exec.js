@@ -1,9 +1,6 @@
-const path = require("path");
 const cp = require("child_process");
 
-const tested = path.join(process.cwd(), "bin", "cli.js");
-
-module.exports = function exec(...args) {
+module.exports = function exec(commandFile, ...args) {
   const options = {
     env: { ...process.env, LC_ALL: "C" },
   };
@@ -15,7 +12,7 @@ module.exports = function exec(...args) {
     newArgs = args.slice(0, lastArgIndex);
   }
   return new Promise((resolve, reject) => {
-    cp.execFile(tested, newArgs, options, (error, stdout, stderr) => {
+    cp.execFile(commandFile, newArgs, options, (error, stdout, stderr) => {
       if (error) {
         /* eslint-disable no-param-reassign */
         error.stdout = stdout;

@@ -97,7 +97,9 @@ test("throw error if no package.json", () => {
 test("End-to-End via CLI", () => {
   return sandbox(async (ctx) => {
     await ctx.fixture("package-normal.json");
-    const { stdout, stderr } = await exec("init", { cwd: ctx.initArgs.cwd });
+    const { stdout, stderr } = await exec(path.resolve("bin/cli.js"), "init", {
+      cwd: ctx.initArgs.cwd,
+    });
     expect(stdout).toMatchInlineSnapshot(`
       "=> \`package.json\` was updated
       => \`.editorconfig\` was updated
