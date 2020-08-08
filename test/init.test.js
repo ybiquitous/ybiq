@@ -2,7 +2,6 @@ const path = require("path");
 const os = require("os");
 const fs = require("fs");
 const fse = require("fs-extra");
-const test = require("tape");
 const pkg = require("../package.json");
 const { init } = require("../lib/init");
 const exec = require("./helpers/exec");
@@ -12,7 +11,7 @@ const readFile = (file) => fs.promises.readFile(file, "utf8");
 const readJSON = (file) => fs.promises.readFile(file, "utf8").then(JSON.parse);
 /* eslint-enable node/no-unsupported-features/node-builtins */
 
-const sandbox = async (fn, t) => {
+const sandbox = async (callback) => {
   const workDir = path.join(os.tmpdir(), `${pkg.name}${process.hrtime.bigint()}`);
   await fs.promises.mkdir(workDir); // eslint-disable-line node/no-unsupported-features/node-builtins
 
@@ -29,7 +28,7 @@ const sandbox = async (fn, t) => {
       return dest;
     };
 
-    return await fn(t, {
+    return await callback({
       fixturePath,
       fixture,
       readFixture: (name) => readFile(fixturePath(name)),
@@ -46,75 +45,71 @@ const sandbox = async (fn, t) => {
   }
 };
 
-test("init", (t) => {
-  const testInSandbox = (name, fn) => {
-    t.test(name, (t) => sandbox(fn, t));
-  };
-
-  testInSandbox('update "package.json"', async (t, ctx) => {
+test('update "package.json"', () => {
+  return sandbox(async (ctx) => {
     const src = await ctx.fixture("package-normal.json");
     await init(ctx.initArgs);
     const actual = await readJSON(src);
     const expected = await ctx.readFixtureJSON("package-normal_expected.json");
-    t.deepEqual(actual, expected);
-    t.end();
+    expect(actual).toEqual(expected);
   });
+});
 
-  testInSandbox('update "package.json" without fields', async (t, ctx) => {
+test('update "package.json" without fields', () => {
+  return sandbox(async (ctx) => {
     const src = await ctx.fixture("package-empty.json");
     await init(ctx.initArgs);
     const actual = await readJSON(src);
     const expected = await ctx.readFixtureJSON("package-empty_expected.json");
-    t.deepEqual(actual, expected);
-    t.end();
+    expect(actual).toEqual(expected);
   });
+});
 
-  [
-    ".editorconfig",
-    ".remarkignore",
-    ".github/workflows/commitlint.yml",
-    ".github/workflows/npm-audit-fix.yml",
-    ".github/workflows/release.yml",
-    ".github/workflows/test.yml",
-  ].forEach((file) => {
-    testInSandbox(`write "${file}"`, async (t, ctx) => {
+[
+  ".editorconfig",
+  ".remarkignore",
+  ".github/workflows/commitlint.yml",
+  ".github/workflows/npm-audit-fix.yml",
+  ".github/workflows/release.yml",
+  ".github/workflows/test.yml",
+].forEach((file) => {
+  test(`write "${file}"`, () => {
+    return sandbox(async (ctx) => {
       await ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
-      t.ok(ctx.logMessage().includes("`package.json` was updated"));
+      expect(ctx.logMessage()).toMatch(/`package.json` was updated/u);
 
       const original = await ctx.readOrigFile(file);
       const copy = await ctx.readWorkFile(file);
-      t.is(original, copy);
+      expect(original).toEqual(copy);
 
-      t.ok(pkg.files.includes(file));
-      t.end();
+      expect(pkg.files).toContain(file);
     });
   });
+});
 
-  testInSandbox("throw error if no package.json", async (t, ctx) => {
-    const error = await init(ctx.initArgs).catch((err) => err);
-    t.ok(error instanceof Error);
-    t.is(error.code, "ENOENT");
-    t.end();
+test("throw error if no package.json", () => {
+  return sandbox(async (ctx) => {
+    await expect(init(ctx.initArgs)).rejects.toHaveProperty("code", "ENOENT");
   });
+});
 
-  testInSandbox("End-to-End via CLI", async (t, ctx) => {
+test("End-to-End via CLI", () => {
+  return sandbox(async (ctx) => {
     await ctx.fixture("package-normal.json");
-    const { stdout, stderr } = await exec("init", { cwd: ctx.initArgs.cwd });
-    t.match(
-      stdout,
-      new RegExp( // eslint-disable-line prefer-regex-literals
-        `=> \`package.json\` was updated
-=> \`.editorconfig\` was updated
-=> \`.remarkignore\` was updated
-=> \`.github/workflows/commitlint.yml\` was updated
-=> \`.github/workflows/npm-audit-fix.yml\` was updated
-=> \`.github/workflows/release.yml\` was updated
-=> \`.github/workflows/test.yml\` was updated`,
-        "u"
-      )
-    );
-    t.is(stderr, "");
-    t.end();
+    const { stdout, stderr } = await exec(path.resolve("bin/cli.js"), "init", {
+      cwd: ctx.initArgs.cwd,
+    });
+    expect(stdout).toMatchInlineSnapshot(`
+      "=> \`package.json\` was updated
+      => \`.editorconfig\` was updated
+      => \`.remarkignore\` was updated
+      => \`.github/workflows/commitlint.yml\` was updated
+      => \`.github/workflows/npm-audit-fix.yml\` was updated
+      => \`.github/workflows/release.yml\` was updated
+      => \`.github/workflows/test.yml\` was updated
+      "
+    `);
+    expect(stderr).toEqual("");
   });
 });

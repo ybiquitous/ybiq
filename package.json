@@ -49,16 +49,15 @@
     "@typescript-eslint/eslint-plugin": "^3.8.0",
     "@typescript-eslint/parser": "^3.8.0",
     "eslint-config-ybiquitous": "^11.0.0",
+    "eslint-plugin-jest": "^23.20.0",
     "fs-extra": "^9.0.1",
-    "nodemon": "^2.0.4",
-    "nyc": "^15.1.0",
-    "tape": "^5.0.1",
+    "jest": "^26.2.2",
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "test": "nyc --check-coverage --lines 100 --branches 90 tape \"test/**/*.test.js\" && npm run test:types",
-    "test:watch": "nodemon --ext js,json --watch . --exec \"tape test/**/*.test.js\"",
-    "test:coverage": "nyc report --reporter=html",
+    "test": "jest --coverage && npm run test:types",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "test:types": "tsc --project test/tsconfig.test.json --noEmit",
     "lint:js": "eslint .",
     "lint:js:fix": "npm run lint:js -- --fix",
@@ -144,6 +143,9 @@
   },
   "eslintConfig": {
     "root": true,
+    "ignorePatterns": [
+      "coverage"
+    ],
     "extends": [
       "ybiquitous/node"
     ],
@@ -152,12 +154,8 @@
     },
     "overrides": [
       {
-        "files": [
-          "**/*.ts"
-        ],
-        "extends": [
-          "ybiquitous/typescript"
-        ],
+        "files": "**/*.ts",
+        "extends": "ybiquitous/typescript",
         "parserOptions": {
           "project": [
             "./tsconfig.json",
@@ -169,23 +167,8 @@
         }
       },
       {
-        "files": [
-          "**/test/**/*.js"
-        ],
-        "rules": {
-          "no-shadow": [
-            "error",
-            {
-              "allow": [
-                "t"
-              ]
-            }
-          ],
-          "max-lines-per-function": [
-            "error",
-            100
-          ]
-        }
+        "files": "**/*.test.js",
+        "extends": "plugin:jest/recommended"
       }
     ]
   },
@@ -193,5 +176,16 @@
     "> 1%",
     "not ie 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "testRegex": ".*\\.test\\.js$",
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 90,
+        "lines": 95,
+        "statements": 95
+      }
+    }
+  }
 }
