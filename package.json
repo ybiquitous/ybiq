@@ -82,7 +82,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
-    "*": "prettier --write",
+    "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail"
   },
   "standard-version": {
