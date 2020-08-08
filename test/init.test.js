@@ -6,14 +6,12 @@ const pkg = require("../package.json");
 const { init } = require("../lib/init");
 const exec = require("./helpers/exec");
 
-/* eslint-disable node/no-unsupported-features/node-builtins */
 const readFile = (file) => fs.promises.readFile(file, "utf8");
 const readJSON = (file) => fs.promises.readFile(file, "utf8").then(JSON.parse);
-/* eslint-enable node/no-unsupported-features/node-builtins */
 
 const sandbox = async (callback) => {
   const workDir = path.join(os.tmpdir(), `${pkg.name}${process.hrtime.bigint()}`);
-  await fs.promises.mkdir(workDir); // eslint-disable-line node/no-unsupported-features/node-builtins
+  await fs.promises.mkdir(workDir);
 
   const logMsgs = [];
   const logger = (msg) => logMsgs.push(msg);
@@ -24,7 +22,7 @@ const sandbox = async (callback) => {
     const fixture = async (name) => {
       const src = fixturePath(name);
       const dest = path.join(workDir, "package.json");
-      await fs.promises.copyFile(src, dest); // eslint-disable-line node/no-unsupported-features/node-builtins
+      await fs.promises.copyFile(src, dest);
       return dest;
     };
 

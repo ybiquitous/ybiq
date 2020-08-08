@@ -168,7 +168,10 @@
       },
       {
         "files": "**/*.test.js",
-        "extends": "plugin:jest/recommended"
+        "extends": "plugin:jest/recommended",
+        "rules": {
+          "node/no-unsupported-features/node-builtins": "off"
+        }
       }
     ]
   },
