@@ -1,4 +1,5 @@
-declare module "ybiq" {
-  type Logger = (msg: string) => any;
-  type CommandParams = { cwd?: string; logger?: Logger };
-}
+export type Logger = (msg: string) => void;
+export type CommandParams = { cwd?: string; logger?: Logger };
+
+export declare function init(params?: CommandParams): Promise<void>;
+type InitCommand = typeof init;
