@@ -28,8 +28,8 @@ Object {
     },
   },
   "lint-staged": Object {
+    "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail",
-    "*": "prettier --write",
     "*.css": "xyz",
     "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
   },
@@ -103,8 +103,8 @@ Object {
     },
   },
   "lint-staged": Object {
+    "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail",
-    "*": "prettier --write",
     "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
   },
   "remarkConfig": Object {
