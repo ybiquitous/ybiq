@@ -49,7 +49,7 @@ Object {
   },
   "scripts": Object {
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
-    "lint": "npm-run-all --print-label --parallel lint:*",
+    "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:js": "eslint .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
@@ -122,7 +122,7 @@ Object {
   },
   "scripts": Object {
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
-    "lint": "npm-run-all --print-label --parallel lint:*",
+    "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:js": "eslint .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
