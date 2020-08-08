@@ -28,7 +28,6 @@ const sandbox = async (callback) => {
 
     return await callback({
       fixture,
-      readOrigFile: (name) => readFile(path.join(cwd, name)),
       readWorkFile: (name) => readFile(path.join(workDir, name)),
       logMessage: () => logMsgs.join(""),
       initArgs: { cwd: workDir, logger },
@@ -69,13 +68,12 @@ test('update "package.json" without fields', () => {
       await ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
       expect(ctx.logMessage()).toMatch(/`package.json` was updated/u);
-
-      const original = await ctx.readOrigFile(file);
-      const copy = await ctx.readWorkFile(file);
-      expect(original).toEqual(copy);
-
-      expect(pkg.files).toContain(file);
+      expect(await ctx.readWorkFile(file)).toMatchSnapshot();
     });
+  });
+
+  test(`contain "${file}" in package.json`, () => {
+    expect(pkg.files).toContain(file);
   });
 });
 

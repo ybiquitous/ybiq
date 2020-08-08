@@ -148,3 +148,121 @@ Object {
   },
 }
 `;
+
+exports[`write ".editorconfig" 1`] = `
+"# EditorConfig is awesome: http://EditorConfig.org
+
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+indent_style = space
+indent_size = 2
+max_line_length = 100
+
+# trailing spaces in markdown indicate word wrap
+[*.md]
+trim_trailing_spaces = false
+"
+`;
+
+exports[`write ".github/workflows/commitlint.yml" 1`] = `
+"name: commitlint
+
+on:
+  push:
+    branches: [\\"main\\"]
+  pull_request:
+    branches: [\\"**\\"]
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: wagoid/commitlint-github-action@v2
+        with:
+          configFile: package.json
+"
+`;
+
+exports[`write ".github/workflows/npm-audit-fix.yml" 1`] = `
+"name: npm audit fix
+
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch:
+    branches: [\\"**\\"]
+
+jobs:
+  npm-audit-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ybiquitous/npm-audit-fix-action@v2
+        with:
+          github_token: \${{ secrets.PERSONAL_ACCESS_TOKEN }}
+"
+`;
+
+exports[`write ".github/workflows/release.yml" 1`] = `
+"name: Release
+
+on:
+  push:
+    tags: [\\"**\\"]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo ::set-output name=VERSION::\${GITHUB_REF/refs\\\\/tags\\\\//}
+        id: get_version
+      - uses: softprops/action-gh-release@v1
+        with:
+          body: |
+            See the [changelog](https://github.com/\${{ github.repository }}/blob/\${{ steps.get_version.outputs.VERSION }}/CHANGELOG.md) for more details.
+        env:
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+"
+`;
+
+exports[`write ".github/workflows/test.yml" 1`] = `
+"name: Test
+
+on:
+  push:
+    branches: [\\"main\\"]
+  pull_request:
+    branches: [\\"**\\"]
+    tags: [\\"**\\"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [\\"10\\", \\"12\\", \\"14\\"]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: \${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run release:dry-run
+"
+`;
+
+exports[`write ".remarkignore" 1`] = `
+"CHANGELOG.md
+"
+`;
