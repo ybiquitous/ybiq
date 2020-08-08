@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        id: get_version
       - uses: softprops/action-gh-release@v1
         with:
           body: |
-            For details, see the [changelog](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/CHANGELOG.md).
+            See the [changelog](https://github.com/${{ github.repository }}/blob/${{ steps.get_version.outputs.VERSION }}/CHANGELOG.md) for more details.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
