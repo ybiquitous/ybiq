@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.3](https://github.com/ybiquitous/ybiq/compare/v11.4.2...v11.4.3) (2020-08-08)
+
+### Bug Fixes
+
+- **init:** remove needless `on.pull_request.tags` from `test.yml` ([#668](https://github.com/ybiquitous/ybiq/issues/668)) ([8b195dc](https://github.com/ybiquitous/ybiq/commit/8b195dc2e61782f00626b6da4c20ec531c2930ca))
+
 ### [11.4.2](https://github.com/ybiquitous/ybiq/compare/v11.4.1...v11.4.2) (2020-08-08)
 
 ### Bug Fixes
