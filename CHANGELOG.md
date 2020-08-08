@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.2](https://github.com/ybiquitous/ybiq/compare/v11.4.1...v11.4.2) (2020-08-08)
+
+### Bug Fixes
+
+- **init:** rename `get_version` to `get_tag` ([#667](https://github.com/ybiquitous/ybiq/issues/667)) ([1eddc1c](https://github.com/ybiquitous/ybiq/commit/1eddc1c4b3d5dbdd92eb6c438c07fedeb7fbdcad))
+
 ### [11.4.1](https://github.com/ybiquitous/ybiq/compare/v11.4.0...v11.4.1) (2020-08-08)
 
 ### Bug Fixes
