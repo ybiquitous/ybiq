@@ -69,7 +69,7 @@
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
-    "prerelease": "git checkout master && git pull origin master && npm ci && npm test",
+    "prerelease": "git switch main && git pull && npm ci && npm test",
     "release": "standard-version",
     "release:dry-run": "standard-version --dry-run"
   },
