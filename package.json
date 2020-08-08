@@ -64,7 +64,7 @@
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
     "lint:types": "tsc --noEmit",
-    "lint": "npm-run-all --print-label --parallel lint:*",
+    "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "prettier": "prettier --ignore-path .gitignore .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
