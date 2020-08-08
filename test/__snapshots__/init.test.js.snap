@@ -23,6 +23,7 @@ Object {
   "husky": Object {
     "hooks": Object {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "post-commit": "npm run release:dry-run",
       "pre-commit": "lint-staged",
     },
   },
@@ -97,6 +98,7 @@ Object {
   "husky": Object {
     "hooks": Object {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "post-commit": "npm run release:dry-run",
       "pre-commit": "lint-staged",
     },
   },
