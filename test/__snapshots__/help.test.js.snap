@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with "--help" option 1`] = `
+"cli.js <command>
+
+Commands:
+  cli.js init  Setup npm project:
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
+
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+"
+`;
+
+exports[`with "-h" option 1`] = `
+"cli.js <command>
+
+Commands:
+  cli.js init  Setup npm project:
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
+
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+"
+`;
+
+exports[`with arguments [] 1`] = `
+"Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js
+cli.js <command>
+
+Commands:
+  cli.js init  Setup npm project:
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
+
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+
+Not enough non-option arguments: got 0, need at least 1
+"
+`;
+
+exports[`with arguments []: stderr 1`] = `
+[Error: Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js
+cli.js <command>
+
+Commands:
+  cli.js init  Setup npm project:
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
+
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+
+Not enough non-option arguments: got 0, need at least 1
+]
+`;
+
+exports[`with arguments [unknown, xyz] 1`] = `
+"Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js unknown xyz
+cli.js <command>
+
+Commands:
+  cli.js init  Setup npm project:
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
+
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+
+Unknown arguments: unknown, xyz
+"
+`;
+
+exports[`with arguments [unknown, xyz]: stderr 1`] = `
+[Error: Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js unknown xyz
+cli.js <command>
+
+Commands:
+  cli.js init  Setup npm project:
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
+
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+
+Unknown arguments: unknown, xyz
+]
+`;
+
+exports[`with arguments [unknown] 1`] = `
+"Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js unknown
+cli.js <command>
+
+Commands:
+  cli.js init  Setup npm project:
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
+
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+
+Unknown argument: unknown
+"
+`;
+
+exports[`with arguments [unknown]: stderr 1`] = `
+[Error: Command failed: /Users/masafumi.koba/git/ybiquitous/ybiq/bin/cli.js unknown
+cli.js <command>
+
+Commands:
+  cli.js init  Setup npm project:
+               - Update \`package.json\`
+               - Create \`.editorconfig\`
+               - Create \`.remarkignore\`
+               - Create \`.github/workflows/*.yml\`
+
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+
+Unknown argument: unknown
+]
+`;
