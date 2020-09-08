@@ -1,9 +1,0 @@
-linter:
-  eslint:
-    npm_install: true
-    ignore-path: ".gitignore"
-    ext: ".js,.jsx,.mjs"
-
-branches:
-  exclude:
-    - /^dependabot/
