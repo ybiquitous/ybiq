@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.4.4](https://github.com/ybiquitous/ybiq/compare/v11.4.3...v11.4.4) (2020-09-15)
+
+### Bug Fixes
+
+- **deps:** bump @commitlint/config-conventional from 9.1.2 to 11.0.0 ([#706](https://github.com/ybiquitous/ybiq/issues/706)) ([c31ce18](https://github.com/ybiquitous/ybiq/commit/c31ce18f299b50d324bc0e824336b7dab262ad6f))
+- **deps:** bump yargs from 15.4.1 to 16.0.3 ([#703](https://github.com/ybiquitous/ybiq/issues/703)) ([38a60fb](https://github.com/ybiquitous/ybiq/commit/38a60fb85f2697e7581ce3fe5e9f245dd65ffa8d))
+
 ### [11.4.3](https://github.com/ybiquitous/ybiq/compare/v11.4.2...v11.4.3) (2020-08-08)
 
 ### Bug Fixes
