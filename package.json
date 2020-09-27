@@ -69,7 +69,8 @@
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
-    "prerelease": "git switch main && git pull && npm ci && npm test",
+    "clean": "git clean -dx --force --exclude=node_modules",
+    "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run lint && npm run clean",
     "release": "standard-version",
     "release:dry-run": "standard-version --dry-run"
   },
