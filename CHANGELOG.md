@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.5.0](https://github.com/ybiquitous/ybiq/compare/v11.4.4...v11.5.0) (2020-09-27)
+
+### Features
+
+- **init:** add `clean` and update `prerelease` ([#726](https://github.com/ybiquitous/ybiq/issues/726)) ([286a622](https://github.com/ybiquitous/ybiq/commit/286a62203bc2044665a27de10d3b6b2833a08d7b))
+
 ### [11.4.4](https://github.com/ybiquitous/ybiq/compare/v11.4.3...v11.4.4) (2020-09-15)
 
 ### Bug Fixes
