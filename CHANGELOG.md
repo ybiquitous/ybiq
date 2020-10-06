@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.6.0](https://github.com/ybiquitous/ybiq/compare/v11.5.1...v11.6.0) (2020-10-06)
+
+### Features
+
+- **init:** npm publish on GitHub Actions ([#738](https://github.com/ybiquitous/ybiq/issues/738)) ([1da2987](https://github.com/ybiquitous/ybiq/commit/1da2987f07f1d24071b95190004e2d2a5d58f539)), closes [#732](https://github.com/ybiquitous/ybiq/issues/732)
+
 ### [11.5.1](https://github.com/ybiquitous/ybiq/compare/v11.5.0...v11.5.1) (2020-10-06)
 
 ### Bug Fixes
