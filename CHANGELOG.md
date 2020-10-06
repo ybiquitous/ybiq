@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.5.1](https://github.com/ybiquitous/ybiq/compare/v11.5.0...v11.5.1) (2020-10-06)
+
+### Bug Fixes
+
+- **actions:** relax `actions/setup-node` version ([#731](https://github.com/ybiquitous/ybiq/issues/731)) ([924342d](https://github.com/ybiquitous/ybiq/commit/924342da721d81e34b3afd74aa14d29457f767c4))
+
 ## [11.5.0](https://github.com/ybiquitous/ybiq/compare/v11.4.4...v11.5.0) (2020-09-27)
 
 ### Features
