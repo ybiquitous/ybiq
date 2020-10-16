@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.6.1](https://github.com/ybiquitous/ybiq/compare/v11.6.0...v11.6.1) (2020-10-16)
+
+### Bug Fixes
+
+- **deps:** bump remark-cli from 8.0.1 to 9.0.0 ([#747](https://github.com/ybiquitous/ybiq/issues/747)) ([5f6d001](https://github.com/ybiquitous/ybiq/commit/5f6d00196ec868e4183535a1e3996426fadb728c))
+- **deps:** bump remark-preset-lint-recommended from 4.0.1 to 5.0.0 ([#746](https://github.com/ybiquitous/ybiq/issues/746)) ([f1e854e](https://github.com/ybiquitous/ybiq/commit/f1e854e63732b13c3ca14d3e0dca640d53dd3d2e))
+
 ## [11.6.0](https://github.com/ybiquitous/ybiq/compare/v11.5.1...v11.6.0) (2020-10-06)
 
 ### Features
