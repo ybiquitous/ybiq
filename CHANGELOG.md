@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.6.2](https://github.com/ybiquitous/ybiq/compare/v11.6.1...v11.6.2) (2021-01-11)
+
+### Bug Fixes
+
+- **deps:** bump actions/setup-node from v2-beta to v2 ([#817](https://github.com/ybiquitous/ybiq/issues/817)) ([61fffc9](https://github.com/ybiquitous/ybiq/commit/61fffc9b4884677a3ba5e024a7ae199515da4b73))
+
 ### [11.6.1](https://github.com/ybiquitous/ybiq/compare/v11.6.0...v11.6.1) (2020-10-16)
 
 ### Bug Fixes
