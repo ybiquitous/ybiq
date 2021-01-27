@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.7.0](https://github.com/ybiquitous/ybiq/compare/v11.6.2...v11.7.0) (2021-01-27)
+
+### Features
+
+- **deps:** require Node.js `>=12.13.0` ([#846](https://github.com/ybiquitous/ybiq/issues/846)) ([227d3ee](https://github.com/ybiquitous/ybiq/commit/227d3ee889eebf4a83ef40e57e612efbdcbaebc3))
+
 ### [11.6.2](https://github.com/ybiquitous/ybiq/compare/v11.6.1...v11.6.2) (2021-01-11)
 
 ### Bug Fixes
