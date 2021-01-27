@@ -1,7 +1,6 @@
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
-const fse = require("fs-extra");
 const pkg = require("../package.json");
 const { init } = require("../lib/init");
 const exec = require("./helpers/exec");
@@ -33,27 +32,23 @@ const sandbox = async (callback) => {
       initArgs: { cwd: workDir, logger },
     });
   } finally {
-    // TODO: Node 12+
-    // await fs.promises.rmdir(workDir, { recursive: true });
-    await fse.remove(workDir);
+    await fs.promises.rmdir(workDir, { recursive: true });
   }
 };
 
-test('update "package.json"', () => {
-  return sandbox(async (ctx) => {
+test('update "package.json"', () =>
+  sandbox(async (ctx) => {
     const src = await ctx.fixture("package-normal.json");
     await init(ctx.initArgs);
     expect(await readJSON(src)).toMatchSnapshot();
-  });
-});
+  }));
 
-test('update "package.json" without fields', () => {
-  return sandbox(async (ctx) => {
+test('update "package.json" without fields', () =>
+  sandbox(async (ctx) => {
     const src = await ctx.fixture("package-empty.json");
     await init(ctx.initArgs);
     expect(await readJSON(src)).toMatchSnapshot();
-  });
-});
+  }));
 
 [
   ".editorconfig",
@@ -63,28 +58,26 @@ test('update "package.json" without fields', () => {
   ".github/workflows/release.yml",
   ".github/workflows/test.yml",
 ].forEach((file) => {
-  test(`write "${file}"`, () => {
-    return sandbox(async (ctx) => {
+  test(`write "${file}"`, () =>
+    sandbox(async (ctx) => {
       await ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
       expect(ctx.logMessage()).toMatch(/`package.json` was updated/u);
       expect(await ctx.readWorkFile(file)).toMatchSnapshot();
-    });
-  });
+    }));
 
   test(`contain "${file}" in package.json`, () => {
     expect(pkg.files).toContain(file);
   });
 });
 
-test("throw error if no package.json", () => {
-  return sandbox(async (ctx) => {
+test("throw error if no package.json", () =>
+  sandbox(async (ctx) => {
     await expect(init(ctx.initArgs)).rejects.toHaveProperty("code", "ENOENT");
-  });
-});
+  }));
 
-test("End-to-End via CLI", () => {
-  return sandbox(async (ctx) => {
+test("End-to-End via CLI", () =>
+  sandbox(async (ctx) => {
     await ctx.fixture("package-normal.json");
     const { stdout, stderr } = await exec(path.resolve("bin/cli.js"), "init", {
       cwd: ctx.initArgs.cwd,
@@ -100,5 +93,4 @@ test("End-to-End via CLI", () => {
       "
     `);
     expect(stderr).toEqual("");
-  });
-});
+  }));
