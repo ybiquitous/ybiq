@@ -20,15 +20,8 @@ Object {
     ],
     "root": true,
   },
-  "husky": Object {
-    "hooks": Object {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "post-commit": "npm run release:dry-run",
-      "pre-commit": "lint-staged",
-    },
-  },
   "lint-staged": Object {
-    "!(*.snap)": "prettier --write",
+    "!(*.snap|.husky/**)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.css": "xyz",
     "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
@@ -57,6 +50,9 @@ Object {
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
     "lint:types": "tsc --noEmit",
+    "postinstall": "husky install",
+    "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable",
     "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run lint && npm run clean",
     "prettier": "prettier --ignore-path .gitignore .",
     "prettier:check": "npm run prettier -- --check",
@@ -96,15 +92,8 @@ Object {
     ],
     "root": true,
   },
-  "husky": Object {
-    "hooks": Object {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "post-commit": "npm run release:dry-run",
-      "pre-commit": "lint-staged",
-    },
-  },
   "lint-staged": Object {
-    "!(*.snap)": "prettier --write",
+    "!(*.snap|.husky/**)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
   },
@@ -132,6 +121,9 @@ Object {
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
     "lint:types": "tsc --noEmit",
+    "postinstall": "husky install",
+    "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable",
     "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run lint && npm run clean",
     "prettier": "prettier --ignore-path .gitignore .",
     "prettier:check": "npm run prettier -- --check",
