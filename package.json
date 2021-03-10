@@ -29,29 +29,29 @@
     "node": ">=12.13.0"
   },
   "dependencies": {
-    "@commitlint/cli": "^12.0.0",
-    "@commitlint/config-conventional": "^12.0.0",
-    "eslint": "^7.11.0",
-    "husky": "^5.1.1",
-    "lint-staged": "^10.4.0",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "eslint": "^7.21.0",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.1.2",
+    "prettier": "^2.2.1",
     "remark-cli": "^9.0.0",
     "remark-lint-no-heading-punctuation": "^2.0.1",
     "remark-preset-lint-recommended": "^5.0.0",
-    "remark-validate-links": "^10.0.2",
-    "standard-version": "^9.0.0",
-    "yargs": "^16.0.3"
+    "remark-validate-links": "^10.0.3",
+    "standard-version": "^9.1.1",
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
-    "@types/node": "^14.11.8",
+    "@types/node": "^14.14.33",
     "@types/yargs": "^16.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.4.0",
-    "@typescript-eslint/parser": "^4.4.0",
-    "eslint-config-ybiquitous": "^12.1.0",
-    "eslint-plugin-jest": "^24.1.0",
-    "jest": "^26.5.3",
-    "typescript": "^4.0.3"
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "eslint-config-ybiquitous": "^12.7.0",
+    "eslint-plugin-jest": "^24.2.0",
+    "jest": "^26.6.3",
+    "typescript": "^4.2.3"
   },
   "scripts": {
     "test": "jest --coverage && npm run test:types",
