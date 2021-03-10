@@ -11,5 +11,8 @@
   },
   "eslintConfig": {
     "extends": []
+  },
+  "husky": {
+    "hooks": {}
   }
 }

@@ -259,6 +259,30 @@ jobs:
 "
 `;
 
+exports[`write ".husky/commit-msg" 1`] = `
+"#!/bin/sh
+. \\"$(dirname \\"$0\\")/_/husky.sh\\"
+
+npx --no-install commitlint --edit \\"$1\\"
+"
+`;
+
+exports[`write ".husky/post-commit" 1`] = `
+"#!/bin/sh
+. \\"$(dirname \\"$0\\")/_/husky.sh\\"
+
+npm run release:dry-run
+"
+`;
+
+exports[`write ".husky/pre-commit" 1`] = `
+"#!/bin/sh
+. \\"$(dirname \\"$0\\")/_/husky.sh\\"
+
+npx --no-install lint-staged
+"
+`;
+
 exports[`write ".remarkignore" 1`] = `
 "CHANGELOG.md
 "
