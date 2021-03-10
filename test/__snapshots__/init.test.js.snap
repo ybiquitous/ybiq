@@ -42,7 +42,7 @@ Object {
     ],
   },
   "scripts": Object {
-    "clean": "git clean -dx --force --exclude=node_modules",
+    "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:js": "eslint .",
@@ -111,7 +111,7 @@ Object {
     ],
   },
   "scripts": Object {
-    "clean": "git clean -dx --force --exclude=node_modules",
+    "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
     "lint:js": "eslint .",
