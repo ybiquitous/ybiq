@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.0.1](https://github.com/ybiquitous/ybiq/compare/v12.0.0...v12.0.1) (2021-03-10)
+
+### Bug Fixes
+
+- **init:** support husky v5 migration ([#895](https://github.com/ybiquitous/ybiq/issues/895)) ([fecfa46](https://github.com/ybiquitous/ybiq/commit/fecfa46dd178579f1572e0258e4fb2370a73e553))
+
 ## [12.0.0](https://github.com/ybiquitous/ybiq/compare/v11.7.0...v12.0.0) (2021-03-10)
 
 ### ⚠ BREAKING CHANGES
