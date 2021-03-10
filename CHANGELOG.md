@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.0.0](https://github.com/ybiquitous/ybiq/compare/v11.7.0...v12.0.0) (2021-03-10)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** husky v5 migration is performed
+
+### Features
+
+- **deps:** bump husky from 4.3.8 to 5.1.1 ([#869](https://github.com/ybiquitous/ybiq/issues/869)) ([b7eb5bb](https://github.com/ybiquitous/ybiq/commit/b7eb5bbd28a3e943f96fbff0a83874edddfca60e))
+
+### Bug Fixes
+
+- **deps:** bump wagoid/commitlint-github-action from v2 to v3 ([#872](https://github.com/ybiquitous/ybiq/issues/872)) ([c0f6741](https://github.com/ybiquitous/ybiq/commit/c0f674106aae36eb646abada17e478d6941c4f11))
+
 ## [11.7.0](https://github.com/ybiquitous/ybiq/compare/v11.6.2...v11.7.0) (2021-01-27)
 
 ### Features
