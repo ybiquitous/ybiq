@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.0.4](https://github.com/ybiquitous/ybiq/compare/v12.0.3...v12.0.4) (2021-04-01)
+
+### Bug Fixes
+
+- **actions:** use the latest npm for releasing ([#913](https://github.com/ybiquitous/ybiq/issues/913)) ([bbf440a](https://github.com/ybiquitous/ybiq/commit/bbf440a57af4f0e2ce843b68d640a3d25fab4aba))
+
 ### [12.0.3](https://github.com/ybiquitous/ybiq/compare/v12.0.2...v12.0.3) (2021-04-01)
 
 ### Bug Fixes
