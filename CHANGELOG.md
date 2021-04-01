@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.0.3](https://github.com/ybiquitous/ybiq/compare/v12.0.2...v12.0.3) (2021-04-01)
+
+### Bug Fixes
+
+- **deps:** bump husky from 5.2.0 to 6.0.0 ([#909](https://github.com/ybiquitous/ybiq/issues/909)) ([45b1047](https://github.com/ybiquitous/ybiq/commit/45b104715c5a496681609488d201005de42feafc))
+
 ### [12.0.2](https://github.com/ybiquitous/ybiq/compare/v12.0.1...v12.0.2) (2021-03-10)
 
 ### Bug Fixes
