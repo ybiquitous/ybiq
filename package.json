@@ -144,6 +144,7 @@
     "ignorePatterns": [
       "coverage"
     ],
+    "reportUnusedDisableDirectives": true,
     "extends": [
       "ybiquitous/node"
     ],
