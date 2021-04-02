@@ -59,7 +59,7 @@ Object {
     "release": "standard-version",
     "release:dry-run": "standard-version --dry-run",
     "test": "abc",
-    "test:coverage": "echo \\"unsupported.\\" && exit 1",
+    "test:coverage": "abc --coverage",
     "test:watch": "abc --watch",
   },
   "standard-version": Object {
@@ -129,7 +129,7 @@ Object {
     "release": "standard-version",
     "release:dry-run": "standard-version --dry-run",
     "test": "test",
-    "test:coverage": "echo \\"unsupported.\\" && exit 1",
+    "test:coverage": "test --coverage",
     "test:watch": "test --watch",
   },
   "standard-version": Object {
