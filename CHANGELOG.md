@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.1.0](https://github.com/ybiquitous/ybiq/compare/v12.0.4...v12.1.0) (2021-04-02)
+
+### Features
+
+- **eslint:** enable reportUnusedDisableDirectives ([#914](https://github.com/ybiquitous/ybiq/issues/914)) ([f40e189](https://github.com/ybiquitous/ybiq/commit/f40e1892734e712751be72db18f48c389860965d))
+- **init:** improve test:coverage script ([#915](https://github.com/ybiquitous/ybiq/issues/915)) ([cdfdad9](https://github.com/ybiquitous/ybiq/commit/cdfdad96a9073bb1a91a3dc2d312b8fba65b72da))
+
 ### [12.0.4](https://github.com/ybiquitous/ybiq/compare/v12.0.3...v12.0.4) (2021-04-01)
 
 ### Bug Fixes
