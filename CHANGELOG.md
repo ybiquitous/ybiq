@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.2.0](https://github.com/ybiquitous/ybiq/compare/v12.1.0...v12.2.0) (2021-04-02)
+
+### Features
+
+- **remark:** use remark-preset-ybiquitous package ([#920](https://github.com/ybiquitous/ybiq/issues/920)) ([d509e5b](https://github.com/ybiquitous/ybiq/commit/d509e5bb350e10098cccc92c0323f58e877b5c48))
+
 ## [12.1.0](https://github.com/ybiquitous/ybiq/compare/v12.0.4...v12.1.0) (2021-04-02)
 
 ### Features
