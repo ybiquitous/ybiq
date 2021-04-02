@@ -18,6 +18,7 @@ Object {
     "extends": Array [
       "ybiquitous",
     ],
+    "reportUnusedDisableDirectives": true,
     "root": true,
   },
   "lint-staged": Object {
@@ -88,6 +89,7 @@ Object {
     "extends": Array [
       "ybiquitous",
     ],
+    "reportUnusedDisableDirectives": true,
     "root": true,
   },
   "lint-staged": Object {
