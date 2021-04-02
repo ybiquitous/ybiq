@@ -8,14 +8,6 @@
 
 Useful command-line tools for Node.js project.
 
-## Table of Contents
-
-1.  [Install](#install)
-2.  [Usage](#usage)
-    1.  [CLI](#cli)
-    2.  [API](#api)
-3.  [LICENSE](#license)
-
 ## Install
 
 ```sh
