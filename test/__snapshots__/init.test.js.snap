@@ -29,17 +29,7 @@ Object {
   },
   "remarkConfig": Object {
     "plugins": Array [
-      "preset-lint-recommended",
-      "lint-no-heading-punctuation",
-      Array [
-        "lint-list-item-bullet-indent",
-        false,
-      ],
-      Array [
-        "lint-list-item-indent",
-        false,
-      ],
-      "validate-links",
+      "remark-preset-ybiquitous",
     ],
   },
   "scripts": Object {
@@ -99,17 +89,7 @@ Object {
   },
   "remarkConfig": Object {
     "plugins": Array [
-      "preset-lint-recommended",
-      "lint-no-heading-punctuation",
-      Array [
-        "lint-list-item-bullet-indent",
-        false,
-      ],
-      Array [
-        "lint-list-item-indent",
-        false,
-      ],
-      "validate-links",
+      "remark-preset-ybiquitous",
     ],
   },
   "scripts": Object {
