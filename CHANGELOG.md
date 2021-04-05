@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.2.2](https://github.com/ybiquitous/ybiq/compare/v12.2.1...v12.2.2) (2021-04-05)
+
+### Bug Fixes
+
+- **deps:** bump ybiquitous/npm-audit-fix-action from v2 to v3 ([#925](https://github.com/ybiquitous/ybiq/issues/925)) ([3101c72](https://github.com/ybiquitous/ybiq/commit/3101c72e2bc3af8ccdbe155680be4c19f8583e97))
+
 ### [12.2.1](https://github.com/ybiquitous/ybiq/compare/v12.2.0...v12.2.1) (2021-04-05)
 
 ### Bug Fixes
