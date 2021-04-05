@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.2.1](https://github.com/ybiquitous/ybiq/compare/v12.2.0...v12.2.1) (2021-04-05)
+
+### Bug Fixes
+
+- **actions:** replace `softprops/action-gh-release` with `gh release` ([#922](https://github.com/ybiquitous/ybiq/issues/922)) ([d81698f](https://github.com/ybiquitous/ybiq/commit/d81698f43c3d1bc2ac2b3e225c73ea1ad1f905e0))
+
 ## [12.2.0](https://github.com/ybiquitous/ybiq/compare/v12.1.0...v12.2.0) (2021-04-02)
 
 ### Features
