@@ -129,7 +129,8 @@
   "eslintConfig": {
     "root": true,
     "ignorePatterns": [
-      "coverage"
+      "coverage",
+      "dist"
     ],
     "reportUnusedDisableDirectives": true,
     "extends": [

@@ -18,6 +18,10 @@ Object {
     "extends": Array [
       "ybiquitous",
     ],
+    "ignorePatterns": Array [
+      "coverage",
+      "dist",
+    ],
     "reportUnusedDisableDirectives": true,
     "root": true,
   },
@@ -78,6 +82,10 @@ Object {
   "eslintConfig": Object {
     "extends": Array [
       "ybiquitous",
+    ],
+    "ignorePatterns": Array [
+      "coverage",
+      "dist",
     ],
     "reportUnusedDisableDirectives": true,
     "root": true,
