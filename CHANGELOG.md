@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.3.0](https://github.com/ybiquitous/ybiq/compare/v12.2.2...v12.3.0) (2021-04-16)
+
+### Features
+
+- **eslint:** add `ignorePatterns` ([#933](https://github.com/ybiquitous/ybiq/issues/933)) ([14f79f7](https://github.com/ybiquitous/ybiq/commit/14f79f77846fb01ec966e26c9e784b0baf822b65))
+
+### Bug Fixes
+
+- **actions:** wrap `cron` with quotes for clarity ([#932](https://github.com/ybiquitous/ybiq/issues/932)) ([1ee02f5](https://github.com/ybiquitous/ybiq/commit/1ee02f543f6f98ff6842997fc54ed0440a61f57c))
+
 ### [12.2.2](https://github.com/ybiquitous/ybiq/compare/v12.2.1...v12.2.2) (2021-04-05)
 
 ### Bug Fixes
