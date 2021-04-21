@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.4.0](https://github.com/ybiquitous/ybiq/compare/v12.3.0...v12.4.0) (2021-04-21)
+
+### Features
+
+- **actions:** support Node.js 16 ([#935](https://github.com/ybiquitous/ybiq/issues/935)) ([914dc9e](https://github.com/ybiquitous/ybiq/commit/914dc9e588f3abc852b06926c8d8faa012ed7935))
+
 ## [12.3.0](https://github.com/ybiquitous/ybiq/compare/v12.2.2...v12.3.0) (2021-04-16)
 
 ### Features
