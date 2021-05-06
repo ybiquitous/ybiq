@@ -1,5 +1,5 @@
-const pkg = require("../package.json");
-const exec = require("./helpers/exec");
+import { exec } from "./helpers/exec.js";
+import { pkg } from "./helpers/pkg.js";
 
 [[], ["unknown"], ["unknown", "xyz"]].forEach((args) => {
   test(`with arguments [${args.join(", ")}]`, async () => {

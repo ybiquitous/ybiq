@@ -1,5 +1,5 @@
-const pkg = require("../package.json");
-const exec = require("./helpers/exec");
+import { exec } from "./helpers/exec.js";
+import { pkg } from "./helpers/pkg.js";
 
 ["--version", "-v"].forEach((option) => {
   test(`with "${option}" option`, async () => {

@@ -1,6 +1,9 @@
-const cp = require("child_process");
+import { execFile as originalExecFile } from "child_process";
+import { promisify } from "util";
 
-module.exports = function exec(commandFile, ...args) {
+const execFile = promisify(originalExecFile);
+
+export function exec(commandFile, ...args) {
   const options = {
     env: { ...process.env, LC_ALL: "C" },
   };
@@ -11,17 +14,5 @@ module.exports = function exec(commandFile, ...args) {
     options.cwd = lastArg.cwd;
     newArgs = args.slice(0, lastArgIndex);
   }
-  return new Promise((resolve, reject) => {
-    cp.execFile(commandFile, newArgs, options, (error, stdout, stderr) => {
-      if (error) {
-        /* eslint-disable no-param-reassign */
-        error.stdout = stdout;
-        error.stderr = stderr;
-        /* eslint-enable no-param-reassign */
-        reject(error);
-      } else {
-        resolve({ stdout, stderr });
-      }
-    });
-  });
-};
+  return execFile(commandFile, newArgs, options);
+}

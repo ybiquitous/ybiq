@@ -1,7 +1,6 @@
-const main = require("..");
+import { init } from "..";
 
 test("init", () => {
-  const { init } = main;
   expect(typeof init).toEqual("function");
   expect(init.name).toEqual("init");
 });

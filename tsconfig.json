@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "module": "ES2020",
+    "lib": ["ES2020"],
     "checkJs": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
@@ -8,9 +10,8 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "skipLibCheck": true
   },
   "include": ["lib/**/*", "types/**/*"]
 }
