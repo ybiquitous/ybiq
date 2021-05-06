@@ -1,53 +1,52 @@
-const path = require("path");
-const os = require("os");
-const fs = require("fs");
-const pkg = require("../package.json");
-const { init } = require("../lib/init");
-const exec = require("./helpers/exec");
+import { copyFileSync, mkdirSync, readFileSync, rmdirSync } from "fs";
+import { tmpdir } from "os";
+import { join, resolve } from "path"; // eslint-disable-line sort-imports
+import { init } from "../lib/init.js";
+import { exec } from "./helpers/exec.js"; // eslint-disable-line sort-imports
+import { pkg } from "./helpers/pkg.js";
 
-const readFile = (file) => fs.promises.readFile(file, "utf8");
-const readJSON = (file) => fs.promises.readFile(file, "utf8").then(JSON.parse);
+const readJSON = (file) => JSON.parse(readFileSync(file, "utf8"));
 
 const sandbox = async (callback) => {
-  const workDir = path.join(os.tmpdir(), `${pkg.name}${process.hrtime.bigint()}`);
-  await fs.promises.mkdir(workDir);
+  const workDir = join(tmpdir(), `${pkg.name}${process.hrtime.bigint()}`);
+  mkdirSync(workDir);
 
   const logMsgs = [];
   const logger = (msg) => logMsgs.push(msg);
 
   try {
     const cwd = process.cwd();
-    const fixturePath = (name) => path.join(cwd, "test", "fixtures", name);
-    const fixture = async (name) => {
+    const fixturePath = (name) => join(cwd, "test", "fixtures", name);
+    const fixture = (name) => {
       const src = fixturePath(name);
-      const dest = path.join(workDir, "package.json");
-      await fs.promises.copyFile(src, dest);
+      const dest = join(workDir, "package.json");
+      copyFileSync(src, dest);
       return dest;
     };
 
     return await callback({
       fixture,
-      readWorkFile: (name) => readFile(path.join(workDir, name)),
+      readWorkFile: (name) => readFileSync(join(workDir, name), "utf8"),
       logMessage: () => logMsgs.join(""),
       initArgs: { cwd: workDir, logger },
     });
   } finally {
-    await fs.promises.rmdir(workDir, { recursive: true });
+    rmdirSync(workDir, { recursive: true });
   }
 };
 
 test('update "package.json"', () =>
   sandbox(async (ctx) => {
-    const src = await ctx.fixture("package-normal.json");
+    const src = ctx.fixture("package-normal.json");
     await init(ctx.initArgs);
-    expect(await readJSON(src)).toMatchSnapshot();
+    expect(readJSON(src)).toMatchSnapshot();
   }));
 
 test('update "package.json" without fields', () =>
   sandbox(async (ctx) => {
-    const src = await ctx.fixture("package-empty.json");
+    const src = ctx.fixture("package-empty.json");
     await init(ctx.initArgs);
-    expect(await readJSON(src)).toMatchSnapshot();
+    expect(readJSON(src)).toMatchSnapshot();
   }));
 
 [
@@ -63,10 +62,10 @@ test('update "package.json" without fields', () =>
 ].forEach((file) => {
   test(`write "${file}"`, () =>
     sandbox(async (ctx) => {
-      await ctx.fixture("package-normal.json");
+      ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
-      expect(ctx.logMessage()).toMatch(/`package.json` was updated/u);
-      expect(await ctx.readWorkFile(file)).toMatchSnapshot();
+      expect(ctx.logMessage()).toMatch("[32m'package.json'[39m was updated");
+      expect(ctx.readWorkFile(file)).toMatchSnapshot();
     }));
 
   test(`contain "${file}" in package.json`, () => {
@@ -81,21 +80,21 @@ test("throw error if no package.json", () =>
 
 test("End-to-End via CLI", () =>
   sandbox(async (ctx) => {
-    await ctx.fixture("package-normal.json");
-    const { stdout, stderr } = await exec(path.resolve(pkg.bin), "init", {
+    ctx.fixture("package-normal.json");
+    const { stdout, stderr } = await exec(resolve(pkg.bin), "init", {
       cwd: ctx.initArgs.cwd,
     });
     expect(stdout).toMatchInlineSnapshot(`
-      "=> \`package.json\` was updated
-      => \`.editorconfig\` was updated
-      => \`.remarkignore\` was updated
-      => \`.github/workflows/commitlint.yml\` was updated
-      => \`.github/workflows/npm-audit-fix.yml\` was updated
-      => \`.github/workflows/release.yml\` was updated
-      => \`.github/workflows/test.yml\` was updated
-      => \`.husky/commit-msg\` was updated
-      => \`.husky/post-commit\` was updated
-      => \`.husky/pre-commit\` was updated
+      "=> [32m'package.json'[39m was updated
+      => [32m'.editorconfig'[39m was updated
+      => [32m'.remarkignore'[39m was updated
+      => [32m'.github/workflows/commitlint.yml'[39m was updated
+      => [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
+      => [32m'.github/workflows/release.yml'[39m was updated
+      => [32m'.github/workflows/test.yml'[39m was updated
+      => [32m'.husky/commit-msg'[39m was updated
+      => [32m'.husky/post-commit'[39m was updated
+      => [32m'.husky/pre-commit'[39m was updated
       "
     `);
     expect(stderr).toEqual("");

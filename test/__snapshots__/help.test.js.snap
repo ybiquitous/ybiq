@@ -4,11 +4,7 @@ exports[`with "--help" option 1`] = `
 "cli.js <command>
 
 Commands:
-  cli.js init  Setup npm project:
-               - Update \`package.json\`
-               - Create \`.editorconfig\`
-               - Create \`.remarkignore\`
-               - Create \`.github/workflows/*.yml\`
+  cli.js init  Setup npm project, e.g. update 'package.json'
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -20,11 +16,7 @@ exports[`with "-h" option 1`] = `
 "cli.js <command>
 
 Commands:
-  cli.js init  Setup npm project:
-               - Update \`package.json\`
-               - Create \`.editorconfig\`
-               - Create \`.remarkignore\`
-               - Create \`.github/workflows/*.yml\`
+  cli.js init  Setup npm project, e.g. update 'package.json'
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -37,11 +29,7 @@ exports[`with arguments [] 1`] = `
 cli.js <command>
 
 Commands:
-  cli.js init  Setup npm project:
-               - Update \`package.json\`
-               - Create \`.editorconfig\`
-               - Create \`.remarkignore\`
-               - Create \`.github/workflows/*.yml\`
+  cli.js init  Setup npm project, e.g. update 'package.json'
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -56,11 +44,7 @@ exports[`with arguments []: stderr 1`] = `
 cli.js <command>
 
 Commands:
-  cli.js init  Setup npm project:
-               - Update \`package.json\`
-               - Create \`.editorconfig\`
-               - Create \`.remarkignore\`
-               - Create \`.github/workflows/*.yml\`
+  cli.js init  Setup npm project, e.g. update 'package.json'
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -75,11 +59,7 @@ exports[`with arguments [unknown, xyz] 1`] = `
 cli.js <command>
 
 Commands:
-  cli.js init  Setup npm project:
-               - Update \`package.json\`
-               - Create \`.editorconfig\`
-               - Create \`.remarkignore\`
-               - Create \`.github/workflows/*.yml\`
+  cli.js init  Setup npm project, e.g. update 'package.json'
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -94,11 +74,7 @@ exports[`with arguments [unknown, xyz]: stderr 1`] = `
 cli.js <command>
 
 Commands:
-  cli.js init  Setup npm project:
-               - Update \`package.json\`
-               - Create \`.editorconfig\`
-               - Create \`.remarkignore\`
-               - Create \`.github/workflows/*.yml\`
+  cli.js init  Setup npm project, e.g. update 'package.json'
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -113,11 +89,7 @@ exports[`with arguments [unknown] 1`] = `
 cli.js <command>
 
 Commands:
-  cli.js init  Setup npm project:
-               - Update \`package.json\`
-               - Create \`.editorconfig\`
-               - Create \`.remarkignore\`
-               - Create \`.github/workflows/*.yml\`
+  cli.js init  Setup npm project, e.g. update 'package.json'
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -132,11 +104,7 @@ exports[`with arguments [unknown]: stderr 1`] = `
 cli.js <command>
 
 Commands:
-  cli.js init  Setup npm project:
-               - Update \`package.json\`
-               - Create \`.editorconfig\`
-               - Create \`.remarkignore\`
-               - Create \`.github/workflows/*.yml\`
+  cli.js init  Setup npm project, e.g. update 'package.json'
 
 Options:
   -h, --help     Show help                                             [boolean]
