@@ -2,7 +2,7 @@
   "name": "ybiq",
   "version": "12.4.0",
   "description": "Useful command-line tools for Node.js project",
-  "author": "Masafumi Koba <ybiquitous@gmail.com>",
+  "author": "Masafumi Koba",
   "license": "MIT",
   "repository": "ybiquitous/ybiq",
   "keywords": [
