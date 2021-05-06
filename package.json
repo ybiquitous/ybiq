@@ -12,10 +12,9 @@
     "tool"
   ],
   "main": "lib/index.js",
-  "bin": "bin/cli.js",
+  "bin": "lib/cli.js",
   "types": "types/ybiq.d.ts",
   "files": [
-    "bin",
     "lib",
     "types",
     ".editorconfig",
