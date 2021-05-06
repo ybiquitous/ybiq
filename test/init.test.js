@@ -82,7 +82,7 @@ test("throw error if no package.json", () =>
 test("End-to-End via CLI", () =>
   sandbox(async (ctx) => {
     await ctx.fixture("package-normal.json");
-    const { stdout, stderr } = await exec(path.resolve("bin/cli.js"), "init", {
+    const { stdout, stderr } = await exec(path.resolve(pkg.bin), "init", {
       cwd: ctx.initArgs.cwd,
     });
     expect(stdout).toMatchInlineSnapshot(`
