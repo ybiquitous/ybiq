@@ -24,7 +24,7 @@ ybiq --help
 
 #### `ybiq init`
 
-Set up an npm project.
+The `ybiq init` command sets up an npm project.
 
 ### API
 
