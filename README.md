@@ -28,6 +28,8 @@ The `ybiq init` command sets up an npm project.
 
 ### API
 
+You also can use this package programmatically.
+
 <!-- lint disable code-block-syntax -->
 
 ```js
