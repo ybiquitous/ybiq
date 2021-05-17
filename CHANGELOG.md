@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.0.0](https://github.com/ybiquitous/ybiq/compare/v12.4.0...v13.0.0) (2021-05-17)
+
+### ⚠ BREAKING CHANGES
+
+- Node.js 12.20+ is required and CommonJS is unsupported
+
+### Features
+
+- remove `bin/` directory ([#948](https://github.com/ybiquitous/ybiq/issues/948)) ([07c542d](https://github.com/ybiquitous/ybiq/commit/07c542d78f022d8bfc0dd351291dad325ab88e58))
+- support only ESM ([#950](https://github.com/ybiquitous/ybiq/issues/950)) ([f7271d6](https://github.com/ybiquitous/ybiq/commit/f7271d64eeb607d18331a0b061dd0ed8790a6f3c))
+
+### Bug Fixes
+
+- **actions:** remove invalid `workflow_dispatch.branches` ([#943](https://github.com/ybiquitous/ybiq/issues/943)) ([1dbc244](https://github.com/ybiquitous/ybiq/commit/1dbc244ac3f7cb8c073bd53764430b743dadbd96))
+- **deps:** bump all outdated packages ([#960](https://github.com/ybiquitous/ybiq/issues/960)) ([0c1b1a6](https://github.com/ybiquitous/ybiq/commit/0c1b1a69e4d365186a5f7f2fbdb0989db9d0926a))
+- **deps:** bump lint-staged from 10.5.4 to 11.0.0 ([#954](https://github.com/ybiquitous/ybiq/issues/954)) ([472f839](https://github.com/ybiquitous/ybiq/commit/472f83914f47eb74760057ccbc222b48c0ab01b9))
+- **deps:** bump yargs from 16.2.0 to 17.0.1 ([#941](https://github.com/ybiquitous/ybiq/issues/941)) ([8302d7b](https://github.com/ybiquitous/ybiq/commit/8302d7baeef0a43df174b70558540b7eee8e907b))
+
 ## [12.4.0](https://github.com/ybiquitous/ybiq/compare/v12.3.0...v12.4.0) (2021-04-21)
 
 ### Features
