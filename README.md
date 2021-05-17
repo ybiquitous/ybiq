@@ -16,7 +16,7 @@ npm install --save-dev ybiq
 
 ### CLI
 
-For details, please show the help.
+Show the help for details:
 
 ```sh
 ybiq --help
@@ -24,7 +24,7 @@ ybiq --help
 
 #### `ybiq init`
 
-Setup npm project.
+Set up an npm project.
 
 ### API
 
@@ -41,7 +41,3 @@ init({
 ```
 
 <!-- lint enable code-block-syntax -->
-
-## License
-
-[MIT](LICENSE) © Masafumi Koba
