@@ -37,15 +37,19 @@ Setup npm project.
 
 ### API
 
-```js
-const ybiq = require("ybiq");
+<!-- lint disable code-block-syntax -->
 
-ybiq.init({
+```js
+import { init } from "ybiq";
+
+init({
   // Default options
   // cwd: process.cwd(),
   // logger: msg => process.stdout.write(msg),
 });
 ```
+
+<!-- lint enable code-block-syntax -->
 
 ## License
 
