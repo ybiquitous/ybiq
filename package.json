@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@types/node": "^15.3.0",
-    "@types/yargs": "^16.0.1",
+    "@types/yargs": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "eslint-config-ybiquitous": "^13.2.0",
     "eslint-plugin-jest": "^24.3.6",
