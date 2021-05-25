@@ -1,8 +1,8 @@
 import { copyFileSync, mkdirSync, readFileSync, rmdirSync } from "fs";
 import { tmpdir } from "os";
-import { join, resolve } from "path"; // eslint-disable-line sort-imports
+import { join, resolve } from "path";
 import { init } from "../lib/init.js";
-import { exec } from "./helpers/exec.js"; // eslint-disable-line sort-imports
+import { exec } from "./helpers/exec.js";
 import { pkg } from "./helpers/pkg.js";
 
 const readJSON = (file) => JSON.parse(readFileSync(file, "utf8"));
