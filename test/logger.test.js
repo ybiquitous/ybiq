@@ -1,6 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies, node/no-extraneous-import
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { jest } from "@jest/globals";
-import { defaultLogger } from "../lib/logger.js"; // eslint-disable-line sort-imports
+import { defaultLogger } from "../lib/logger.js";
 
 test("defaultLogger", () => {
   const spy = jest.spyOn(process.stdout, "write");
