@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.1.0](https://github.com/ybiquitous/ybiq/compare/v13.0.0...v13.1.0) (2021-06-01)
+
+### Features
+
+- **eslint:** ignore `tmp/` by default ([#973](https://github.com/ybiquitous/ybiq/issues/973)) ([f5849e2](https://github.com/ybiquitous/ybiq/commit/f5849e2810bc193e3798b7827394df9e607a026a))
+
 ## [13.0.0](https://github.com/ybiquitous/ybiq/compare/v12.4.0...v13.0.0) (2021-05-17)
 
 ### ⚠ BREAKING CHANGES
