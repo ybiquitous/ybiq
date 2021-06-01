@@ -21,6 +21,7 @@ Object {
     "ignorePatterns": Array [
       "coverage",
       "dist",
+      "tmp",
     ],
     "reportUnusedDisableDirectives": true,
     "root": true,
@@ -86,6 +87,7 @@ Object {
     "ignorePatterns": Array [
       "coverage",
       "dist",
+      "tmp",
     ],
     "reportUnusedDisableDirectives": true,
     "root": true,
