@@ -130,7 +130,8 @@
     "root": true,
     "ignorePatterns": [
       "coverage",
-      "dist"
+      "dist",
+      "tmp"
     ],
     "reportUnusedDisableDirectives": true,
     "extends": [
