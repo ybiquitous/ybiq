@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.2.0](https://github.com/ybiquitous/ybiq/compare/v13.1.0...v13.2.0) (2021-07-02)
+
+### Features
+
+- **init:** add `lint:types:watch` script ([#990](https://github.com/ybiquitous/ybiq/issues/990)) ([4145bb6](https://github.com/ybiquitous/ybiq/commit/4145bb632e44b35d7519f96ef6a1e2010f56caf8))
+
 ## [13.1.0](https://github.com/ybiquitous/ybiq/compare/v13.0.0...v13.1.0) (2021-06-01)
 
 ### Features
