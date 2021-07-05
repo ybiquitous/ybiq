@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync, readFileSync, rmdirSync } from "fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, rmdirSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import { join, resolve } from "path";
 import { init } from "../lib/init.js";
@@ -26,6 +26,7 @@ const sandbox = async (callback) => {
 
     return await callback({
       fixture,
+      workDir,
       readWorkFile: (name) => readFileSync(join(workDir, name), "utf8"),
       logMessage: () => logMsgs.join(""),
       initArgs: { cwd: workDir, logger },
@@ -98,4 +99,15 @@ test("End-to-End via CLI", () =>
       "
     `);
     expect(stderr).toEqual("");
+  }));
+
+test("Remove `.husky/.gitignore` if exists", () =>
+  sandbox(async (ctx) => {
+    mkdirSync(join(ctx.workDir, ".husky"));
+    writeFileSync(join(ctx.workDir, ".husky", ".gitignore"), "_");
+    writeFileSync(join(ctx.workDir, "package.json"), "{}");
+
+    await init(ctx.initArgs);
+
+    expect(existsSync(join(ctx.workDir, ".husky", ".gitignore"))).toEqual(false);
   }));
