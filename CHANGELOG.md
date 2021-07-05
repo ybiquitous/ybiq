@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.2.0](https://github.com/ybiquitous/ybiq/compare/v13.1.0...v13.2.0) (2021-07-05)
+
+### Features
+
+- **deps:** bump husky from 6.0.0 to 7.0.0 ([#992](https://github.com/ybiquitous/ybiq/issues/992)) ([3076a00](https://github.com/ybiquitous/ybiq/commit/3076a00f8e9ae9984139a142180b33d3e62e57f4))
+- **init:** add `lint:types:watch` script ([#990](https://github.com/ybiquitous/ybiq/issues/990)) ([4145bb6](https://github.com/ybiquitous/ybiq/commit/4145bb632e44b35d7519f96ef6a1e2010f56caf8))
+
 ## [13.2.0](https://github.com/ybiquitous/ybiq/compare/v13.1.0...v13.2.0) (2021-07-02)
 
 ### Features
