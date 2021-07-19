@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [13.2.1](https://github.com/ybiquitous/ybiq/compare/v13.2.0...v13.2.1) (2021-07-19)
+
+### Bug Fixes
+
+- **deps:** bump wagoid/commitlint-github-action from 3 to 4 ([#1006](https://github.com/ybiquitous/ybiq/issues/1006)) ([739e5be](https://github.com/ybiquitous/ybiq/commit/739e5be8695d531d44b3f21c6ccb8d65c8790e4f))
+
 ## [13.2.0](https://github.com/ybiquitous/ybiq/compare/v13.1.0...v13.2.0) (2021-07-05)
 
 ### Features
