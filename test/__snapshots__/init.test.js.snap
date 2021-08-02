@@ -243,6 +243,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: \${{ matrix.node-version }}
+          cache: \\"npm\\"
       - run: npm --global install npm@latest
       - run: npm ci
       - run: npm run lint
