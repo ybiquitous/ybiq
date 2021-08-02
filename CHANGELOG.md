@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.4.0](https://github.com/ybiquitous/ybiq/compare/v13.3.0...v13.4.0) (2021-08-02)
+
+### Features
+
+- **eslint:** use cache ([#1023](https://github.com/ybiquitous/ybiq/issues/1023)) ([60a83d3](https://github.com/ybiquitous/ybiq/commit/60a83d3c1f8d83a8cc742b06b0128b9919d6344c))
+
 ## [13.3.0](https://github.com/ybiquitous/ybiq/compare/v13.2.1...v13.3.0) (2021-08-02)
 
 ### Features
