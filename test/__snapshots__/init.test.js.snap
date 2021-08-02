@@ -30,7 +30,7 @@ Object {
     "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.css": "xyz",
-    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
+    "*.{js,jsx,mjs,ts,tsx}": "eslint --cache --fix",
   },
   "remarkConfig": Object {
     "plugins": Array [
@@ -41,7 +41,7 @@ Object {
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
-    "lint:js": "eslint .",
+    "lint:js": "eslint --cache .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
@@ -96,7 +96,7 @@ Object {
   "lint-staged": Object {
     "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail",
-    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
+    "*.{js,jsx,mjs,ts,tsx}": "eslint --cache --fix",
   },
   "remarkConfig": Object {
     "plugins": Array [
@@ -107,7 +107,7 @@ Object {
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --parallel lint:*:fix prettier:write",
     "lint": "npm-run-all --print-label --parallel lint:* prettier:check",
-    "lint:js": "eslint .",
+    "lint:js": "eslint --cache .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
