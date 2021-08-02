@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.3.0](https://github.com/ybiquitous/ybiq/compare/v13.2.1...v13.3.0) (2021-08-02)
+
+### Features
+
+- **actions:** use cache for `actions/setup-node` ([#1017](https://github.com/ybiquitous/ybiq/issues/1017)) ([fb4ff11](https://github.com/ybiquitous/ybiq/commit/fb4ff115104e565e7cfa724ea3d39760c07f851f))
+
+### Bug Fixes
+
+- **deps:** bump @commitlint/cli from 12.1.4 to 13.1.0 ([#1016](https://github.com/ybiquitous/ybiq/issues/1016)) ([eb740d6](https://github.com/ybiquitous/ybiq/commit/eb740d6effe8e1418163ce7f2411c0f5f181d294))
+- **deps:** bump @commitlint/config-conventional from 12.1.4 to 13.1.0 ([#1013](https://github.com/ybiquitous/ybiq/issues/1013)) ([cefd1ee](https://github.com/ybiquitous/ybiq/commit/cefd1eeda480f8897a23cfab6a8a345b0f9654de))
+
 ### [13.2.1](https://github.com/ybiquitous/ybiq/compare/v13.2.0...v13.2.1) (2021-07-19)
 
 ### Bug Fixes
