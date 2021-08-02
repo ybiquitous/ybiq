@@ -86,18 +86,19 @@ test("End-to-End via CLI", () =>
       cwd: ctx.initArgs.cwd,
     });
     expect(stdout).toMatchInlineSnapshot(`
-      "=> [32m'package.json'[39m was updated
-      => [32m'.editorconfig'[39m was updated
-      => [32m'.remarkignore'[39m was updated
-      => [32m'.github/workflows/commitlint.yml'[39m was updated
-      => [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
-      => [32m'.github/workflows/release.yml'[39m was updated
-      => [32m'.github/workflows/test.yml'[39m was updated
-      => [32m'.husky/commit-msg'[39m was updated
-      => [32m'.husky/post-commit'[39m was updated
-      => [32m'.husky/pre-commit'[39m was updated
-      "
-    `);
+"=> [32m'package.json'[39m was updated
+=> [32m'.editorconfig'[39m was updated
+=> [32m'.remarkignore'[39m was updated
+=> [32m'.github/workflows/commitlint.yml'[39m was updated
+=> [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
+=> [32m'.github/workflows/npm-diff.yml'[39m was updated
+=> [32m'.github/workflows/release.yml'[39m was updated
+=> [32m'.github/workflows/test.yml'[39m was updated
+=> [32m'.husky/commit-msg'[39m was updated
+=> [32m'.husky/post-commit'[39m was updated
+=> [32m'.husky/pre-commit'[39m was updated
+"
+`);
     expect(stderr).toEqual("");
   }));
 
