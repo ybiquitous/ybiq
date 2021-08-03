@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [13.5.1](https://github.com/ybiquitous/ybiq/compare/v13.5.0...v13.5.1) (2021-08-03)
+
+### Bug Fixes
+
+- **actions:** update `files` for `npm-diff.yml` ([#1025](https://github.com/ybiquitous/ybiq/issues/1025)) ([a84a348](https://github.com/ybiquitous/ybiq/commit/a84a348f0610bb4494090de66b2ee427faca7e0e)), closes [#1024](https://github.com/ybiquitous/ybiq/issues/1024)
+
 ## [13.5.0](https://github.com/ybiquitous/ybiq/compare/v13.4.0...v13.5.0) (2021-08-03)
 
 ### Features
