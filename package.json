@@ -59,7 +59,7 @@
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
     "test:types": "tsc --project test/tsconfig.test.json --noEmit",
-    "lint:js": "eslint --cache .",
+    "lint:js": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
