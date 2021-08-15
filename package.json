@@ -12,9 +12,9 @@
     "tool"
   ],
   "type": "module",
-  "main": "lib/index.js",
-  "bin": "lib/cli.js",
-  "types": "types/ybiq.d.ts",
+  "exports": "./lib/index.js",
+  "bin": "./lib/cli.js",
+  "types": "./types/ybiq.d.ts",
   "files": [
     "lib",
     "types",
