@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.7.0](https://github.com/ybiquitous/ybiq/compare/v13.6.0...v13.7.0) (2021-08-15)
+
+### Features
+
+- **eslint:** add `--ext` flag to `npm run lint:js` ([#1035](https://github.com/ybiquitous/ybiq/issues/1035)) ([0df9ed0](https://github.com/ybiquitous/ybiq/commit/0df9ed0252bbf70d5f28bdcde14abf4a3a2080ef))
+- **eslint:** support `.cjs` extensions ([#1034](https://github.com/ybiquitous/ybiq/issues/1034)) ([f6bd459](https://github.com/ybiquitous/ybiq/commit/f6bd4590914cd8dac726e8cd2d5298eebcf009f5))
+
 ## [13.6.0](https://github.com/ybiquitous/ybiq/compare/v13.5.1...v13.6.0) (2021-08-15)
 
 ### Features
