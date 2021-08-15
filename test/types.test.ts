@@ -1,4 +1,5 @@
-import * as ybiq from "../lib/index.js";
+// eslint-disable-next-line import/no-unresolved, node/no-missing-import -- Prevent error: TS7016: Could not find a declaration file for module '../lib/index.js'
+import * as ybiq from "..";
 
 const noop = (arg?: unknown): void => {
   process.stdout.write(String(arg));
