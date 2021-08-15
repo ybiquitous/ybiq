@@ -77,7 +77,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx,mjs,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
     "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail"
   },
