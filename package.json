@@ -12,9 +12,9 @@
     "tool"
   ],
   "type": "module",
-  "main": "lib/index.js",
-  "bin": "lib/cli.js",
-  "types": "types/ybiq.d.ts",
+  "exports": "./lib/index.js",
+  "bin": "./lib/cli.js",
+  "types": "./types/ybiq.d.ts",
   "files": [
     "lib",
     "types",
@@ -162,6 +162,7 @@
           ]
         },
         "rules": {
+          "import/no-internal-modules": "off",
           "node/no-unsupported-features/es-syntax": "off"
         }
       },
