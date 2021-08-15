@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.6.0](https://github.com/ybiquitous/ybiq/compare/v13.5.1...v13.6.0) (2021-08-15)
+
+### Features
+
+- **deps:** bump remark-cli from 9.0.0 to 10.0.0 ([#1028](https://github.com/ybiquitous/ybiq/issues/1028)) ([9ad515f](https://github.com/ybiquitous/ybiq/commit/9ad515f88c6dbb86e39c13637b6a15dc741d77cf))
+
+### Bug Fixes
+
+- replace `main` with `exports` in package.json ([#1032](https://github.com/ybiquitous/ybiq/issues/1032)) ([4290ff8](https://github.com/ybiquitous/ybiq/commit/4290ff8df3d2a2c007efe6f66c03579ed848cf77))
+
 ### [13.5.1](https://github.com/ybiquitous/ybiq/compare/v13.5.0...v13.5.1) (2021-08-03)
 
 ### Bug Fixes
