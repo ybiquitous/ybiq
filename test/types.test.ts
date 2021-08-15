@@ -1,4 +1,4 @@
-import * as ybiq from "..";
+import * as ybiq from "../lib/index.js";
 
 const noop = (arg?: unknown): void => {
   process.stdout.write(String(arg));

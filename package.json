@@ -162,6 +162,7 @@
           ]
         },
         "rules": {
+          "import/no-internal-modules": "off",
           "node/no-unsupported-features/es-syntax": "off"
         }
       },
