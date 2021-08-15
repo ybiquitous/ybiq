@@ -30,7 +30,7 @@ Object {
     "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.css": "xyz",
-    "*.{js,jsx,mjs,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
   },
   "remarkConfig": Object {
     "plugins": Array [
@@ -96,7 +96,7 @@ Object {
   "lint-staged": Object {
     "!(*.snap)": "prettier --write",
     "!(CHANGELOG).md": "remark --frail",
-    "*.{js,jsx,mjs,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
   },
   "remarkConfig": Object {
     "plugins": Array [
