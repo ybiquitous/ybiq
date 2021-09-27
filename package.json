@@ -36,23 +36,23 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "eslint": "^7.32.0",
-    "husky": "^7.0.1",
+    "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.3.2",
+    "prettier": "^2.4.1",
     "remark-cli": "^10.0.0",
     "standard-version": "^9.3.1",
-    "yargs": "^17.1.1"
+    "yargs": "^17.2.1"
   },
   "devDependencies": {
-    "@types/node": "^16.6.1",
-    "@types/yargs": "^17.0.2",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "eslint-config-ybiquitous": "^14.0.1",
-    "eslint-plugin-jest": "^24.4.0",
-    "jest": "^27.0.6",
-    "remark-preset-ybiquitous": "^0.1.0",
-    "typescript": "^4.3.5"
+    "@types/node": "^16.10.1",
+    "@types/yargs": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "eslint-config-ybiquitous": "^14.2.0",
+    "eslint-plugin-jest": "^24.4.2",
+    "jest": "^27.2.2",
+    "remark-preset-ybiquitous": "^0.1.1",
+    "typescript": "^4.4.3"
   },
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage && npm run test:types",
