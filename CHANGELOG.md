@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [13.7.1](https://github.com/ybiquitous/ybiq/compare/v13.7.0...v13.7.1) (2021-09-27)
+
+### Bug Fixes
+
+- **actions:** make the test job names more clear ([#1064](https://github.com/ybiquitous/ybiq/issues/1064)) ([90117d1](https://github.com/ybiquitous/ybiq/commit/90117d1c9892c3ecc10ea29d205e98c6d0cfe5ac))
+- **actions:** use LTS syntax for `node-version` ([#1065](https://github.com/ybiquitous/ybiq/issues/1065)) ([6123db6](https://github.com/ybiquitous/ybiq/commit/6123db6eac48308ad9cca0429a0d3027a77512b9))
+
 ## [13.7.0](https://github.com/ybiquitous/ybiq/compare/v13.6.0...v13.7.0) (2021-08-15)
 
 ### Features
