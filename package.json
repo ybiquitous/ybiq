@@ -55,6 +55,7 @@
     "typescript": "^4.5.4"
   },
   "scripts": {
+    "pretest": "npm run lint",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage && npm run test:types",
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
