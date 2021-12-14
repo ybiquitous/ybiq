@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.0.0](https://github.com/ybiquitous/ybiq/compare/v13.8.0...v14.0.0) (2021-12-14)
+
+### ⚠ BREAKING CHANGES
+
+- **init:** `npm test` runs not only testing, but also linting.
+- **init:** `npm run prettier:*` scripts are no longer supported.
+
+### Features
+
+- **init:** add `pretest` script ([#1142](https://github.com/ybiquitous/ybiq/issues/1142)) ([0055333](https://github.com/ybiquitous/ybiq/commit/0055333789676d3c6e545c4d828206dfcaedfb22))
+- **init:** rename prettier scripts ([#1141](https://github.com/ybiquitous/ybiq/issues/1141)) ([b2eef5b](https://github.com/ybiquitous/ybiq/commit/b2eef5be8b14ff5f374486425001b1b68473fcf3))
+
+### Bug Fixes
+
+- **init:** remove needless linting from `prerelease` script ([#1143](https://github.com/ybiquitous/ybiq/issues/1143)) ([ffce671](https://github.com/ybiquitous/ybiq/commit/ffce6719eec231cb1f278e96a4e69ba782bdc7da)), closes [#1142](https://github.com/ybiquitous/ybiq/issues/1142)
+
 ## [13.8.0](https://github.com/ybiquitous/ybiq/compare/v13.7.1...v13.8.0) (2021-12-14)
 
 ### Features
