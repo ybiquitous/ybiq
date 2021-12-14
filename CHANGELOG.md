@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.8.0](https://github.com/ybiquitous/ybiq/compare/v13.7.1...v13.8.0) (2021-12-14)
+
+### Features
+
+- **deps:** bump eslint from 7.32.0 to 8.4.1 ([#1133](https://github.com/ybiquitous/ybiq/issues/1133)) ([659b555](https://github.com/ybiquitous/ybiq/commit/659b5555560455274817a5e8be4199d42abb1460))
+
+### Bug Fixes
+
+- **deps:** bump @commitlint/cli from 13.2.1 to 14.1.0 ([#1105](https://github.com/ybiquitous/ybiq/issues/1105)) ([e14a21c](https://github.com/ybiquitous/ybiq/commit/e14a21cf7e322135a058329328ddb756fb86d769))
+- **deps:** bump @commitlint/cli from 14.1.0 to 15.0.0 ([#1116](https://github.com/ybiquitous/ybiq/issues/1116)) ([5f5228d](https://github.com/ybiquitous/ybiq/commit/5f5228d4cec8eaa1f2558a863d532532ef6dced3))
+- **deps:** bump @commitlint/config-conventional from 13.2.0 to 14.1.0 ([#1107](https://github.com/ybiquitous/ybiq/issues/1107)) ([700a16c](https://github.com/ybiquitous/ybiq/commit/700a16c8363587f74de4a20a8230ac46935a91ea))
+- **deps:** bump @commitlint/config-conventional from 14.1.0 to 15.0.0 ([#1114](https://github.com/ybiquitous/ybiq/issues/1114)) ([450248a](https://github.com/ybiquitous/ybiq/commit/450248a5826b17a81bd7ae2c8658e4a0419d0cd5))
+- **deps:** bump lint-staged from 11.2.6 to 12.0.2 ([#1111](https://github.com/ybiquitous/ybiq/issues/1111)) ([b31ffa5](https://github.com/ybiquitous/ybiq/commit/b31ffa5ad84717e31c1e7abf6183f9d2a83db17e))
+- **deps:** bump lint-staged from 12.0.2 to 12.1.1 ([#1117](https://github.com/ybiquitous/ybiq/issues/1117)) ([e926515](https://github.com/ybiquitous/ybiq/commit/e9265151083965f1982d6ecb5cab8aaa532b772b))
+
 ### [13.7.1](https://github.com/ybiquitous/ybiq/compare/v13.7.0...v13.7.1) (2021-09-27)
 
 ### Bug Fixes
