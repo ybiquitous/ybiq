@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [14.0.1](https://github.com/ybiquitous/ybiq/compare/v14.0.0...v14.0.1) (2021-12-29)
+
+### Bug Fixes
+
+- **deps:** bump @commitlint/\* from 15.0.0 to 16.0.0 ([#1150](https://github.com/ybiquitous/ybiq/issues/1150)) ([a504b20](https://github.com/ybiquitous/ybiq/commit/a504b20f54d48bf82fb1406b0687b6f418b66be5))
+
 ## [14.0.0](https://github.com/ybiquitous/ybiq/compare/v13.8.0...v14.0.0) (2021-12-14)
 
 ### ⚠ BREAKING CHANGES
