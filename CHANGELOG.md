@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.1.0](https://github.com/ybiquitous/ybiq/compare/v14.0.1...v14.1.0) (2022-02-28)
+
+### Features
+
+- **actions:** bump actions/setup-node from 2 to 3 ([#1195](https://github.com/ybiquitous/ybiq/issues/1195)) ([385e2d5](https://github.com/ybiquitous/ybiq/commit/385e2d5936865a5de5d0edf153f537fa06f3857d))
+
 ### [14.0.1](https://github.com/ybiquitous/ybiq/compare/v14.0.0...v14.0.1) (2021-12-29)
 
 ### Bug Fixes
