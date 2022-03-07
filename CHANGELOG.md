@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.2.0](https://github.com/ybiquitous/ybiq/compare/v14.1.0...v14.2.0) (2022-03-07)
+
+### Features
+
+- **actions:** bump actions/checkout from 2 to 3 ([#1201](https://github.com/ybiquitous/ybiq/issues/1201)) ([f4de497](https://github.com/ybiquitous/ybiq/commit/f4de497a8cfa2ad1cd6a495c223e87b1b4eefc10))
+- **actions:** bump ybiquitous/npm-audit-fix-action from 3 to 4 ([#1204](https://github.com/ybiquitous/ybiq/issues/1204)) ([2d0a916](https://github.com/ybiquitous/ybiq/commit/2d0a916289e3bb8192d38014a07fcdec7718ccad)), closes [#1200](https://github.com/ybiquitous/ybiq/issues/1200)
+
 ## [14.1.0](https://github.com/ybiquitous/ybiq/compare/v14.0.1...v14.1.0) (2022-02-28)
 
 ### Features
