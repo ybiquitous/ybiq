@@ -168,7 +168,7 @@ jobs:
   commitlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: wagoid/commitlint-github-action@v4
@@ -189,7 +189,7 @@ jobs:
   npm-audit-fix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ybiquitous/npm-audit-fix-action@v3
         with:
           github_token: \${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -207,7 +207,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: \\"lts/*\\"
@@ -242,7 +242,7 @@ jobs:
       matrix:
         node-version: [\\"12\\", \\"14\\", \\"16\\"]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: \${{ matrix.node-version }}
