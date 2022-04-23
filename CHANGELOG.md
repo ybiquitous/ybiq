@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.3.0](https://github.com/ybiquitous/ybiq/compare/v14.2.0...v14.3.0) (2022-04-23)
+
+### Features
+
+- **actions:** add Node.js 18 to test matrix ([#1231](https://github.com/ybiquitous/ybiq/issues/1231)) ([8d9bde8](https://github.com/ybiquitous/ybiq/commit/8d9bde8e2f61556728996aacab317b327b3dd7d1))
+
 ## [14.2.0](https://github.com/ybiquitous/ybiq/compare/v14.1.0...v14.2.0) (2022-03-07)
 
 ### Features
