@@ -36,18 +36,6 @@ jobs:
       - run: npm ci
       - run: npm run lint
 
-  release-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "lts/*"
-          cache: npm
-      - run: npm --global install npm@latest
-      - run: npm ci
-      - run: npm run release:dry-run
-
   commitlint:
     runs-on: ubuntu-latest
     steps:
