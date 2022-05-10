@@ -117,6 +117,7 @@
           "deps-dev",
           "editorconfig",
           "eslint",
+          "husky",
           "init",
           "lint-staged",
           "package",
