@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, mkdirSync, readFileSync, rmdirSync, writeFileSync } from "fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import { join, resolve } from "path";
 import { init } from "../lib/init.js";
@@ -32,7 +32,7 @@ const sandbox = async (callback) => {
       initArgs: { cwd: workDir, logger },
     });
   } finally {
-    rmdirSync(workDir, { recursive: true });
+    rmSync(workDir, { recursive: true });
   }
 };
 
