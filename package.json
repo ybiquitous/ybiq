@@ -29,7 +29,7 @@
     ".husky/pre-commit"
   ],
   "engines": {
-    "node": "^14.14.0 || >=16.0.0"
+    "node": "^14.17.0 || >=16.0.0"
   },
   "dependencies": {
     "@commitlint/cli": "^16.2.4",
