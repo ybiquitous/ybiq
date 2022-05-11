@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [15.0.0](https://github.com/ybiquitous/ybiq/compare/v14.3.0...v15.0.0) (2022-05-11)
+
+### ⚠ BREAKING CHANGES
+
+- **actions:** The "commitlint" workflow is unified into the "test" workflow and removed.
+- **actions:** Node.js v12 is End-of-Life. The support is dropped.
+
+### Features
+
+- **actions:** auto-generate release notes ([#1258](https://github.com/ybiquitous/ybiq/issues/1258)) ([f8e38fb](https://github.com/ybiquitous/ybiq/commit/f8e38fbdc5ec97c58359b9308ede2382d54243cf))
+- **actions:** drop Node.js v12 support ([#1253](https://github.com/ybiquitous/ybiq/issues/1253)) ([44cfc56](https://github.com/ybiquitous/ybiq/commit/44cfc568280fa1aed57952868956df8ea3d30c30))
+- **actions:** remove needless "commitlint" workflow if exists ([#1263](https://github.com/ybiquitous/ybiq/issues/1263)) ([acaba94](https://github.com/ybiquitous/ybiq/commit/acaba94d9009eedab4ba2bd5b56cce3dcc7102cc))
+- **actions:** simplify workflows and jobs ([#1257](https://github.com/ybiquitous/ybiq/issues/1257)) ([2df37d7](https://github.com/ybiquitous/ybiq/commit/2df37d7da663e43ed4c35136bf82c2732020e75b))
+- **deps:** bump husky from 7.0.4 to 8.0.1 ([#1254](https://github.com/ybiquitous/ybiq/issues/1254)) ([043900f](https://github.com/ybiquitous/ybiq/commit/043900fe8d713313a8047f5fd5ff5ab99956f500))
+- **deps:** require Node.js 14.14.0 as a minimum ([#1259](https://github.com/ybiquitous/ybiq/issues/1259)) ([1ff217d](https://github.com/ybiquitous/ybiq/commit/1ff217d43c362de2987d53981e9fd6f69298f3ae))
+- **deps:** require Node.js 14.17.0 as a minimum ([#1260](https://github.com/ybiquitous/ybiq/issues/1260)) ([6ddb17b](https://github.com/ybiquitous/ybiq/commit/6ddb17b16acee1d1f990c897c3aabc9e4d26f56c))
+- **init:** show removed files ([#1264](https://github.com/ybiquitous/ybiq/issues/1264)) ([1f3e869](https://github.com/ybiquitous/ybiq/commit/1f3e86997f1c7eb556614022bf87b1460774d7a7))
+
+### Bug Fixes
+
+- **husky:** shebang and `dirname` in hook shell scripts ([#1256](https://github.com/ybiquitous/ybiq/issues/1256)) ([ee70357](https://github.com/ybiquitous/ybiq/commit/ee70357ab562b7391ac06c36dd22d5f29d08eaef))
+- use `node:` protocol for Node.js core modules ([#1261](https://github.com/ybiquitous/ybiq/issues/1261)) ([7e99d88](https://github.com/ybiquitous/ybiq/commit/7e99d88f21f5d3efbfb2415b9154a3ea21ad7997))
+
 ## [14.3.0](https://github.com/ybiquitous/ybiq/compare/v14.2.0...v14.3.0) (2022-04-23)
 
 ### Features
