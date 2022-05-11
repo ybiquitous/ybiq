@@ -110,3 +110,14 @@ test("Remove `.husky/.gitignore` if exists", () =>
 
     expect(existsSync(join(ctx.workDir, ".husky", ".gitignore"))).toEqual(false);
   }));
+
+test("Remove `.github/workflows/commitlint.yml` if exists", () =>
+  sandbox(async (ctx) => {
+    mkdirSync(join(ctx.workDir, ".github", "workflows"), { recursive: true });
+    writeFileSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"), "dummy: 1");
+    writeFileSync(join(ctx.workDir, "package.json"), "{}");
+
+    await init(ctx.initArgs);
+
+    expect(existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"))).toEqual(false);
+  }));
