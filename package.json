@@ -41,7 +41,7 @@
     "prettier": "^2.6.2",
     "remark-cli": "^10.0.1",
     "standard-version": "^9.5.0",
-    "yargs": "^17.4.1"
+    "yargs": "^17.5.1"
   },
   "devDependencies": {
     "@tsconfig/strictest": "^1.0.1",
