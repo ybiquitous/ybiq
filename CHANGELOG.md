@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [15.1.0](https://github.com/ybiquitous/ybiq/compare/v15.0.0...v15.1.0) (2022-05-31)
+
+### Features
+
+- **deps:** bump @commitlint/cli from 16.2.4 to 17.0.1 ([#1276](https://github.com/ybiquitous/ybiq/issues/1276)) ([0dd2ded](https://github.com/ybiquitous/ybiq/commit/0dd2ded69ff05f92c6d7ff78d921dd213d469e3f))
+- **deps:** bump @commitlint/config-conventional from 16.2.4 to 17.0.0 ([#1275](https://github.com/ybiquitous/ybiq/issues/1275)) ([bf07abd](https://github.com/ybiquitous/ybiq/commit/bf07abd75e6f97277a54db5026c500751f71028a))
+
 ## [15.0.0](https://github.com/ybiquitous/ybiq/compare/v14.3.0...v15.0.0) (2022-05-11)
 
 ### ⚠ BREAKING CHANGES
