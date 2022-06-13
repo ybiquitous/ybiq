@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [15.1.1](https://github.com/ybiquitous/ybiq/compare/v15.1.0...v15.1.1) (2022-06-13)
+
+### Bug Fixes
+
+- **deps:** bump lint-staged from 12.4.3 to 13.0.1 ([#1295](https://github.com/ybiquitous/ybiq/issues/1295)) ([2554828](https://github.com/ybiquitous/ybiq/commit/255482885c16f6c4e055e539cad1b3b8318ff275))
+
 ## [15.1.0](https://github.com/ybiquitous/ybiq/compare/v15.0.0...v15.1.0) (2022-05-31)
 
 ### Features
