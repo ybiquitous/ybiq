@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [15.2.0](https://github.com/ybiquitous/ybiq/compare/v15.1.2...v15.2.0) (2022-06-20)
+
+### Features
+
+- **prettier:** add `--cache` option ([#1305](https://github.com/ybiquitous/ybiq/issues/1305)) ([0860daa](https://github.com/ybiquitous/ybiq/commit/0860daa6a1d95a85f21ccec95f7e54007445c8a1))
+
 ### [15.1.2](https://github.com/ybiquitous/ybiq/compare/v15.1.1...v15.1.2) (2022-06-20)
 
 ### Bug Fixes
