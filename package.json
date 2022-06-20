@@ -67,7 +67,7 @@
     "lint:types": "tsc --noEmit",
     "lint:types:watch": "npm run lint:types -- --watch",
     "lint": "npm-run-all --print-label --parallel lint:*",
-    "prettier": "prettier --ignore-path .gitignore .",
+    "prettier": "prettier --cache --ignore-path .gitignore .",
     "lint:styles": "npm run prettier -- --check",
     "lint:styles:fix": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --parallel lint:*:fix",
@@ -79,7 +79,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
-    "!(*.snap)": "prettier --write",
+    "!(*.snap)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail"
   },
   "standard-version": {
