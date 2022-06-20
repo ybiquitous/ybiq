@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [15.1.2](https://github.com/ybiquitous/ybiq/compare/v15.1.1...v15.1.2) (2022-06-20)
+
+### Bug Fixes
+
+- **deps:** bump wagoid/commitlint-github-action from 4 to 5 ([#1301](https://github.com/ybiquitous/ybiq/issues/1301)) ([438f221](https://github.com/ybiquitous/ybiq/commit/438f2214af2e4c87358eca76d257a35330f2aad8))
+
 ### [15.1.1](https://github.com/ybiquitous/ybiq/compare/v15.1.0...v15.1.1) (2022-06-13)
 
 ### Bug Fixes
