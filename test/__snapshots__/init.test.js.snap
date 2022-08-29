@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`update "package.json" 1`] = `
-Object {
-  "commitlint": Object {
-    "extends": Array [
+{
+  "commitlint": {
+    "extends": [
       "@commitlint/config-conventional",
     ],
-    "rules": Object {
-      "body-max-line-length": Array [
+    "rules": {
+      "body-max-line-length": [
         1,
         "always",
         100,
       ],
     },
   },
-  "eslintConfig": Object {
-    "extends": Array [
+  "eslintConfig": {
+    "extends": [
       "ybiquitous",
     ],
-    "ignorePatterns": Array [
+    "ignorePatterns": [
       "coverage",
       "dist",
       "tmp",
@@ -26,18 +26,18 @@ Object {
     "reportUnusedDisableDirectives": true,
     "root": true,
   },
-  "lint-staged": Object {
+  "lint-staged": {
     "!(*.snap)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.css": "xyz",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
   },
-  "remarkConfig": Object {
-    "plugins": Array [
+  "remarkConfig": {
+    "plugins": [
       "remark-preset-ybiquitous",
     ],
   },
-  "scripts": Object {
+  "scripts": {
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --parallel lint:*:fix",
     "lint": "npm-run-all --print-label --parallel lint:*",
@@ -59,8 +59,8 @@ Object {
     "test:coverage": "abc --coverage",
     "test:watch": "abc --watch",
   },
-  "standard-version": Object {
-    "scripts": Object {
+  "standard-version": {
+    "scripts": {
       "postchangelog": "prettier --write CHANGELOG.md",
     },
     "sign": true,
@@ -69,24 +69,24 @@ Object {
 `;
 
 exports[`update "package.json" without fields 1`] = `
-Object {
-  "commitlint": Object {
-    "extends": Array [
+{
+  "commitlint": {
+    "extends": [
       "@commitlint/config-conventional",
     ],
-    "rules": Object {
-      "body-max-line-length": Array [
+    "rules": {
+      "body-max-line-length": [
         1,
         "always",
         100,
       ],
     },
   },
-  "eslintConfig": Object {
-    "extends": Array [
+  "eslintConfig": {
+    "extends": [
       "ybiquitous",
     ],
-    "ignorePatterns": Array [
+    "ignorePatterns": [
       "coverage",
       "dist",
       "tmp",
@@ -94,17 +94,17 @@ Object {
     "reportUnusedDisableDirectives": true,
     "root": true,
   },
-  "lint-staged": Object {
+  "lint-staged": {
     "!(*.snap)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
   },
-  "remarkConfig": Object {
-    "plugins": Array [
+  "remarkConfig": {
+    "plugins": [
       "remark-preset-ybiquitous",
     ],
   },
-  "scripts": Object {
+  "scripts": {
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --parallel lint:*:fix",
     "lint": "npm-run-all --print-label --parallel lint:*",
@@ -126,8 +126,8 @@ Object {
     "test:coverage": "test --coverage",
     "test:watch": "test --watch",
   },
-  "standard-version": Object {
-    "scripts": Object {
+  "standard-version": {
+    "scripts": {
       "postchangelog": "prettier --write CHANGELOG.md",
     },
     "sign": true,
@@ -160,7 +160,7 @@ exports[`write ".github/workflows/npm-audit-fix.yml" 1`] = `
 
 on:
   schedule:
-    - cron: \\"0 0 * * *\\"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -179,7 +179,7 @@ exports[`write ".github/workflows/release.yml" 1`] = `
 
 on:
   push:
-    tags: [\\"**\\"]
+    tags: ["**"]
 
 jobs:
   release:
@@ -188,17 +188,17 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: \\"lts/*\\"
-          registry-url: \\"https://registry.npmjs.org\\"
+          node-version: "lts/*"
+          registry-url: "https://registry.npmjs.org"
       - run: npm --global install npm@latest
       - run: npm ci
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: \${{ secrets.NPM_TOKEN }}
       - run: |
-          gh release create \\"\${GITHUB_REF_NAME}\\" \\\\
-            --generate-notes \\\\
-            --notes \\"See the [changelog](https://github.com/\${GITHUB_REPOSITORY}/blob/\${GITHUB_REF_NAME}/CHANGELOG.md) for more details.\\"
+          gh release create "\${GITHUB_REF_NAME}" \\
+            --generate-notes \\
+            --notes "See the [changelog](https://github.com/\${GITHUB_REPOSITORY}/blob/\${GITHUB_REF_NAME}/CHANGELOG.md) for more details."
         env:
           GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
 "
@@ -209,18 +209,18 @@ exports[`write ".github/workflows/test.yml" 1`] = `
 
 on:
   push:
-    branches: [\\"main\\"]
+    branches: ["main"]
   pull_request:
-    branches: [\\"**\\"]
+    branches: ["**"]
 
 jobs:
   test:
-    name: \\"test on node \${{ matrix.node-version }}\\"
+    name: "test on node \${{ matrix.node-version }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        node-version: [\\"14\\", \\"16\\", \\"18\\"]
+        node-version: ["14", "16", "18"]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -237,7 +237,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: \\"lts/*\\"
+          node-version: "lts/*"
           cache: npm
       - run: npm --global install npm@latest
       - run: npm ci
@@ -257,15 +257,15 @@ jobs:
 
 exports[`write ".husky/commit-msg" 1`] = `
 "#!/usr/bin/env sh
-. \\"$(dirname -- \\"$0\\")/_/husky.sh\\"
+. "$(dirname -- "$0")/_/husky.sh"
 
-npx --no-install commitlint --edit \\"$1\\"
+npx --no-install commitlint --edit "$1"
 "
 `;
 
 exports[`write ".husky/post-commit" 1`] = `
 "#!/usr/bin/env sh
-. \\"$(dirname -- \\"$0\\")/_/husky.sh\\"
+. "$(dirname -- "$0")/_/husky.sh"
 
 npm run release:dry-run
 "
@@ -273,7 +273,7 @@ npm run release:dry-run
 
 exports[`write ".husky/pre-commit" 1`] = `
 "#!/usr/bin/env sh
-. \\"$(dirname -- \\"$0\\")/_/husky.sh\\"
+. "$(dirname -- "$0")/_/husky.sh"
 
 npx --no-install lint-staged
 "
