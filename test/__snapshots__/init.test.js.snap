@@ -136,9 +136,7 @@ exports[`update "package.json" without fields 1`] = `
 `;
 
 exports[`write ".editorconfig" 1`] = `
-"# EditorConfig is awesome: http://EditorConfig.org
-
-root = true
+"root = true
 
 [*]
 end_of_line = lf
