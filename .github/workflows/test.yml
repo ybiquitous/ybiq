@@ -8,40 +8,14 @@ on:
 
 jobs:
   test:
-    name: "test on node ${{ matrix.node-version }}"
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         node-version: ["14", "16", "18"]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-      - run: npm --global install npm@latest
-      - run: npm ci
-      - run: npm test --ignore-scripts
+    uses: ybiquitous/.github/.github/workflows/test-reusable.yml@main
 
   lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "lts/*"
-          cache: npm
-      - run: npm --global install npm@latest
-      - run: npm ci
-      - run: npm run lint
+    uses: ybiquitous/.github/.github/workflows/lint-reusable.yml@main
 
   commitlint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v5
-        with:
-          configFile: package.json
+    uses: ybiquitous/.github/.github/workflows/lint-reusable.yml@main
