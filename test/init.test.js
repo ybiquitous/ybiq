@@ -54,6 +54,7 @@ test('update "package.json" without fields', () =>
   ".editorconfig",
   ".remarkignore",
   ".github/workflows/npm-audit-fix.yml",
+  ".github/workflows/npm-diff.yml",
   ".github/workflows/release.yml",
   ".github/workflows/test.yml",
   ".husky/commit-msg",
