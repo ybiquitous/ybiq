@@ -18,6 +18,3 @@ jobs:
 
   lint:
     uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@main
-
-  commitlint:
-    uses: ybiquitous/.github/.github/workflows/nodejs-commitlint-reusable.yml@main

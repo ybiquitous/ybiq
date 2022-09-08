@@ -39,8 +39,9 @@ exports[`update "package.json" 1`] = `
   },
   "scripts": {
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
-    "format": "npm-run-all --print-label --parallel lint:*:fix",
-    "lint": "npm-run-all --print-label --parallel lint:*",
+    "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
+    "lint": "npm-run-all --print-label --silent --parallel lint:*",
+    "lint:commit": "commitlint --from HEAD~10",
     "lint:js": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
@@ -106,8 +107,9 @@ exports[`update "package.json" without fields 1`] = `
   },
   "scripts": {
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
-    "format": "npm-run-all --print-label --parallel lint:*:fix",
-    "lint": "npm-run-all --print-label --parallel lint:*",
+    "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
+    "lint": "npm-run-all --print-label --silent --parallel lint:*",
+    "lint:commit": "commitlint --from HEAD~10",
     "lint:js": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
@@ -208,9 +210,6 @@ jobs:
 
   lint:
     uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@main
-
-  commitlint:
-    uses: ybiquitous/.github/.github/workflows/nodejs-commitlint-reusable.yml@main
 "
 `;
 
