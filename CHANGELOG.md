@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [15.4.0](https://github.com/ybiquitous/ybiq/compare/v15.3.1...v15.4.0) (2022-09-08)
+
+### Features
+
+- **commitlint:** integrate commitlint and lint ([#1362](https://github.com/ybiquitous/ybiq/issues/1362)) ([47a9596](https://github.com/ybiquitous/ybiq/commit/47a9596bf88521ce20864ecbcd27760264d349cd))
+
 ### [15.3.1](https://github.com/ybiquitous/ybiq/compare/v15.3.0...v15.3.1) (2022-09-08)
 
 ### Bug Fixes
