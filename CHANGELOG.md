@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [15.4.1](https://github.com/ybiquitous/ybiq/compare/v15.4.0...v15.4.1) (2022-09-08)
+
+### Bug Fixes
+
+- **actions:** add permissions ([#1363](https://github.com/ybiquitous/ybiq/issues/1363)) ([cbb2b39](https://github.com/ybiquitous/ybiq/commit/cbb2b397843f6e2176b3a8d617cf08bd357b9f17))
+- **actions:** improve job name for `npm diff` workflow ([#1364](https://github.com/ybiquitous/ybiq/issues/1364)) ([65de5ff](https://github.com/ybiquitous/ybiq/commit/65de5ffcc573c3e852087cdccd8b0184a608f76b))
+
 ## [15.4.0](https://github.com/ybiquitous/ybiq/compare/v15.3.1...v15.4.0) (2022-09-08)
 
 ### Features
