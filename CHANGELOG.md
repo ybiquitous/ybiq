@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [15.3.0](https://github.com/ybiquitous/ybiq/compare/v15.2.0...v15.3.0) (2022-09-08)
+
+### Features
+
+- **actions:** use reusable release workflow ([#1360](https://github.com/ybiquitous/ybiq/issues/1360)) ([a5661fd](https://github.com/ybiquitous/ybiq/commit/a5661fdeda7c85810846fa39d04ad6938a02640b))
+- **actions:** use reusable workflows ([c114c3b](https://github.com/ybiquitous/ybiq/commit/c114c3b2855228ce47f1023ec2097e27990b54ea))
+- **actions:** use reusable workflows ([#1359](https://github.com/ybiquitous/ybiq/issues/1359)) ([592d238](https://github.com/ybiquitous/ybiq/commit/592d2385266c8f01b0101ee5cf1f18f89836bc46))
+
+### Bug Fixes
+
+- **editorconfig:** remove extra comment ([#1358](https://github.com/ybiquitous/ybiq/issues/1358)) ([f3d4919](https://github.com/ybiquitous/ybiq/commit/f3d49191b3fb7674af74836c7da809eca0707650))
+
 ## [15.2.0](https://github.com/ybiquitous/ybiq/compare/v15.1.2...v15.2.0) (2022-06-20)
 
 ### Features
