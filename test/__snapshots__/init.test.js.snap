@@ -185,7 +185,7 @@ on:
     types: [assigned]
 
 jobs:
-  post-comment:
+  npm-diff:
     if: \${{ contains(github.head_ref, 'dependabot/npm_and_yarn/') }}
     runs-on: ubuntu-latest
     permissions:
