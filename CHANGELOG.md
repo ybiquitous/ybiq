@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [15.5.0](https://github.com/ybiquitous/ybiq/compare/v15.4.1...v15.5.0) (2022-10-03)
+
+### Features
+
+- **init:** better `test:*` sub commands ([#1384](https://github.com/ybiquitous/ybiq/issues/1384)) ([dc8ed09](https://github.com/ybiquitous/ybiq/commit/dc8ed09f907eaa64c80966f2dc361c7fc6e4438d))
+
 ### [15.4.1](https://github.com/ybiquitous/ybiq/compare/v15.4.0...v15.4.1) (2022-09-08)
 
 ### Bug Fixes
