@@ -56,9 +56,9 @@
   },
   "scripts": {
     "pretest": "npm run lint",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage && npm run test:types",
-    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
-    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "test": "npm run test:types && NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "npm --ignore-scripts test -- --watch",
+    "test:coverage": "npm --ignore-scripts test -- --coverage",
     "test:types": "tsc --project test/tsconfig.test.json --noEmit",
     "lint:js": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
     "lint:js:fix": "npm run lint:js -- --fix",
