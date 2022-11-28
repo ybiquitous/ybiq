@@ -138,7 +138,8 @@ exports[`update "package.json" without fields 1`] = `
 `;
 
 exports[`write ".editorconfig" 1`] = `
-"root = true
+"# editorconfig.org
+root = true
 
 [*]
 end_of_line = lf
@@ -151,7 +152,7 @@ max_line_length = 100
 
 # trailing spaces in markdown indicate word wrap
 [*.md]
-trim_trailing_spaces = false
+trim_trailing_whitespace = false
 "
 `;
 
