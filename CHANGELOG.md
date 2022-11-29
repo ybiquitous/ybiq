@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [15.5.1](https://github.com/ybiquitous/ybiq/compare/v15.5.0...v15.5.1) (2022-11-29)
+
+### Bug Fixes
+
+- **editorconfig:** use `trim_trailing_whitespace` instead of `trim_trailing_spaces` ([#1423](https://github.com/ybiquitous/ybiq/issues/1423)) ([6717182](https://github.com/ybiquitous/ybiq/commit/67171821741c75a03095a4f3bc5f7ab3b4205459))
+- update `CommandParams` type ([7722547](https://github.com/ybiquitous/ybiq/commit/7722547a8fb216d7fbb95d652412bd5949467154))
+
 ## [15.5.0](https://github.com/ybiquitous/ybiq/compare/v15.4.1...v15.5.0) (2022-10-03)
 
 ### Features
