@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [15.5.2](https://github.com/ybiquitous/ybiq/compare/v15.5.1...v15.5.2) (2022-12-03)
+
+### Bug Fixes
+
+- **actions:** improve "npm diff" workflow ([#1426](https://github.com/ybiquitous/ybiq/issues/1426)) ([2916c73](https://github.com/ybiquitous/ybiq/commit/2916c73cb67d1a2a42bbc9c77942c737cd43bb68))
+
 ### [15.5.1](https://github.com/ybiquitous/ybiq/compare/v15.5.0...v15.5.1) (2022-11-29)
 
 ### Bug Fixes
