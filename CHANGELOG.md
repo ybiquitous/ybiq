@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [15.6.0](https://github.com/ybiquitous/ybiq/compare/v15.5.3...v15.6.0) (2023-01-08)
+
+### Features
+
+- **deps:** bump ybiquitous/npm-audit-fix-action from 4 to 5 ([#1450](https://github.com/ybiquitous/ybiq/issues/1450)) ([a472f89](https://github.com/ybiquitous/ybiq/commit/a472f89c4bfd104b7c6151fe40ea576e53abf8dc))
+
 ### [15.5.3](https://github.com/ybiquitous/ybiq/compare/v15.5.2...v15.5.3) (2023-01-04)
 
 ### Bug Fixes
