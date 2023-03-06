@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@tsconfig/strictest": "^1.0.2",
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.14.6",
     "@types/yargs": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "eslint-config-ybiquitous": "^16.2.0",
