@@ -32,6 +32,10 @@ exports[`update "package.json" 1`] = `
     "*.css": "xyz",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
   },
+  "publishConfig": {
+    "access": true,
+    "provenance": true,
+  },
   "remarkConfig": {
     "plugins": [
       "remark-preset-ybiquitous",
@@ -99,6 +103,9 @@ exports[`update "package.json" without fields 1`] = `
     "!(*.snap)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
+  },
+  "publishConfig": {
+    "provenance": true,
   },
   "remarkConfig": {
     "plugins": [

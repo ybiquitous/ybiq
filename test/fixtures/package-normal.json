@@ -3,6 +3,9 @@
     "test": "abc",
     "lint:js": "eslint ."
   },
+  "publishConfig": {
+    "access": true
+  },
   "lint-staged": {
     "*.css": "xyz"
   },
