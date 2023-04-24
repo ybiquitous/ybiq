@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [16.0.0](https://github.com/ybiquitous/ybiq/compare/v15.6.0...v16.0.0) (2023-04-24)
+
+### ⚠ BREAKING CHANGES
+
+- Node.js 14 support is removed since it's End-of-Life.
+
+This change also adds Node.js 20 to the CI matrix.
+
+### Features
+
+- **init:** support provenance publishing ([#1523](https://github.com/ybiquitous/ybiq/issues/1523)) ([35e29a9](https://github.com/ybiquitous/ybiq/commit/35e29a9f07b62a6fc0f6d0229d1873c6ff065575))
+- remove Node.js 14 support ([#1522](https://github.com/ybiquitous/ybiq/issues/1522)) ([72b7ace](https://github.com/ybiquitous/ybiq/commit/72b7ace602e7cd12d82ddc8923c8843be626537b))
+
 ## [15.6.0](https://github.com/ybiquitous/ybiq/compare/v15.5.3...v15.6.0) (2023-01-08)
 
 ### Features

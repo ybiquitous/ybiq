@@ -1,6 +1,6 @@
 {
   "name": "ybiq",
-  "version": "15.6.0",
+  "version": "16.0.0",
   "description": "Useful command-line tools for Node.js project",
   "author": "Masafumi Koba",
   "license": "MIT",
