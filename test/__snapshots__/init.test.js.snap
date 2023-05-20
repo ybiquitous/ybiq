@@ -163,6 +163,19 @@ trim_trailing_whitespace = false
 "
 `;
 
+exports[`write ".github/workflows/dependabot-auto-merge.yml" 1`] = `
+"name: Dependabot auto-merge
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  auto-merge:
+    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@main
+"
+`;
+
 exports[`write ".github/workflows/npm-audit-fix.yml" 1`] = `
 "name: npm audit fix
 

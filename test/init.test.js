@@ -53,6 +53,7 @@ test('update "package.json" without fields', () =>
 [
   ".editorconfig",
   ".remarkignore",
+  ".github/workflows/dependabot-auto-merge.yml",
   ".github/workflows/npm-audit-fix.yml",
   ".github/workflows/npm-diff.yml",
   ".github/workflows/release.yml",
@@ -89,6 +90,7 @@ test("End-to-End via CLI", () =>
       "=> [32m'package.json'[39m was updated
       => [32m'.editorconfig'[39m was updated
       => [32m'.remarkignore'[39m was updated
+      => [32m'.github/workflows/dependabot-auto-merge.yml'[39m was updated
       => [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
       => [32m'.github/workflows/npm-diff.yml'[39m was updated
       => [32m'.github/workflows/release.yml'[39m was updated
