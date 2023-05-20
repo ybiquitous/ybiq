@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [16.1.0](https://github.com/ybiquitous/ybiq/compare/v16.0.0...v16.1.0) (2023-05-20)
+
+### Features
+
+- **actions:** add `dependabot-auto-merge.yml` workflow ([#1541](https://github.com/ybiquitous/ybiq/issues/1541)) ([3d1c77a](https://github.com/ybiquitous/ybiq/commit/3d1c77a8125b7b2046a4d9080b2d1d4b298b5a43))
+
 ## [16.0.0](https://github.com/ybiquitous/ybiq/compare/v15.6.0...v16.0.0) (2023-04-24)
 
 ### ⚠ BREAKING CHANGES
