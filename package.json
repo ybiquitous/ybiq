@@ -72,7 +72,7 @@
     "lint:types:watch": "npm run lint:types -- --watch",
     "lint:commit": "commitlint --from HEAD~10",
     "lint": "npm-run-all --print-label --silent --parallel lint:*",
-    "prettier": "prettier --cache --ignore-path .gitignore .",
+    "prettier": "prettier --cache .",
     "lint:styles": "npm run prettier -- --check",
     "lint:styles:fix": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
