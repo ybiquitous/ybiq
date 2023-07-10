@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [16.2.0](https://github.com/ybiquitous/ybiq/compare/v16.1.0...v16.2.0) (2023-07-10)
+
+### Features
+
+- **deps:** bump prettier from 2.8.8 to 3.0.0 ([#1571](https://github.com/ybiquitous/ybiq/issues/1571)) ([4fda9be](https://github.com/ybiquitous/ybiq/commit/4fda9be0a44bae37184e8869f7fc0e5ca16d8d62))
+
 ## [16.1.0](https://github.com/ybiquitous/ybiq/compare/v16.0.0...v16.1.0) (2023-05-20)
 
 ### Features
