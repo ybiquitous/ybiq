@@ -1,4 +1,4 @@
-import * as ybiq from "..";
+import * as ybiq from ".."; // eslint-disable-line import/extensions
 
 const noop = (arg?: unknown): void => {
   process.stdout.write(String(arg));
