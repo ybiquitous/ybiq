@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [16.3.0](https://github.com/ybiquitous/ybiq/compare/v16.2.1...v16.3.0) (2023-09-11)
+
+### Features
+
+- **deps:** bump actions/checkout from 3 to 4 ([#1609](https://github.com/ybiquitous/ybiq/issues/1609)) ([41600e3](https://github.com/ybiquitous/ybiq/commit/41600e3415e0b8cd8f688487f07785c6b6260725))
+
 ### [16.2.1](https://github.com/ybiquitous/ybiq/compare/v16.2.0...v16.2.1) (2023-08-14)
 
 ### Bug Fixes
