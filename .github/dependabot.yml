@@ -6,6 +6,13 @@ updates:
       interval: weekly
     open-pull-requests-limit: 10
     versioning-strategy: increase
+    groups:
+      commitlint:
+        patterns: ["@commitlint/*"]
+      eslint-dev:
+        patterns: ["@typescript-eslint/*", "eslint-*"]
+      typescript:
+        patterns: ["@tsconfig/*", "@types/*", "typescript"]
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
