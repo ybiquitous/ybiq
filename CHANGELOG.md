@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [16.3.1](https://github.com/ybiquitous/ybiq/compare/v16.3.0...v16.3.1) (2023-09-26)
+
+### Bug Fixes
+
+- **deps:** bump remark-cli from 11.0.0 to 12.0.0 ([#1617](https://github.com/ybiquitous/ybiq/issues/1617)) ([af00d20](https://github.com/ybiquitous/ybiq/commit/af00d20e08d3f01a2421051f92a3197f957c8a50))
+
 ## [16.3.0](https://github.com/ybiquitous/ybiq/compare/v16.2.1...v16.3.0) (2023-09-11)
 
 ### Features
