@@ -106,7 +106,7 @@
       "body-max-line-length": [
         2,
         "always",
-        200
+        300
       ],
       "scope-enum": [
         2,
