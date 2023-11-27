@@ -1,10 +1,11 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { jest } from "@jest/globals";
+import test from "node:test";
+import assert from "node:assert/strict";
+
 import { defaultLogger } from "../lib/logger.js";
 
-test("defaultLogger", () => {
-  const spy = jest.spyOn(process.stdout, "write");
+test("defaultLogger", (t) => {
+  t.mock.method(process.stdout, "write", () => {});
   defaultLogger("test message");
-  expect(spy).toHaveBeenCalled();
-  spy.mockRestore();
+  assert.equal(process.stdout.write.mock.calls.length, 1);
+  t.mock.restoreAll();
 });

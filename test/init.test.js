@@ -1,6 +1,10 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
+
 import { init } from "../lib/init.js";
 import { exec } from "./helpers/exec.js";
 import { pkg } from "./helpers/pkg.js";
@@ -40,14 +44,15 @@ test('update "package.json"', () =>
   sandbox(async (ctx) => {
     const src = ctx.fixture("package-normal.json");
     await init(ctx.initArgs);
-    expect(readJSON(src)).toMatchSnapshot();
+    // expect(readJSON(src)).toMatchSnapshot();
+    assert.equal(readJSON(src), "");
   }));
 
 test('update "package.json" without fields', () =>
   sandbox(async (ctx) => {
     const src = ctx.fixture("package-empty.json");
     await init(ctx.initArgs);
-    expect(readJSON(src)).toMatchSnapshot();
+    assert.equal(readJSON(src), "");
   }));
 
 [
@@ -66,18 +71,24 @@ test('update "package.json" without fields', () =>
     sandbox(async (ctx) => {
       ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
-      expect(ctx.logMessage()).toMatch("[32m'package.json'[39m was updated");
-      expect(ctx.readWorkFile(file)).toMatchSnapshot();
+      assert.ok(ctx.logMessage().includes("[32m'package.json'[39m was updated"));
+      assert.match(ctx.readWorkFile(file), "");
     }));
 
   test(`contain "${file}" in package.json`, () => {
-    expect(pkg.files).toContain(file);
+    assert.ok(pkg.files.includes(file));
   });
 });
 
 test("throw error if no package.json", () =>
   sandbox(async (ctx) => {
-    await expect(init(ctx.initArgs)).rejects.toHaveProperty("code", "ENOENT");
+    await assert.rejects(
+      () => init(ctx.initArgs),
+      (error) => {
+        assert.equal(error.code, "ENOENT");
+        return true;
+      },
+    );
   }));
 
 test("End-to-End via CLI", () =>
@@ -86,23 +97,24 @@ test("End-to-End via CLI", () =>
     const { stdout, stderr } = await exec(resolve(pkg.bin), "init", {
       cwd: ctx.initArgs.cwd,
     });
-    expect(stdout).toMatchInlineSnapshot(`
-      "=> [32m'package.json'[39m was updated
-      => [32m'.editorconfig'[39m was updated
-      => [32m'.remarkignore'[39m was updated
-      => [32m'.github/workflows/dependabot-auto-merge.yml'[39m was updated
-      => [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
-      => [32m'.github/workflows/npm-diff.yml'[39m was updated
-      => [32m'.github/workflows/release.yml'[39m was updated
-      => [32m'.github/workflows/test.yml'[39m was updated
-      => [32m'.husky/commit-msg'[39m was updated
-      => [32m'.husky/post-commit'[39m was updated
-      => [32m'.husky/pre-commit'[39m was updated
-      => [32m'.husky/.gitignore'[39m was removed
-      => [32m'.github/workflows/commitlint.yml'[39m was removed
-      "
-    `);
-    expect(stderr).toEqual("");
+    assert.ok(
+      stdout.includes(`
+=> [32m'package.json'[39m was updated
+=> [32m'.editorconfig'[39m was updated
+=> [32m'.remarkignore'[39m was updated
+=> [32m'.github/workflows/dependabot-auto-merge.yml'[39m was updated
+=> [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
+=> [32m'.github/workflows/npm-diff.yml'[39m was updated
+=> [32m'.github/workflows/release.yml'[39m was updated
+=> [32m'.github/workflows/test.yml'[39m was updated
+=> [32m'.husky/commit-msg'[39m was updated
+=> [32m'.husky/post-commit'[39m was updated
+=> [32m'.husky/pre-commit'[39m was updated
+=> [32m'.husky/.gitignore'[39m was removed
+=> [32m'.github/workflows/commitlint.yml'[39m was removed`),
+      stdout,
+    );
+    assert.equal(stderr, "");
   }));
 
 test("Remove `.husky/.gitignore` if exists", () =>
@@ -113,7 +125,7 @@ test("Remove `.husky/.gitignore` if exists", () =>
 
     await init(ctx.initArgs);
 
-    expect(existsSync(join(ctx.workDir, ".husky", ".gitignore"))).toEqual(false);
+    assert.equal(existsSync(join(ctx.workDir, ".husky", ".gitignore")), false);
   }));
 
 test("Remove `.github/workflows/commitlint.yml` if exists", () =>
@@ -124,5 +136,5 @@ test("Remove `.github/workflows/commitlint.yml` if exists", () =>
 
     await init(ctx.initArgs);
 
-    expect(existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"))).toEqual(false);
+    assert.equal(existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml")), false);
   }));

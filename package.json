@@ -60,7 +60,7 @@
   },
   "scripts": {
     "pretest": "npm run lint",
-    "test": "npm run test:types && NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "npm run test:types && node --test",
     "test:watch": "npm --ignore-scripts test -- --watch",
     "test:coverage": "npm --ignore-scripts test -- --coverage",
     "test:types": "tsc --project test/tsconfig.test.json --noEmit",
