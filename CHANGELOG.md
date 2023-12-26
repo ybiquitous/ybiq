@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [17.0.0](https://github.com/ybiquitous/ybiq/compare/v16.3.1...v17.0.0) (2023-12-26)
+
+### ⚠ BREAKING CHANGES
+
+- remove Node.js 16 support (#1661)
+
+### Features
+
+- **deps:** bump `@commitlint/*` from 17.8.0 to 18.4.3 ([#1659](https://github.com/ybiquitous/ybiq/issues/1659)) ([1610d09](https://github.com/ybiquitous/ybiq/commit/1610d094e9506f533256a00db96a39297c6cb0ad))
+- **deps:** bump lint-staged from 14.0.1 to 15.1.0 ([#1652](https://github.com/ybiquitous/ybiq/issues/1652)) ([da3a382](https://github.com/ybiquitous/ybiq/commit/da3a382c547a85663f48e558e6187cc55398ca93))
+- **deps:** bump ybiquitous/npm-audit-fix-action from 5 to 6 ([#1673](https://github.com/ybiquitous/ybiq/issues/1673)) ([a7106c6](https://github.com/ybiquitous/ybiq/commit/a7106c6482a6daaa218f5e4420b0214dfa3e0f5a))
+- remove Node.js 16 support ([#1661](https://github.com/ybiquitous/ybiq/issues/1661)) ([cd72806](https://github.com/ybiquitous/ybiq/commit/cd7280624ea1ed1c7d4f18c9e23d178dfed4f711))
+
 ### [16.3.1](https://github.com/ybiquitous/ybiq/compare/v16.3.0...v16.3.1) (2023-09-26)
 
 ### Bug Fixes
