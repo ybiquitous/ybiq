@@ -27,7 +27,7 @@ exports[`update "package.json" 1`] = `
     "root": true,
   },
   "lint-staged": {
-    "!(*.snap)": "prettier --cache --write",
+    "!(**/*.snap|.husky/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.css": "xyz",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
@@ -54,7 +54,7 @@ exports[`update "package.json" 1`] = `
     "lint:styles:fix": "npm run prettier -- --write",
     "lint:types": "tsc --noEmit",
     "lint:types:watch": "npm run lint:types -- --watch",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run clean",
     "pretest": "npm run lint",
     "prettier": "prettier --cache .",
@@ -100,7 +100,7 @@ exports[`update "package.json" without fields 1`] = `
     "root": true,
   },
   "lint-staged": {
-    "!(*.snap)": "prettier --cache --write",
+    "!(**/*.snap|.husky/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
   },
@@ -125,7 +125,7 @@ exports[`update "package.json" without fields 1`] = `
     "lint:styles:fix": "npm run prettier -- --write",
     "lint:types": "tsc --noEmit",
     "lint:types:watch": "npm run lint:types -- --watch",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run clean",
     "pretest": "npm run lint",
     "prettier": "prettier --cache .",
@@ -257,26 +257,17 @@ jobs:
 `;
 
 exports[`write ".husky/commit-msg" 1`] = `
-"#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx --no-install commitlint --edit "$1"
+"npx --no-install commitlint --edit "$1"
 "
 `;
 
 exports[`write ".husky/post-commit" 1`] = `
-"#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npm run release:dry-run
+"npm run release:dry-run
 "
 `;
 
 exports[`write ".husky/pre-commit" 1`] = `
-"#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx --no-install lint-staged
+"npx --no-install lint-staged
 "
 `;
 
