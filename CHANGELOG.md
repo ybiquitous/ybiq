@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [17.1.0](https://github.com/ybiquitous/ybiq/compare/v17.0.0...v17.1.0) (2024-01-29)
+
+### Features
+
+- **deps:** bump husky from 8.0.3 to 9.0.6 ([#1689](https://github.com/ybiquitous/ybiq/issues/1689)) ([f6c3e51](https://github.com/ybiquitous/ybiq/commit/f6c3e511634557ad53e8d109d52b42f7c076ebd0))
+
 ## [17.0.0](https://github.com/ybiquitous/ybiq/compare/v16.3.1...v17.0.0) (2023-12-26)
 
 ### ⚠ BREAKING CHANGES
