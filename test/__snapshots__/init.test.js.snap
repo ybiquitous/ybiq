@@ -10,7 +10,7 @@ exports[`update "package.json" 1`] = `
       "body-max-line-length": [
         1,
         "always",
-        100,
+        300,
       ],
     },
   },
@@ -83,7 +83,7 @@ exports[`update "package.json" without fields 1`] = `
       "body-max-line-length": [
         1,
         "always",
-        100,
+        300,
       ],
     },
   },
