@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [17.2.0](https://github.com/ybiquitous/ybiq/compare/v17.1.0...v17.2.0) (2024-01-30)
+
+### Features
+
+- **commitlint:** loosen `body-max-line-length` from 100 to 300 ([#1690](https://github.com/ybiquitous/ybiq/issues/1690)) ([fdead22](https://github.com/ybiquitous/ybiq/commit/fdead22a1c5008067ccdff7438e4a64a251400bf))
+- **husky:** replace `npx --no-install` with `npm exec --no` ([#1691](https://github.com/ybiquitous/ybiq/issues/1691)) ([ec3af44](https://github.com/ybiquitous/ybiq/commit/ec3af441149f47471145a24c602028a7acde805b))
+
 ## [17.1.0](https://github.com/ybiquitous/ybiq/compare/v17.0.0...v17.1.0) (2024-01-29)
 
 ### Features
