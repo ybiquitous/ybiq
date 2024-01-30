@@ -257,7 +257,7 @@ jobs:
 `;
 
 exports[`write ".husky/commit-msg" 1`] = `
-"npx --no-install commitlint --edit "$1"
+"npm exec --no -- commitlint --edit "$1"
 "
 `;
 
@@ -267,7 +267,7 @@ exports[`write ".husky/post-commit" 1`] = `
 `;
 
 exports[`write ".husky/pre-commit" 1`] = `
-"npx --no-install lint-staged
+"npm exec --no -- lint-staged
 "
 `;
 
