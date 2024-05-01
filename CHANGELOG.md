@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [17.3.0](https://github.com/ybiquitous/ybiq/compare/v17.2.0...v17.3.0) (2024-05-01)
+
+### Features
+
+- **actions:** add Node.js 22 to test matrix ([#1729](https://github.com/ybiquitous/ybiq/issues/1729)) ([6189917](https://github.com/ybiquitous/ybiq/commit/61899179ed84020a3e67c5ccaa6408a6e48ecf3c))
+
+### Bug Fixes
+
+- **deps:** bump the commitlint group with 2 updates to v19 ([#1707](https://github.com/ybiquitous/ybiq/issues/1707)) ([4c7f066](https://github.com/ybiquitous/ybiq/commit/4c7f066596e69e857cbfbd683c375a3a16a068ea))
+
 ## [17.2.0](https://github.com/ybiquitous/ybiq/compare/v17.1.0...v17.2.0) (2024-01-30)
 
 ### Features
