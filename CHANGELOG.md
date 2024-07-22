@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [17.4.0](https://github.com/ybiquitous/ybiq/compare/v17.3.0...v17.4.0) (2024-07-22)
+
+### Features
+
+- **husky:** remove no longer needed `npm exec` since 9.1.1 ([#1760](https://github.com/ybiquitous/ybiq/issues/1760)) ([2d0af12](https://github.com/ybiquitous/ybiq/commit/2d0af12407a148bebb02ff86ad8c90f62df6ee79))
+
 ## [17.3.0](https://github.com/ybiquitous/ybiq/compare/v17.2.0...v17.3.0) (2024-05-01)
 
 ### Features
