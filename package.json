@@ -106,7 +106,7 @@
       "body-max-line-length": [
         2,
         "always",
-        300
+        400
       ],
       "header-max-length": [
         2,
