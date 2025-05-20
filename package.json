@@ -30,7 +30,7 @@
     ".husky/pre-commit"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "publishConfig": {
     "provenance": true
