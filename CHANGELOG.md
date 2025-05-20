@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [18.0.0](https://github.com/ybiquitous/ybiq/compare/v17.4.0...v18.0.0) (2025-05-20)
+
+### ⚠ BREAKING CHANGES
+
+- remove Node.js 18 support (#1901)
+
+### Features
+
+- **actions:** add Node.js 24 to test matrix ([#1902](https://github.com/ybiquitous/ybiq/issues/1902)) ([8d1b861](https://github.com/ybiquitous/ybiq/commit/8d1b86156eb1a7458b3808bb331922444d3eb990))
+- **actions:** run tests regularly and manually ([#1900](https://github.com/ybiquitous/ybiq/issues/1900)) ([46f81f9](https://github.com/ybiquitous/ybiq/commit/46f81f9a8257819e3309aaf423e22b40d5f63cf9))
+- **deps:** bump lint-staged from 15.5.1 to 16.0.0 ([#1895](https://github.com/ybiquitous/ybiq/issues/1895)) ([ac9b8f2](https://github.com/ybiquitous/ybiq/commit/ac9b8f2086f94793acfcb1394e9227d5e795ccef))
+- **deps:** bump ybiquitous/npm-audit-fix-action from 6 to 7 ([#1857](https://github.com/ybiquitous/ybiq/issues/1857)) ([196e0a3](https://github.com/ybiquitous/ybiq/commit/196e0a355139c469c8929bb62af1403346c5a4e9))
+- remove Node.js 18 support ([#1901](https://github.com/ybiquitous/ybiq/issues/1901)) ([41811f1](https://github.com/ybiquitous/ybiq/commit/41811f14a51deb5a4a95ce87dfeb5a891befc2be))
+
+### Bug Fixes
+
+- **actions:** explicitly specify permissions to all jobs for security ([#1899](https://github.com/ybiquitous/ybiq/issues/1899)) ([90492bb](https://github.com/ybiquitous/ybiq/commit/90492bb4e2cdb09a384aae5531cb9bda779063c7))
+
 ## [17.4.0](https://github.com/ybiquitous/ybiq/compare/v17.3.0...v17.4.0) (2024-07-22)
 
 ### Features
