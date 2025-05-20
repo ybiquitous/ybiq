@@ -173,6 +173,8 @@ on:
 jobs:
   auto-merge:
     uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@main
+    permissions:
+      contents: write
 "
 `;
 
@@ -229,6 +231,9 @@ jobs:
     uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@main
     secrets:
       npm-token: \${{ secrets.NPM_TOKEN }}
+    permissions:
+      contents: write
+      id-token: write
 "
 `;
 
@@ -250,9 +255,13 @@ jobs:
     uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@main
     with:
       node-version: \${{ matrix.node-version }}
+    permissions:
+      contents: read
 
   lint:
     uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@main
+    permissions:
+      contents: read
 "
 `;
 

@@ -15,6 +15,10 @@ jobs:
     uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@main
     with:
       node-version: ${{ matrix.node-version }}
+    permissions:
+      contents: read
 
   lint:
     uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@main
+    permissions:
+      contents: read
