@@ -51,9 +51,9 @@
     "@tsconfig/strictest": "^2.0.5",
     "@types/node": "^24.0.3",
     "@types/yargs": "^17.0.33",
-    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
     "eslint-config-ybiquitous": "^21.1.0",
-    "eslint-plugin-jest": "^28.14.0",
+    "eslint-plugin-jest": "^29.0.1",
     "jest": "^30.0.2",
     "remark-preset-ybiquitous": "^0.4.4",
     "typescript": "^5.8.3"
