@@ -7,8 +7,6 @@ on:
 jobs:
   release:
     uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@main
-    secrets:
-      npm-token: ${{ secrets.NPM_TOKEN }}
     permissions:
       contents: write
       id-token: write
