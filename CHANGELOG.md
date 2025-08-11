@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [18.1.0](https://github.com/ybiquitous/ybiq/compare/v18.0.0...v18.1.0) (2025-08-11)
+
+### Features
+
+- **actions:** support npm trusted publishing with OIDC ([#1943](https://github.com/ybiquitous/ybiq/issues/1943)) ([1787f4b](https://github.com/ybiquitous/ybiq/commit/1787f4b66bbea9704ba6564aefd4028a83e38527))
+
+### Bug Fixes
+
+- **deps:** bump yargs from 17.7.2 to 18.0.0 ([#1908](https://github.com/ybiquitous/ybiq/issues/1908)) ([fa40a09](https://github.com/ybiquitous/ybiq/commit/fa40a09982547687e8a0419d96063f86287b86bb))
+
 ## [18.0.0](https://github.com/ybiquitous/ybiq/compare/v17.4.0...v18.0.0) (2025-05-20)
 
 ### ⚠ BREAKING CHANGES
