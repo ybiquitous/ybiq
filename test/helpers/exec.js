@@ -1,5 +1,5 @@
-import { execFile as originalExecFile } from "child_process";
-import { promisify } from "util";
+import { execFile as originalExecFile } from "node:child_process";
+import { promisify } from "node:util";
 
 const execFile = promisify(originalExecFile);
 
