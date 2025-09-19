@@ -26,7 +26,6 @@
     ".github/workflows/release.yml",
     ".github/workflows/test.yml",
     ".husky/commit-msg",
-    ".husky/post-commit",
     ".husky/pre-commit"
   ],
   "engines": {
@@ -38,13 +37,14 @@
   "dependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "conventional-changelog": "^7.1.1",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
     "eslint": "^8.57.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.6.2",
     "remark-cli": "^12.0.1",
-    "standard-version": "^9.5.0",
     "yargs": "^18.0.0"
   },
   "devDependencies": {
@@ -77,21 +77,14 @@
     "lint:styles:fix": "npm run prettier -- --write",
     "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
-    "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run clean",
-    "release": "standard-version",
-    "release:dry-run": "standard-version --dry-run",
+    "changelog": "conventional-changelog --preset conventionalcommits --release-count 0 && prettier --write CHANGELOG.md",
+    "postversion": "npm run changelog",
     "prepare": "husky"
   },
   "lint-staged": {
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
     "!(**/*.snap|.husky/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail"
-  },
-  "standard-version": {
-    "sign": true,
-    "scripts": {
-      "postchangelog": "prettier --write CHANGELOG.md"
-    }
   },
   "remarkConfig": {
     "plugins": [
@@ -120,6 +113,7 @@
           "",
           "actions",
           "api",
+          "changelog",
           "commitlint",
           "coverage",
           "deps",
@@ -134,7 +128,6 @@
           "readme",
           "release",
           "remark",
-          "standard-version",
           "types"
         ]
       ]
