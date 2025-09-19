@@ -59,7 +59,6 @@ test('update "package.json" without fields', () =>
   ".github/workflows/release.yml",
   ".github/workflows/test.yml",
   ".husky/commit-msg",
-  ".husky/post-commit",
   ".husky/pre-commit",
 ].forEach((file) => {
   test(`write "${file}"`, () =>
@@ -96,10 +95,10 @@ test("End-to-End via CLI", () =>
       => [32m'.github/workflows/release.yml'[39m was updated
       => [32m'.github/workflows/test.yml'[39m was updated
       => [32m'.husky/commit-msg'[39m was updated
-      => [32m'.husky/post-commit'[39m was updated
       => [32m'.husky/pre-commit'[39m was updated
       => [32m'.husky/.gitignore'[39m was removed
       => [32m'.github/workflows/commitlint.yml'[39m was removed
+      => [32m'.husky/post-commit'[39m was removed
       "
     `);
     expect(stderr).toEqual("");

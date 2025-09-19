@@ -42,6 +42,7 @@ exports[`update "package.json" 1`] = `
     ],
   },
   "scripts": {
+    "changelog": "conventional-changelog --preset conventionalcommits --release-count 0 && prettier --write CHANGELOG.md",
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
     "lint": "npm-run-all --print-label --silent --parallel lint:*",
@@ -54,21 +55,13 @@ exports[`update "package.json" 1`] = `
     "lint:styles:fix": "npm run prettier -- --write",
     "lint:types": "tsc --noEmit",
     "lint:types:watch": "npm run lint:types -- --watch",
+    "postversion": "npm run changelog",
     "prepare": "husky",
-    "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run clean",
     "pretest": "npm run lint",
     "prettier": "prettier --cache .",
-    "release": "standard-version",
-    "release:dry-run": "standard-version --dry-run",
     "test": "abc",
     "test:coverage": "npm --ignore-scripts test -- --coverage",
     "test:watch": "npm --ignore-scripts test -- --watch",
-  },
-  "standard-version": {
-    "scripts": {
-      "postchangelog": "prettier --write CHANGELOG.md",
-    },
-    "sign": true,
   },
 }
 `;
@@ -113,6 +106,7 @@ exports[`update "package.json" without fields 1`] = `
     ],
   },
   "scripts": {
+    "changelog": "conventional-changelog --preset conventionalcommits --release-count 0 && prettier --write CHANGELOG.md",
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
     "lint": "npm-run-all --print-label --silent --parallel lint:*",
@@ -125,21 +119,13 @@ exports[`update "package.json" without fields 1`] = `
     "lint:styles:fix": "npm run prettier -- --write",
     "lint:types": "tsc --noEmit",
     "lint:types:watch": "npm run lint:types -- --watch",
+    "postversion": "npm run changelog",
     "prepare": "husky",
-    "prerelease": "git switch main && git pull && npm ci && npm run clean && npm test && npm run clean",
     "pretest": "npm run lint",
     "prettier": "prettier --cache .",
-    "release": "standard-version",
-    "release:dry-run": "standard-version --dry-run",
     "test": "test",
     "test:coverage": "npm --ignore-scripts test -- --coverage",
     "test:watch": "npm --ignore-scripts test -- --watch",
-  },
-  "standard-version": {
-    "scripts": {
-      "postchangelog": "prettier --write CHANGELOG.md",
-    },
-    "sign": true,
   },
 }
 `;
@@ -270,11 +256,6 @@ jobs:
 
 exports[`write ".husky/commit-msg" 1`] = `
 "commitlint --edit "$1"
-"
-`;
-
-exports[`write ".husky/post-commit" 1`] = `
-"npm run release:dry-run
 "
 `;
 
