@@ -92,6 +92,7 @@ test("End-to-End via CLI", () =>
       => [32m'.github/workflows/dependabot-auto-merge.yml'[39m was updated
       => [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
       => [32m'.github/workflows/npm-diff.yml'[39m was updated
+      => [32m'.github/workflows/release-pr.yml'[39m was updated
       => [32m'.github/workflows/release.yml'[39m was updated
       => [32m'.github/workflows/test.yml'[39m was updated
       => [32m'.husky/commit-msg'[39m was updated
