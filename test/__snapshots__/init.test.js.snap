@@ -43,6 +43,7 @@ exports[`update "package.json" 1`] = `
   },
   "scripts": {
     "changelog": "conventional-changelog --preset conventionalcommits --release-count 0 && prettier --write CHANGELOG.md",
+    "changelog:dryrun": "npm version "\${NEW_VERSION}" --no-git-tag-version && git diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
     "lint": "npm-run-all --print-label --silent --parallel lint:*",
@@ -107,6 +108,7 @@ exports[`update "package.json" without fields 1`] = `
   },
   "scripts": {
     "changelog": "conventional-changelog --preset conventionalcommits --release-count 0 && prettier --write CHANGELOG.md",
+    "changelog:dryrun": "npm version "\${NEW_VERSION}" --no-git-tag-version && git diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
     "lint": "npm-run-all --print-label --silent --parallel lint:*",
