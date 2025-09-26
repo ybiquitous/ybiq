@@ -1,5 +1,11 @@
 ## [19.0.0](https://github.com/ybiquitous/ybiq/compare/v18.1.0...v19.0.0) (2025-09-26)
 
+### ⚠ BREAKING CHANGES
+
+- `CHANGELOG.md` is reformatted.
+- `husky/post-commit` is removed.
+- The new release workflow requires creating a pull request before publishing.
+
 ### Features
 
 - **changelog:** migrate `standard-version` to `conventional-changelog` ([#1957](https://github.com/ybiquitous/ybiq/issues/1957)) ([7ab4ed5](https://github.com/ybiquitous/ybiq/commit/7ab4ed5c1a92555e17abdb531a0cb79d3795b3a4))
