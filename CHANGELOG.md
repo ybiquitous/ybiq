@@ -1,3 +1,5 @@
+## 19.0.0 (2025-09-26)
+
 ## [18.1.0](https://github.com/ybiquitous/ybiq/compare/v18.0.0...v18.1.0) (2025-08-11)
 
 ### Features
