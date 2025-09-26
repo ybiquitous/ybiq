@@ -43,7 +43,7 @@ exports[`update "package.json" 1`] = `
   },
   "scripts": {
     "changelog": "if [ ! -f CHANGELOG.md ]; then conventional-changelog --first-release ; else conventional-changelog ; fi && prettier --write CHANGELOG.md",
-    "changelog:dryrun": "npm version "\${NEW_VERSION}" --no-git-tag-version && git diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
+    "changelog:dryrun": "npm version "\${NEW_VERSION:-major}" --no-git-tag-version && git --no-pager diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
     "lint": "npm-run-all --print-label --silent --parallel lint:*",
@@ -108,7 +108,7 @@ exports[`update "package.json" without fields 1`] = `
   },
   "scripts": {
     "changelog": "if [ ! -f CHANGELOG.md ]; then conventional-changelog --first-release ; else conventional-changelog ; fi && prettier --write CHANGELOG.md",
-    "changelog:dryrun": "npm version "\${NEW_VERSION}" --no-git-tag-version && git diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
+    "changelog:dryrun": "npm version "\${NEW_VERSION:-major}" --no-git-tag-version && git --no-pager diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
     "lint": "npm-run-all --print-label --silent --parallel lint:*",
