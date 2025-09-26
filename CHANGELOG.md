@@ -1,3 +1,23 @@
+## [19.0.0](https://github.com/ybiquitous/ybiq/compare/v18.1.0...v19.0.0) (2025-09-26)
+
+### ⚠ BREAKING CHANGES
+
+- `CHANGELOG.md` is reformatted ([#1957](https://github.com/ybiquitous/ybiq/issues/1957))
+- `husky/post-commit` is removed ([#1957](https://github.com/ybiquitous/ybiq/issues/1957))
+- The new release workflow requires creating a pull request before publishing ([#1960](https://github.com/ybiquitous/ybiq/issues/1960))
+
+### Features
+
+- **changelog:** migrate `standard-version` to `conventional-changelog` ([#1957](https://github.com/ybiquitous/ybiq/issues/1957)) ([7ab4ed5](https://github.com/ybiquitous/ybiq/commit/7ab4ed5c1a92555e17abdb531a0cb79d3795b3a4))
+- **deps:** bump actions/checkout from 4 to 5 ([#1944](https://github.com/ybiquitous/ybiq/issues/1944)) ([bf04d42](https://github.com/ybiquitous/ybiq/commit/bf04d423f5ba123e5b4f6527ab597d1826f1f946))
+- **init:** add `npm run changelog:dryrun` script ([#1963](https://github.com/ybiquitous/ybiq/issues/1963)) ([01ad3f7](https://github.com/ybiquitous/ybiq/commit/01ad3f7150a94823ba8074b555cf0d14d51ed399))
+- **init:** change release workflow ([#1960](https://github.com/ybiquitous/ybiq/issues/1960)) ([08a472e](https://github.com/ybiquitous/ybiq/commit/08a472e67479355a59078e12aa00c0532b6d2448))
+
+### Bug Fixes
+
+- **deps:** bump ybiquitous/.github from 1.0.2 to 1.0.3 ([#1971](https://github.com/ybiquitous/ybiq/issues/1971)) ([fd95430](https://github.com/ybiquitous/ybiq/commit/fd95430d492add42f9368b17561c606ec94458bc))
+- **init:** `npm run changelog` to respect first release and no full commit logs ([#1965](https://github.com/ybiquitous/ybiq/issues/1965)) ([e6a847b](https://github.com/ybiquitous/ybiq/commit/e6a847b89583f50de3ef4b65d9c755ac030c7d8b))
+
 ## [18.1.0](https://github.com/ybiquitous/ybiq/compare/v18.0.0...v18.1.0) (2025-08-11)
 
 ### Features
