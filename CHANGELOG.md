@@ -2,9 +2,9 @@
 
 ### ⚠ BREAKING CHANGES
 
-- `CHANGELOG.md` is reformatted.
-- `husky/post-commit` is removed.
-- The new release workflow requires creating a pull request before publishing.
+- `CHANGELOG.md` is reformatted ([#1957](https://github.com/ybiquitous/ybiq/issues/1957))
+- `husky/post-commit` is removed ([#1957](https://github.com/ybiquitous/ybiq/issues/1957))
+- The new release workflow requires creating a pull request before publishing ([#1960](https://github.com/ybiquitous/ybiq/issues/1960))
 
 ### Features
 
