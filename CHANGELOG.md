@@ -1,3 +1,10 @@
+## [19.0.1](https://github.com/ybiquitous/ybiq/compare/v19.0.0...v19.0.1) (2025-10-23)
+
+### Bug Fixes
+
+- **deps:** bump the commitlint group from v19 to v20 ([#1974](https://github.com/ybiquitous/ybiq/issues/1974)) ([35ea930](https://github.com/ybiquitous/ybiq/commit/35ea930bd1bd600beb1a1d4c0f9e3c7ef4409d36))
+- **deps:** bump ybiquitous/.github from 1.0.3 to 2.1.3 ([#1975](https://github.com/ybiquitous/ybiq/issues/1975)) ([3ab4bf9](https://github.com/ybiquitous/ybiq/commit/3ab4bf9640ecd74674d5031228448084b267cc7b))
+
 ## [19.0.0](https://github.com/ybiquitous/ybiq/compare/v18.1.0...v19.0.0) (2025-09-26)
 
 ### ⚠ BREAKING CHANGES
