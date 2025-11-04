@@ -8,14 +8,19 @@ import { pkg } from "./helpers/pkg.js";
 
 let stdoutMock;
 let stderrMock;
+let originalEnv;
 
 beforeEach(() => {
   stdoutMock = { write: jest.fn() };
   stderrMock = { write: jest.fn() };
+  originalEnv = { ...process.env };
+  process.env.FORCE_COLOR = undefined;
+  process.env.NO_COLOR = "1";
 });
 
 afterEach(() => {
   jest.clearAllMocks();
+  process.env = originalEnv;
 });
 
 // eslint-disable-next-line max-statements
