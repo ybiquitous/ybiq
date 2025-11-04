@@ -11,6 +11,7 @@ export type RunLabeler = (script: string) => string;
 
 export type RunParams = {
   readonly scripts: ReadonlyArray<string>;
+  readonly npm?: boolean | undefined;
   readonly labeler?: RunLabeler | undefined;
   readonly stdout?: NodeJS.WriteStream | undefined;
   readonly stderr?: NodeJS.WriteStream | undefined;
@@ -22,10 +23,6 @@ export type RunResult = {
   readonly code: number | undefined;
   readonly error: Error | undefined;
 };
-
-export class RunError extends Error {
-  readonly script: string;
-}
 
 export declare function run(params: RunParams): Promise<{
   success: boolean;
