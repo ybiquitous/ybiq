@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`End-to-End via CLI 1`] = `
+"[34m[echo "Hi"][39m Hi
+"
+`;
+
+exports[`finish with errors when some scripts fail 1`] = `
+[
+  [
+    "[34m[node -e "console.log('Hi')"][39m Hi
+",
+  ],
+]
+`;
+
+exports[`finish with errors when some scripts fail 2`] = `
+[
+  [
+    "[32m[invalid_command][39m /bin/sh: invalid_command: command not found
+",
+  ],
+]
+`;
+
+exports[`run multiple scripts in parallel 1`] = `
+[
+  [
+    "[34m[echo "Hello"][39m Hello
+",
+  ],
+  [
+    "[36m[node -e "console.log('Hi')"][39m Hi
+",
+  ],
+]
+`;
+
+exports[`run multiple scripts in parallel 2`] = `
+[
+  [
+    "[32m[node -e "console.error('Error')"][39m Error
+",
+  ],
+]
+`;
