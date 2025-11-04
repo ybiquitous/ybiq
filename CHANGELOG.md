@@ -1,3 +1,14 @@
+## [19.0.2](https://github.com/ybiquitous/ybiq/compare/v19.0.1...v19.0.2) (2025-11-04)
+
+### Features
+
+- **deps:** bump ybiquitous/.github from 2.1.5 to 2.2.0 ([#1989](https://github.com/ybiquitous/ybiq/issues/1989)) ([e2b244b](https://github.com/ybiquitous/ybiq/commit/e2b244b6fdaff56a32fdf0c8179d5dc3507614be))
+
+### Bug Fixes
+
+- **deps:** bump ybiquitous/.github from 2.1.3 to 2.1.4 ([#1983](https://github.com/ybiquitous/ybiq/issues/1983)) ([d56fed1](https://github.com/ybiquitous/ybiq/commit/d56fed11948d34dbdbce93489432eb02d9a6cdcc))
+- **deps:** bump ybiquitous/.github from 2.1.4 to 2.1.5 ([#1984](https://github.com/ybiquitous/ybiq/issues/1984)) ([9f93c54](https://github.com/ybiquitous/ybiq/commit/9f93c54a25705242496818b9b9b0765b316cbe57))
+
 ## [19.0.1](https://github.com/ybiquitous/ybiq/compare/v19.0.0...v19.0.1) (2025-10-23)
 
 ### Bug Fixes
