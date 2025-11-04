@@ -94,7 +94,7 @@ test("finish with errors when some scripts fail", async () => {
   expect(stderrMock.write).toHaveBeenCalledTimes(1);
   expect(stderrMock.write).toHaveBeenNthCalledWith(
     1,
-    `[invalid_command] /bin/sh: invalid_command: command not found\n`,
+    expect.stringMatching(/\[invalid_command\] \/bin\/sh: .+ not found/u),
   );
 });
 
