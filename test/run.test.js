@@ -8,20 +8,24 @@ import { pkg } from "./helpers/pkg.js";
 
 let stdoutMock;
 let stderrMock;
-let originalEnv;
 
 beforeEach(() => {
-  stdoutMock = { write: jest.fn() };
-  stderrMock = { write: jest.fn() };
-  originalEnv = { ...process.env };
-  process.env.FORCE_COLOR = undefined;
-  process.env.NO_COLOR = "1";
+  stdoutMock = { write: jest.fn(), hasColors: () => false };
+  stderrMock = { write: jest.fn(), hasColors: () => false };
 });
 
 afterEach(() => {
   jest.clearAllMocks();
-  process.env = originalEnv;
 });
+
+function runWithMocks(scripts, options = {}) {
+  return run({
+    scripts,
+    stdout: stdoutMock,
+    stderr: stderrMock,
+    ...options,
+  });
+}
 
 // eslint-disable-next-line max-statements
 test("run multiple scripts in parallel", async () => {
@@ -30,7 +34,7 @@ test("run multiple scripts in parallel", async () => {
     `node -e "console.log('Hi')"`,
     `node -e "console.error('Error')"`,
   ];
-  const result = await run({ scripts, stdout: stdoutMock, stderr: stderrMock });
+  const result = await runWithMocks(scripts);
 
   expect(result.success).toBe(true);
   expect(result.results).toHaveLength(3);
@@ -52,16 +56,18 @@ test("run multiple scripts in parallel", async () => {
     script: scripts[2],
     error: undefined,
   });
+
   expect(stdoutMock.write).toHaveBeenCalledTimes(2);
-  expect(stdoutMock.write.mock.calls).toMatchSnapshot();
+  expect(stdoutMock.write).toHaveBeenNthCalledWith(1, `[echo "Hello"] Hello\n`);
+  expect(stdoutMock.write).toHaveBeenNthCalledWith(2, `[node -e "console.log('Hi')"] Hi\n`);
   expect(stderrMock.write).toHaveBeenCalledTimes(1);
-  expect(stderrMock.write.mock.calls).toMatchSnapshot();
+  expect(stderrMock.write).toHaveBeenNthCalledWith(1, `[node -e "console.error('Error')"] Error\n`);
 });
 
 // eslint-disable-next-line max-statements
 test("finish with errors when some scripts fail", async () => {
   const scripts = [`node -e "console.log('Hi')"`, `node -e "process.exit(1)"`, `invalid_command`];
-  const result = await run({ scripts, stdout: stdoutMock, stderr: stderrMock });
+  const result = await runWithMocks(scripts);
 
   expect(result.success).toBe(false);
   expect(result.results).toHaveLength(3);
@@ -84,14 +90,31 @@ test("finish with errors when some scripts fail", async () => {
     error: undefined,
   });
   expect(stdoutMock.write).toHaveBeenCalledTimes(1);
+  expect(stdoutMock.write).toHaveBeenNthCalledWith(1, `[node -e "console.log('Hi')"] Hi\n`);
   expect(stderrMock.write).toHaveBeenCalledTimes(1);
-  expect(stdoutMock.write.mock.calls).toMatchSnapshot();
-  expect(stderrMock.write.mock.calls).toMatchSnapshot();
+  expect(stderrMock.write).toHaveBeenNthCalledWith(
+    1,
+    `[invalid_command] /bin/sh: invalid_command: command not found\n`,
+  );
+});
+
+test("run npm scripts", async () => {
+  const scripts = ["postprepare"];
+  const result = await runWithMocks(scripts, { npm: true });
+
+  expect(result.success).toBe(true);
+  expect(result.results).toHaveLength(1);
+  expect(result.results[0]).toEqual({
+    code: 0,
+    success: true,
+    script: "npm run postprepare",
+    error: undefined,
+  });
 });
 
 test("End-to-End via CLI", async () => {
   const { stdout, stderr } = await exec(resolve(pkg.bin), "run", `echo "Hi"`);
 
-  expect(stdout).toMatchSnapshot();
+  expect(stdout).toBe(`[echo "Hi"] Hi\n`);
   expect(stderr).toBe("");
 });
