@@ -160,7 +160,7 @@ on:
 
 jobs:
   auto-merge:
-    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@e54eb84e49a9fd53560891994cb394d0352b3a5c # v2.1.5
+    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@f8fcc24daafba740475cba67eaf3d5c19abd3f14 # v2.2.0
     permissions:
       contents: write
 "
@@ -217,7 +217,7 @@ on:
 
 jobs:
   release:
-    uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@e54eb84e49a9fd53560891994cb394d0352b3a5c # v2.1.5
+    uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@f8fcc24daafba740475cba67eaf3d5c19abd3f14 # v2.2.0
     permissions:
       contents: write
       id-token: write
@@ -244,14 +244,14 @@ jobs:
       fail-fast: false
       matrix:
         node-version: ["20", "22", "24"]
-    uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@e54eb84e49a9fd53560891994cb394d0352b3a5c # v2.1.5
+    uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@f8fcc24daafba740475cba67eaf3d5c19abd3f14 # v2.2.0
     with:
       node-version: \${{ matrix.node-version }}
     permissions:
       contents: read
 
   lint:
-    uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@e54eb84e49a9fd53560891994cb394d0352b3a5c # v2.1.5
+    uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@f8fcc24daafba740475cba67eaf3d5c19abd3f14 # v2.2.0
     permissions:
       contents: read
 "
