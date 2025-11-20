@@ -17,5 +17,8 @@
   },
   "husky": {
     "hooks": {}
+  },
+  "standard-version": {
+    "scripts": {}
   }
 }
