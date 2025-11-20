@@ -187,8 +187,8 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v5
-      - uses: ybiquitous/npm-audit-fix-action@v7
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: ybiquitous/npm-audit-fix-action@31a824d54c0b7ffee552df67ad3be12c5ab844ec # v7.3.2
         with:
           github_token: \${{ secrets.PERSONAL_ACCESS_TOKEN }}
 "
@@ -209,7 +209,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: ybiquitous/npm-diff-action@v1
+      - uses: ybiquitous/npm-diff-action@6c8b3173f54df2486b486e16efed488465ab8061 # v1.7.0
 "
 `;
 
