@@ -32,6 +32,9 @@ exports[`update "package.json" 1`] = `
     "*.css": "xyz",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
   },
+  "overrides": {
+    "conventional-changelog-conventionalcommits": "^9.1.0",
+  },
   "publishConfig": {
     "access": true,
     "provenance": true,
@@ -97,6 +100,9 @@ exports[`update "package.json" without fields 1`] = `
     "!(**/*.snap|.husky/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
+  },
+  "overrides": {
+    "conventional-changelog-conventionalcommits": "^9.1.0",
   },
   "publishConfig": {
     "provenance": true,

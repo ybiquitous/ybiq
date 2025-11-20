@@ -86,7 +86,8 @@ test("End-to-End via CLI", () =>
       cwd: ctx.initArgs.cwd,
     });
     expect(stdout).toMatchInlineSnapshot(`
-      "=> [32m'package.json'[39m was updated
+      "=> [32m'conventional-changelog-conventionalcommits'[39m is overridden. Run \`npm i\`.
+      => [32m'package.json'[39m was updated
       => [32m'.editorconfig'[39m was updated
       => [32m'.remarkignore'[39m was updated
       => [32m'.github/workflows/dependabot-auto-merge.yml'[39m was updated
@@ -105,7 +106,7 @@ test("End-to-End via CLI", () =>
     expect(stderr).toEqual("");
   }));
 
-test("Remove `.husky/.gitignore` if exists", () =>
+test("remove `.husky/.gitignore` if exists", () =>
   sandbox(async (ctx) => {
     mkdirSync(join(ctx.workDir, ".husky"));
     writeFileSync(join(ctx.workDir, ".husky", ".gitignore"), "_");
@@ -116,7 +117,7 @@ test("Remove `.husky/.gitignore` if exists", () =>
     expect(existsSync(join(ctx.workDir, ".husky", ".gitignore"))).toEqual(false);
   }));
 
-test("Remove `.github/workflows/commitlint.yml` if exists", () =>
+test("remove `.github/workflows/commitlint.yml` if exists", () =>
   sandbox(async (ctx) => {
     mkdirSync(join(ctx.workDir, ".github", "workflows"), { recursive: true });
     writeFileSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"), "dummy: 1");
@@ -125,4 +126,24 @@ test("Remove `.github/workflows/commitlint.yml` if exists", () =>
     await init(ctx.initArgs);
 
     expect(existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"))).toEqual(false);
+  }));
+
+test("overrids `conventional-changelog-conventionalcommits` with the consistent version", () =>
+  sandbox(async (ctx) => {
+    const src = ctx.fixture("package-normal.json");
+    await init(ctx.initArgs);
+    expect(readJSON(src).overrides["conventional-changelog-conventionalcommits"]).toEqual(
+      pkg.dependencies["conventional-changelog-conventionalcommits"],
+    );
+  }));
+
+test("overrids `conventional-changelog-conventionalcommits` keeping other packages", () =>
+  sandbox(async (ctx) => {
+    const src = ctx.fixture("package-overrides.json");
+    await init(ctx.initArgs);
+    expect(readJSON(src).overrides).toEqual({
+      "conventional-changelog-conventionalcommits":
+        pkg.dependencies["conventional-changelog-conventionalcommits"],
+      foo: "1.2.3",
+    });
   }));
