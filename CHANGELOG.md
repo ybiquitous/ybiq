@@ -1,3 +1,10 @@
+## [19.2.0](https://github.com/ybiquitous/ybiq/compare/v19.1.0...v19.2.0) (2025-11-20)
+
+### Features
+
+- **init:** add `overrides` for `conventional-changelog-conventionalcommits` to `package.json` ([#1998](https://github.com/ybiquitous/ybiq/issues/1998)) ([c068527](https://github.com/ybiquitous/ybiq/commit/c068527b1a16364c0106f155e923682c1f31fd92))
+- **init:** remove useless `standard-version` field in `package.json` ([#1997](https://github.com/ybiquitous/ybiq/issues/1997)) ([36143d4](https://github.com/ybiquitous/ybiq/commit/36143d4037ee9b23c6237df9fe8388c1999eb2ca))
+
 ## [19.1.0](https://github.com/ybiquitous/ybiq/compare/v19.0.1...v19.1.0) (2025-11-04)
 
 ### Features
