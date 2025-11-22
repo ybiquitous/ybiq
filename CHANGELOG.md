@@ -1,3 +1,9 @@
+## [20.0.1](https://github.com/ybiquitous/ybiq/compare/v20.0.0...v20.0.1) (2025-11-22)
+
+### Bug Fixes
+
+- **types:** remove unneeded global types ([#2011](https://github.com/ybiquitous/ybiq/issues/2011)) ([e761049](https://github.com/ybiquitous/ybiq/commit/e761049f766cd44a97e0d42657b516fe70f55d4d))
+
 ## [20.0.0](https://github.com/ybiquitous/ybiq/compare/v19.2.0...v20.0.0) (2025-11-22)
 
 ### ⚠ BREAKING CHANGES
