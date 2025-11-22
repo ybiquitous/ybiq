@@ -1,3 +1,13 @@
+## [20.0.0](https://github.com/ybiquitous/ybiq/compare/v19.2.0...v20.0.0) (2025-11-22)
+
+### ⚠ BREAKING CHANGES
+
+- **run:** This removed the [`npm-run-all`](https://github.com/mysticatea/npm-run-all) dependency because it has been unmaintained for a long time.
+
+### Features
+
+- **run:** add `ybiq run` command ([#1993](https://github.com/ybiquitous/ybiq/issues/1993)) ([8b1f0c7](https://github.com/ybiquitous/ybiq/commit/8b1f0c7ef7b7734114f4b4b8ac3cbf077339053a))
+
 ## [19.2.0](https://github.com/ybiquitous/ybiq/compare/v19.1.0...v19.2.0) (2025-11-20)
 
 ### Features
