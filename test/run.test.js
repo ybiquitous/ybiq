@@ -116,3 +116,13 @@ test("End-to-End via CLI", async () => {
   expect(stdout).toBe(`[echo "Hi"] Hi\n`);
   expect(stderr).toBe("");
 });
+
+test("End-to-End via CLI when some scripts fail", async () => {
+  await expect(
+    exec(resolve(pkg.bin), "run", `node -e "console.log('Hi')"`, `node -e "process.exit(1)"`),
+  ).rejects.toMatchObject({
+    stdout: `[node -e "console.log('Hi')"] Hi\n`,
+    stderr: "",
+    code: 1,
+  });
+});
