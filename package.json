@@ -43,7 +43,6 @@
     "eslint": "^8.57.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
-    "npm-run-all": "^4.1.5",
     "prettier": "^3.6.2",
     "remark-cli": "^12.0.1",
     "yargs": "^18.0.0"
@@ -75,16 +74,17 @@
     "lint:types": "tsc --noEmit",
     "lint:types:watch": "npm run lint:types -- --watch",
     "lint:commit": "commitlint --from HEAD~10",
-    "lint": "npm-run-all --print-label --silent --parallel lint:*",
+    "lint": "ybiq run --npm lint:js lint:md lint:types lint:commit lint:styles",
     "prettier": "prettier --cache .",
     "lint:styles": "npm run prettier -- --check",
     "lint:styles:fix": "npm run prettier -- --write",
-    "format": "npm-run-all --print-label --silent --parallel lint:*:fix",
+    "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
     "clean": "git clean -dx --force --exclude=node_modules --exclude=.husky",
     "changelog": "if [ ! -f CHANGELOG.md ]; then opts='--first-release' ; fi && conventional-changelog --preset conventional-changelog-conventionalcommits $opts && prettier --write CHANGELOG.md",
     "changelog:dryrun": "npm version \"${NEW_VERSION:-major}\" --no-git-tag-version && git --no-pager diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
     "postversion": "npm run changelog",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postprepare": "ln -sf \"${PWD}/lib/cli.js\" node_modules/.bin/ybiq"
   },
   "lint-staged": {
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
@@ -133,6 +133,7 @@
           "readme",
           "release",
           "remark",
+          "run",
           "types"
         ]
       ]
