@@ -57,7 +57,7 @@ await init({
 // Run scripts in parallel
 await run({
   scripts: ["echo hello", "echo world"],
-  // npm: false,  // Set to true to run npm scripts
+  // npm: false, // Set to true to run npm scripts
   // labeler: (script) => script,  // Customize script labels
   // stdout: process.stdout,
   // stderr: process.stderr,
