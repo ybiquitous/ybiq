@@ -17,7 +17,7 @@
   "types": "./types/ybiq.d.ts",
   "files": [
     "lib",
-    "types",
+    "types/ybiq.d.ts",
     ".editorconfig",
     ".remarkignore",
     ".github/workflows/dependabot-auto-merge.yml",
