@@ -24,7 +24,19 @@ ybiq --help
 
 #### `ybiq init`
 
-The `ybiq init` command sets up an npm project.
+The `ybiq init` command sets up your npm project.
+
+#### `ybiq run`
+
+The `ybiq run` command runs scripts in parallel.
+
+```sh
+# Run shell commands in parallel
+ybiq run "echo hello" "echo world"
+
+# Run npm scripts in parallel
+ybiq run --npm lint:js lint:md lint:types
+```
 
 ### API
 
@@ -33,12 +45,22 @@ You also can use this package programmatically.
 <!-- lint disable code-block-syntax -->
 
 ```js
-import { init } from "ybiq";
+import { init, run } from "ybiq";
 
-init({
+// Initialize project
+await init({
   // Default options
   // cwd: process.cwd(),
   // logger: msg => process.stdout.write(msg),
+});
+
+// Run scripts in parallel
+await run({
+  scripts: ["echo hello", "echo world"],
+  // npm: false,  // Set to true to run npm scripts
+  // labeler: (script) => script,  // Customize script labels
+  // stdout: process.stdout,
+  // stderr: process.stderr,
 });
 ```
 
