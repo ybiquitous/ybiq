@@ -158,7 +158,6 @@
     "env": {
       "es2024": true
     },
-    "rules": {},
     "overrides": [
       {
         "files": "**/*.ts",
