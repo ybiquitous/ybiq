@@ -24,7 +24,7 @@ export type RunResult = {
   readonly error: Error | undefined;
 };
 
-export declare function run(params: RunParams): Promise<{
+export declare function run(params: Readonly<RunParams>): Promise<{
   success: boolean;
   results: Array<RunResult>;
 }>;
