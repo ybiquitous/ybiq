@@ -2,7 +2,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-- **run:** This removed the [`npm-run-all`](https://github.com/mysticatea/npm-run-all) dependency because it has been unmaintained for a long time.
+- **run:** This version removed the [`npm-run-all`](https://github.com/mysticatea/npm-run-all) dependency because it has been unmaintained for a long time.
 
 ### Features
 
