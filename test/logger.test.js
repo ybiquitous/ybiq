@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { jest } from "@jest/globals";
+import { jest } from "@jest/globals"; // eslint-disable-line n/no-extraneous-import
 import { defaultLogger } from "../lib/logger.js";
 
 test("defaultLogger", () => {

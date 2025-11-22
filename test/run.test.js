@@ -1,6 +1,6 @@
 import { resolve } from "node:path";
 
-import { expect, jest } from "@jest/globals"; // eslint-disable-line import/no-extraneous-dependencies
+import { expect, jest } from "@jest/globals"; // eslint-disable-line n/no-extraneous-import
 
 import { run } from "../lib/run.js";
 import { exec } from "./helpers/exec.js";
@@ -27,7 +27,6 @@ function runWithMocks(scripts, options = {}) {
   });
 }
 
-// eslint-disable-next-line max-statements
 test("run multiple scripts in parallel", async () => {
   const scripts = [
     `echo "Hello"`,
@@ -64,7 +63,6 @@ test("run multiple scripts in parallel", async () => {
   expect(stderrMock.write).toHaveBeenNthCalledWith(1, `[node -e "console.error('Error')"] Error\n`);
 });
 
-// eslint-disable-next-line max-statements
 test("finish with errors when some scripts fail", async () => {
   const scripts = [`node -e "console.log('Hi')"`, `node -e "process.exit(1)"`, `invalid_command`];
   const result = await runWithMocks(scripts);
