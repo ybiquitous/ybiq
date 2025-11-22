@@ -155,7 +155,7 @@
       "sourceType": "module"
     },
     "env": {
-      "es2020": true
+      "es2024": true
     },
     "rules": {
       "import/extensions": "off",
