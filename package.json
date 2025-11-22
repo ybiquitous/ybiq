@@ -55,8 +55,8 @@
     "@types/node": "^24.10.1",
     "@types/yargs": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "^8.46.4",
-    "eslint-config-ybiquitous": "^22.0.0",
     "eslint-plugin-jest": "^29.1.0",
+    "eslint-plugin-n": "^17.23.1",
     "jest": "^30.2.0",
     "remark-preset-ybiquitous": "^0.5.1",
     "typescript": "^5.9.3"
@@ -148,7 +148,8 @@
     ],
     "reportUnusedDisableDirectives": true,
     "extends": [
-      "ybiquitous/node"
+      "eslint:recommended",
+      "plugin:n/recommended-module"
     ],
     "parserOptions": {
       "ecmaVersion": "latest",
@@ -157,35 +158,25 @@
     "env": {
       "es2024": true
     },
-    "rules": {
-      "import/extensions": "off",
-      "import/no-internal-modules": "off",
-      "import/no-unresolved": "off",
-      "import/prefer-default-export": "off",
-      "node/no-missing-import": "off"
-    },
+    "rules": {},
     "overrides": [
       {
         "files": "**/*.ts",
-        "extends": "ybiquitous/typescript",
+        "extends": [
+          "plugin:@typescript-eslint/eslint-recommended",
+          "plugin:@typescript-eslint/recommended",
+          "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        ],
         "parserOptions": {
           "project": [
             "./tsconfig.json",
             "./test/tsconfig.test.json"
           ]
-        },
-        "rules": {
-          "import/no-internal-modules": "off",
-          "import/no-unresolved": "off",
-          "node/no-unsupported-features/es-syntax": "off"
         }
       },
       {
         "files": "**/*.test.js",
-        "extends": "plugin:jest/recommended",
-        "rules": {
-          "node/no-unsupported-features/node-builtins": "off"
-        }
+        "extends": "plugin:jest/recommended"
       }
     ]
   },
