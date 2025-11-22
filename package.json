@@ -150,11 +150,11 @@
       "ybiquitous/node"
     ],
     "parserOptions": {
-      "ecmaVersion": 2020,
+      "ecmaVersion": "latest",
       "sourceType": "module"
     },
     "env": {
-      "es2020": true
+      "es2024": true
     },
     "rules": {
       "import/extensions": "off",
