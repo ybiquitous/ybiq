@@ -54,12 +54,12 @@
     "@tsconfig/strictest": "^2.0.8",
     "@types/node": "^24.10.1",
     "@types/yargs": "^17.0.35",
-    "@typescript-eslint/eslint-plugin": "^8.46.4",
     "eslint-plugin-jest": "^29.1.0",
     "eslint-plugin-n": "^17.23.1",
     "jest": "^30.2.0",
     "remark-preset-ybiquitous": "^0.5.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.47.0"
   },
   "scripts": {
     "pretest": "npm run lint",
@@ -67,7 +67,7 @@
     "test:watch": "npm --ignore-scripts test -- --watch",
     "test:coverage": "npm --ignore-scripts test -- --coverage",
     "test:types": "tsc --project test/tsconfig.test.json --noEmit",
-    "lint:js": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
+    "lint:js": "eslint --cache",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
@@ -138,46 +138,6 @@
         ]
       ]
     }
-  },
-  "eslintConfig": {
-    "root": true,
-    "ignorePatterns": [
-      "coverage",
-      "dist",
-      "tmp"
-    ],
-    "reportUnusedDisableDirectives": true,
-    "extends": [
-      "eslint:recommended",
-      "plugin:n/recommended-module"
-    ],
-    "parserOptions": {
-      "ecmaVersion": "latest",
-      "sourceType": "module"
-    },
-    "env": {
-      "es2024": true
-    },
-    "overrides": [
-      {
-        "files": "**/*.ts",
-        "extends": [
-          "plugin:@typescript-eslint/eslint-recommended",
-          "plugin:@typescript-eslint/recommended",
-          "plugin:@typescript-eslint/recommended-requiring-type-checking"
-        ],
-        "parserOptions": {
-          "project": [
-            "./tsconfig.json",
-            "./test/tsconfig.test.json"
-          ]
-        }
-      },
-      {
-        "files": "**/*.test.js",
-        "extends": "plugin:jest/recommended"
-      }
-    ]
   },
   "browserslist": [
     "> 1%",

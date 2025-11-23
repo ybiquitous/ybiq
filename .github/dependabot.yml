@@ -10,7 +10,7 @@ updates:
       commitlint:
         patterns: ["@commitlint/*"]
       eslint-dev:
-        patterns: ["@typescript-eslint/*", "eslint-*"]
+        patterns: ["typescript-eslint", "eslint-*"]
       typescript:
         patterns: ["@tsconfig/*", "@types/*", "typescript"]
     cooldown:
