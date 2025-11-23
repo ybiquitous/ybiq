@@ -1,3 +1,14 @@
+## [20.1.0](https://github.com/ybiquitous/ybiq/compare/v20.0.2...v20.1.0) (2025-11-23)
+
+### ⚠ BREAKING CHANGES
+
+- **init:** remove the `eslintConfig` field in `package.json` and
+  generate `eslint.config.js` without any plugins instead
+
+### Features
+
+- **init:** bump eslint from v8 to v9 and migrate to flat config ([#2008](https://github.com/ybiquitous/ybiq/issues/2008)) ([bb34692](https://github.com/ybiquitous/ybiq/commit/bb34692a282a5af004570161727d7bdca36624e9))
+
 ## [20.0.2](https://github.com/ybiquitous/ybiq/compare/v20.0.1...v20.0.2) (2025-11-22)
 
 ### Bug Fixes
