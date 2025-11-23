@@ -14,18 +14,6 @@ exports[`update "package.json" 1`] = `
       ],
     },
   },
-  "eslintConfig": {
-    "extends": [
-      "ybiquitous",
-    ],
-    "ignorePatterns": [
-      "coverage",
-      "dist",
-      "tmp",
-    ],
-    "reportUnusedDisableDirectives": true,
-    "root": true,
-  },
   "lint-staged": {
     "!(**/*.snap|.husky/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
@@ -83,18 +71,6 @@ exports[`update "package.json" without fields 1`] = `
         300,
       ],
     },
-  },
-  "eslintConfig": {
-    "extends": [
-      "ybiquitous",
-    ],
-    "ignorePatterns": [
-      "coverage",
-      "dist",
-      "tmp",
-    ],
-    "reportUnusedDisableDirectives": true,
-    "root": true,
   },
   "lint-staged": {
     "!(**/*.snap|.husky/**)": "prettier --cache --write",
@@ -275,5 +251,26 @@ exports[`write ".husky/pre-commit" 1`] = `
 
 exports[`write ".remarkignore" 1`] = `
 "CHANGELOG.md
+"
+`;
+
+exports[`write "eslint.config.js" 1`] = `
+"import js from "@eslint/js"; // eslint-disable-line n/no-extraneous-import
+import { defineConfig } from "eslint/config";
+
+export default defineConfig([
+  {
+    ignores: ["coverage", "dist", "tmp"],
+    linterOptions: {
+      reportUnusedDisableDirectives: "error",
+      reportUnusedInlineConfigs: "error",
+    },
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
+    extends: [js.configs.recommended],
+  },
+]);
 "
 `;
