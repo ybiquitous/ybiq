@@ -2,8 +2,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-- **init:** remove the `eslintConfig` field in `package.json` and
-  generate `eslint.config.js` without any plugins instead
+- **init:** remove the `eslintConfig` field in `package.json` and generate `eslint.config.js` without any plugins instead
 
 ### Features
 
