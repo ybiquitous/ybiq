@@ -51,16 +51,17 @@ test('update "package.json" without fields', () =>
   }));
 
 [
-  ".editorconfig",
-  ".remarkignore",
-  ".github/workflows/dependabot-auto-merge.yml",
-  ".github/workflows/npm-audit-fix.yml",
-  ".github/workflows/npm-diff.yml",
-  ".github/workflows/release.yml",
-  ".github/workflows/test.yml",
-  ".husky/commit-msg",
-  ".husky/pre-commit",
-].forEach((file) => {
+  [".editorconfig", true],
+  [".remarkignore", true],
+  [".github/workflows/dependabot-auto-merge.yml", true],
+  [".github/workflows/npm-audit-fix.yml", true],
+  [".github/workflows/npm-diff.yml", true],
+  [".github/workflows/release.yml", true],
+  [".github/workflows/test.yml", true],
+  [".husky/commit-msg", true],
+  [".husky/pre-commit", true],
+  ["eslint.config.js", false],
+].forEach(([file, inPackageJson]) => {
   test(`write "${file}"`, () =>
     sandbox(async (ctx) => {
       ctx.fixture("package-normal.json");
@@ -69,9 +70,11 @@ test('update "package.json" without fields', () =>
       expect(ctx.readWorkFile(file)).toMatchSnapshot();
     }));
 
-  test(`contain "${file}" in package.json`, () => {
-    expect(pkg.files).toContain(file);
-  });
+  if (inPackageJson) {
+    test(`contain "${file}" in package.json`, () => {
+      expect(pkg.files).toContain(file);
+    });
+  }
 });
 
 test("throw error if no package.json", () =>
@@ -90,6 +93,7 @@ test("End-to-End via CLI", () =>
       => [32m'package.json'[39m was updated
       => [32m'.editorconfig'[39m was updated
       => [32m'.remarkignore'[39m was updated
+      => [32m'eslint.config.js'[39m was updated
       => [32m'.github/workflows/dependabot-auto-merge.yml'[39m was updated
       => [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
       => [32m'.github/workflows/npm-diff.yml'[39m was updated

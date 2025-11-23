@@ -14,18 +14,6 @@ exports[`update "package.json" 1`] = `
       ],
     },
   },
-  "eslintConfig": {
-    "extends": [
-      "ybiquitous",
-    ],
-    "ignorePatterns": [
-      "coverage",
-      "dist",
-      "tmp",
-    ],
-    "reportUnusedDisableDirectives": true,
-    "root": true,
-  },
   "lint-staged": {
     "!(**/*.snap|.husky/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
@@ -51,7 +39,7 @@ exports[`update "package.json" 1`] = `
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
     "lint": "ybiq run --npm lint:js lint:md lint:types lint:commit lint:styles",
     "lint:commit": "commitlint --from HEAD~10",
-    "lint:js": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
+    "lint:js": "eslint --cache",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
@@ -84,18 +72,6 @@ exports[`update "package.json" without fields 1`] = `
       ],
     },
   },
-  "eslintConfig": {
-    "extends": [
-      "ybiquitous",
-    ],
-    "ignorePatterns": [
-      "coverage",
-      "dist",
-      "tmp",
-    ],
-    "reportUnusedDisableDirectives": true,
-    "root": true,
-  },
   "lint-staged": {
     "!(**/*.snap|.husky/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail",
@@ -119,7 +95,7 @@ exports[`update "package.json" without fields 1`] = `
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
     "lint": "ybiq run --npm lint:js lint:md lint:types lint:commit lint:styles",
     "lint:commit": "commitlint --from HEAD~10",
-    "lint:js": "eslint --cache --ext=js,jsx,cjs,mjs,ts,tsx .",
+    "lint:js": "eslint --cache",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:md": "remark . --frail",
     "lint:md:fix": "remark . --output",
@@ -275,5 +251,26 @@ exports[`write ".husky/pre-commit" 1`] = `
 
 exports[`write ".remarkignore" 1`] = `
 "CHANGELOG.md
+"
+`;
+
+exports[`write "eslint.config.js" 1`] = `
+"import js from "@eslint/js";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig([
+  {
+    ignores: ["coverage", "dist", "tmp"],
+    linterOptions: {
+      reportUnusedDisableDirectives: "error",
+      reportUnusedInlineConfigs: "error",
+    },
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
+    extends: [js.configs.recommended],
+  },
+]);
 "
 `;
