@@ -255,7 +255,7 @@ exports[`write ".remarkignore" 1`] = `
 `;
 
 exports[`write "eslint.config.js" 1`] = `
-"import js from "@eslint/js"; // eslint-disable-line n/no-extraneous-import
+"import js from "@eslint/js";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([

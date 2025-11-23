@@ -36,4 +36,12 @@ export default defineConfig([
     files: ["**/*.test.js"],
     extends: [jestPlugin.configs["flat/recommended"]],
   },
+
+  // Exceptions
+  {
+    files: ["lib/templates/**/*.js"],
+    rules: {
+      "n/no-extraneous-import": "off",
+    },
+  },
 ]);
