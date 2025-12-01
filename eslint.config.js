@@ -8,7 +8,9 @@ import jestPlugin from "eslint-plugin-jest";
 export default defineConfig([
   // Base
   {
-    ignores: ["coverage", "dist", "tmp"],
+    ignores: ["coverage/**", "dist/**", "tmp/**"],
+  },
+  {
     linterOptions: {
       reportUnusedDisableDirectives: "error",
       reportUnusedInlineConfigs: "error",
