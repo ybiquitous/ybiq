@@ -142,7 +142,7 @@ on:
 
 jobs:
   auto-merge:
-    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@87de5ae43f03470d08d6d5d8fa1fb684947c173b # v2.2.1
+    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@530c2571685fc8fd3462fad7d19beb613e28609d # v2.3.0
     permissions:
       contents: write
 "
@@ -163,7 +163,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
       - uses: ybiquitous/npm-audit-fix-action@31a824d54c0b7ffee552df67ad3be12c5ab844ec # v7.3.2
         with:
           github_token: \${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -199,7 +199,7 @@ on:
 
 jobs:
   release:
-    uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@87de5ae43f03470d08d6d5d8fa1fb684947c173b # v2.2.1
+    uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@530c2571685fc8fd3462fad7d19beb613e28609d # v2.3.0
     permissions:
       contents: write
       id-token: write
@@ -233,7 +233,7 @@ jobs:
       contents: read
 
   lint:
-    uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@87de5ae43f03470d08d6d5d8fa1fb684947c173b # v2.2.1
+    uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@530c2571685fc8fd3462fad7d19beb613e28609d # v2.3.0
     permissions:
       contents: read
 "
