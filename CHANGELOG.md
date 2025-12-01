@@ -1,3 +1,14 @@
+## [21.0.1](https://github.com/ybiquitous/ybiq/compare/v21.0.0...v21.0.1) (2025-12-01)
+
+### Bug Fixes
+
+- **init:** bump actions/checkout from 5.0.1 to 6.0.0 ([#2022](https://github.com/ybiquitous/ybiq/issues/2022)) ([77b84a3](https://github.com/ybiquitous/ybiq/commit/77b84a35b9805a8b03edee91619b399fff9f3648))
+- **init:** bump ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml from 2.2.1 to 2.3.0 ([#2024](https://github.com/ybiquitous/ybiq/issues/2024)) ([6b7759f](https://github.com/ybiquitous/ybiq/commit/6b7759f100f7502447492a2a9619c3c6426bc6d0))
+- **init:** bump ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml from 2.2.1 to 2.3.0 ([#2026](https://github.com/ybiquitous/ybiq/issues/2026)) ([ee678f2](https://github.com/ybiquitous/ybiq/commit/ee678f2c01323365af11b111a8b261930a26dc8f))
+- **init:** bump ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml from 2.2.1 to 2.3.0 ([#2021](https://github.com/ybiquitous/ybiq/issues/2021)) ([0a85b8f](https://github.com/ybiquitous/ybiq/commit/0a85b8f8baee6fe30aa780a7e279fede57922639))
+- **init:** bump ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml from 2.2.1 to 2.3.0 ([#2025](https://github.com/ybiquitous/ybiq/issues/2025)) ([cef6195](https://github.com/ybiquitous/ybiq/commit/cef61953bdffa6bc7a3040d29eedab81efd9c51a))
+- **init:** precede `ignores` in generated `eslint.config.js` ([#2018](https://github.com/ybiquitous/ybiq/issues/2018)) ([796fe3b](https://github.com/ybiquitous/ybiq/commit/796fe3b865a4451feeaf7d4fa27a5d2928fefe95))
+
 ## [21.0.0](https://github.com/ybiquitous/ybiq/compare/v20.0.2...v21.0.0) (2025-11-23)
 
 ### ⚠ BREAKING CHANGES
