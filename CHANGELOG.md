@@ -1,3 +1,9 @@
+## [21.0.2](https://github.com/ybiquitous/ybiq/compare/v21.0.1...v21.0.2) (2025-12-04)
+
+### Bug Fixes
+
+- **run:** show error summary when some scripts fail ([#2030](https://github.com/ybiquitous/ybiq/issues/2030)) ([e50c795](https://github.com/ybiquitous/ybiq/commit/e50c795577d14847d2780382b0d34415a3e89726))
+
 ## [21.0.1](https://github.com/ybiquitous/ybiq/compare/v21.0.0...v21.0.1) (2025-12-01)
 
 ### Bug Fixes
