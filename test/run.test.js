@@ -122,7 +122,10 @@ test("End-to-End via CLI when some scripts fail", async () => {
     exec(resolve(pkg.bin), "run", `node -e "console.log('Hi')"`, `node -e "process.exit(1)"`),
   ).rejects.toMatchObject({
     stdout: `[node -e "console.log('Hi')"] Hi\n`,
-    stderr: "",
+    stderr: `
+Failed:
+- node -e "process.exit(1)" (exit code: 1)
+`,
     code: 1,
   });
 });
