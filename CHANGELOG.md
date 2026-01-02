@@ -1,3 +1,15 @@
+## [21.0.3](https://github.com/ybiquitous/ybiq/compare/v21.0.2...v21.0.3) (2026-01-02)
+
+### Bug Fixes
+
+- **deps:** bump actions/checkout from 6.0.0 to 6.0.1 ([#2036](https://github.com/ybiquitous/ybiq/issues/2036)) ([a05c37a](https://github.com/ybiquitous/ybiq/commit/a05c37a017972ea36338b3d81f62766bfab3110b))
+- **deps:** bump ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml from 2.3.0 to 2.3.1 ([#2037](https://github.com/ybiquitous/ybiq/issues/2037)) ([c233641](https://github.com/ybiquitous/ybiq/commit/c2336411da9d861ef06509e380a508a3e866cf26))
+- **deps:** bump ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml from 2.3.0 to 2.3.1 ([#2038](https://github.com/ybiquitous/ybiq/issues/2038)) ([db512d9](https://github.com/ybiquitous/ybiq/commit/db512d97fcbff158158d2e074dbbaeec1d009059))
+- **deps:** bump ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml from 2.3.0 to 2.3.1 ([#2032](https://github.com/ybiquitous/ybiq/issues/2032)) ([5b46d9f](https://github.com/ybiquitous/ybiq/commit/5b46d9fe4c31276921a1f85193b6f1040af714b2))
+- **deps:** bump ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml from 2.3.0 to 2.3.1 ([#2039](https://github.com/ybiquitous/ybiq/issues/2039)) ([0545974](https://github.com/ybiquitous/ybiq/commit/05459740cb1b783c2833b2499a176bc7f0ae27a4))
+- **deps:** bump ybiquitous/npm-audit-fix-action from 7.3.2 to 7.3.3 ([#2034](https://github.com/ybiquitous/ybiq/issues/2034)) ([4e3827e](https://github.com/ybiquitous/ybiq/commit/4e3827e0d6bffd16c9751d036b8ba3c193a6a6a0))
+- **deps:** bump ybiquitous/npm-diff-action from 1.7.0 to 1.7.1 ([#2035](https://github.com/ybiquitous/ybiq/issues/2035)) ([da50ba8](https://github.com/ybiquitous/ybiq/commit/da50ba842b827f2dc8203c620a9380ed8d184e1f))
+
 ## [21.0.2](https://github.com/ybiquitous/ybiq/compare/v21.0.1...v21.0.2) (2025-12-04)
 
 ### Bug Fixes
