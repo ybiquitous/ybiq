@@ -53,13 +53,13 @@ test('update "package.json" without fields', () =>
 [
   [".editorconfig", true],
   [".remarkignore", true],
+  [".githooks/commit-msg", true],
+  [".githooks/pre-commit", true],
   [".github/workflows/dependabot-auto-merge.yml", true],
   [".github/workflows/npm-audit-fix.yml", true],
   [".github/workflows/npm-diff.yml", true],
   [".github/workflows/release.yml", true],
   [".github/workflows/test.yml", true],
-  [".husky/commit-msg", true],
-  [".husky/pre-commit", true],
   ["eslint.config.js", false],
 ].forEach(([file, inPackageJson]) => {
   test(`write "${file}"`, () =>
@@ -94,23 +94,22 @@ test("End-to-End via CLI", () =>
       => [32m'.editorconfig'[39m was updated
       => [32m'.remarkignore'[39m was updated
       => [32m'eslint.config.js'[39m was updated
+      => [32m'.githooks/commit-msg'[39m was updated
+      => [32m'.githooks/pre-commit'[39m was updated
       => [32m'.github/workflows/dependabot-auto-merge.yml'[39m was updated
       => [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
       => [32m'.github/workflows/npm-diff.yml'[39m was updated
       => [32m'.github/workflows/release-pr.yml'[39m was updated
       => [32m'.github/workflows/release.yml'[39m was updated
       => [32m'.github/workflows/test.yml'[39m was updated
-      => [32m'.husky/commit-msg'[39m was updated
-      => [32m'.husky/pre-commit'[39m was updated
-      => [32m'.husky/.gitignore'[39m was removed
       => [32m'.github/workflows/commitlint.yml'[39m was removed
-      => [32m'.husky/post-commit'[39m was removed
+      => [32m'.husky'[39m was removed
       "
     `);
     expect(stderr).toEqual("");
   }));
 
-test("remove `.husky/.gitignore` if exists", () =>
+test("remove `.husky/` if exists", () =>
   sandbox(async (ctx) => {
     mkdirSync(join(ctx.workDir, ".husky"));
     writeFileSync(join(ctx.workDir, ".husky", ".gitignore"), "_");
@@ -118,7 +117,7 @@ test("remove `.husky/.gitignore` if exists", () =>
 
     await init(ctx.initArgs);
 
-    expect(existsSync(join(ctx.workDir, ".husky", ".gitignore"))).toEqual(false);
+    expect(existsSync(join(ctx.workDir, ".husky"))).toEqual(false);
   }));
 
 test("remove `.github/workflows/commitlint.yml` if exists", () =>
