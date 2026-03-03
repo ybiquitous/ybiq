@@ -9,6 +9,8 @@ updates:
     groups:
       commitlint:
         patterns: ["@commitlint/*"]
+      eslint:
+        patterns: ["eslint", "@eslint/*"]
       eslint-dev:
         patterns: ["typescript-eslint", "eslint-*"]
       typescript:
