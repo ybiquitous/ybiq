@@ -28,4 +28,4 @@ updates:
         patterns: ["ybiquitous/.github/*"]
     cooldown:
       default-days: 7
-      exclude: ["ybiquitous/.github"]
+      exclude: ["ybiquitous/.github/*"]
