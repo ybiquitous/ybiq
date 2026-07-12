@@ -9,6 +9,8 @@ updates:
     groups:
       commitlint:
         patterns: ["@commitlint/*"]
+      conventional-changelog:
+        patterns: ["conventional-changelog", "conventional-changelog-*"]
       eslint:
         patterns: ["eslint", "@eslint/*"]
       eslint-dev:
