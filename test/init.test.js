@@ -50,6 +50,24 @@ test('update "package.json" without fields', () =>
     expect(readJSON(src)).toMatchSnapshot();
   }));
 
+test("remove `overrides` for `conventional-changelog-conventionalcommits`", () =>
+  sandbox(async (ctx) => {
+    const src = ctx.fixture("package-overrides.json");
+    await init(ctx.initArgs);
+    expect(readJSON(src).overrides).toEqual({ foo: "1.2.3" });
+  }));
+
+test("remove empty `overrides` after dropping `conventional-changelog-conventionalcommits`", () =>
+  sandbox(async (ctx) => {
+    const src = ctx.fixture("package-normal.json");
+    writeFileSync(
+      src,
+      JSON.stringify({ overrides: { "conventional-changelog-conventionalcommits": "^9.1.0" } }),
+    );
+    await init(ctx.initArgs);
+    expect(readJSON(src)).not.toHaveProperty("overrides");
+  }));
+
 [
   [".editorconfig", true],
   [".remarkignore", true],
@@ -89,8 +107,7 @@ test("End-to-End via CLI", () =>
       cwd: ctx.initArgs.cwd,
     });
     expect(stdout).toMatchInlineSnapshot(`
-      "=> [32m'conventional-changelog-conventionalcommits'[39m is overridden. Run \`npm i\`.
-      => [32m'package.json'[39m was updated
+      "=> [32m'package.json'[39m was updated
       => [32m'.editorconfig'[39m was updated
       => [32m'.remarkignore'[39m was updated
       => [32m'eslint.config.js'[39m was updated
@@ -129,24 +146,4 @@ test("remove `.github/workflows/commitlint.yml` if exists", () =>
     await init(ctx.initArgs);
 
     expect(existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"))).toEqual(false);
-  }));
-
-test("overrids `conventional-changelog-conventionalcommits` with the consistent version", () =>
-  sandbox(async (ctx) => {
-    const src = ctx.fixture("package-normal.json");
-    await init(ctx.initArgs);
-    expect(readJSON(src).overrides["conventional-changelog-conventionalcommits"]).toEqual(
-      pkg.dependencies["conventional-changelog-conventionalcommits"],
-    );
-  }));
-
-test("overrids `conventional-changelog-conventionalcommits` keeping other packages", () =>
-  sandbox(async (ctx) => {
-    const src = ctx.fixture("package-overrides.json");
-    await init(ctx.initArgs);
-    expect(readJSON(src).overrides).toEqual({
-      "conventional-changelog-conventionalcommits":
-        pkg.dependencies["conventional-changelog-conventionalcommits"],
-      foo: "1.2.3",
-    });
   }));
