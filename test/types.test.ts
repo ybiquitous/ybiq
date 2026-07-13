@@ -25,4 +25,5 @@ run({
 // changelog
 changelog().then(() => noop());
 changelog({ cwd: "." }).then(() => noop());
-changelog({ cwd: ".", generate: (cwd: string) => Promise.resolve(noop(cwd)) }).then(() => noop());
+changelog({ cwd: ".", generate: (cwd: string) => Promise.resolve(cwd) }).then(() => noop());
+changelog({ dryRun: true, logger: (msg: string) => noop(msg) }).then(() => noop());

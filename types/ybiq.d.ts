@@ -30,11 +30,13 @@ export declare function run(params: Readonly<RunParams>): Promise<{
 }>;
 type RunCommand = typeof run;
 
-export type GenerateChangelog = (cwd: string) => Promise<void>;
+export type GenerateChangelog = (cwd: string) => Promise<string>;
 
 export type ChangelogParams = {
   readonly cwd?: string | undefined;
   readonly generate?: GenerateChangelog | undefined;
+  readonly dryRun?: boolean | undefined;
+  readonly logger?: Logger | undefined;
 };
 
 export declare function changelog(params?: Readonly<ChangelogParams>): Promise<void>;

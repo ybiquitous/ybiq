@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { changelog, normalizeChangelog } from "../lib/changelog.js";
@@ -45,12 +45,8 @@ test("changelog() normalizes and formats the generated file", () =>
   sandbox(async (dir) => {
     const file = join(dir, "CHANGELOG.md");
     // Simulate conventional-changelog prepending a release above the existing header.
-    const generate = async (cwd) => {
-      writeFileSync(
-        join(cwd, "CHANGELOG.md"),
-        `## [2.0.0](https://x) (2026)\n\n### Features\n\n- new\n\n${TOP}## [1.0.0](https://x) (2025)\n\n### Bug Fixes\n\n- old\n`,
-      );
-    };
+    const generate = async () =>
+      `## [2.0.0](https://x) (2026)\n\n### Features\n\n- new\n\n${TOP}## [1.0.0](https://x) (2025)\n\n### Bug Fixes\n\n- old\n`;
 
     await changelog({ cwd: dir, generate });
 
@@ -58,6 +54,22 @@ test("changelog() normalizes and formats the generated file", () =>
     expect(existsSync(file)).toEqual(true);
     expect(content.startsWith(`${TOP}## [2.0.0]`)).toEqual(true);
     expect(content.match(/^# Changelog$/gm)).toHaveLength(1);
+  }));
+
+test("changelog() with dryRun prints the result without writing the file", () =>
+  sandbox(async (dir) => {
+    const file = join(dir, "CHANGELOG.md");
+    const generate = async () => `## [1.0.0](https://x) (2026)\n\n### Features\n\n- new\n`;
+    /** @type {string[]} */
+    const lines = [];
+    const logger = (msg) => lines.push(msg);
+
+    await changelog({ cwd: dir, generate, dryRun: true, logger });
+
+    expect(existsSync(file)).toEqual(false);
+    const output = lines.join("\n");
+    expect(output.startsWith(`${TOP}## [1.0.0]`)).toEqual(true);
+    expect(output).toContain("- new");
   }));
 
 test("changelog() propagates generator failures", () =>
