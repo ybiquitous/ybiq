@@ -1,3 +1,7 @@
+# Changelog
+
+<!-- lint disable no-duplicate-headings -->
+
 ## [21.0.3](https://github.com/ybiquitous/ybiq/compare/v21.0.2...v21.0.3) (2026-01-02)
 
 ### Bug Fixes
@@ -775,7 +779,7 @@ This change also adds Node.js 20 to the CI matrix.
 - **remark:** `markdownlint` is unsupported no longer. It may fail linting your Markdown files.
 - **init:** drop support Node 8.4- by using `fs.copyFile()`
 
-http://nodejs.org/api/fs.html#fs_fs_copyfile_src_dest_flags_callback
+<http://nodejs.org/api/fs.html#fs_fs_copyfile_src_dest_flags_callback>
 
 ### Features
 
@@ -1020,8 +1024,8 @@ http://nodejs.org/api/fs.html#fs_fs_copyfile_src_dest_flags_callback
 
 - **package:** Angular's commit convention has removed the `chore` type. For details, see below links:
 
-* https://github.com/marionebl/commitlint/releases/tag/v5.0.0
-* https://github.com/angular/angular/blob/master/CONTRIBUTING.md
+* <https://github.com/marionebl/commitlint/releases/tag/v5.0.0>
+* <https://github.com/angular/angular/blob/master/CONTRIBUTING.md>
 
 Also add `browserslist` settings to fix lint error.
 

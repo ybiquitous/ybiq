@@ -29,3 +29,15 @@ export declare function run(params: Readonly<RunParams>): Promise<{
   results: Array<RunResult>;
 }>;
 type RunCommand = typeof run;
+
+export type GenerateChangelog = (cwd: string) => Promise<void>;
+
+export type ChangelogParams = {
+  readonly cwd?: string | undefined;
+  readonly generate?: GenerateChangelog | undefined;
+};
+
+export declare function changelog(params?: Readonly<ChangelogParams>): Promise<void>;
+type ChangelogCommand = typeof changelog;
+
+export declare function normalizeChangelog(content: string): string;

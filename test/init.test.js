@@ -70,7 +70,6 @@ test("remove empty `overrides` after dropping `conventional-changelog-convention
 
 [
   [".editorconfig", true],
-  [".remarkignore", true],
   [".githooks/commit-msg", true],
   [".githooks/pre-commit", true],
   [".github/workflows/dependabot-auto-merge.yml", true],
@@ -109,7 +108,6 @@ test("End-to-End via CLI", () =>
     expect(stdout).toMatchInlineSnapshot(`
       "=> [32m'package.json'[39m was updated
       => [32m'.editorconfig'[39m was updated
-      => [32m'.remarkignore'[39m was updated
       => [32m'eslint.config.js'[39m was updated
       => [32m'.githooks/commit-msg'[39m was updated
       => [32m'.githooks/pre-commit'[39m was updated
@@ -146,4 +144,24 @@ test("remove `.github/workflows/commitlint.yml` if exists", () =>
     await init(ctx.initArgs);
 
     expect(existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"))).toEqual(false);
+  }));
+
+test("remove `.remarkignore` if it only ignores `CHANGELOG.md`", () =>
+  sandbox(async (ctx) => {
+    writeFileSync(join(ctx.workDir, ".remarkignore"), "CHANGELOG.md\n");
+    writeFileSync(join(ctx.workDir, "package.json"), "{}");
+
+    await init(ctx.initArgs);
+
+    expect(existsSync(join(ctx.workDir, ".remarkignore"))).toEqual(false);
+  }));
+
+test("keep `.remarkignore` if it ignores other files", () =>
+  sandbox(async (ctx) => {
+    writeFileSync(join(ctx.workDir, ".remarkignore"), "CHANGELOG.md\ndocs/\n");
+    writeFileSync(join(ctx.workDir, "package.json"), "{}");
+
+    await init(ctx.initArgs);
+
+    expect(existsSync(join(ctx.workDir, ".remarkignore"))).toEqual(true);
   }));

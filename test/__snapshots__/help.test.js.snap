@@ -6,6 +6,7 @@ exports[`with "--help" option 1`] = `
 Commands:
   cli.js init             Setup npm project, e.g. update 'package.json'
   cli.js run <scripts..>  Run scripts in parallel
+  cli.js changelog        Generate CHANGELOG.md from conventional commits
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -19,6 +20,7 @@ exports[`with "-h" option 1`] = `
 Commands:
   cli.js init             Setup npm project, e.g. update 'package.json'
   cli.js run <scripts..>  Run scripts in parallel
+  cli.js changelog        Generate CHANGELOG.md from conventional commits
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -33,6 +35,7 @@ cli.js <command>
 Commands:
   cli.js init             Setup npm project, e.g. update 'package.json'
   cli.js run <scripts..>  Run scripts in parallel
+  cli.js changelog        Generate CHANGELOG.md from conventional commits
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -49,6 +52,7 @@ cli.js <command>
 Commands:
   cli.js init             Setup npm project, e.g. update 'package.json'
   cli.js run <scripts..>  Run scripts in parallel
+  cli.js changelog        Generate CHANGELOG.md from conventional commits
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -65,6 +69,7 @@ cli.js <command>
 Commands:
   cli.js init             Setup npm project, e.g. update 'package.json'
   cli.js run <scripts..>  Run scripts in parallel
+  cli.js changelog        Generate CHANGELOG.md from conventional commits
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -81,6 +86,7 @@ cli.js <command>
 Commands:
   cli.js init             Setup npm project, e.g. update 'package.json'
   cli.js run <scripts..>  Run scripts in parallel
+  cli.js changelog        Generate CHANGELOG.md from conventional commits
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -97,6 +103,7 @@ cli.js <command>
 Commands:
   cli.js init             Setup npm project, e.g. update 'package.json'
   cli.js run <scripts..>  Run scripts in parallel
+  cli.js changelog        Generate CHANGELOG.md from conventional commits
 
 Options:
   -h, --help     Show help                                             [boolean]
@@ -113,6 +120,7 @@ cli.js <command>
 Commands:
   cli.js init             Setup npm project, e.g. update 'package.json'
   cli.js run <scripts..>  Run scripts in parallel
+  cli.js changelog        Generate CHANGELOG.md from conventional commits
 
 Options:
   -h, --help     Show help                                             [boolean]

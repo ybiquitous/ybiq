@@ -30,7 +30,7 @@ exports[`update "package.json" 1`] = `
     ],
   },
   "scripts": {
-    "changelog": "if [ ! -f CHANGELOG.md ]; then opts='--first-release' ; fi && conventional-changelog --preset conventional-changelog-conventionalcommits $opts && prettier --write CHANGELOG.md",
+    "changelog": "ybiq changelog",
     "changelog:dryrun": "npm version "\${NEW_VERSION:-major}" --no-git-tag-version && git --no-pager diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
     "clean": "git clean -dx --force --exclude=node_modules",
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
@@ -83,7 +83,7 @@ exports[`update "package.json" without fields 1`] = `
     ],
   },
   "scripts": {
-    "changelog": "if [ ! -f CHANGELOG.md ]; then opts='--first-release' ; fi && conventional-changelog --preset conventional-changelog-conventionalcommits $opts && prettier --write CHANGELOG.md",
+    "changelog": "ybiq changelog",
     "changelog:dryrun": "npm version "\${NEW_VERSION:-major}" --no-git-tag-version && git --no-pager diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
     "clean": "git clean -dx --force --exclude=node_modules",
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
@@ -242,11 +242,6 @@ jobs:
     uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@2f13cf9e69be40562c26464439a9dd258a99cc98 # v3.1.1
     permissions:
       contents: read
-"
-`;
-
-exports[`write ".remarkignore" 1`] = `
-"CHANGELOG.md
 "
 `;
 

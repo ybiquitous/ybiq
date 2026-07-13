@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-confusing-void-expression */
 /* eslint-disable @typescript-eslint/no-floating-promises */
-import { init, run } from "../lib/index.js"; // eslint-disable-line n/no-missing-import
+import { changelog, init, run } from "../lib/index.js"; // eslint-disable-line n/no-missing-import
 
 const noop = (arg?: unknown): void => {
   process.stdout.write(String(arg));
@@ -21,3 +21,8 @@ run({
   stdout: process.stdout,
   stderr: process.stderr,
 }).then(() => noop());
+
+// changelog
+changelog().then(() => noop());
+changelog({ cwd: "." }).then(() => noop());
+changelog({ cwd: ".", generate: (cwd: string) => Promise.resolve(noop(cwd)) }).then(() => noop());
