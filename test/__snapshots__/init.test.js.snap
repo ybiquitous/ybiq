@@ -31,7 +31,7 @@ exports[`update "package.json" 1`] = `
   },
   "scripts": {
     "changelog": "ybiq changelog",
-    "changelog:dryrun": "npm version "\${NEW_VERSION:-major}" --no-git-tag-version && ybiq changelog --dry-run && git checkout package.json package-lock.json",
+    "changelog:dryrun": "ybiq changelog --dry-run",
     "clean": "git clean -dx --force --exclude=node_modules",
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
     "lint": "ybiq run --npm lint:js lint:md lint:types lint:commit lint:styles",
@@ -84,7 +84,7 @@ exports[`update "package.json" without fields 1`] = `
   },
   "scripts": {
     "changelog": "ybiq changelog",
-    "changelog:dryrun": "npm version "\${NEW_VERSION:-major}" --no-git-tag-version && ybiq changelog --dry-run && git checkout package.json package-lock.json",
+    "changelog:dryrun": "ybiq changelog --dry-run",
     "clean": "git clean -dx --force --exclude=node_modules",
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
     "lint": "ybiq run --npm lint:js lint:md lint:types lint:commit lint:styles",

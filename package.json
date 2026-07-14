@@ -78,7 +78,7 @@
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
     "clean": "git clean -dx --force --exclude=node_modules",
     "changelog": "ybiq changelog",
-    "changelog:dryrun": "npm version \"${NEW_VERSION:-major}\" --no-git-tag-version && ybiq changelog --dry-run && git checkout package.json package-lock.json",
+    "changelog:dryrun": "ybiq changelog --dry-run",
     "postversion": "npm run changelog",
     "prepare": "git config set --local core.hooksPath .githooks || true",
     "postprepare": "ln -sf \"${PWD}/lib/cli.js\" node_modules/.bin/ybiq"
