@@ -4,15 +4,16 @@ import { pkg } from "./helpers/pkg.js";
 
 [[], ["unknown"], ["unknown", "xyz"]].forEach((args) => {
   test(`with arguments [${args.join(", ")}]`, async (t) => {
-    const error = await exec(pkg.bin, ...args).then(
-      () => null,
-      (e) => e,
+    await t.assert.rejects(
+      () => exec(pkg.bin, ...args),
+      (error) => {
+        t.assert.strictEqual(error.code, 1);
+        t.assert.strictEqual(error.stdout, "");
+        t.assert.snapshot(error.message);
+        t.assert.snapshot(error.stderr);
+        return true;
+      },
     );
-    t.assert.ok(error, "should reject");
-    t.assert.strictEqual(error.code, 1);
-    t.assert.strictEqual(error.stdout, "");
-    t.assert.snapshot(error.message);
-    t.assert.snapshot(error.stderr);
   });
 });
 
