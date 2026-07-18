@@ -1,6 +1,7 @@
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
+import { test } from "node:test";
 import { init } from "../lib/init.js";
 import { exec } from "./helpers/exec.js";
 import { pkg } from "./helpers/pkg.js";
@@ -36,28 +37,28 @@ const sandbox = async (callback) => {
   }
 };
 
-test('update "package.json"', () =>
+test('update "package.json"', (t) =>
   sandbox(async (ctx) => {
     const src = ctx.fixture("package-normal.json");
     await init(ctx.initArgs);
-    expect(readJSON(src)).toMatchSnapshot();
+    t.assert.snapshot(readJSON(src));
   }));
 
-test('update "package.json" without fields', () =>
+test('update "package.json" without fields', (t) =>
   sandbox(async (ctx) => {
     const src = ctx.fixture("package-empty.json");
     await init(ctx.initArgs);
-    expect(readJSON(src)).toMatchSnapshot();
+    t.assert.snapshot(readJSON(src));
   }));
 
-test("remove `overrides` for `conventional-changelog-conventionalcommits`", () =>
+test("remove `overrides` for `conventional-changelog-conventionalcommits`", (t) =>
   sandbox(async (ctx) => {
     const src = ctx.fixture("package-overrides.json");
     await init(ctx.initArgs);
-    expect(readJSON(src).overrides).toEqual({ foo: "1.2.3" });
+    t.assert.deepStrictEqual(readJSON(src).overrides, { foo: "1.2.3" });
   }));
 
-test("remove empty `overrides` after dropping `conventional-changelog-conventionalcommits`", () =>
+test("remove empty `overrides` after dropping `conventional-changelog-conventionalcommits`", (t) =>
   sandbox(async (ctx) => {
     const src = ctx.fixture("package-normal.json");
     writeFileSync(
@@ -65,7 +66,7 @@ test("remove empty `overrides` after dropping `conventional-changelog-convention
       JSON.stringify({ overrides: { "conventional-changelog-conventionalcommits": "^9.1.0" } }),
     );
     await init(ctx.initArgs);
-    expect(readJSON(src)).not.toHaveProperty("overrides");
+    t.assert.ok(!("overrides" in readJSON(src)));
   }));
 
 [
@@ -80,53 +81,40 @@ test("remove empty `overrides` after dropping `conventional-changelog-convention
   [".github/workflows/test.yml", true],
   ["eslint.config.js", false],
 ].forEach(([file, inPackageJson]) => {
-  test(`write "${file}"`, () =>
+  test(`write "${file}"`, (t) =>
     sandbox(async (ctx) => {
       ctx.fixture("package-normal.json");
       await init(ctx.initArgs);
-      expect(ctx.logMessage()).toMatch("[32m'package.json'[39m was updated");
-      expect(ctx.readWorkFile(file)).toMatchSnapshot();
+      t.assert.ok(ctx.logMessage().includes("[32m'package.json'[39m was updated"));
+      t.assert.snapshot(ctx.readWorkFile(file));
     }));
 
   if (inPackageJson) {
-    test(`contain "${file}" in package.json`, () => {
-      expect(pkg.files).toContain(file);
+    test(`contain "${file}" in package.json`, (t) => {
+      t.assert.ok(pkg.files.includes(file));
     });
   }
 });
 
-test("throw error if no package.json", () =>
+test("throw error if no package.json", (t) =>
   sandbox(async (ctx) => {
-    await expect(init(ctx.initArgs)).rejects.toHaveProperty("code", "ENOENT");
+    await t.assert.rejects(init(ctx.initArgs), (error) => {
+      t.assert.strictEqual(error.code, "ENOENT");
+      return true;
+    });
   }));
 
-test("End-to-End via CLI", () =>
+test("End-to-End via CLI", (t) =>
   sandbox(async (ctx) => {
     ctx.fixture("package-normal.json");
     const { stdout, stderr } = await exec(resolve(pkg.bin), "init", {
       cwd: ctx.initArgs.cwd,
     });
-    expect(stdout).toMatchInlineSnapshot(`
-      "=> [32m'package.json'[39m was updated
-      => [32m'.editorconfig'[39m was updated
-      => [32m'.remarkignore'[39m was updated
-      => [32m'eslint.config.js'[39m was updated
-      => [32m'.githooks/commit-msg'[39m was updated
-      => [32m'.githooks/pre-commit'[39m was updated
-      => [32m'.github/workflows/dependabot-auto-merge.yml'[39m was updated
-      => [32m'.github/workflows/npm-audit-fix.yml'[39m was updated
-      => [32m'.github/workflows/npm-diff.yml'[39m was updated
-      => [32m'.github/workflows/release-pr.yml'[39m was updated
-      => [32m'.github/workflows/release.yml'[39m was updated
-      => [32m'.github/workflows/test.yml'[39m was updated
-      => [32m'.github/workflows/commitlint.yml'[39m was removed
-      => [32m'.husky'[39m was removed
-      "
-    `);
-    expect(stderr).toEqual("");
+    t.assert.snapshot(stdout);
+    t.assert.strictEqual(stderr, "");
   }));
 
-test("remove `.husky/` if exists", () =>
+test("remove `.husky/` if exists", (t) =>
   sandbox(async (ctx) => {
     mkdirSync(join(ctx.workDir, ".husky"));
     writeFileSync(join(ctx.workDir, ".husky", ".gitignore"), "_");
@@ -134,10 +122,10 @@ test("remove `.husky/` if exists", () =>
 
     await init(ctx.initArgs);
 
-    expect(existsSync(join(ctx.workDir, ".husky"))).toEqual(false);
+    t.assert.strictEqual(existsSync(join(ctx.workDir, ".husky")), false);
   }));
 
-test("remove `.github/workflows/commitlint.yml` if exists", () =>
+test("remove `.github/workflows/commitlint.yml` if exists", (t) =>
   sandbox(async (ctx) => {
     mkdirSync(join(ctx.workDir, ".github", "workflows"), { recursive: true });
     writeFileSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"), "dummy: 1");
@@ -145,5 +133,8 @@ test("remove `.github/workflows/commitlint.yml` if exists", () =>
 
     await init(ctx.initArgs);
 
-    expect(existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml"))).toEqual(false);
+    t.assert.strictEqual(
+      existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml")),
+      false,
+    );
   }));

@@ -51,18 +51,17 @@
     "@tsconfig/strictest": "^2.0.8",
     "@types/node": "^26.1.0",
     "@types/yargs": "^17.0.35",
-    "eslint-plugin-jest": "^29.15.4",
     "eslint-plugin-n": "^18.2.1",
-    "jest": "^30.4.2",
     "remark-preset-ybiquitous": "^0.5.1",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.1"
   },
   "scripts": {
     "pretest": "npm run lint",
-    "test": "npm run test:types && NODE_OPTIONS=--experimental-vm-modules jest",
-    "test:watch": "npm --ignore-scripts test -- --watch",
-    "test:coverage": "npm --ignore-scripts test -- --coverage",
+    "test": "npm run test:types && node --test --experimental-test-snapshots test/*.test.js",
+    "test:watch": "node --test --experimental-test-snapshots --watch test/*.test.js",
+    "test:coverage": "node --test --experimental-test-snapshots --experimental-test-coverage --test-coverage-exclude='test/**' --test-coverage-lines=0.95 --test-coverage-branches=0.8 --test-coverage-functions=0.9 test/*.test.js",
+    "test:update-snapshots": "node --test --experimental-test-snapshots --test-update-snapshots test/*.test.js",
     "test:types": "tsc --project test/tsconfig.test.json --noEmit",
     "lint:js": "eslint --cache",
     "lint:js:fix": "npm run lint:js -- --fix",
@@ -85,7 +84,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
-    "!(**/*.snap|.githooks/**)": "prettier --cache --write",
+    "!(**/*.snapshot|.githooks/**)": "prettier --cache --write",
     "!(CHANGELOG).md": "remark --frail"
   },
   "remarkConfig": {
@@ -145,16 +144,5 @@
     "> 1%",
     "not ie 11",
     "not op_mini all"
-  ],
-  "jest": {
-    "testRegex": ".*\\.test\\.js$",
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 90,
-        "lines": 95,
-        "statements": 95
-      }
-    }
-  }
+  ]
 }
