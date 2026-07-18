@@ -9,6 +9,7 @@ export declare function run(params: {
   labeler?: ((script: string) => string) | undefined;
   stdout?: NodeJS.WriteStream | undefined;
   stderr?: NodeJS.WriteStream | undefined;
+  cwd?: string | undefined;
 }): Promise<{
   success: boolean;
   results: Array<{
