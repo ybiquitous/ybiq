@@ -1,0 +1,31 @@
+exports[`with \"--help\" option 1`] = `
+"cli.js <command>\\n\\nCommands:\\n  cli.js init             Setup npm project, e.g. update 'package.json'\\n  cli.js run <scripts..>  Run scripts in parallel\\n  cli.js changelog        Generate CHANGELOG.md from conventional commits\\n\\nOptions:\\n  -h, --help     Show help                                             [boolean]\\n  -v, --version  Show version number                                   [boolean]\\n"
+`;
+
+exports[`with \"-h\" option 1`] = `
+"cli.js <command>\\n\\nCommands:\\n  cli.js init             Setup npm project, e.g. update 'package.json'\\n  cli.js run <scripts..>  Run scripts in parallel\\n  cli.js changelog        Generate CHANGELOG.md from conventional commits\\n\\nOptions:\\n  -h, --help     Show help                                             [boolean]\\n  -v, --version  Show version number                                   [boolean]\\n"
+`;
+
+exports[`with arguments [] 1`] = `
+"Command failed: ./lib/cli.js\\ncli.js <command>\\n\\nCommands:\\n  cli.js init             Setup npm project, e.g. update 'package.json'\\n  cli.js run <scripts..>  Run scripts in parallel\\n  cli.js changelog        Generate CHANGELOG.md from conventional commits\\n\\nOptions:\\n  -h, --help     Show help                                             [boolean]\\n  -v, --version  Show version number                                   [boolean]\\n\\nNot enough non-option arguments: got 0, need at least 1\\n"
+`;
+
+exports[`with arguments [] 2`] = `
+"cli.js <command>\\n\\nCommands:\\n  cli.js init             Setup npm project, e.g. update 'package.json'\\n  cli.js run <scripts..>  Run scripts in parallel\\n  cli.js changelog        Generate CHANGELOG.md from conventional commits\\n\\nOptions:\\n  -h, --help     Show help                                             [boolean]\\n  -v, --version  Show version number                                   [boolean]\\n\\nNot enough non-option arguments: got 0, need at least 1\\n"
+`;
+
+exports[`with arguments [unknown, xyz] 1`] = `
+"Command failed: ./lib/cli.js unknown xyz\\ncli.js <command>\\n\\nCommands:\\n  cli.js init             Setup npm project, e.g. update 'package.json'\\n  cli.js run <scripts..>  Run scripts in parallel\\n  cli.js changelog        Generate CHANGELOG.md from conventional commits\\n\\nOptions:\\n  -h, --help     Show help                                             [boolean]\\n  -v, --version  Show version number                                   [boolean]\\n\\nUnknown arguments: unknown, xyz\\n"
+`;
+
+exports[`with arguments [unknown, xyz] 2`] = `
+"cli.js <command>\\n\\nCommands:\\n  cli.js init             Setup npm project, e.g. update 'package.json'\\n  cli.js run <scripts..>  Run scripts in parallel\\n  cli.js changelog        Generate CHANGELOG.md from conventional commits\\n\\nOptions:\\n  -h, --help     Show help                                             [boolean]\\n  -v, --version  Show version number                                   [boolean]\\n\\nUnknown arguments: unknown, xyz\\n"
+`;
+
+exports[`with arguments [unknown] 1`] = `
+"Command failed: ./lib/cli.js unknown\\ncli.js <command>\\n\\nCommands:\\n  cli.js init             Setup npm project, e.g. update 'package.json'\\n  cli.js run <scripts..>  Run scripts in parallel\\n  cli.js changelog        Generate CHANGELOG.md from conventional commits\\n\\nOptions:\\n  -h, --help     Show help                                             [boolean]\\n  -v, --version  Show version number                                   [boolean]\\n\\nUnknown argument: unknown\\n"
+`;
+
+exports[`with arguments [unknown] 2`] = `
+"cli.js <command>\\n\\nCommands:\\n  cli.js init             Setup npm project, e.g. update 'package.json'\\n  cli.js run <scripts..>  Run scripts in parallel\\n  cli.js changelog        Generate CHANGELOG.md from conventional commits\\n\\nOptions:\\n  -h, --help     Show help                                             [boolean]\\n  -v, --version  Show version number                                   [boolean]\\n\\nUnknown argument: unknown\\n"
+`;

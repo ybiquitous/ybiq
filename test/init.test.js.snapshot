@@ -1,0 +1,147 @@
+exports[`End-to-End via CLI 1`] = `
+"=> \\u001b[32m'package.json'\\u001b[39m was updated\\n=> \\u001b[32m'.editorconfig'\\u001b[39m was updated\\n=> \\u001b[32m'eslint.config.js'\\u001b[39m was updated\\n=> \\u001b[32m'.githooks/commit-msg'\\u001b[39m was updated\\n=> \\u001b[32m'.githooks/pre-commit'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/dependabot-auto-merge.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/npm-audit-fix.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/npm-diff.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/release-pr.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/release.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/test.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/commitlint.yml'\\u001b[39m was removed\\n=> \\u001b[32m'.husky'\\u001b[39m was removed\\n"
+`;
+
+exports[`update \"package.json\" 1`] = `
+{
+  "scripts": {
+    "test": "abc",
+    "lint:js": "eslint --cache",
+    "test:watch": "npm --ignore-scripts test -- --watch",
+    "test:coverage": "npm --ignore-scripts test -- --coverage",
+    "pretest": "npm run lint",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:md": "remark . --frail",
+    "lint:md:fix": "remark . --output",
+    "lint:types": "tsc --noEmit",
+    "lint:types:watch": "npm run lint:types -- --watch",
+    "lint:commit": "commitlint --from HEAD~10",
+    "lint": "ybiq run --npm lint:js lint:md lint:types lint:commit lint:styles",
+    "prettier": "prettier --cache .",
+    "lint:styles": "npm run prettier -- --check",
+    "lint:styles:fix": "npm run prettier -- --write",
+    "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
+    "clean": "git clean -dx --force --exclude=node_modules",
+    "changelog": "ybiq changelog",
+    "changelog:dryrun": "ybiq changelog --dry-run",
+    "postversion": "npm run changelog",
+    "prepare": "git config set --local core.hooksPath .githooks || true"
+  },
+  "publishConfig": {
+    "access": true,
+    "provenance": true
+  },
+  "lint-staged": {
+    "*.css": "xyz",
+    "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
+    "!(**/*.snapshot|.githooks/**)": "prettier --cache --write",
+    "!(CHANGELOG).md": "remark --frail"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "body-max-line-length": [
+        1,
+        "always",
+        300
+      ]
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-ybiquitous"
+    ]
+  }
+}
+`;
+
+exports[`update \"package.json\" without fields 1`] = `
+{
+  "scripts": {
+    "test": "test",
+    "test:watch": "npm --ignore-scripts test -- --watch",
+    "test:coverage": "npm --ignore-scripts test -- --coverage",
+    "pretest": "npm run lint",
+    "lint:js": "eslint --cache",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:md": "remark . --frail",
+    "lint:md:fix": "remark . --output",
+    "lint:types": "tsc --noEmit",
+    "lint:types:watch": "npm run lint:types -- --watch",
+    "lint:commit": "commitlint --from HEAD~10",
+    "lint": "ybiq run --npm lint:js lint:md lint:types lint:commit lint:styles",
+    "prettier": "prettier --cache .",
+    "lint:styles": "npm run prettier -- --check",
+    "lint:styles:fix": "npm run prettier -- --write",
+    "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
+    "clean": "git clean -dx --force --exclude=node_modules",
+    "changelog": "ybiq changelog",
+    "changelog:dryrun": "ybiq changelog --dry-run",
+    "postversion": "npm run changelog",
+    "prepare": "git config set --local core.hooksPath .githooks || true"
+  },
+  "publishConfig": {
+    "provenance": true
+  },
+  "lint-staged": {
+    "*.{js,jsx,cjs,mjs,ts,tsx}": "eslint --cache --fix",
+    "!(**/*.snapshot|.githooks/**)": "prettier --cache --write",
+    "!(CHANGELOG).md": "remark --frail"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-ybiquitous"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "body-max-line-length": [
+        1,
+        "always",
+        300
+      ]
+    }
+  }
+}
+`;
+
+exports[`write \".editorconfig\" 1`] = `
+"# editorconfig.org\\nroot = true\\n\\n[*]\\nend_of_line = lf\\ninsert_final_newline = true\\ntrim_trailing_whitespace = true\\ncharset = utf-8\\nindent_style = space\\nindent_size = 2\\nmax_line_length = 100\\n\\n# trailing spaces in markdown indicate word wrap\\n[*.md]\\ntrim_trailing_whitespace = false\\n"
+`;
+
+exports[`write \".githooks/commit-msg\" 1`] = `
+"#!/usr/bin/env sh\\n\\nnpx --no -- commitlint --edit \\"$1\\"\\n"
+`;
+
+exports[`write \".githooks/pre-commit\" 1`] = `
+"#!/usr/bin/env sh\\n\\nnpx --no lint-staged\\n"
+`;
+
+exports[`write \".github/workflows/dependabot-auto-merge.yml\" 1`] = `
+"name: Dependabot auto-merge\\n\\non:\\n  pull_request:\\n    types: [opened, synchronize]\\n\\njobs:\\n  auto-merge:\\n    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@2f13cf9e69be40562c26464439a9dd258a99cc98 # v3.1.1\\n    permissions:\\n      contents: write\\n"
+`;
+
+exports[`write \".github/workflows/npm-audit-fix.yml\" 1`] = `
+"name: npm audit fix\\n\\non:\\n  schedule:\\n    - cron: \\"0 0 * * *\\"\\n  workflow_dispatch:\\n\\njobs:\\n  npm-audit-fix:\\n    runs-on: ubuntu-latest\\n    permissions:\\n      contents: write\\n      pull-requests: write\\n    steps:\\n      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0\\n      - uses: ybiquitous/npm-audit-fix-action@5e2a4ed64aa0a87fc4e51855324ae923061d722e # v8.0.0\\n"
+`;
+
+exports[`write \".github/workflows/npm-diff.yml\" 1`] = `
+"name: npm diff\\n\\non:\\n  pull_request_target:\\n    types: [opened]\\n\\njobs:\\n  npm-diff:\\n    if: \${{ startsWith(github.head_ref, 'dependabot/npm_and_yarn/') }}\\n    runs-on: ubuntu-latest\\n    permissions:\\n      contents: read\\n      pull-requests: write\\n    steps:\\n      - uses: ybiquitous/npm-diff-action@557115f4fa45f871da20c66d77be11812d7d06fa # v1.7.3\\n"
+`;
+
+exports[`write \".github/workflows/release.yml\" 1`] = `
+"name: Release\\n\\non:\\n  pull_request:\\n    branches: [main]\\n    types: [closed]\\n\\njobs:\\n  release:\\n    uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@2f13cf9e69be40562c26464439a9dd258a99cc98 # v3.1.1\\n    permissions:\\n      contents: write\\n      id-token: write\\n"
+`;
+
+exports[`write \".github/workflows/test.yml\" 1`] = `
+"name: Test\\n\\non:\\n  push:\\n    branches: [\\"main\\"]\\n  pull_request:\\n    branches: [\\"**\\"]\\n  # Run the workflow regularly, as auto-merged PRs by bots may not trigger it.\\n  schedule:\\n    - cron: \\"0 0 1,15 * *\\"\\n  # Allow manual triggering of the workflow.\\n  workflow_dispatch:\\n\\njobs:\\n  test:\\n    strategy:\\n      fail-fast: false\\n      matrix:\\n        node-version: [\\"22\\", \\"24\\", \\"26\\"]\\n    uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@2f13cf9e69be40562c26464439a9dd258a99cc98 # v3.1.1\\n    with:\\n      node-version: \${{ matrix.node-version }}\\n    permissions:\\n      contents: read\\n\\n  lint:\\n    uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@2f13cf9e69be40562c26464439a9dd258a99cc98 # v3.1.1\\n    permissions:\\n      contents: read\\n"
+`;
+
+exports[`write \"eslint.config.js\" 1`] = `
+"import js from \\"@eslint/js\\";\\nimport { defineConfig } from \\"eslint/config\\";\\n\\nexport default defineConfig([\\n  {\\n    ignores: [\\"coverage/**\\", \\"dist/**\\", \\"tmp/**\\"],\\n  },\\n  {\\n    linterOptions: {\\n      reportUnusedDisableDirectives: \\"error\\",\\n      reportUnusedInlineConfigs: \\"error\\",\\n    },\\n    languageOptions: {\\n      ecmaVersion: \\"latest\\",\\n      sourceType: \\"module\\",\\n    },\\n    extends: [js.configs.recommended],\\n  },\\n]);\\n"
+`;

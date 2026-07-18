@@ -1,45 +1,27 @@
-export type Logger = (msg: string) => void;
-export type CommandParams = {
-  readonly cwd?: string | undefined;
-  readonly logger?: Logger | undefined;
-};
+export declare function init(params?: {
+  cwd?: string | undefined;
+  logger?: ((msg: string) => void) | undefined;
+}): Promise<void>;
 
-export declare function init(params?: CommandParams): Promise<void>;
-type InitCommand = typeof init;
-
-export type RunLabeler = (script: string) => string;
-
-export type RunParams = {
-  readonly scripts: ReadonlyArray<string>;
-  readonly npm?: boolean | undefined;
-  readonly labeler?: RunLabeler | undefined;
-  readonly stdout?: NodeJS.WriteStream | undefined;
-  readonly stderr?: NodeJS.WriteStream | undefined;
-};
-
-export type RunResult = {
-  readonly script: string;
-  readonly success: boolean;
-  readonly code: number | undefined;
-  readonly error: Error | undefined;
-};
-
-export declare function run(params: Readonly<RunParams>): Promise<{
+export declare function run(params: {
+  scripts: Array<string>;
+  npm?: boolean | undefined;
+  labeler?: ((script: string) => string) | undefined;
+  stdout?: NodeJS.WriteStream | undefined;
+  stderr?: NodeJS.WriteStream | undefined;
+  cwd?: string | undefined;
+}): Promise<{
   success: boolean;
-  results: Array<RunResult>;
+  results: Array<{
+    script: string;
+    success: boolean;
+    code: number | undefined;
+    error: Error | undefined;
+  }>;
 }>;
-type RunCommand = typeof run;
-
-export type GenerateChangelog = (cwd: string) => Promise<string>;
-
-export type ChangelogParams = {
-  readonly cwd?: string | undefined;
-  readonly generate?: GenerateChangelog | undefined;
-  readonly dryRun?: boolean | undefined;
-  readonly logger?: Logger | undefined;
-};
-
-export declare function changelog(params?: Readonly<ChangelogParams>): Promise<void>;
-type ChangelogCommand = typeof changelog;
-
-export declare function normalizeChangelog(content: string): string;
+export declare function changelog(params?: {
+  cwd?: string | undefined;
+  generate?: ((cwd: string) => Promise<string>) | undefined;
+  dryRun?: boolean | undefined;
+  logger?: ((msg: string) => void) | undefined;
+}): Promise<void>;
