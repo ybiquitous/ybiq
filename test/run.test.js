@@ -96,6 +96,23 @@ test("finish with errors when some scripts fail", async () => {
   );
 });
 
+test("return a structured error when a script cannot be spawned", async () => {
+  const script = 'echo "Hi"';
+  const result = await runWithMocks([script], { cwd: "/no/such/ybiq/dir" });
+
+  expect(result.success).toBe(false);
+  expect(result.results).toHaveLength(1);
+  expect(result.results[0]).toMatchObject({
+    script: script,
+    success: false,
+    code: undefined,
+    error: expect.any(Error),
+  });
+  expect(result.results[0].error.message).toMatch(/ENOENT/u);
+  expect(stdoutMock.write).not.toHaveBeenCalled();
+  expect(stderrMock.write).not.toHaveBeenCalled();
+});
+
 test("run npm scripts", async () => {
   const scripts = ["postprepare"];
   const result = await runWithMocks(scripts, { npm: true });

@@ -61,6 +61,7 @@ await run({
   // labeler: (script) => script,  // Customize script labels
   // stdout: process.stdout,
   // stderr: process.stderr,
+  // cwd: process.cwd(),
 });
 ```
 
