@@ -1,10 +1,11 @@
+import { test } from "node:test";
 import { exec } from "./helpers/exec.js";
 import { pkg } from "./helpers/pkg.js";
 
 ["--version", "-v"].forEach((option) => {
-  test(`with "${option}" option`, async () => {
+  test(`with "${option}" option`, async (t) => {
     const { stdout, stderr } = await exec(pkg.bin, option);
-    expect(stdout).toEqual(`${pkg.version}\n`);
-    expect(stderr).toEqual("");
+    t.assert.strictEqual(stdout, `${pkg.version}\n`);
+    t.assert.strictEqual(stderr, "");
   });
 });

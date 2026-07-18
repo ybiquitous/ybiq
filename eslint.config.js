@@ -3,7 +3,6 @@ import { defineConfig } from "eslint/config";
 
 import nodePlugin from "eslint-plugin-n";
 import tsPlugin from "typescript-eslint";
-import jestPlugin from "eslint-plugin-jest";
 
 export default defineConfig([
   // Base
@@ -31,12 +30,6 @@ export default defineConfig([
       },
     },
     extends: [tsPlugin.configs.eslintRecommended, tsPlugin.configs.strictTypeChecked],
-  },
-
-  // Jest
-  {
-    files: ["**/*.test.js"],
-    extends: [jestPlugin.configs["flat/recommended"]],
   },
 
   // Exceptions
