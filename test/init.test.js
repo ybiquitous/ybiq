@@ -71,7 +71,6 @@ test("remove empty `overrides` after dropping `conventional-changelog-convention
 
 [
   [".editorconfig", true],
-  [".remarkignore", true],
   [".githooks/commit-msg", true],
   [".githooks/pre-commit", true],
   [".github/workflows/dependabot-auto-merge.yml", true],
@@ -137,4 +136,24 @@ test("remove `.github/workflows/commitlint.yml` if exists", (t) =>
       existsSync(join(ctx.workDir, ".github", "workflows", "commitlint.yml")),
       false,
     );
+  }));
+
+test("remove `.remarkignore` if it only ignores `CHANGELOG.md`", (t) =>
+  sandbox(async (ctx) => {
+    writeFileSync(join(ctx.workDir, ".remarkignore"), "CHANGELOG.md\n");
+    writeFileSync(join(ctx.workDir, "package.json"), "{}");
+
+    await init(ctx.initArgs);
+
+    t.assert.strictEqual(existsSync(join(ctx.workDir, ".remarkignore")), false);
+  }));
+
+test("keep `.remarkignore` if it ignores other files", (t) =>
+  sandbox(async (ctx) => {
+    writeFileSync(join(ctx.workDir, ".remarkignore"), "CHANGELOG.md\ndocs/\n");
+    writeFileSync(join(ctx.workDir, "package.json"), "{}");
+
+    await init(ctx.initArgs);
+
+    t.assert.strictEqual(existsSync(join(ctx.workDir, ".remarkignore")), true);
   }));

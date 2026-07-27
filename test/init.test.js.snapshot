@@ -1,5 +1,5 @@
 exports[`End-to-End via CLI 1`] = `
-"=> \\u001b[32m'package.json'\\u001b[39m was updated\\n=> \\u001b[32m'.editorconfig'\\u001b[39m was updated\\n=> \\u001b[32m'.remarkignore'\\u001b[39m was updated\\n=> \\u001b[32m'eslint.config.js'\\u001b[39m was updated\\n=> \\u001b[32m'.githooks/commit-msg'\\u001b[39m was updated\\n=> \\u001b[32m'.githooks/pre-commit'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/dependabot-auto-merge.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/npm-audit-fix.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/npm-diff.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/release-pr.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/release.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/test.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/commitlint.yml'\\u001b[39m was removed\\n=> \\u001b[32m'.husky'\\u001b[39m was removed\\n"
+"=> \\u001b[32m'package.json'\\u001b[39m was updated\\n=> \\u001b[32m'.editorconfig'\\u001b[39m was updated\\n=> \\u001b[32m'eslint.config.js'\\u001b[39m was updated\\n=> \\u001b[32m'.githooks/commit-msg'\\u001b[39m was updated\\n=> \\u001b[32m'.githooks/pre-commit'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/dependabot-auto-merge.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/npm-audit-fix.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/npm-diff.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/release-pr.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/release.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/test.yml'\\u001b[39m was updated\\n=> \\u001b[32m'.github/workflows/commitlint.yml'\\u001b[39m was removed\\n=> \\u001b[32m'.husky'\\u001b[39m was removed\\n"
 `;
 
 exports[`update \"package.json\" 1`] = `
@@ -22,8 +22,8 @@ exports[`update \"package.json\" 1`] = `
     "lint:styles:fix": "npm run prettier -- --write",
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
     "clean": "git clean -dx --force --exclude=node_modules",
-    "changelog": "if [ ! -f CHANGELOG.md ]; then opts='--first-release' ; fi && conventional-changelog --preset conventional-changelog-conventionalcommits $opts && prettier --write CHANGELOG.md",
-    "changelog:dryrun": "npm version \\"\${NEW_VERSION:-major}\\" --no-git-tag-version && git --no-pager diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
+    "changelog": "ybiq changelog",
+    "changelog:dryrun": "ybiq changelog --dry-run",
     "postversion": "npm run changelog",
     "prepare": "git config set --local core.hooksPath .githooks || true"
   },
@@ -77,8 +77,8 @@ exports[`update \"package.json\" without fields 1`] = `
     "lint:styles:fix": "npm run prettier -- --write",
     "format": "ybiq run --npm lint:js:fix lint:md:fix lint:styles:fix",
     "clean": "git clean -dx --force --exclude=node_modules",
-    "changelog": "if [ ! -f CHANGELOG.md ]; then opts='--first-release' ; fi && conventional-changelog --preset conventional-changelog-conventionalcommits $opts && prettier --write CHANGELOG.md",
-    "changelog:dryrun": "npm version \\"\${NEW_VERSION:-major}\\" --no-git-tag-version && git --no-pager diff CHANGELOG.md && git checkout CHANGELOG.md package.json package-lock.json",
+    "changelog": "ybiq changelog",
+    "changelog:dryrun": "ybiq changelog --dry-run",
     "postversion": "npm run changelog",
     "prepare": "git config set --local core.hooksPath .githooks || true"
   },
@@ -140,10 +140,6 @@ exports[`write \".github/workflows/release.yml\" 1`] = `
 
 exports[`write \".github/workflows/test.yml\" 1`] = `
 "name: Test\\n\\non:\\n  push:\\n    branches: [\\"main\\"]\\n  pull_request:\\n    branches: [\\"**\\"]\\n  # Run the workflow regularly, as auto-merged PRs by bots may not trigger it.\\n  schedule:\\n    - cron: \\"0 0 1,15 * *\\"\\n  # Allow manual triggering of the workflow.\\n  workflow_dispatch:\\n\\njobs:\\n  test:\\n    strategy:\\n      fail-fast: false\\n      matrix:\\n        node-version: [\\"22\\", \\"24\\", \\"26\\"]\\n    uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@2f13cf9e69be40562c26464439a9dd258a99cc98 # v3.1.1\\n    with:\\n      node-version: \${{ matrix.node-version }}\\n    permissions:\\n      contents: read\\n\\n  lint:\\n    uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@2f13cf9e69be40562c26464439a9dd258a99cc98 # v3.1.1\\n    permissions:\\n      contents: read\\n"
-`;
-
-exports[`write \".remarkignore\" 1`] = `
-"CHANGELOG.md\\n"
 `;
 
 exports[`write \"eslint.config.js\" 1`] = `

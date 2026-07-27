@@ -19,3 +19,9 @@ export declare function run(params: {
     error: Error | undefined;
   }>;
 }>;
+export declare function changelog(params?: {
+  cwd?: string | undefined;
+  generate?: ((cwd: string) => Promise<string>) | undefined;
+  dryRun?: boolean | undefined;
+  logger?: ((msg: string) => void) | undefined;
+}): Promise<void>;
