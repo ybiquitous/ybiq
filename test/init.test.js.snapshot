@@ -127,7 +127,7 @@ exports[`write \".github/workflows/dependabot-auto-merge.yml\" 1`] = `
 `;
 
 exports[`write \".github/workflows/npm-audit-fix.yml\" 1`] = `
-"name: npm audit fix\\n\\non:\\n  schedule:\\n    - cron: \\"0 0 * * *\\"\\n  workflow_dispatch:\\n\\njobs:\\n  npm-audit-fix:\\n    runs-on: ubuntu-latest\\n    permissions:\\n      contents: write\\n      pull-requests: write\\n    steps:\\n      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0\\n      - uses: ybiquitous/npm-audit-fix-action@5e2a4ed64aa0a87fc4e51855324ae923061d722e # v8.0.0\\n"
+"name: npm audit fix\\n\\non:\\n  schedule:\\n    - cron: \\"0 0 * * *\\"\\n  workflow_dispatch:\\n\\njobs:\\n  npm-audit-fix:\\n    runs-on: ubuntu-latest\\n    permissions:\\n      contents: write\\n      pull-requests: write\\n    steps:\\n      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\\n      - uses: ybiquitous/npm-audit-fix-action@5e2a4ed64aa0a87fc4e51855324ae923061d722e # v8.0.0\\n"
 `;
 
 exports[`write \".github/workflows/npm-diff.yml\" 1`] = `
