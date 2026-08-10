@@ -38,7 +38,7 @@
     "@commitlint/cli": "^21.2.0",
     "@commitlint/config-conventional": "^21.1.0",
     "@eslint/js": "^10.0.1",
-    "conventional-changelog": "^8.0.1",
+    "conventional-changelog": "^8.1.0",
     "conventional-changelog-conventionalcommits": "^10.2.1",
     "conventional-commits-filter": "^6.0.1",
     "eslint": "^10.6.0",
@@ -105,12 +105,12 @@
       "footer-max-line-length": [
         2,
         "always",
-        120
+        200
       ],
       "header-max-length": [
         2,
         "always",
-        120
+        200
       ],
       "scope-enum": [
         2,
