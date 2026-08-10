@@ -51,10 +51,10 @@
     "@tsconfig/strictest": "^2.0.8",
     "@types/node": "^26.1.0",
     "@types/yargs": "^17.0.35",
-    "eslint-plugin-n": "^18.2.1",
+    "eslint-plugin-n": "^18.2.2",
     "remark-preset-ybiquitous": "^0.5.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.1"
+    "typescript-eslint": "^8.65.0"
   },
   "scripts": {
     "pretest": "npm run lint",
