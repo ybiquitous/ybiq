@@ -105,12 +105,12 @@
       "footer-max-line-length": [
         2,
         "always",
-        120
+        200
       ],
       "header-max-length": [
         2,
         "always",
-        120
+        200
       ],
       "scope-enum": [
         2,
