@@ -17,8 +17,6 @@ updates:
         patterns: ["typescript-eslint", "eslint-*"]
       typescript:
         patterns: ["@tsconfig/*", "@types/*", "typescript"]
-    cooldown:
-      default-days: 7
 
   - package-ecosystem: github-actions
     directory: "/"
@@ -29,5 +27,4 @@ updates:
       ybiquitous-actions:
         patterns: ["ybiquitous/.github/*"]
     cooldown:
-      default-days: 7
       exclude: ["ybiquitous/.github/*"]
