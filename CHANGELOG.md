@@ -2,6 +2,64 @@
 
 <!-- lint disable no-duplicate-headings -->
 
+## [22.0.0](https://github.com/ybiquitous/ybiq/compare/v21.0.3...v22.0.0) (2026-08-29)
+
+### ⚠ BREAKING CHANGES
+
+- **init:** `npm run changelog` now calls `ybiq changelog`, which is added in this version.
+- **init:** `ybiq init` no longer installs `husky`. The `.husky/` directory is replaced with `.githooks/`.
+- **init:** `ybiq init` no longer writes the `.remarkignore` file and removes it when it solely ignores `CHANGELOG.md`.
+- **init:** `ybiq init` no longer adds the `overrides` field to `package.json` and removes the previously injected `conventional-changelog-conventionalcommits` override.
+- **init**: The `PERSONAL_ACCESS_TOKEN` secret is no longer needed in the `npm-audit-fix` workflow.
+- Node.js v20 support is removed.
+
+### Features
+
+- **changelog:** add `ybiq changelog` command and drop `.remarkignore` ([#2129](https://github.com/ybiquitous/ybiq/issues/2129)) ([68d17c3](https://github.com/ybiquitous/ybiq/commit/68d17c360b365f737c4e77351f945061f35cb9a1))
+- **deps:** bump actions/checkout from 6.0.2 to 7.0.0 ([#2109](https://github.com/ybiquitous/ybiq/issues/2109)) ([2f200d1](https://github.com/ybiquitous/ybiq/commit/2f200d1b3bf43823ebc1623251371b0969e5370d))
+- **deps:** bump eslint from 9.39.2 to 10.0.2 ([#2067](https://github.com/ybiquitous/ybiq/issues/2067)) ([fef811e](https://github.com/ybiquitous/ybiq/commit/fef811e7b104863f4981e97ad751fcba2de6abbf))
+- **deps:** bump ybiquitous/npm-audit-fix-action from 7.3.6 to 8.0.0 ([#2110](https://github.com/ybiquitous/ybiq/issues/2110)) ([e0c62ef](https://github.com/ybiquitous/ybiq/commit/e0c62ef414c71a3dff5902c50eea82b2b8c66a94))
+- **init:** remove `conventional-changelog-conventionalcommits` overrides and bump it from 9.1.0 to 10.2.1 ([#2127](https://github.com/ybiquitous/ybiq/issues/2127)) ([4164f1f](https://github.com/ybiquitous/ybiq/commit/4164f1fef0162faae93a736c834b40d6fba0f57e))
+- **init:** remove `husky` ([#2069](https://github.com/ybiquitous/ybiq/issues/2069)) ([4884955](https://github.com/ybiquitous/ybiq/commit/48849555d8aa581ff64b7e684573a1e2acb2da28))
+- remove Node.js 20 support ([#2119](https://github.com/ybiquitous/ybiq/issues/2119)) ([4b0470c](https://github.com/ybiquitous/ybiq/commit/4b0470c13a0e4fcda21d57a0df84b55d3a5fd1e9))
+- **run:** add `cwd` option ([#2131](https://github.com/ybiquitous/ybiq/issues/2131)) ([97954cf](https://github.com/ybiquitous/ybiq/commit/97954cf90afeccb727c2f63cc413fdfd7324113f))
+- simplify type definitions ([#2130](https://github.com/ybiquitous/ybiq/issues/2130)) ([29bd831](https://github.com/ybiquitous/ybiq/commit/29bd831c403ffe83c55123c4bdbc0132116b105a))
+
+### Bug Fixes
+
+- **deps:** bump @commitlint/* packges from 20.5.0 to 21.1.0 ([#2102](https://github.com/ybiquitous/ybiq/issues/2102)) ([0967a62](https://github.com/ybiquitous/ybiq/commit/0967a6296867ba8bdfd135839fbfc1f1b3304d82))
+- **deps:** bump @commitlint/cli from 21.2.0 to 21.2.1 in the commitlint group across 1 directory ([#2138](https://github.com/ybiquitous/ybiq/issues/2138)) ([d709572](https://github.com/ybiquitous/ybiq/commit/d709572e4d1df67cf12d93b484a3113e040209ba))
+- **deps:** bump actions/checkout from 6.0.1 to 6.0.2 ([#2046](https://github.com/ybiquitous/ybiq/issues/2046)) ([a0f90c4](https://github.com/ybiquitous/ybiq/commit/a0f90c4b90efa993fd76536a93777cec54468126))
+- **deps:** bump actions/checkout from 7.0.0 to 7.0.1 ([#2137](https://github.com/ybiquitous/ybiq/issues/2137)) ([087460b](https://github.com/ybiquitous/ybiq/commit/087460b12e5913f704de99f222ff56cf9a09e425))
+- **deps:** bump conventional-changelog from 7.2.1 to 8.0.1 ([#2123](https://github.com/ybiquitous/ybiq/issues/2123)) ([850670b](https://github.com/ybiquitous/ybiq/commit/850670bd679d678aa2a2ac3b7f1ee5f3b47cab30))
+- **deps:** bump conventional-changelog from 8.0.1 to 8.1.0 in the conventional-changelog group across 1 directory ([#2139](https://github.com/ybiquitous/ybiq/issues/2139)) ([232809b](https://github.com/ybiquitous/ybiq/commit/232809b4359dff9d24422b64aab624b43aa180a6))
+- **deps:** bump eslint from 10.5.0 to 10.6.0 in the eslint group across 1 directory ([#2124](https://github.com/ybiquitous/ybiq/issues/2124)) ([38cb01f](https://github.com/ybiquitous/ybiq/commit/38cb01f56cf49ee8b73256ab4757187263d8b554))
+- **deps:** bump eslint from 10.6.0 to 10.8.0 in the eslint group across 1 directory ([#2140](https://github.com/ybiquitous/ybiq/issues/2140)) ([83d42fa](https://github.com/ybiquitous/ybiq/commit/83d42fa1ca439c211337ee6cb7efbca1aea9709c))
+- **deps:** bump eslint from 10.8.0 to 10.9.0 in the eslint group across 1 directory ([#2154](https://github.com/ybiquitous/ybiq/issues/2154)) ([edfcac4](https://github.com/ybiquitous/ybiq/commit/edfcac47d8118ba6caa3c71b841e46d5c65aa9ae))
+- **deps:** bump eslint from 10.9.0 to 10.9.1 in the eslint group ([#2161](https://github.com/ybiquitous/ybiq/issues/2161)) ([3282186](https://github.com/ybiquitous/ybiq/commit/32821862f40d96a72ac37f8a52c209c70016d1ac))
+- **deps:** bump fast-uri from 3.1.4 to 3.1.5 ([#2146](https://github.com/ybiquitous/ybiq/issues/2146)) ([4e05916](https://github.com/ybiquitous/ybiq/commit/4e0591696e68b3dc80808d2988ecd0de7e602980))
+- **deps:** bump js-yaml from 4.3.0 to 4.3.1 ([#2149](https://github.com/ybiquitous/ybiq/issues/2149)) ([aaa243a](https://github.com/ybiquitous/ybiq/commit/aaa243a15e64e6c8066fefe99daeb6ad1edfc51d))
+- **deps:** bump lint-staged from 16.4.0 to 17.0.8 ([#2115](https://github.com/ybiquitous/ybiq/issues/2115)) ([50edca8](https://github.com/ybiquitous/ybiq/commit/50edca85ee0260e48288e9de6a9dd93f719b7479))
+- **deps:** bump lint-staged from 17.0.8 to 17.3.0 ([#2144](https://github.com/ybiquitous/ybiq/issues/2144)) ([b9d14e3](https://github.com/ybiquitous/ybiq/commit/b9d14e3a76af87b59b804b0331aa8dfc30f56dbe))
+- **deps:** bump prettier from 3.8.4 to 3.9.4 ([#2126](https://github.com/ybiquitous/ybiq/issues/2126)) ([b2cbeb3](https://github.com/ybiquitous/ybiq/commit/b2cbeb3ea4120215f30b0cc54094ca4d72b3b753))
+- **deps:** bump prettier from 3.9.4 to 3.9.6 ([#2143](https://github.com/ybiquitous/ybiq/issues/2143)) ([e0edacb](https://github.com/ybiquitous/ybiq/commit/e0edacb89a691e2edd03291e7b5d91e0e9647a8e))
+- **deps:** bump the commitlint group with 2 updates ([#2122](https://github.com/ybiquitous/ybiq/issues/2122)) ([3eade42](https://github.com/ybiquitous/ybiq/commit/3eade42b8c52a2859e62e82afcb9d90c9fed3cc2))
+- **deps:** bump the commitlint group with 2 updates ([#2152](https://github.com/ybiquitous/ybiq/issues/2152)) ([2fb99b4](https://github.com/ybiquitous/ybiq/commit/2fb99b429d52184e2b2b46709b85f44de2dc9799))
+- **deps:** bump the conventional-changelog group across 1 directory with 2 updates ([#2153](https://github.com/ybiquitous/ybiq/issues/2153)) ([ce2d6bb](https://github.com/ybiquitous/ybiq/commit/ce2d6bb22f8833df649b22911f4ed5fdf51017a3))
+- **deps:** bump the ybiquitous-actions group across 1 directory with 5 updates ([#2159](https://github.com/ybiquitous/ybiq/issues/2159)) ([dd3a3d9](https://github.com/ybiquitous/ybiq/commit/dd3a3d9ae8cafce7e0a0fb32adc114a144a48f7f))
+- **deps:** bump yargs from 18.0.0 to 18.1.0 ([#2156](https://github.com/ybiquitous/ybiq/issues/2156)) ([d587bd9](https://github.com/ybiquitous/ybiq/commit/d587bd91e205fb3b55c65038c1495e61bf4e70c9))
+- **deps:** bump ybiquitous actions from 3.1.1 to 3.2.0 ([#2136](https://github.com/ybiquitous/ybiq/issues/2136)) ([3f7315b](https://github.com/ybiquitous/ybiq/commit/3f7315bed4a64dbaa92182e011546f7c1d2248f2))
+- **deps:** bump ybiquitous/.github actions from 2.5.0 to 3.0.1 ([#2091](https://github.com/ybiquitous/ybiq/issues/2091)) ([ecfcab6](https://github.com/ybiquitous/ybiq/commit/ecfcab65f473c3100b362d95229eda065b50b762))
+- **deps:** bump ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml from 2.3.1 to 2.5.0 ([#2061](https://github.com/ybiquitous/ybiq/issues/2061)) ([3c22bdd](https://github.com/ybiquitous/ybiq/commit/3c22bddf675d017fd5e5db5b87135923090743cc))
+- **deps:** bump ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml from 2.3.1 to 2.5.0 ([#2060](https://github.com/ybiquitous/ybiq/issues/2060)) ([ba6e43d](https://github.com/ybiquitous/ybiq/commit/ba6e43d2f2395ad0c253731540451ff3f2a9dbd3))
+- **deps:** bump ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml from 2.3.1 to 2.5.0 ([#2057](https://github.com/ybiquitous/ybiq/issues/2057)) ([055ff25](https://github.com/ybiquitous/ybiq/commit/055ff2500dfe818d1fa4f2742efeaacbd6c9d83e))
+- **deps:** bump ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml from 2.3.1 to 2.5.0 ([#2062](https://github.com/ybiquitous/ybiq/issues/2062)) ([f5cae32](https://github.com/ybiquitous/ybiq/commit/f5cae32151556bed3c26385149bf54701d21d938))
+- **deps:** bump ybiquitous/* actions from 3.0.1 to 3.1.1 ([#2100](https://github.com/ybiquitous/ybiq/issues/2100)) ([2724dd7](https://github.com/ybiquitous/ybiq/commit/2724dd795c89ad9902bc73303b0c5c3f74332899))
+- **deps:** bump ybiquitous/npm-audit-fix-action from 7.3.3 to 7.3.6 ([#2058](https://github.com/ybiquitous/ybiq/issues/2058)) ([a6ea851](https://github.com/ybiquitous/ybiq/commit/a6ea85137d35515dcf77bdc766332ec2166d23a8))
+- **deps:** bump ybiquitous/npm-diff-action from 1.7.1 to 1.7.2 ([#2047](https://github.com/ybiquitous/ybiq/issues/2047)) ([a8aa749](https://github.com/ybiquitous/ybiq/commit/a8aa749c862501662abcd6982e0f337908c9d16f))
+- **deps:** bump ybiquitous/npm-diff-action from 1.7.2 to 1.7.3 ([#2059](https://github.com/ybiquitous/ybiq/issues/2059)) ([5af7f82](https://github.com/ybiquitous/ybiq/commit/5af7f8243fa671f7e5c6482ec4373d18d4fc2bb5))
+- **run:** flaky line output ([#2117](https://github.com/ybiquitous/ybiq/issues/2117)) ([3c601b3](https://github.com/ybiquitous/ybiq/commit/3c601b3f59f7a232e7cca80876d74046e27b619f))
+
 ## [21.0.3](https://github.com/ybiquitous/ybiq/compare/v21.0.2...v21.0.3) (2026-01-02)
 
 ### Bug Fixes
