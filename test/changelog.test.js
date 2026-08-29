@@ -1,8 +1,10 @@
-import { existsSync, mkdirSync, readFileSync, rmSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
 import { test } from "node:test";
 import { changelog } from "../lib/changelog.js";
+import { exec } from "./helpers/exec.js";
 import { pkg } from "./helpers/pkg.js";
 
 const HEADER = "# Changelog";
@@ -58,3 +60,24 @@ test("propagate generator failures", async (t) => {
     await t.assert.rejects(changelog({ cwd: dir, generate }), /boom/u);
   });
 });
+
+test("End-to-End via CLI", (t) =>
+  sandbox(async (dir) => {
+    const git = (...args) => execFileSync("git", args, { cwd: dir });
+
+    git("init", "--quiet");
+    git("config", "user.email", "test@example.com");
+    git("config", "user.name", "Test");
+    writeFileSync(
+      join(dir, "package.json"),
+      JSON.stringify({ name: "e2e-fixture", version: "0.0.0", repository: "ybiquitous/ybiq" }),
+    );
+    git("add", "package.json");
+    git("commit", "--quiet", "-m", "feat: initial commit");
+
+    const { stdout, stderr } = await exec(resolve(pkg.bin), "changelog", "--dry-run", { cwd: dir });
+
+    t.assert.strictEqual(stderr, "");
+    t.assert.ok(stdout.startsWith(TOP));
+    t.assert.ok(stdout.includes("initial commit"));
+  }));
