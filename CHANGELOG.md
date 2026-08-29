@@ -6,12 +6,12 @@
 
 ### ⚠ BREAKING CHANGES
 
-- **init:** `husky` is not installed. The `.husky` directory is replaced with `.githooks`.
-- **changelog:** `ybiq init` no longer writes `.remarkignore` and removes an existing one when it solely ignores `CHANGELOG.md`. `npm run changelog` now calls `ybiq changelog`.
-- **init:** init no longer adds the overrides field to package.json
-  and removes the previously injected conventional-changelog-conventionalcommits override.
-- remove Node.js 20 support ([#2119](https://github.com/ybiquitous/ybiq/issues/2119))
-- **deps:** The `PERSONAL_ACCESS_TOKEN` secret is no longer needed in the `npm-audit-fix` workflow.
+- **init:** `npm run changelog` now calls `ybiq changelog`, which is added in this version.
+- **init:** `ybiq init` no longer installs `husky`. The `.husky/` directory is replaced with `.githooks/`.
+- **init:** `ybiq init` no longer writes the `.remarkignore` file and removes it when it solely ignores `CHANGELOG.md`.
+- **init:** `ybiq init` no longer adds the `overrides` field to `package.json` and removes the previously injected `conventional-changelog-conventionalcommits` override.
+- **init**: The `PERSONAL_ACCESS_TOKEN` secret is no longer needed in the `npm-audit-fix` workflow.
+- Node.js v20 support is removed.
 
 ### Features
 
