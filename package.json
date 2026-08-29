@@ -41,7 +41,7 @@
     "conventional-changelog": "^8.1.0",
     "conventional-changelog-conventionalcommits": "^10.2.1",
     "conventional-commits-filter": "^6.0.1",
-    "eslint": "^10.8.0",
+    "eslint": "^10.9.0",
     "lint-staged": "^17.3.0",
     "prettier": "^3.9.6",
     "remark-cli": "^12.0.1",
