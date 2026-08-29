@@ -123,7 +123,7 @@ exports[`write \".githooks/pre-commit\" 1`] = `
 `;
 
 exports[`write \".github/workflows/dependabot-auto-merge.yml\" 1`] = `
-"name: Dependabot auto-merge\\n\\non:\\n  pull_request:\\n    types: [opened, synchronize]\\n\\njobs:\\n  auto-merge:\\n    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@cdefa43486604b3aae79e9d1db24b670475f2c92 # v3.2.0\\n    permissions:\\n      contents: write\\n"
+"name: Dependabot auto-merge\\n\\non:\\n  pull_request:\\n    types: [opened, synchronize]\\n\\njobs:\\n  auto-merge:\\n    uses: ybiquitous/.github/.github/workflows/dependabot-auto-merge-reusable.yml@5e88270a455e5daf2387974dcb3cdea448076387 # v3.2.2\\n    permissions:\\n      contents: write\\n"
 `;
 
 exports[`write \".github/workflows/npm-audit-fix.yml\" 1`] = `
@@ -135,11 +135,11 @@ exports[`write \".github/workflows/npm-diff.yml\" 1`] = `
 `;
 
 exports[`write \".github/workflows/release.yml\" 1`] = `
-"name: Release\\n\\non:\\n  pull_request:\\n    branches: [main]\\n    types: [closed]\\n\\njobs:\\n  release:\\n    uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@cdefa43486604b3aae79e9d1db24b670475f2c92 # v3.2.0\\n    permissions:\\n      contents: write\\n      id-token: write\\n"
+"name: Release\\n\\non:\\n  pull_request:\\n    branches: [main]\\n    types: [closed]\\n\\njobs:\\n  release:\\n    uses: ybiquitous/.github/.github/workflows/nodejs-release-reusable.yml@5e88270a455e5daf2387974dcb3cdea448076387 # v3.2.2\\n    permissions:\\n      contents: write\\n      id-token: write\\n"
 `;
 
 exports[`write \".github/workflows/test.yml\" 1`] = `
-"name: Test\\n\\non:\\n  push:\\n    branches: [\\"main\\"]\\n  pull_request:\\n    branches: [\\"**\\"]\\n  # Run the workflow regularly, as auto-merged PRs by bots may not trigger it.\\n  schedule:\\n    - cron: \\"0 0 1,15 * *\\"\\n  # Allow manual triggering of the workflow.\\n  workflow_dispatch:\\n\\njobs:\\n  test:\\n    strategy:\\n      fail-fast: false\\n      matrix:\\n        node-version: [\\"22\\", \\"24\\", \\"26\\"]\\n    uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@cdefa43486604b3aae79e9d1db24b670475f2c92 # v3.2.0\\n    with:\\n      node-version: \${{ matrix.node-version }}\\n    permissions:\\n      contents: read\\n\\n  lint:\\n    uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@cdefa43486604b3aae79e9d1db24b670475f2c92 # v3.2.0\\n    permissions:\\n      contents: read\\n"
+"name: Test\\n\\non:\\n  push:\\n    branches: [\\"main\\"]\\n  pull_request:\\n    branches: [\\"**\\"]\\n  # Run the workflow regularly, as auto-merged PRs by bots may not trigger it.\\n  schedule:\\n    - cron: \\"0 0 1,15 * *\\"\\n  # Allow manual triggering of the workflow.\\n  workflow_dispatch:\\n\\njobs:\\n  test:\\n    strategy:\\n      fail-fast: false\\n      matrix:\\n        node-version: [\\"22\\", \\"24\\", \\"26\\"]\\n    uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@5e88270a455e5daf2387974dcb3cdea448076387 # v3.2.2\\n    with:\\n      node-version: \${{ matrix.node-version }}\\n    permissions:\\n      contents: read\\n\\n  lint:\\n    uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@5e88270a455e5daf2387974dcb3cdea448076387 # v3.2.2\\n    permissions:\\n      contents: read\\n"
 `;
 
 exports[`write \"eslint.config.js\" 1`] = `
