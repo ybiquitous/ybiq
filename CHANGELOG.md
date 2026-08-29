@@ -27,11 +27,6 @@
 
 ### Bug Fixes
 
-- **deps-dev:** bump brace-expansion from 2.1.2 to 2.1.4 ([#2148](https://github.com/ybiquitous/ybiq/issues/2148)) ([f88142f](https://github.com/ybiquitous/ybiq/commit/f88142f98cd0209875fbd21f20e030698b830e40))
-- **deps-dev:** bump the eslint-dev group across 1 directory with 2 updates ([#2141](https://github.com/ybiquitous/ybiq/issues/2141)) ([b14f794](https://github.com/ybiquitous/ybiq/commit/b14f7947ea4d55517151993bb6989627f4b89a5b))
-- **deps-dev:** bump the eslint-dev group across 1 directory with 2 updates ([#2155](https://github.com/ybiquitous/ybiq/issues/2155)) ([e02bfa0](https://github.com/ybiquitous/ybiq/commit/e02bfa0e53915e5943648be4f3600ee3119720ef))
-- **deps-dev:** bump the eslint-dev group across 1 directory with 3 updates ([#2125](https://github.com/ybiquitous/ybiq/issues/2125)) ([7a72594](https://github.com/ybiquitous/ybiq/commit/7a7259458145a59822197b1e83259145b72c374d))
-- **deps-dev:** bump typescript-eslint from 8.67.0 to 8.68.0 in the eslint-dev group across 1 directory ([#2162](https://github.com/ybiquitous/ybiq/issues/2162)) ([4a074ef](https://github.com/ybiquitous/ybiq/commit/4a074efb95e10dbc2df97e11e786032c477e4f57))
 - **deps:** bump @commitlint/* packges from 20.5.0 to 21.1.0 ([#2102](https://github.com/ybiquitous/ybiq/issues/2102)) ([0967a62](https://github.com/ybiquitous/ybiq/commit/0967a6296867ba8bdfd135839fbfc1f1b3304d82))
 - **deps:** bump @commitlint/cli from 21.2.0 to 21.2.1 in the commitlint group across 1 directory ([#2138](https://github.com/ybiquitous/ybiq/issues/2138)) ([d709572](https://github.com/ybiquitous/ybiq/commit/d709572e4d1df67cf12d93b484a3113e040209ba))
 - **deps:** bump actions/checkout from 6.0.1 to 6.0.2 ([#2046](https://github.com/ybiquitous/ybiq/issues/2046)) ([a0f90c4](https://github.com/ybiquitous/ybiq/commit/a0f90c4b90efa993fd76536a93777cec54468126))
