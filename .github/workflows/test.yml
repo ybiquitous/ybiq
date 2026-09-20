@@ -20,7 +20,7 @@ jobs:
     uses: ybiquitous/.github/.github/workflows/nodejs-test-reusable.yml@11134ce0efbe36bdd758ab41e38fd8e05bf0a10d # v3.3.0
     with:
       node-version: ${{ matrix.node-version }}
-      node-version-coverage: "26"
+      node-version-coverage: "24"
       node-version-snapshot: "26"
     permissions:
       contents: write
