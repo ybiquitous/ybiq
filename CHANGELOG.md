@@ -2,6 +2,18 @@
 
 <!-- lint disable no-duplicate-headings -->
 
+## [22.1.0](https://github.com/ybiquitous/ybiq/compare/v22.0.0...v22.1.0) (2026-09-20)
+
+### Features
+
+- **deps:** bump ybiquitous/npm-audit-fix-action from 8.0.0 to 9.0.0 ([#2164](https://github.com/ybiquitous/ybiq/issues/2164)) ([91b58ea](https://github.com/ybiquitous/ybiq/commit/91b58ea8a253ffcaab9a3ba7b3d8585136a029ec))
+
+### Bug Fixes
+
+- **deps:** bump fast-uri from 3.1.5 to 3.1.7 ([#2166](https://github.com/ybiquitous/ybiq/issues/2166)) ([d36af4f](https://github.com/ybiquitous/ybiq/commit/d36af4fb31302fd24d545f1ec06e86c635f177d5))
+- **deps:** bump lint-staged from 17.3.0 to 17.4.1 ([#2165](https://github.com/ybiquitous/ybiq/issues/2165)) ([7ddc5a8](https://github.com/ybiquitous/ybiq/commit/7ddc5a8da0019d4662b1ebb971e964ae053947aa))
+- **remark:** fix `lint-staged` config in package.json ([#2169](https://github.com/ybiquitous/ybiq/issues/2169)) ([0babb16](https://github.com/ybiquitous/ybiq/commit/0babb166e918bb124cf93e8c46b79669cd29d268))
+
 ## [22.0.0](https://github.com/ybiquitous/ybiq/compare/v21.0.3...v22.0.0) (2026-08-29)
 
 ### ⚠ BREAKING CHANGES
