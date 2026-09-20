@@ -2,6 +2,16 @@
 
 <!-- lint disable no-duplicate-headings -->
 
+## [22.2.0](https://github.com/ybiquitous/ybiq/compare/v22.1.0...v22.2.0) (2026-09-20)
+
+### Features
+
+- **deps:** bump the ybiquitous-actions group with 5 updates ([#2171](https://github.com/ybiquitous/ybiq/issues/2171)) ([db8f312](https://github.com/ybiquitous/ybiq/commit/db8f312975a5838e0365dde9f4d79c84159f46cb))
+
+### Bug Fixes
+
+- **init:** use newer Node.js version for coverage ([#2172](https://github.com/ybiquitous/ybiq/issues/2172)) ([5318bcb](https://github.com/ybiquitous/ybiq/commit/5318bcbf8e5e0549425517cb7d625b0df9738964))
+
 ## [22.1.0](https://github.com/ybiquitous/ybiq/compare/v22.0.0...v22.1.0) (2026-09-20)
 
 ### Features
