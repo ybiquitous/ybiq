@@ -24,7 +24,6 @@ jobs:
       node-version-snapshot: "24"
     permissions:
       contents: write
-      pull-requests: write
 
   lint:
     uses: ybiquitous/.github/.github/workflows/nodejs-lint-reusable.yml@3a3a3f01f06fd4c0f834f5df53dc3b38c493d007 # v3.3.1
