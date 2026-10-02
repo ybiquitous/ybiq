@@ -2,6 +2,17 @@
 
 <!-- lint disable no-duplicate-headings -->
 
+## [22.3.0](https://github.com/ybiquitous/ybiq/compare/v22.2.0...v22.3.0) (2026-10-01)
+
+### Features
+
+- **deps:** bump the ybiquitous-actions group with 5 updates ([#2183](https://github.com/ybiquitous/ybiq/issues/2183)) ([a9420cf](https://github.com/ybiquitous/ybiq/commit/a9420cf4c56cdb41c0a76efac986c6998039c76a))
+- **deps:** bump ybiquitous/npm-audit-fix-action from 9.0.0 to 9.1.2 ([#2174](https://github.com/ybiquitous/ybiq/issues/2174)) ([2845e6a](https://github.com/ybiquitous/ybiq/commit/2845e6ad9b93adcc24cde537ca611167081bb506))
+
+### Bug Fixes
+
+- **init:** remove unneeded `pull-requests:write` permission from test CI job ([#2185](https://github.com/ybiquitous/ybiq/issues/2185)) ([086aa04](https://github.com/ybiquitous/ybiq/commit/086aa044636567396256f7aa72bf97baa0e32aa6))
+
 ## [22.2.0](https://github.com/ybiquitous/ybiq/compare/v22.1.0...v22.2.0) (2026-09-20)
 
 ### Features
