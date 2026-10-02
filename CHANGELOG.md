@@ -6,15 +6,7 @@
 
 ### Features
 
-- **deps-dev:** bump brace-expansion from 2.1.4 to 2.1.7 ([#2181](https://github.com/ybiquitous/ybiq/issues/2181)) ([6e11d3a](https://github.com/ybiquitous/ybiq/commit/6e11d3a90589c6a7c69841288aea66a16d50206c))
-- **deps-dev:** bump the eslint-dev group across 1 directory with 2 updates ([#2177](https://github.com/ybiquitous/ybiq/issues/2177)) ([2928df6](https://github.com/ybiquitous/ybiq/commit/2928df62d5ccc184433b22a489601a476ae9b57a))
-- **deps:** bump eslint from 10.9.1 to 10.11.0 in the eslint group ([#2176](https://github.com/ybiquitous/ybiq/issues/2176)) ([c65262d](https://github.com/ybiquitous/ybiq/commit/c65262db4e88e6051a79578875eb85bcb595ada8))
-- **deps:** bump fast-uri from 3.1.7 to 3.1.8 ([#2182](https://github.com/ybiquitous/ybiq/issues/2182)) ([e1c49c2](https://github.com/ybiquitous/ybiq/commit/e1c49c2e21fbed960b5e3aac1e54612fbf8e8055))
-- **deps:** bump lint-staged from 17.4.1 to 17.6.0 ([#2178](https://github.com/ybiquitous/ybiq/issues/2178)) ([b47677e](https://github.com/ybiquitous/ybiq/commit/b47677e1548ad6dec91eb07705493dc5101ca510))
-- **deps:** bump prettier from 3.9.6 to 3.9.9 ([#2180](https://github.com/ybiquitous/ybiq/issues/2180)) ([21a4baf](https://github.com/ybiquitous/ybiq/commit/21a4bafec6af2b7582de5fada731c36bd22d86a7))
-- **deps:** bump the commitlint group across 1 directory with 2 updates ([#2175](https://github.com/ybiquitous/ybiq/issues/2175)) ([bf0209e](https://github.com/ybiquitous/ybiq/commit/bf0209e821c463357fa56f92f343b0e2f8dfefc0))
 - **deps:** bump the ybiquitous-actions group with 5 updates ([#2183](https://github.com/ybiquitous/ybiq/issues/2183)) ([a9420cf](https://github.com/ybiquitous/ybiq/commit/a9420cf4c56cdb41c0a76efac986c6998039c76a))
-- **deps:** bump yargs from 18.1.0 to 18.2.0 ([#2179](https://github.com/ybiquitous/ybiq/issues/2179)) ([199004e](https://github.com/ybiquitous/ybiq/commit/199004e393c9c65a31c805c286b8871f870a28c2))
 - **deps:** bump ybiquitous/npm-audit-fix-action from 9.0.0 to 9.1.2 ([#2174](https://github.com/ybiquitous/ybiq/issues/2174)) ([2845e6a](https://github.com/ybiquitous/ybiq/commit/2845e6ad9b93adcc24cde537ca611167081bb506))
 
 ### Bug Fixes
